@@ -1,0 +1,140 @@
+MIDTERM GRADE INFORMATION, 73/88-110 FALL, 2002:
+
+IMPORTANT INFORMATION:
+
+Friends,
+
+The midterm grade is designed to give you INFORMATION.  The letter
+grade you receive only indicates how you are doing relative to your
+classmates.  If you get an A, you are doing much better than average, a
+B indicates above average, a C indicates average or slightly below, a D
+indicates below average, and an R indicates much worse than average.
+
+When FINAL GRADES are calculated, much more consideration will be
+placed on first trying to place each student within a group that
+deserves a similar grade, then trying to make the best case for each
+student to have him or her moved to a higher category based on unusual
+external circumstances, and finally assigning grades appropriate to
+each group of students.  It is likely that such a process, if it were
+done today, would not result in anyone receiving a lower grade than
+indicated, and might well allow some to receive a higher grade.
+
+NOTWITHSTANDING THE PREVIOUS SENTENCE, DO NOT IGNORE THE INFORMATION
+INHERENT IN YOUR MIDTERM GRADE!
+
+If you received a D or R at midterm, you are in SERIOUS trouble, and
+you need to do something about it NOW.  I am very willing to help in
+any way that I can, but YOU need to take responsibility for initiating
+and following up on actions that will better your grade.  COME AND SEE
+ME, NOW!
+
+If you are getting a C, you should also come and see me, as many such
+students, if they so desire, have been able to alter a few behaviors
+and consequently learn and understand the material in such a way that
+they can achieve much higher grades by the end of the semester, if they
+initiate some action now.
+
+If you are getting a B, good job, make a few adjustments and strive for
+an A.  Come and see me if you want some suggestions.
+
+If you are getting an A, then please continue the fine work, and also
+consider volunteering to help some of your other classmates achieve a
+better understanding of the material.  This only takes a small
+commitment of time (say one or two hours a week), and in the process
+you will often learn a lot more about the material---teaching is an
+easy route to learning.
+
+--John
+
+-----------------------------------------------------------
+-----------------------------------------------------------
+
+What graded material is left in the semester?
+
+Homework constitutes 50% of your final grade.  Your midterm grade is
+based on 5 out of 11 total assignments, and thus we have 55% of the 
+homework remaining (which will count for a little less than 30% of 
+the total remaining in your final grade).  Please remember that 
+homework averages tend to be high, so good performance on homework 
+requires very high grades.
+
+The first midterm counted for 20% of your grade.  The second exam will
+also count for 20% of your final grade.
+
+To re cap, you have:
+
+Roughly 30% of the final grade remaining on homework and 20% remaining 
+on exams.  (There is also 10% from experimental payoffs, but as long
+as you actively participate in the experiments and do your best, this
+should not negatively factor into your final grade.)
+
+-----------------------------------------------------------
+-----------------------------------------------------------
+
+How was the midterm grade calculated?
+
+Your midterm grade was calculated as follows:
+
+1) If you had any missing homework, you received a 0 on that homework.
+You should double check with us if you think we may have inadvertently
+missed one of your homeworks---one way to check this is to do the
+calculation below and see if your calculation gives you the same
+midterm grade that was recorded on the system.
+
+IMPORTANT NOTE: Although we will drop your lowest homework score in
+calculating your final grade, we did NOT do this for midsemester, as 
+keeping it in provides some useful information.  If you
+failed to turn in an assignment, or got an exceptionally low 
+score on something, then this will have a big impact on your 
+midsemester_homework_score---please make sure that you turn in 
+EVERYTHING else on time and that your remaining homework is done
+to a high standard, so that this will not be a serious factor in
+your final grade.  That is, if your midterm grade is low because of
+a bad score or missing assignment, you do NOT have much flexibility
+and you need to be EXTREMELY careful from here on out.
+
+BTW, if your midterm grade is low because of the above, you can easily
+recalculate it by replacing the bad grade with something that is closer
+to your average performance---in this way, you can see what would have
+happened if you had not had a problem.  Please be careful here---while one
+bad homework grade won't make much of a difference (since it will be
+dropped), two or more will have a significant impact on your grade.
+
+2) A midterm_homework_score was calculated by taking the sum of your
+points on the five homeworks.  Thus, your midterm_homework_scores ranged 
+from 0 to 100 points.
+
+3)  Your midterm_test_score is equal to the score you received on the
+first exam.  Thus, midterm_test_score ranges from 0 to 100.
+
+4) Your final_midterm_score was calculated as follows:
+
+final_midterm_score = midterm_homework_score + midterm_test_score.
+
+Thus, these scores ranged from 0 to 200, and are composed 50% from homework 
+and 50% from exams.  (Note that your final grade will be of a slightly
+different weighting, but given the usual high homework scores the heavier
+weight on exams at this point may give you a more accurate overall picture.)
+As discussed above, there is also a small fraction of your final grade (10%) 
+that is a function of the profits you earned in the experiments---this 
+does not appear in your midsemester grade, and will only make a 
+difference in your final grade if you are on a border.
+
+5) Your midsemester letter grade was calculated as follows:
+
+A  >= 190 
+B  >= 183 
+C  >= 168 
+D  >= 160 
+R  <  160
+
++/- were given if your grade was on the extremes of the indicated
+range.
+
+Again, these grades are for your information, and do not reflect what
+your actual letter grade would be if these were final grades.
+
+Heed the warning...if you receive a C or below, come see me.
+
+---------------------------------------------------------
+---------------------------------------------------------

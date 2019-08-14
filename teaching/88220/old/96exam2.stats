@@ -1,0 +1,63 @@
+Here are the statistics for the second exam, Fall 1996.
+
+Congratulations to the five individuals who scored above 200.
+Way to go!
+
+MTB > Describe 'ex2'.
+
+                N     MEAN   MEDIAN   TRMEAN    STDEV   SEMEAN
+ex2            95   152.35   155.00   153.96    33.76     3.46
+
+              MIN      MAX       Q1       Q3
+ex2         57.00   207.00   131.00   179.00
+
+MTB > Stem-and-Leaf 'ex2';
+SUBC>   Increment 5.
+
+Stem-and-leaf of ex2       N  = 95
+Leaf Unit = 1.0
+
+    2    5 78
+    2    6 
+    2    6 
+    2    7 
+    2    7 
+    3    8 2
+    5    8 59
+    6    9 2
+    8    9 59
+    9   10 2
+   10   10 8
+
+   11   11 3
+   15   11 5778
+   19   12 0024
+   23   12 5999
+   26   13 122
+
+   31   13 55888
+   37   14 000223
+   40   14 569
+   45   15 01444
+  (10)  15 5555677779
+   40   16 1224
+   36   16 5
+
+   35   17 00144
+   30   17 56777799
+   22   18 011
+
+   19   18 5679
+   15   19 022344
+    9   19 5589
+    5   20 1133
+    1   20 7
+
+The ROUGH grade distribution is as follows:
+
+185+ A
+170+ B
+135+ C
+110+ D
+< 109 R
+

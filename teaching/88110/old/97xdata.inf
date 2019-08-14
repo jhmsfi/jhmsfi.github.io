@@ -1,0 +1,79 @@
+Experiment 11: Adverse Selection
+
+The experiment was conducted on 17 October, 1996, at 
+Carnegie Mellon University.
+
+Important Notes:
+
+Use the data from the last round of each session for the Lab Report.
+
+Please add the following question to the bottom of page 323:
+
+In Session 3, the total amount of net profit earned by used-car owners 
+who sold their cars on the market was _____, the total amount earned 
+by dealers was ____, and the total amount earned by both was _______.  
+In Session 4, the total amount of net profit earned by used-car owners 
+who sold their cars on the market was _____, the total amount earned 
+by dealers was ____, and the total amount earned by both was _______.
+
+
+Please add the following table to the bottom of page 319, as the 
+information is needed for some of the questions.
+
+Table L11.0: Distribution of Car Type and Dealers by Session:
+                      	Session 2	Session 3	Session 4
+Number Good Car Owners:	17		11		11			
+Number Lemon Owners:	17		22		22	
+Number of Dealers:	5		5		5
+
+
+Here is the remaining data:
+
+In Session 2 there were 17 good used-cars and 17 lemons
+purchased by dealers.
+
+Data for Table L11.1
+Prices Paid by Dealers--Session 2:
+Dealer	Prices		
+ID	Paid
+2881	1650	1650	1720	1720	1720	
+	1720	1720	1720	1720	1720
+9339	1650	1650	1650	1650	1660
+2923	1700	1700	1700	1700	1700
+	1700	1700	1700	1700	1730
+9715	1625	1625	1625	1625
+2755	1660	1660	1660	1660	1660	
+
+
+In Session 3 there were 0 good used-cars and
+22 lemons purchased by dealers.
+
+Data for Table L11.3
+Prices Paid by Dealers--Session 3:
+Dealer	Prices		
+ID	Paid
+2923	475	475	475	481	481
+9715	475	475	475	475
+2755	460	460	475	460	480
+	480	475
+2881	480	480	480
+9339	450	450	460
+
+Session 4 
+
+Data for Table L11.5
+Prices Paid by Dealers--Session 4:
+(asterisk by price indicates good car showed, double
+asterisk by price indicates bad car showed, no asterick
+by price indicates no card shown)
+Dealer	Prices		
+ID	Paid
+9339	375**	375**
+2923	1800*	400**	1800*	400**	1800*	400**	400**
+2881	470**	460**	460**	2300*	450**
+2755	1900*	495**	1900*	1700*	1900*	400**	400**
+	400**	400**	2500*	2500*	
+9715	475**	475**	475**	475**	475**	475**	475**
+	1700*
+
+End of file..................

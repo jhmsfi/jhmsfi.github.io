@@ -1,0 +1,95 @@
+Experiment 6: Externalities   88-220  
+
+The experiment was conducted on 11 November, 1998, at
+Carnegie Mellon University by John H. Miller 
+
+Some important notes:
+
+To make the home work on positive externalities more interesting, alter Table D6.1
+(p 190), Figure D6.1 (p 191), and Figure D6.2 (p 194). In the table, instead of having
+5 buyers with Buyer Value $10, have 5 buyers with Buyer Value $20 (that is, alter
+the "10" in the 4th row, 3rd column to a "20"). When you make this change, the
+demand curves in the two figures need to be modified by eliminating the line
+segments from (10,20) to (10,10) and (10,10) to (15,10), and replacing them with
+line segments from ((10,20) to (15,20) and (15,20) to (15,10)---this will correct the
+last segment of the demand curve. These changes have no effect on the discussion
+that follows in the text. 
+
+Questions on pp 205-207: All of these questions refer to the demand curve used for
+Figure D6.1 (p 191). 
+
+The last line on the first question asks for the student to draw a dotted red line to
+show the supply curve with the subsidy. This question is then repeated as the first
+question on the next page in a more elaborate form. Obviously, once will suffice. 
+
+If your analysis indicates a range of equilibrium prices, then just
+use the average value in this range for your calculations.
+
+Pg. 207, last question.  This question may be clearer in the following
+form:  Explain why it is that the subisdy on apple production increases total 
+profits (including externalities and the cost of the subsidy) compared to the
+market without any subsidy.
+
+Pollution costs are $30 per transaction, not $15.
+
+There were 34 buyers and sellers in the lab, and the pollution 
+cost per lawn ornament sold was: $0.88235 (=$30/34) per person 
+in the room (or a total of $30 per transaction).  
+
+For you overall profit calculations, you can avoid annoying
+rounding errors by using the fact that each trade costs $30 to
+the market (versus 0.88 per person x 34 people  = $29.92).
+
+Data for Table L6.1:
+Distribution of Types of Agents
+Sup. 	Seller	Num. 	Dem.	Buyer	Num.
+Type	Cost	Market	Type	Value	Market
+A	28	3	A	20	2
+B	23	3	B	25	3
+C	18	4	C	30	3
+D	13	3	D	35	3
+E	8	2	E	40	3
+F	3	2	F	45	3
+
+Data for Table L6.2: 
+Transactions in Session 1-Last Round
+(No Interference)
+Trade	Price	BValue	SCost
+1	30	35	13
+2	30	40	23
+3	36	45	28
+4	25	40	3
+5	35	45	28
+6	30	45	8
+7	21	35	3
+8	30	35	18
+9	20	20	8
+10	29	30	18
+11	29	40	28
+12	24	25	23
+13	25	30	13
+14	20	25	18
+15	25	30	13
+
+
+Data for Table L6.3: 
+Transactions in Session 2-Last Round
+(With $30 Pollution Tax (paid by Sellers))
+Trade	Price	BValue	SCost
+1	40	45	8
+2	40	45	3
+3	38	40	8
+
+Data for Table L6.4: (Synthetic)
+Transactions in Session 3-Last Round
+(Pollution Permits Required)
+Trade	Price	BValue	SCost Permit_Price*
+1	40	45	3	30
+2	40	45	8	31
+3	38	40	3	30
+4	41	45	8	28
+
+*Permit_Price is the last price paid for the permit.
+
+End of file..................
+

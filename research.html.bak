@@ -1,0 +1,851 @@
+<HTML>
+
+<HEAD>
+<TITLE>Research: John H. Miller, CMU</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF">
+
+<A NAME="top"></A>
+
+<TABLE WIDTH=550 CELLPADDING=0 CELLSPACING=0 BORDER=0>
+
+<TR>
+
+<TD WIDTH=140 HEIGHT="35" VALIGN=TOP>
+
+<FONT FACE="geneva, arial, helvetica, sans-serif" Size=-1>
+
+J.H. Miller<BR>
+
+</FONT>
+
+<FONT FACE="geneva, arial, helvetica, sans-serif" Size=-3>
+
+<A HREF="mailto:miller@santafe.edu">miller@santafe.edu</A>
+<BR>
+
+</FONT>
+
+</TD>
+
+<TD WIDTH=410 HEIGHT="35" COLSPAN=2 VALIGN=TOP>
+
+<FONT FACE="geneva, arial, helvetica, sans-serif" Size=+3>
+
+Research
+
+</FONT>
+
+</TD>
+
+</TR>
+
+<TR>
+
+<TD WIDTH=140>
+
+<BR>
+
+</TD>
+
+<TD WIDTH=410 HEIGHT="30" COLSPAN=2 VALIGN=TOP>
+
+<!-- #### Top Nav Bar #### -->
+
+<FONT FACE="Arial" SIZE="1">
+
+<a href="index.html">Home</a> | 
+Research |  
+<A HREF="teaching.html"> Teaching </A> |  
+<a href="biovita.html">Bio/Vita</a> | 
+<a href="misc.html">Misc</a> | 
+<a href="contact.html">Contact</a> 
+
+</FONT>
+
+</TD>
+
+</TR>
+
+<TR>
+
+<TD WIDTH=140 VALIGN=TOP HALIGN=CENTER>
+
+<BR>
+
+<!-- #### LHS Links #### -->
+
+<FONT FACE="geneva, arial, helvetica, sans-serif" Size=-1>
+
+<A STYLE="text-decoration:none" HREF="#background">Background</A><BR>
+<BR>
+<A STYLE="text-decoration:none" HREF="#ongoing">Some Ongoing Projects</A><BR>
+
+<TABLE>
+<TR>
+<TD WIDTH=5>
+<BR>
+</TD>
+<TD>
+<FONT FACE="geneva, arial, helvetica, sans-serif" Size=-1>
+<A STYLE="text-decoration:none" HREF="#cass">
+Complex Adaptive Social Systems: The Interest in Between
+</A>
+</FONT>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=5>
+<BR>
+</TD>
+<TD>
+<FONT FACE="geneva, arial, helvetica, sans-serif" Size=-1>
+<A STYLE="text-decoration:none" HREF="#ghost">
+The Ghost in the Machine
+</A>
+</FONT>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=5>
+<BR>
+</TD>
+<TD>
+<FONT FACE="geneva, arial, helvetica, sans-serif" Size=-1>
+<A STYLE="text-decoration:none" HREF="#neuttech">
+Neutral Networks and Technology
+</A>
+</FONT>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=5>
+<BR>
+</TD>
+<TD>
+<FONT FACE="geneva, arial, helvetica, sans-serif" Size=-1>
+<A STYLE="text-decoration:none" HREF="#ddrug">
+Discovering Novel Chemotherapies
+</A>
+</FONT>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=5>
+<BR>
+</TD>
+<TD>
+<FONT FACE="geneva, arial, helvetica, sans-serif" Size=-1>
+<A STYLE="text-decoration:none" HREF="#garp">
+Giving According to GARP
+</A>
+</FONT>
+</TD>
+</TR>
+</TABLE>
+
+<BR>
+<A STYLE="text-decoration:none" HREF="#comp">Computational Modeling</A><BR>
+<BR>
+<A STYLE="text-decoration:none" HREF="#docs">Selected Research Documents</A><BR>
+
+<TABLE>
+<TR>
+<TD WIDTH=5><BR></TD><TD>
+<FONT FACE="geneva, arial, helvetica, sans-serif" Size=-1>
+<A STYLE="text-decoration:none" HREF="#wp">Working Papers</A>
+</FONT>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=5>
+<BR>
+</TD>
+<TD>
+<FONT FACE="geneva, arial, helvetica, sans-serif" Size=-1>
+<A STYLE="text-decoration:none" HREF="#books">Books</A>
+</FONT>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=5>
+<BR>
+</TD>
+<TD>
+<FONT FACE="geneva, arial, helvetica, sans-serif" Size=-1>
+<A STYLE="text-decoration:none" HREF="#papers">Published Papers</A>
+</FONT>
+
+<TABLE>
+<TR>
+<TD WIDTH=5>
+<BR>
+</TD>
+<TD>
+<FONT FACE="geneva, arial, helvetica, sans-serif" Size=-1>
+<A STYLE="text-decoration:none" HREF="#ce">Computational Economics</A>
+</FONT>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=5>
+<BR>
+</TD>
+<TD>
+<FONT FACE="geneva, arial, helvetica, sans-serif" Size=-1>
+<A STYLE="text-decoration:none" HREF="#cpe">Computational Political Economy</A>
+</FONT>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=5><BR></TD><TD><FONT FACE="geneva, arial, helvetica, sans-serif" Size=-1>
+<A STYLE="text-decoration:none" HREF="#experiments">Experiments in Cooperation and Altruism</A>
+</FONT>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=5><BR></TD><TD><FONT FACE="geneva, arial, helvetica, sans-serif" Size=-1>
+<A STYLE="text-decoration:none" HREF="#other">Other</A>
+</FONT>
+</TD>
+</TR>
+</TABLE>
+
+</TD>
+</TR>
+</TABLE>
+
+<BR><BR><BR><BR><BR>
+
+<HR SIZE=1 WIDTH=90% ALIGN=LEFT>
+
+<FONT FACE="geneva, arial, helvetica, sans-serif" SIZE=-2>
+
+Institutional Affiliations:<BR><BR>
+<A HREF="http://www.cmu.edu">Carnegie Mellon</A><BR>
+&nbsp&nbsp
+<A HREF="http://www.hss.cmu.edu/departments/sds/">SDS</A><BR>
+<A HREF="http://www.santafe.edu">Santa Fe Institute</A><BR>
+
+</FONT>
+
+</TD>		
+
+<TD WIDTH=20>
+
+<BR>
+
+</TD>
+
+<TD WIDTH=390 VALIGN=TOP>
+
+<HR SIZE=2 ALIGN=LEFT>
+
+<!-- ####  Main Content #### -->
+
+<A NAME="background"></A>
+<FONT FACE="geneva, arial, helvetica, sans-serif" Size=+2>
+<B>
+Background
+</B>
+</FONT>
+
+<FONT FACE="geneva, arial, helvetica, sans-serif" Size=-1>
+
+<P>
+My research focuses on understanding the behavior that emerges in complex adaptive 
+social systems (CASS). 
+Understanding the behavior of CASS, composed of interacting,
+thoughtful (but perhaps not brilliant) agents, is one of the great
+challenges of science.  Such systems capture pervasive and important
+phenomena, arising in biological, chemical, environmental, economic,
+organizational, and political systems.  Traditional scientific
+approaches to understanding these types of systems have shown only a
+limited ability to pry away their secrets.  Part of this failure is
+attributable to a fundamental limitation of the reductionist approach
+to science: reducing systems to components does not imply the ability
+to reconstruct them (as anyone who has scrambled an egg innately
+understands).  While it may seem that because we understand one we
+must also understand two, because one <CITE>and</CITE> one make two, this is
+only true if we also understand <CITE>and</CITE>.  
+
+<P>
+Colleagues 
+and I have applied CASS models to the analysis of a variety of key social
+phenomena. 
+For example, we have explored the dynamics of political platforms in spatial elections, how decentralized institutional mechanisms can be
+used to sort agents into coherent groups,
+the emergence of cooperation in the iterated Prisoner's Dilemma, strategic choice in simple two-person games, the development of strategic communication,
+and bidding behavior in auction markets. To understand the fundamental dynamics of price formation in simple markets, we designed and organized an international computerized double auction tournament in 
+1988-90 (which was also the first internet-based 
+auction market---here is the <A HREF="papers/dat.pdf">DAT Participant's Manual</A>). 
+This tournament allowed us to create an "artificial world" of trading agents in which we explored a variety of theoretical and practical issues.  All of the above work indicates
+the remarkably potential for CASS modeling to advance our
+understanding about some of the most fundamental questions in the
+social sciences.
+
+<P>
+For CASS modeling, traditional
+tools of scientific theory building, such as mathematical modeling, need to be
+supplemented 
+with computational models that take advantage of recent technological
+progress.  As the mathematician Stanislaw Ulam pointed out, ``[T]he
+use of computers seems thus not merely convenient, but absolutely
+essential...I believe that the experience gained as a result of
+following the behavior of such processes will have a fundamental
+influence on whatever may ultimately generalize or perhaps even
+replace in mathematics our present exclusive immersion in the formal
+axiomatic method.''  
+Using computational methods, previously inaccessible, yet fundamental, questions are now becoming amenable to analysis.
+
+<P>
+Complementing the above work, I have also pursued experimental approaches to understanding
+human cooperation and
+altruism.  In some recent experiments we have shown that the altruistic choices of human
+subjects are economically rationalizable in the sense that they could be accounted for
+by a standard model of economic choice.  We also found that while the altruistic 
+preferences of
+subjects fall into three distinct classes, there is a large
+degree of heterogeneity in their preferences.
+
+<P>
+At the conclusion of <CITE>Origins of the Species</CITE>, Darwin remarked
+that ``[T]here is grandeur in this view of life, with its several
+powers, having been originally breathed into a few forms or into
+one...from so simple a beginning endless forms most beautiful and most
+wonderful have been, and are being, evolved.'' 
+Through a remarkable
+convergence of ideas, technology, and scientific and engineering
+imperative, we now stand ready to exploit this ``view of life'' in a
+quest to understand and control complex adaptive social systems.
+
+<P>
+There is grandeur in this view of social life.
+
+</FONT>
+
+<P>
+<FONT FACE="geneva, arial, helvetica, sans-serif" Size=-3>
+<A HREF="#top">back to top</A>
+</FONT>
+
+<P><BR><P>
+<HR SIZE=1 WIDTH=35% ALIGN=LEFT>
+<A NAME="ongoing"></A>
+<FONT FACE="geneva, arial, helvetica, sans-serif" Size=+2>
+<B>
+Some Ongoing Projects
+</B>
+</FONT>
+
+<P>
+<A NAME="cass"></A>
+<FONT FACE="geneva, arial, helvetica, sans-serif" Size=+1>
+<B>
+Complex Adaptive Social Systems:  The Interest in Between
+</B>
+</FONT>
+
+<FONT FACE="geneva, arial, helvetica, sans-serif" Size=-1>
+
+<P>
+Scott Page (Michigan) and I have written a book on complex adaptive social systems.
+In the book, we derive some fundamental examples and principles
+of complex adaptive social systems using a simple set of related 
+models.  Models composed of thoughtful agents fundamentally differ from the
+typical interacting particle systems that have been widely discussed in
+the past.   The simple models we develop allow us to 
+to illuminate, and often correct, some of the key principles that have been
+discussed over the past two decades.  Finally, we take the opportunity
+to outline more fully the foundations necessary for successful 
+computational modeling in this area.  This book will be published in 2007 by
+Princeton University Press.
+
+</FONT>
+
+<P>
+<A NAME="ghost"></A>
+<FONT FACE="geneva, arial, helvetica, sans-serif" Size=+1>
+<B>
+The Ghost in the Machine
+</B>
+</FONT>
+
+<FONT FACE="geneva, arial, helvetica, sans-serif" Size=-1>
+
+<P>
+James Engle-Warnick (McGill) and I are developing sound statistical
+methods for divining the underlying "strategic programs" employed by
+human subjects in experimental games.  The goal here is to have a succinct characterization of
+actual human strategic choice, and then use this knowledge to better understand
+and predict behavior in such situations.
+
+</FONT>
+
+<P>
+<A NAME="neuttech"></A>
+<FONT FACE="geneva, arial, helvetica, sans-serif" Size=+1>
+<B>
+Neutral Technological Networks: The Value of Muddling Through
+</B>
+</FONT>
+
+<FONT FACE="geneva, arial, helvetica, sans-serif" Size=-1>
+
+<P>
+This research applies ideas about
+the impact of neutral networks on evolutionary dynamics in biology to
+the problem of technological innovation.  Theoretically, we find that there
+may be considerable value in firms "muddling through" technological spaces, as
+such muddling allows them to achieve superior outcomes that under more traditional
+models would not have been attainable.  One example of this process is in
+software design, where recent notions of
+"refactoring" implicitly attempt to exploit the value of 
+neutral networks.  
+[<A HREF="papers/neutabst.html">abstract</A>][<A HREF="papers/neut.pdf">pdf</A>]
+
+
+</FONT>
+
+<P>
+<A NAME="ddrug"></A>
+<FONT FACE="geneva, arial, helvetica, sans-serif" Size=+1>
+<B>
+Discovering Novel Chemotherapies
+</B>
+</FONT>
+
+<FONT FACE="geneva, arial, helvetica, sans-serif" Size=-1>
+
+<P>
+There is good reason to think that cocktails composed of 
+a variety of chemotherapy drugs might be a key means by which to 
+fight diseases like cancer.  Unfortunately, discovering effective
+cocktails is difficult given the underlying combinatorics.  
+If you have, say, twenty drugs that you could include in the mix,
+you can create over one million different cocktails.  Alas, you can
+only screen around twenty or so cocktails every few days (laboratory
+biology is slow and hard), so there is no way to exhaustively search
+all of the possible combinations.  To surmount this problem, we employ
+a nonlinear search algorithm to direct the discovery of the cocktails. 
+Our preliminary results, focusing on
+lung carcinomas, are quite promising---the algorithm quickly found a
+very effective cocktail that is promising enough to begin more elaborate
+trials.   
+[<A HREF="papers/ddrugabst.html">abstract</A>][<A HREF="papers/ddrug.pdf">pdf</A>]
+
+</FONT>
+
+<P>
+<A NAME="garp"></A>
+<FONT FACE="geneva, arial, helvetica, sans-serif" Size=+1>
+<B>
+Giving According to GARP
+</B>
+</FONT>
+
+<FONT FACE="geneva, arial, helvetica, sans-serif" Size=-1>
+
+<P>
+This work uses laboratory studies of human subjects to show that their altruistic
+choices are economically rational, in the sense that such choices could result from
+the rational maximization of a well-behaved (in the economic sense) utility function
+over giving to self and to others.  Here is a variant of the  
+<a href = "http://zia.hss.cmu.edu/miller/bgarp.html">basic experiment</A>...are you
+a rational altruist?  
+[<A HREF="papers/garpabst.html">abstract</A>][<A HREF="papers/garp.pdf">pdf</A>]
+
+</FONT>
+
+<P>
+<FONT FACE="geneva, arial, helvetica, sans-serif" Size=-3>
+<A HREF="#top">back to top</A>
+</FONT>
+
+<P><BR><P>
+<HR SIZE=1 WIDTH=35% ALIGN=LEFT>
+<A NAME="comp"></A>
+<FONT FACE="geneva, arial, helvetica, sans-serif" Size=+2>
+<B>
+Computational Modeling
+</B>
+</FONT>
+
+<FONT FACE="geneva, arial, helvetica, sans-serif" Size=-1>
+
+<P>
+One of the most powerful tools arising from complex systems research
+is a set of computational techniques that allow a much wider range of
+models to be explored.  Using these tools, worlds of heterogeneous, adaptive
+agents can interact in a dynamic environment subjected to various
+limits of time and space.  Having the ability to investigate new
+theoretical worlds obviously does not imply any kind of scientific
+necessity or validity---these must be earned by carefully considering
+the ability of the new models to help us understand and predict the
+questions that we hold most dear. 
+ 
+<P>
+Over the last decade or so, computational modeling is beginning to
+gain a foothold in theoretical social science.  Like any theoretical
+tool, great care and effort is required to create high quality models
+using computational methods.  Here are some links focused on
+<a href = "../econ"> computational modeling in the social sciences</a>
+(including our graduate workshop).  Part of our 
+<A HREF="#cass"> book on complex adaptive social systems</A> will also
+be devoted to this topic. 
+
+</FONT>
+
+<P>
+<FONT FACE="geneva, arial, helvetica, sans-serif" Size=-3>
+<A HREF="#top">back to top</A>
+</FONT>
+
+<P><BR><P>
+<HR SIZE=1 WIDTH=35% ALIGN=LEFT>
+<A NAME="docs"></A>
+<FONT FACE="geneva, arial, helvetica, sans-serif" Size=+2>
+<B>
+Selected Research Documents
+</B>
+</FONT>
+
+<P>
+<A NAME="wp"></A>
+<FONT FACE="geneva, arial, helvetica, sans-serif" Size=+1>
+<B>
+Working Papers
+</B>
+</FONT>
+
+<FONT FACE="geneva, arial, helvetica, sans-serif" Size=-1>
+
+<P>
+John H. Miller, Ralph Zinner, and Brittany Barrett,
+``Directed Discovery of Novel Drug Cocktails,''
+<CITE> Santa Fe Institute Working Paper 05-07-031</CITE>, (2005).
+[<A HREF="papers/ddrugabst.html">abstract</A>][<A HREF="papers/ddrug.pdf">pdf</A>]
+
+<P>
+Jose Lobo, John H. Miller, and Walter Fontana,
+``Neutrality in Technological Landscapes,''
+Working Paper, 2004.  
+[<A HREF="papers/neutabst.html">abstract</A>][<A HREF="papers/neut.pdf">pdf</A>]
+
+
+<P>
+Ken Kollman, John H. Miller, and Scott E. Page,
+``A Simplified Framework for Analyzing the Behavior of 
+Political Institutions,'' 1999.
+
+<P>
+John H. Miller, ``A Genetic Model of Adaptive Economic Behavior,'' University
+ of Michigan working paper, 1986.
+  This was, to my knowledge, the first paper in economics to use genetic
+algorithms.
+[<A HREF="papers/genmodelaebabst.html">abstract</A>][<A HREF="papers/genmodelaeb.pdf">pdf</A>]
+
+</FONT>
+
+<P>
+<FONT FACE="geneva, arial, helvetica, sans-serif" Size=-3>
+<A HREF="#top">back to top</A>
+</FONT>
+
+<P><BR><P>
+<A NAME="books"></A>
+<FONT FACE="geneva, arial, helvetica, sans-serif" Size=+1>
+<B>
+Books
+</B>
+</FONT>
+
+<FONT FACE="geneva, arial, helvetica, sans-serif" Size=-1>
+
+<P>
+John H. Miller and Scott E. Page, <CITE>Complex Adaptive Social
+ Systems: An Introduction to Computational Models of Social Life</CITE>, Princeton University Press, 
+2007.
+
+<P>
+Ken Kollman, John H. Miller, and Scott E. Page (eds.), 
+<A HREF="http://mitpress.mit.edu/catalog/item/default.asp?sid=1C4EA1D1-E303-4BBD-86DE-06098229D6E1&ttype=2&tid=9582">
+<CITE>Computational 
+Models in Political Economy</CITE>,</A>
+MIT Press, 2003.
+
+
+
+
+<P>
+Theodore Bergstrom and John H. Miller,
+  
+<A HREF="http://zia.hss.cmu.edu/miller/eep/eep.html">
+<CITE>Experiments with Economic Principles: Microeconomics</CITE> 2nd ed</A>, 
+McGraw Hill, 2000 (1997 1st ed).
+
+
+
+<P>
+Theodore Bergstrom and John H. Miller, 
+<A HREF="http://zia.hss.cmu.edu/miller/eep/eep.html">
+<CITE>Instructor's Manual for Experiments with Economic Principles:
+  Microeconomics</CITE> 2nd ed,</A>
+McGraw Hill, 2000 (1997 1st ed).
+
+</FONT>
+
+<P>
+<FONT FACE="geneva, arial, helvetica, sans-serif" Size=-3>
+<A HREF="#top">back to top</A>
+</FONT>
+
+<P><BR><P>
+<A NAME="papers"></A>
+<FONT FACE="geneva, arial, helvetica, sans-serif" Size=+1>
+<B>
+Selected Published Papers
+</B>
+</FONT>
+
+<P>
+<A NAME="ce"></A>
+<FONT FACE="geneva, arial, helvetica, sans-serif" Size=+1>
+<B>
+&nbsp&nbsp Computational Economics
+</B>
+</FONT>
+
+<FONT FACE="geneva, arial, helvetica, sans-serif" Size=-1>
+
+<P>
+John H. Miller and Scott E. Page,
+``The Standing Ovation Problem,'' <CITE>
+Complexity</CITE>, 9 (2004):8-16.
+[<A HREF="papers/ovationabst.html">abstract</A>][<A HREF="papers/ovation.pdf">pdf</A>]
+
+<P>
+John H. Miller and Scott Moser,
+``Communication and Coordination,''
+<CITE>Complexity</CITE>, 9 (2004):31-40.
+[<A HREF="papers/commcoordabst.html">abstract</A>][<A HREF="papers/commcoord.pdf">pdf</A>]
+
+
+<P>
+John H. Miller, Carter Butts, and David Rode,
+``Communication and Cooperation,'' <CITE>
+Journal of Economic Behavior and Organization</CITE>, 47 (2002):179--95.
+[<A HREF="papers/commcoopabst.html">abstract</A>][<A HREF="papers/commcoop.pdf">pdf</A>]
+
+<P>
+John H. Miller, ``The Coevolution of Automata in the Repeated Prisoner's
+ Dilemma,'' <CITE>Journal of Economic Behavior and Organization</CITE> 29:1 (January, 1996):87--112.
+
+[<A HREF="papers/coevolvcoopabst.html">abstract</A>][<A HREF="papers/coevolvcoop.pdf">pdf</A>]
+
+<P>
+James Andreoni and John H. Miller,
+``Auctions with Adaptive Artificial Agents,'' 
+<CITE>Journal of Games and Economic Behavior</CITE> 10 (1995):39--64.
+[<A HREF="papers/auctionsaaaabst.html">abstract</A>][<A HREF="papers/auctionsaaa.pdf">pdf</A>]
+
+<P>
+John Rust, John H. Miller, and Richard Palmer,
+``Characterizing Effective Trading Strategies: Insights from a
+ Computerized Double Auction Tournament,'' <CITE>
+Journal of Economic Dynamics and Control</CITE> 18 (1994):61--96.
+
+[<A HREF="papers/chartradingdatabst.html">abstract</A>][<A HREF="papers/chartradingdat.pdf">pdf</A>]
+
+<P>
+John Rust, John H. Miller, and Richard Palmer,
+``Behavior of Trading Automata in a Computerized
+Double Auction Market,'' 
+in D. Friedman and J. Rust (eds), <CITE>The Double Auction 
+Market: Institutions, Theories, and Evidence</CITE>, 
+ Addison Wesley (1992):155--98.
+
+[<A HREF="papers/behtradingdatabst.html">abstract</A>][<A HREF="papers/behtradingdat.pdf">pdf</A>]
+
+<P>
+John H. Holland and John H. Miller, ``Artificial Adaptive Agents in Economic Theory,'' <CITE>American Economic Review, Papers and Proceedings</CITE> 81 
+(May, 1991):365--70.
+[<A HREF="papers/aaaabst.html">abstract</A>][<A HREF="papers/aaa.pdf">pdf</A>]
+
+
+
+<P>
+John H. Miller, 
+``The Evolution of Automata in the Repeated Prisoner's
+ Dilemma,'' 
+in <CITE>Two Essays on the Economics of Imperfect Information</CITE>, Ph.D. Dissertation, University of Michigan, 1988.
+
+
+</FONT>
+
+<P>
+<FONT FACE="geneva, arial, helvetica, sans-serif" Size=-3>
+<A HREF="#top">back to top</A>
+</FONT>
+
+<P><BR><P>
+<A NAME="cpe"></A>
+<FONT FACE="geneva, arial, helvetica, sans-serif" Size=+1>
+<B>
+&nbsp&nbsp Computational Political Economy
+</B>
+</FONT>
+
+<FONT FACE="geneva, arial, helvetica, sans-serif" Size=-1>
+
+<P>
+Kollman, John H. Miller, and Scott Page,
+``Consequences of Nonlinear Preferences in a Federal Political System,''
+in Diana Richards (ed.), <CITE>Political Complexity: Nonlinear Models 
+of Politics</CITE>, University of Michigan Press, Ann Arbor, MI (2000):23--45.
+
+
+
+<P>
+Ken Kollman, John H. Miller, and Scott E. Page,
+``Decentralization and the Search for Policy Solutions,''
+ <CITE>Journal of Law, Economics, and Organization</CITE>, 16 (2000):102--28.
+
+
+<P>
+
+
+Ken Kollman, John H. Miller, and Scott Page,
+``Political Parties and Electoral Landscapes,'' 
+<CITE>British Journal of Political Science</CITE> 28 (1998):139--158.
+
+[<A HREF="papers/pollandscapesabst.html">abstract</A>][<A HREF="papers/pollandscapes.pdf">pdf</A>]
+
+<P>
+John H. Miller and Peter Stadler,
+``The Dynamics of Adaptive Parties under Spatial Voting,'' <CITE>Journal of Economic Dynamics and Control</CITE>, 23 (1998):171--189.
+
+
+
+<P>
+Ken Kollman, John H. Miller, and Scott Page,
+``Political Institutions and Sorting in a Tiebout Model,''
+ <CITE>American Economic Review</CITE> 87:5 (December, 1997):977--992.
+[<A HREF="papers/tieboutabst.html">abstract</A>][<A HREF="papers/tiebout.pdf">pdf</A>]
+
+
+
+<P>
+Ken Kollman, John H. Miller, and Scott E. Page,
+``Computational Political Economy,'' 
+in 
+
+Brian Arthur, Steven Durlauf, and David Lane (eds.), <CITE>The Economy as an Evolving Complex System II</CITE>, 
+ Addison Wesley, 1997.
+
+
+<P>
+Ken Kollman, John H. Miller, and Scott Page,
+``Adaptive Parties in Spatial Elections,'' <CITE>
+American Political Science Review</CITE> 86 (December, 1992):929--37.
+[<A HREF="papers/adaptpartiesabst.html">abstract</A>][<A HREF="papers/adaptparties.pdf">pdf</A>]
+
+
+
+</FONT>
+
+<P>
+<FONT FACE="geneva, arial, helvetica, sans-serif" Size=-3>
+<A HREF="#top">back to top</A>
+</FONT>
+
+<P><BR><P>
+<A NAME="experiments"></A>
+<FONT FACE="geneva, arial, helvetica, sans-serif" Size=+1>
+<B>
+&nbsp&nbsp Experiments in Cooperation and Altruism
+</B>
+</FONT>
+
+<FONT FACE="geneva, arial, helvetica, sans-serif" Size=-1>
+
+<P>
+James Andreoni and John H. Miller,
+``Giving According to GARP: 
+An Experimental Study of Rationality and Altruism,'' <CITE>
+Econometrica</CITE>, 70 (2002):737--753.
+
+
+[<A HREF="papers/garpabst.html">abstract</A>][<A HREF="papers/garp.pdf">pdf</A>]
+
+<P>
+James Andreoni and John H. Miller,
+``Rational Cooperation in the Finitely Repeated Prisoner's Dilemma:
+Experimental Evidence,'' 
+<CITE>Economic Journal</CITE> 103:418 (May, 1993):570--85.
+[<A HREF="papers/ratcoopabst.html">abstract</A>][<A HREF="papers/ratcoop.pdf">pdf</A>]
+
+
+
+
+</FONT>
+
+<P>
+<FONT FACE="geneva, arial, helvetica, sans-serif" Size=-3>
+<A HREF="#top">back to top</A>
+</FONT>
+
+<P><BR><P>
+<A NAME="other"></A>
+<FONT FACE="geneva, arial, helvetica, sans-serif" Size=+1>
+<B>
+&nbsp&nbsp Other
+</B>
+</FONT>
+
+<FONT FACE="geneva, arial, helvetica, sans-serif" Size=-1>
+
+<P>
+Stephen Lansing and John H. Miller,
+``Cooperation, Games, and Ecological Feedback: Some Insights from Bali,''
+<CITE> Current Anthropology</CITE>, 46 (2005).
+[<A HREF="papers/baliabst.html">abstract</A>][<A HREF="papers/bali.pdf">pdf</A>]
+
+<P>
+John H. Miller, ``Evolving Information Processing Organizations,''
+in Alessandro Lomi and Erik R. Larsen (eds.),  
+<CITE>Dynamics of Organizations: Computational Modeling and Organization
+
+Theories</CITE>, MIT Press, Cambridge, Massachusetts
+ (2001):307--27.
+
+
+[<A HREF="papers/evolorgabst.html">abstract</A>][<A HREF="papers/evolorg.pdf">pdf</A>]
+
+<P>
+John H. Miller, ``Active Nonlinear Tests (ANTs) of Complex Simulations 
+Models,'' <CITE>Management Science</CITE> 44:6 (June, 1998):820--30.
+[<A HREF="papers/antabst.html">abstract</A>][<A HREF="papers/ant.pdf">pdf</A>]
+
+
+
+</FONT>
+
+<P>
+
+
+<FONT FACE="geneva, arial, helvetica, sans-serif" Size=-3>
+<A HREF="#top">back to top</A>
+</FONT>
+
+<P><BR><P>
+
+
+</TD>		
+</TR>
+</TABLE>
+
+</BODY>
+</HTML>
+

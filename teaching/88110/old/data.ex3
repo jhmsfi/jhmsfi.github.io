@@ -1,0 +1,79 @@
+Data for Experiment 3, Sept. 13, 1995
+
+There were always 12 fisherman in each session.  The number of 
+fish brought to market is as follows:
+
+Session 1: 12
+Session 2: 18
+Session 3: 24
+
+The Buyer's Values were identical across all sessions, and were as follows:
+
+BV        Number of Buyers
+
+25         5
+20         5
+15         5
+ 7         5      ( <--note that in the book this is given as 10)
+
+Here is the actual data for the last round of each session:
+
+Session 1													
+Trade	BV	SC	Price	
+1	20	0	10								
+2	25	0	12								
+3	25	0	25								
+4	15	0	7								
+5	15	0	9								
+6	25	0	12								
+7	15	0	10								
+8	25	0	11								
+9	7	0	5								
+10	15	0	10								
+11	20	0	13								
+12	15	0	14
+
+	Session 2		
+
+Trade	BV	SC	Price
+1	25	0	15
+2	20	0	10
+3	7	0	5
+4	20	0	10
+5	25	0	10
+6	20	0	14
+7	25	0	11.5
+8	20	0	11.5
+9	25	0	12
+10	7	0	5
+11	25	0	15
+12	20	0	10
+13	15	0	10
+14	15	0	12
+15	15	0	12
+16	15	0	4
+17	15	0	8
+18	7	0	7
+
+	Session 3		
+
+Trade	BV	SC	Price
+1	20	5	12
+2	25	5	12
+3	15	5	10
+4	15	5	13
+5	25	5	12
+6	20	5	15
+7	15	5	10
+8	15	5	12.5
+9	25	5	12
+10	7	5	6
+11	25	5	15
+12	7	5	5
+13	20	5	12.5
+14	15	5	7
+15	20	5	10
+16	25	5	10
+17	7	5	6.5
+18	7	5	10
+19      20      5       10

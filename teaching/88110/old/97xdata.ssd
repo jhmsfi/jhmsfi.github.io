@@ -1,0 +1,111 @@
+Experiment 2: Shifting Supply Curves
+
+The experiment was conducted on 12 September, 1996, at
+Carnegie Mellon University by John H. Miller.
+
+Here are some important notes:
+
+Question 2, p 81: Assume that "mad cow disease" does not affect
+seller costs.
+ 
+Question 2, p 82, line 2: Removing the word "former" may relive
+a potential ambiguity.
+ 
+Questions 1 and 2, p 88: The first equation in each question
+gives the supply curve (not the demand curve as stated), and 
+the second equation gives the demand curve (not the supply curve).
+
+
+Here is the data:
+
+Data for Table L2.1:
+Distribution of Buyer Values--All Sessions
+Buyer	Buyer	Number of
+Type	Value	Buyers
+High	20	6	
+Med	15	12	
+Low	5	6
+
+Data for Table L2.2:
+Session		Number of	Number of
+		Fish Caught 	Fisherman
+Session 1	17		17
+Session 2	23		17
+Session 3	45		17
+
+Data for Table L2.3:
+Transactions in Session 1--Last Round
+Trade	Price BValue
+1	8	15     
+2	7	15
+3	10	15 
+4	7	15
+5	10	15
+6	9	15 
+7	10	20
+8	11	15
+9	7	15
+10	10	20
+11	9	20
+12	10	15
+13	8	15
+14	8	20
+15	12	20
+16	12	20
+
+Data for Table L2.4:
+Transactions in Session 2--Last Round
+Trade	Price BValue
+1	7	15
+2	8	15
+3	8	20
+4	5	15
+5	5	5	
+6	8	20
+7	8.25	15
+8	7	15
+9	8	20
+10	4	5
+11	7	20
+12	5	15
+13	4	5
+14	9	15
+15	6	20
+16	5	15
+17	7	15
+18	10	15
+19	7	15
+20	7	20
+21	4	15
+22	4	5
+23	4	5
+				
+Data for Table L2.5:
+Transactions in Session 3--Last Round
+Trade	Price BValue
+1	5.5	15	
+2	2	5
+3	2	20
+4	2	5
+5	1	5
+6	5.5	20
+7	5	15
+8	2	15
+9	6	15
+10	3	20
+11	5	20
+12	3	15
+13	1	15
+14	2	15
+15	2.5	20
+16	4	5
+17	1	15
+18	1	15
+19	1	5
+20	1	5
+21	5	15
+22	1	20
+23	0.1	15
+24	9	15
+
+*******end of file*************

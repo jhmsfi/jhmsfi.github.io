@@ -1,0 +1,37 @@
+Statistics for Exam 2, 22 October, 1997
+
+Variable        N     Mean   Median   TrMean    StDev   SEMean
+Exam 2         97   151.03   157.00   152.83    27.04     2.75
+ 
+Variable      Min      Max       Q1       Q3
+Exam 2      65.00   192.00   136.75   170.50
+ 
+Stem-and-leaf of Exam 2    N  = 97
+Leaf Unit = 1.0
+ 
+ 
+    1    6 5
+    3    7 35
+    3    8 
+    4    9 4
+    9   10 12488
+   14   11 33579
+   18   12 0357
+   26   13 12234678
+   39   14 1222345577899
+  (16)  15 1245556677888899
+   42   16 22244555667778899
+   25   17 0122344455688899
+    9   18 023555
+    3   19 122
+
+
+Thus, to gauge your performance:
+
+>= 178 Excellent
+>= 165 Good
+>= 138 OK
+>= 125 Poor
+< 125  Very Poor
+
+

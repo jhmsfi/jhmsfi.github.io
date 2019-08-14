@@ -1,0 +1,70 @@
+Experiment 7: Monopolies and Cartels
+
+The experiment was conducted on 1 November, 1996,
+Carnegie Mellon University by John H. Miller 
+
+Data for Table L7.1:
+Distribution of Buyer Types in Session 1
+Type of		Buyer	Number of
+Buyer		Value	Buyers
+High-Value	$21	19
+Low-Value	$16	8
+
+Data for Figure/Table L7.2: 
+Prices and Sales with Quotas Enforced
+Seller's	Prices Paid by
+ID		Seller's Customers
+2254		20	20	20	20
+9712		20	20	20	20
+7271		20	20	20	20
+9273		20	20	20	20
+4648		20	20	20
+
+All of these buyers had Buyer Values of $21.
+
+Data for Figure/Table L7.3: 
+Prices and Sales with Voluntary Quotas 
+Seller's	Prices Paid by
+ID		Seller's Customers
+5699		6	6	6	6	6	6	6
+4250		6	6
+0518		6	6	6	6	6	6	6	6
+3081	 	6	6	6	6	6
+7615		6	6	6	6	6
+
+The above is for the last round of the session, I think it is also
+fun to see what happened in the first round of this session.  Here 
+are the sales prices (each row is a seller).  The further to the
+right you go with any seller, the later in the session the sale.
+As I recall, the intial breakdown in the market began with the
+second seller.
+20 
+18	18	18	18	6	6	6	6	6	6
+18	16	15	16	6
+15	15	15	13
+15	15	15	15	15	15	
+
+
+Data for Table L7.2:
+Distribution of Student and Non-Student Buyer Values
+Type of			Buyer	Number of
+Buyer			Value	Buyers
+High-Value Student	$21	4
+Low-Value Student	$16	8
+High-Value Non-Student	$21	15
+Low-Value Non-Student	$16	0
+
+Data for Figure/Table L7.4: 
+Prices and Sales for Students and Non-Students
+Seller's	Prices Paid by
+ID		Seller's Customers
+9211	15*	20	15*	20	20
+7687	20	20	20	15*	15*	15*
+3831	15*	20	20	15*	15*	20
+9264	15*	15*	15*	20	20	20
+9875	20	20	15*	20
+
+We did not do Session 4 in class, please work the problems as a thought
+experiment only.
+
+End of file..................

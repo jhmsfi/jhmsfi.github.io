@@ -1,0 +1,46 @@
+Statistics for exam 1, 20 September 1995
+
+
+
+                N     MEAN   MEDIAN   TRMEAN    STDEV   SEMEAN
+exam1          99   144.40   144.00   144.83    22.55     2.27
+
+              MIN      MAX       Q1       Q3
+exam1       88.00   189.00   129.00   162.00
+
+
+Divisions on stem and leaf are based on standard curves, and thus
+represent rough approximations for grades on the exam.  
+
+ANYONE RECEIVING BELOW A 140 NEEDS TO SEE ME IMMEDIATELY.
+
+Stem-and-leaf of exam1     N  = 99
+Leaf Unit = 1.0
+
+    1    8 8
+    2    9 4
+    5    9 999         ~R
+    6   10 0
+    8   10 67
+    9   11 0
+
+   11   11 58
+   18   12 0034444     ~D
+   25   12 5778889
+   32   13 0112333
+
+   41   13 677789999
+  (10)  14 0011111244   ~C
+   48   14 66778
+   43   15 00112334
+
+   35   15 55777788
+   27   16 1222344      ~B
+   20   16 55667999
+
+   12   17 014
+    9   17 57
+    7   18 0134         ~A
+    3   18 569
+
+

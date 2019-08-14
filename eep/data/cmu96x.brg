@@ -1,0 +1,122 @@
+Experiment 13: Bargaining
+
+The experiment was conducted on 15 November, 1996, at
+Carnegie Mellon University by John H. Miller 
+
+Data for Table L13.1
+Offers and Outcomes---Session 1
+Price	Accept (a)
+Offered	Reject (r)
+110	a
+125	a
+101	r
+125	a
+130	a
+120	a
+101	a
+125	a
+101	r
+101	r
+101	r
+120	a
+125	a
+125	a
+125	a
+125	a
+120	a
+135	a
+101	r
+101	r
+149	a
+101	r
+125	a
+120	a
+101	r
+105	r
+110	a
+130	a
+101	a
+125	a
+
+Data for Table L13.3
+Offers and Outcomes---Session 1, Round 2
+We did not run two rounds of this session.
+
+Data for Table L13.5
+Offers and Outcomes---Session 2
+Price	Accept (a)	Counteroffer
+Offered	or Counter	Accepted?	
+101	120		y
+110	125		y
+125	115		y
+110	115		y
+110	115		y
+129	a
+120	a
+126	a
+125	a
+115	a
+125	a
+129	a
+125	a
+130	a
+125	a
+120	a
+
+Data for Table L13.8
+Offers and Outcomes---Session 3
+Buyer's	Seller	Buyer	Second	
+Offer	accept	accept	Offer
+	counter	counter	accepted
+115	120	105	n
+115	123	105	n
+125	115	101	n
+110	118	a
+117	115	a
+109	120	a
+125	a
+130	a
+125	a
+120	a
+125	a
+110	a
+125	a
+125	a
+123	a
+120	a
+120	a
+
+Centipede Game
+
+The values for the centipede game were:
+
+start --> <1a> -C--> <2b> -C--> <1c> -C--> <2d> -C---
+           S          S          S          S       |     
+           |          |          |          |       |
+$Ply 1    0.40       0.20       1.60	   0.80    6.40
+$Ply 2    0.10       0.80       0.40       3.20    1.60
+
+We observed five types of patterns in the centipede game.
+
+3 people:
+1_a C  1_c C
+2_b C  2_d C
+
+13 people:
+1_a S  1_c S
+2_b S  2_d S
+
+10 people:
+1_a C  1_c S
+2_b C  2_d S
+
+4 people:
+1_a C  1_c S
+2_b S  2_d S
+
+3 people:
+1_a C  1_c C
+2_b C  2_d S
+
+End of file..................
+

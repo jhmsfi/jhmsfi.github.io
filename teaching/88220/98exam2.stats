@@ -1,0 +1,64 @@
+Statistics for Exam 2, 21 October, 1998
+
+Variable        N     Mean   Median   TrMean    StDev   SEMean
+Exam 2        100   126.61   122.50   126.47    29.44     2.94
+ 
+Variable      Min      Max       Q1       Q3
+Exam 2      62.00   190.00   106.25   146.75
+
+ 
+Histogram of Exam 1r   N = 100
+ 
+Midpoint   Count
+      60       1  *
+      70       2  **
+      80       4  ****
+      90       6  ******
+     100       9  *********
+     110      14  **************
+     120      16  ****************
+     130       8  ********
+     140      13  *************
+     150       6  ******
+     160       9  *********
+     170       5  *****
+     180       5  *****
+     190       2  **
+ 
+Character Stem-and-Leaf Display
+ 
+ 
+Stem-and-leaf of Exam 1r   N  = 100
+Leaf Unit = 1.0
+ 
+ 
+    3    6 269
+    4    7 8
+   11    8 0146889
+   18    9 236
+
+         9 7889
+   28   10 0012566778
+   48   11 001
+
+        11 33344555666778899
+   (7)  12 1234558
+   45   13 00344556677899
+   31   14 00
+
+        14 23567
+   24   15 02288889
+
+   16   16 12336678
+    8   17 259
+    5   18 2246
+    1   19 0
+
+Thus, to gauge your performance:
+
+160 >=  Excellent
+142 >=  Good
+112 >=  OK
+97  >=  Poor
+97  <  Very Poor
+

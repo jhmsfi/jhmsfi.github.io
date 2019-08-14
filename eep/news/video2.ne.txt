@@ -1,0 +1,127 @@
+Video phones finding niche after 40 years in development
+by Al Moyers
+Air Force Communications Agency Office of History  
+(_http://infosphere.safb.af.mil/~rmip/97dec/intercom.htm_)
+
+The Air Force is testing video telephones at locations both in the United  
+States and overseas to provide "video morale calls" for deployed members.
+
+"I have never seen a better morale booster," was the report of one Air Force  
+first sergeant during a recent test of video telephone technology at  
+Incirlik AB, Turkey.
+
+The video phone concept is actually more than four decades old, but new  
+low-cost technologies are providing the Air Force a rare opportunity to  
+permit families and deployed airmen to be able to see, as well as talk, to  
+one another.
+
+The idea behind the video telephone system presently being examined by the  
+Air Force was succinctly stated in the 1960s print advertisement of Western  
+Electric-"crossing a telephone with a TV set." The Western Electric  
+advertisement showed the less-than-successful Picturephone system which it  
+produced in cooperation with AT&T's Bell Laboratories.
+
+Years before, engineers at Bell Laboratories began discussing the concept of  
+simultaneous transmission of video and voice over telephone lines in the  
+1920s.
+
+In 1927, the Bell Telephone System sent live television images of Herbert  
+Hoover, then Secretary of Commerce, over telephone lines from Washington,  
+D.C. to an auditorium in Manhattan, N.Y. This was the first public  
+demonstration in the United States of long-distance video transmission.
+
+The first "Picturephone" was completed by Bell Laboratory engineers in 1956.  
+This first system was crude and cumbersome and required three standard wire  
+pairs to operate: one pair to carry the video transmission, one pair to carry  
+video reception, and the third to carry the audio signal. Requiring  
+1,000,000 Hertz of bandwidth, the Picturephone video signal exceeded by more  
+than 300 times the bandwidth allotted to a typical telephone voice signal.
+
+By 1964, a somewhat improved version of the Picturephone, dubbed the "Mod  
+1," had been developed and was debuted at the New York World's Fair. To test  
+public reaction to the Picturephone, visitors were invited to place calls  
+between special exhibits of the Picturephone at the World's Fair and  
+Disneyland.
+
+Survey results indicated that most people did not like Picturephone. The  
+controls were awkward and the picture was small. Moreover, most people were  
+not comfortable with the idea of being seen during a phone conversation.
+
+However, the system's developers at Bell Laboratories were convinced that  
+Picturephone was viable and could find a market. AT&T inaugurated commercial  
+Picturephone service between New York City, Chicago, and Washington, D.C.,  
+June 24, 1964, with a call from Lady Bird Johnson, wife of President Lyndon  
+Johnson, in Washington; to Dr. Elizabeth A. Wood of Bell Laboratories in New  
+York City.
+
+A three-minute Picturephone call from Washington to New York City cost $16.  
+The most expensive connection, between New York City and Chicago, cost $27  
+for three minutes. This inaugural Picturephone service never caught the  
+attention of consumers.
+
+AT&T continued to believe in the viability of Picturephone. With the  
+beginning of commercial Picturephone service in Pittsburgh in 1970, AT&T  
+executives predicted that Picturephones would be in use in more than a  
+million settings by 1980. Their estimates were far off the mark. Consumers  
+were still not ready for Picturephone, finding it too big, too expensive,  
+and, for many, too intrusive.
+
+In January 1992, AT&T executives again predicted the success of a videophone  
+system with the introduction of the AT&T VideoPhone 2500-the first  
+full-color, home video phone system to use standard home telephone lines.
+
+During the system's debut, Robert Kavner, AT&T group executive for AT&T  
+Communications Products, said, "This is the way people want to communicate.  
+The time is right. The price is right. The technology is right."
+
+AT&T executives reported that the video phone would become as popular as  
+cordless and cellular phones. Yet, a large market has yet to be found.
+
+According to the calculations of telecommunications author Stephen J.  
+Maudsley, the great decrease in the cost of video telephones is due to the  
+continued development of silicon technology. Maudsley reports the cost of a  
+video telephone in the 1960s was nearly $500,000. The AT&T VideoPhone 2500  
+was introduced in 1992 at a cost of approximately $1500 and within a year was  
+selling for less than $1000. The video telephone system being tested by the  
+Air Force sells for about $500 for each unit. This dramatic increase in  
+savings, according to Maudsley, comes from two areas-the integration of  
+functions and the compression of images-associated with the continued  
+decrease in the size of electronic devices.
+
+The functions required for video phone operation have been integrated onto  
+fewer pieces of silicon. This is a direct result of the decrease in the size  
+of component transistors. During the early period of video telephone  
+development, the smallest feature on a silicon chip was about 10 microns.  
+Currently, silicon chips are being manufactured with features as small as .3  
+microns.
+
+Video compression ratios have also improved to increase the rate of image  
+transmission from Picturephone's one frame every two seconds to the present  
+state-of-the-art 20 frames per second. By comparison, broadcast television  
+transmits at 30 frames per second.
+
+Now, video telephones have taken two distinct venues. Seemingly, the larger  
+share of the industry was concentrating its efforts in personal  
+computer-based systems, or desktop video teleconferencing technology, which  
+requires computer networks. The smaller effort was aimed at the video  
+phone-through-your-television market which requires no more than a  
+television, a video telephone, and POTS, the industry acronym for plain old  
+telephone service.
+
+The Air Force is testing the latter. According to Col. David L. Rakestraw,  
+director of technology at the Air Force Communications Agency, "because they  
+are so easy to set up and use, video phones are an excellent way for the Air  
+Force to add a video dimension to phone calls home."
+
+Moreover, the television-based systems cost no more for line transmission  
+than a standard voice call.
+
+Whether consumers on a large scale will finally be attracted to video  
+telephone technology remains to be seen. The technology does seem to have  
+found a niche among those Air Force members who have taken part in the Air  
+Force trials.
+
+After seeing and speaking to his wife in Hawaii from his deployed location  
+in Turkey, SSgt. Lionel Price remarked, "I have been blessed to take part in  
+this."
+

@@ -1,0 +1,55 @@
+Experiment 11: Adverse Selection
+
+The experiment was conducted on 6 and 11 November, 1996, at
+Carnegie Mellon University by John Miller.
+
+In Session 2 there were 10 good car owners
+and 10 lemon owners.
+
+In Sessions 3 and 4, there were 7 good car owners
+and 13 lemon owners.
+
+All sessions had 5 dealers.
+ 
+
+In Session 2 there were 10 good and 10 lemons purchased.
+
+Data for Table L11.1
+Prices Paid by Dealers--Session 2:
+Dealer	Prices		
+ID	Paid
+1	2500	2500	2500	2500	2500	2300
+2	2500	2500	
+3	2200	2200	2200	2200	2200	2200
+4	2000	2000	2000	2000
+5	2000	2000
+
+
+In Session 3 there were 0 good cars and 13 lemons purchased.
+
+Data for Table L11.3
+Prices Paid by Dealers--Session 3:
+Dealer	Prices		
+ID	Paid
+1	400	490	497
+2	400	450	475	500
+3	475   	480
+4	480	480
+5	480	480
+
+In Session 4 there were 7 good and 13 lemons purchased.
+
+Data for Table L11.5
+Prices Paid by Dealers--Session 4:
+(asterisk by price indicates good car showed, double
+asterisk by price indicates bad car showed, no asterick
+by price indicates no card shown)
+Dealer	Prices		
+ID	Paid
+1	2500*	1650* 	475**	
+2	2200*	1700*	400**	400**
+3	450**	490** 	475**	480**	
+4	480**	3400*	3400*	480**	480**	480**
+5	1650*	450**	480**
+
+End of file..................

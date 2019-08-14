@@ -1,0 +1,134 @@
+Business Week
+
+March 14, 1994
+
+HEADLINE: WHAT PRICE AIR?
+
+BYLINE: Mark Lewyn in Washington
+
+HIGHLIGHT: The FCC readies an airwave auction by boning up on game theory
+
+Australian bureaucrats thought they had struck it rich last April when they
+auctioned off rights to use the airwaves for a satellite-TV service. An
+investment group called Ucom Proprietary Ltd. submitted a sealed bid for $ 152
+million, far above government projections. The problem was that Ucom had no
+intention of spending that much. It deliberately defaulted on its winning bid,
+forcing the government to turn to the next lower bid -- which was also Ucom's.
+The company proceeded to default on one bid after another before finally
+sticking with one that was just slightly higher than the bid of its closest
+rival, which by then had leaked out. Ucom walked off with the license for $ 84
+million -- setting off an uproar that nearly cost Australia's communications
+minister his job.
+
+The U.S. Federal Communications Commission is determined not to make such a
+mistake later this year when it hands out licenses for new wireless phone
+systems known as Personal Communications Services (PCS). In the past, the
+agency awarded licenses free of charge, either through lotteries or hearings.
+This time around, it intends to hold its first-ever auction. To make sure the
+sale goes smoothly, the FCC has enlisted the help of an expert in game theory,
+John McMillan, an economist at the University of California at San Diego. His
+job is to apply the principles of game theory -- a branch of applied
+mathematics that studies how people try to outsmart one another in contests
+ranging from checkers to politics -- to help the FCC get the most for its
+licenses.
+
+Not to be outdone, potential bidders have signed up their own game theorists.
+Pacific Bell has hired Stanford University Professors Robert B. Wilson and Paul
+R. Milgrom. Bell Atlantic Corp. has engaged Yale University Professor Barry J.
+Nalebuff and Stanford's Jeremy Bulow. MCI Communications Corp. has enlisted
+University of Maryland economist Peter Cramton. The consultants have been
+arguing in filings to the FCC over what the rules of the auction should be.
+Once the agency decides on the rules -- which Congress has said it must do by
+Mar. 8 -- the theorists will change gears, helping their clients devise bidding
+strategies to exploit the system. If all goes as planned, which is by no means
+assured, the Office of Management & Budget hopes the auctions will raise more
+than $ 12 billion.
+
+TRUE FUN. Game theory dates back to the 1940s, when mathematician John von
+Neumann and economist Oskar Morgenstern turned their formidable analytic
+abilities to playing their favorite game -- poker. Their goal was to understand
+the best strategy to pursue -- bluff, fold, stand pat, or raise -- given a
+particular hand. Game theory was funded in the 1950s and 1960s by the Pentagon,
+which was interested in the best strategies for avoiding -- and fighting -- a
+nuclear war. But it has generally been shunned by business because the real
+world may be too complex and fickle to structure and analyze in any meaningful
+way. An auction, with rules known by all parties, is an exception, however.
+"This is one of the biggest applications of game theory in a long time," says
+University of Texas economist R. Preston McAfee, who is advising Airtouch
+Communications, the wireless business that is being spun off by Pacific Telesis
+Group. The bidders' game theorists are having a rollicking good time devising
+strategies that will play to their clients' strengths -- and minimize their
+weaknesses. Before its Feb. 28 announcement that it would take a 17% stake in
+Nextel Communications Inc., which has wireless franchises across the nation,
+MCI had lobbied the FCC to award a PCS license that covered the entire country.
+MCI figured that most other big telecom companies would be disqualified from
+bidding for such a broad license on the grounds that they already own
+substantial cellular properties. Furthermore, MCI proposed that the bid be
+awarded through a Vickrey auction, a sealed-bid procedure in which the high
+bidder wins but only pays the price of the second-highest bid (table, page 48).
+MCI calculated that with the pool of bidders small, the second-highest bid
+would probably be low. "It was so ridiculously self-serving, it wasn't funny,"
+says Yale's Nalebuff. MCI later dropped the idea.
+
+The FCC sees right through such proposals, which would limit the government's
+take. The agency does plan to assist small businesses, women, and minorities by
+setting aside some licenses on which only they will be allowed to bid -- and by
+letting them pay in installments. But big businesses won't get any price break,
+though they complain that they'll have to spend so much for licenses that they
+won't have anything left to build their systems. Kent Y. Nakamura, an FCC
+attorney, argues that even if the government did devise an auction that left
+more money in the pockets of bidders, there's no assurance that they would
+invest it in wireless infrastructure instead of, say, executive bonuses.
+
+To maximize the take, the agency will most likely go with a standard English
+auction in which the winner pays what it bids -- and everyone can see all bids
+as they are being made, either electronically or in person. Game-theory
+research has shown that open auctions tend to stimulate bidding because the
+contenders don't worry as much about the "winner's curse" of overpaying: Sealed
+bids foster restraint for fear of needlessly making an offer that's way above
+the second-highest bid.
+
+"GARBAGE BIDS"? The FCC also wants to get PCS to the public as rapidly as
+possible, however, which raises another issue: Should it take bids for all
+2,500 or so airwave licenses at once? The agency intends to sell two licenses
+apiece in each of 51 regions called "major trading areas" and five licenses
+apiece in each of 492 smaller "basic trading areas." One camp of game theorists
+argues that all licenses should be put up for bid simultaneously. That would
+make it easier for buyers to assemble licenses into economically efficient
+blocs of adjoining areas. This method appeals to the FCC, because if bidders
+get what they need at the auction they won't waste time trading licenses
+afterward, and wireless services would reach market more quickly. Trouble is,
+requiring buyers to submit all their bids at once could be a nightmare of
+complexity. And the more complicated the auction is, the greater the threat of
+legal challenges from losing bidders - a major concern of the FCC. Beyond that,
+the rules would probably have to allow contenders to withdraw and shift around
+offers -- so a bidder who lost New York wouldn't be stuck with paying a high
+price for a contiguous New Jersey property that it no longer wanted. But if
+offers can be withdrawn, "people can submit all sorts of garbage bids," says
+Northwestern University economist Daniel R. Vincent, who is advising
+Washington-based American Personal Communications Inc., a company backed by
+Washington Post Co. Without serious bids as a guide to value, buyers tend to be
+cautious -- and come in low.
+
+BIG UNKNOWNS. Of course, the alternative isn't entirely palatable, either. In a
+sequential auction, using either sealed bids or open ones, licenses are put up
+one at a time, like paintings. Because buyers can't go after geographic blocs
+all at once, they may not bid as much for properties. "The problem with
+sequential is that it doesn't allow bidders to fully express what they might be
+willing to pay," says the FCC's Nakamura. Bell Atlantic wants a sequential
+auction because it is less complex and less subject to legal challenge. But
+Airtouch Communications, the Pacific Telesis spin-off, doesn't like this idea
+because such an auction might drag on and on, wasting everyone's time. If the
+auction is sequential, Nynex Corp. is hoping that properties won't be auctioned
+off from biggest to smallest -- because it doesn't want New York to go first.
+Game theory suggests that Nynex might be able to save money by calibrating a
+bid for New York from the winning bids for other areas.
+
+Academics have devoted entire careers to exploring just such questions. As the
+Mar. 8 deadline approached, the FCC still had to make major decisions,
+including whether to choose simultaneous bidding, sequential bidding, or some
+hybrid. "There is no obvious best way," says Yale's Nalebuff. One thing is
+clear, though: No matter what rules prevail, the government is bound to do
+better than it has in the past. Since the dawn of broadcasting, the FCC has
+been making gifts of licenses. It doesn't take a game theorist to point out
+that any winnings are better than none.

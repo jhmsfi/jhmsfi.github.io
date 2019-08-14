@@ -1,0 +1,183 @@
+The Wall Street Journal Interactive Edition
+
+November 10, 1997
+
+Manager's Journal
+Why the Justice Dept. Is Wrong
+
+By WILLIAM H. GATES
+
+If you asked customers whom they would rather have
+deciding what innovations go into their computer--the
+government or software companies--the answer would be
+clear. They'd want the decision left to the marketplace,
+with competition driving improvements. This is the
+question at the center of the Justice Department's
+recent action aimed at forcing Microsoft to remove
+Internet Explorer from Windows. In this instance, the
+interests of the consumer seem to be less important than
+the complaints of a handful of our competitors who want
+the government to help them compete--by preventing
+Microsoft from enhancing its products. The Justice
+Department's position is akin to the government telling
+personal computer manufacturers that they can't include
+word processing, spreadsheet or e-mail capability in PCs
+because it would be unfair to typewriter, calculator and
+courier companies.
+
+New Functionality
+
+Microsoft and the Justice Department anticipated this
+very issue three years ago when we signed a consent
+decree that specifically allowed Microsoft to develop
+"integrated software products." At the time, the
+department was fully aware that we were planning to
+integrate Internet capabilities into the forthcoming
+Windows 95 operating system. Microsoft has a long
+history of improving its operating system products and
+building in new functionality, just as Apple, IBM, Sun,
+Novell and others have. These features have included
+such things as a graphical user interface, memory
+management, type fonts, disk compression and networking.
+Every one of these was available first as a separate
+offering and later integrated to meet customer demand
+for greater functionality in Windows.
+
+Supporting Internet browsing in Windows is a logical,
+incremental step in the evolution of the operating
+system. For 15 years a core function of Microsoft
+operating systems has been to enable consumers to locate
+and use information from local sources, such as the hard
+drive or the CD-ROM drive, as well as from remote
+sources, such as local area networks. Windows 95 simply
+permits users to get information from the newest remote
+source--the Internet.
+
+When a PC manufacturer like Compaq, Dell or Gateway
+chooses to license Windows, it agrees to ship the whole
+operating system, including Internet Explorer.
+Installing Windows 95 does not prevent computer makers
+from also shipping a competing browser, such as
+Netscape's Navigator, and many of them do just that. PC
+manufacturers are free to differentiate their products
+from one another in many ways, including by adding their
+choice of software products--but modifying Windows is
+not one of them.
+
+                        Internet Explorer is much more than just a "Web
+                        browser." It provides important functionality that is
+                        the basis for other companies' new software products.
+                        Without a uniform Windows installation, end users could
+                        not be sure of the performance of the integrated
+                        operating system, and Microsoft could not stand behind
+                        its product. Furthermore, Windows would become
+                        Balkanized, like the many incompatible versions of UNIX.
+                        This would eventually drive prices for PC products
+                        higher as software developers and hardware manufacturers
+                        would have to develop and test their products for all
+                        the different versions of Windows. And innovation would
+                        slow because developers would be reluctant to write new
+                        programs if they couldn't be sure that new features
+                        would work on all Windows PCs.
+
+                        I doubt the New York Times would let a newsstand tear
+                        out the business section of the paper just because it
+                        wanted to sell more Wall Street Journals. Or that the
+                        Ford Motor Co. would let its dealers replace a Ford
+                        engine with a Toyota engine. Microsoft has the right to
+                        preserve a consistent customer experience when using
+                        Windows.
+
+                        Curiously, while the Justice Department is claiming that
+                        Windows should not include browsing capabilities,
+                        Microsoft's competitors are busy incorporating basic
+                        operating system services such as printing and running
+                        applications into their browsers, making them nothing
+                        less than . . . an operating system. If our competitors
+                        can integrate an operating system into their browsers in
+                        the name of competition, why should Microsoft be
+                        forbidden to integrate browsing capabilities into its
+                        operating system? Enhancing Windows to support Internet
+                        standards more fully is not a frill--it is critical for
+                        Windows to stay competitive. Telling Microsoft that we
+                        can't improve Windows is telling us we can't compete.
+
+                        Since its inception more than 20 year ago, the PC
+                        industry has grown incredibly rapidly and provided real
+                        benefits for customers without the government regulating
+                        product designs. Creativity and entrepreneurship are
+                        flourishing as hundreds of new software companies and
+                        thousands of new products come to market each year.
+                        Microsoft Windows has played an important role in this
+                        innovation, largely because it serves as an open,
+                        integrated platform for software developers, hardware
+                        vendors and solution providers. This gives them the
+                        incentive and the certainty they need to build products
+                        for Windows, which attracts more customers and, in turn,
+                        encourages greater demand, more innovation and new
+                        products.
+
+                        Consumers are the big winners. Today you can buy a PC
+                        for under $1,000 that is more powerful than a PC that
+                        just a few years ago was three or four times as
+                        expensive. Prices for software are constantly falling,
+                        thanks in part to the stable development platform
+                        Windows provides. In the late 1980s, business
+                        applications such as word processors or spreadsheets
+                        typically cost several hundred dollars each. Now, you
+                        can buy a full suite of far better applications for
+                        about the same price. In 1990, CD-ROMs containing games,
+                        encyclopedias and personal finance software cost $80 to
+                        $200. Today, it's rare to see CD-ROMs for home users
+                        priced above $49.
+
+                        And although Windows is by far the most popular
+                        operating system on the market today, the price has
+                        remained virtually the same for years, while its
+                        performance has leapt forward. Unlike other operating
+                        systems, Windows will always be an open platform
+                        available at a reasonable price, because that's the key
+                        to attracting new software development and giving
+                        customers the kind of low-cost, innovative PCs they want
+                        and have come to expect. A high-volume, low-cost
+                        approach works only as long as the platform remains
+                        open, so we have a vested interest in keeping it that
+                        way.
+
+                        Rich Support
+
+                        The Internet promotes openness and competition more than
+                        almost any other invention of the past 100 years. The
+                        government should encourage the rich support for
+                        Internet standards that Microsoft is providing. The
+                        popularity of Windows does not create a chokehold on the
+                        Internet any more than a popular word processor chokes
+                        off free speech. Windows PCs allow people to browse the
+                        entire Internet easily. They allow anyone to become a
+                        publisher and to offer goods and services to the global
+                        market with minimal overhead and without anyone taking a
+                        fee.
+
+                        U.S. antitrust laws exist not to prop up competitors,
+                        but to ensure that consumers benefit from the widespread
+                        availability of goods and services at fair prices. And
+                        that's exactly what we have today. Microsoft spends more
+                        every year to improve the Windows operating system. This
+                        year we will spend more than $1 billion on research and
+                        development for future versions of Windows. Over the
+                        next several decades we will enhance Windows so that
+                        computers can talk, listen, see and learn, making it
+                        dramatically easier to enjoy the benefits of the
+                        Internet. The PC business has an exciting future--if the
+                        government does not hold it back by regulating product
+                        design.
+
+                        --------------------------------------------------------
+
+                        Mr. Gates is chairman and CEO of Microsoft.
+                                                                        [Image]
+
+                                         Return to top of page
+
+                         Copyright © 1997 Dow Jones & Company, Inc. All Rights
+                                               Reserved.

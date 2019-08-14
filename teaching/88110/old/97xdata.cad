@@ -1,0 +1,70 @@
+Experiment 10: Comparative Advantage
+
+The experiment was conducted on 7 November, 1997, at 
+Carnegie Mellon University by John H. Miller
+
+Important Notes:
+
+For the payoff calculations, do *NOT* multiply by $10.
+(This will allow everyone to be consistent.)
+
+There were 13 Richlanders and 26 Poorlanders in the experiment.
+
+Data for Table L10.1
+Output and Payoffs in Richland, Session 2, Final Round
+ID	Fish	Bread	Final Fish	Final Bread	Payoff
+	Prod	Prod	Holdings	Holdings	
+1	20	0	10		10		10
+2	20	0	10		10		10
+3	20	0	10		10		10
+4	20	0	10		10		10
+5	20	0	10		10		10
+6	20	0	10		10		10
+7	20	0	10		10		10
+8	20	0	10		10		10
+9	20	0	10		10		10
+10	20	0	10		10		10
+11	20	0	10		10		10
+12	20	0	10		10		10
+13	20	0	10		10		10
+	
+Note: In the first round of this session, all but three of the
+Richlanders did as above.  
+	
+Data for Table L10.2
+Output and Payoffs in Poorland, Session 2, Final Round
+ID	Fish	Bread	Final Fish	Final Bread	Payoff
+	Prod	Prod	Holdings	Holdings	
+1	0	10	5		5		5
+2	0	10	5		5		5
+3	0	10	5		5		5
+4	0	10	5		5		5
+5	0	10	5		5		5
+6	0	10	5		5		5
+7	0	10	5		5		5
+8	0	10	5		5		5
+9	0	10	5		5		5
+10	0	10	5		5		5
+11	0	10	5		5		5
+12	0	10	5		5		5
+13	0	10	5		5		5
+14	0	10	5		5		5
+15	0	10	5		5		5
+16	0	10	5		5		5
+17	0	10	5		5		5
+18	0	10	5		5		5
+19	0	10	5		5		5
+20	0	10	5		5		5
+21	0	10	5		5		5
+22	0	10	5		5		5
+23	0	10	5		5		5
+24	0	10	5		5		5
+25	0	10	5		5		5
+26	0	10	5		5		5
+
+To make it easier, I eliminated one person from the data set
+(who traded to 4 and 4), but couldn't have done better because of
+an odd number of traders.  In the first round of this session,
+about five Poorlanders did worse than (5,5) and one did better (6,6).
+
+End of file..................

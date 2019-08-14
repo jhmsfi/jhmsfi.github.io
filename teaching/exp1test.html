@@ -1,0 +1,193 @@
+<HTML>
+<HEAD>
+
+<Title> John's Test of Java Stuff </title>
+</head>
+<body>
+<h3>  (c) J.H. Miller, 1996, all rights reserved</h3>
+<hr>
+Feel free to use, but please do not distribute or copy any part of this page
+or Java code.
+<hr>
+<h1> A Simple Market Experiment </h1>
+<hr>
+
+<p>
+
+<h3> Instructions:</h3>
+
+This market is very similar to the first experiment in 
+<a href="http://zia.hss.cmu.edu/miller/teaching/eep.html">
+Experiments with Economic Principles</a>.
+You may want to read these instructions completely, and then "reload"
+this page to begin a new experiment.
+<p>
+You will either be a Buyer (with a Buyer Value) or a Seller
+(with a Seller Cost).  This information is available in the lower-right
+side of the display.
+You will be allowed to make only a single transaction during 
+a given market session.
+<p>
+If you are a buyer, your Buyer Value gives you the value you will 
+receive if you purchase a good on the market (in essence, it tells you how much
+the good is worth to you).
+Thus, if your buyer value is 80 and you
+purchase a good for 73, then you will have earned a profit of 7.
+If you do not purchase a good, you will receive a profit of 0.
+<p> 
+If you are a seller, your Seller Cost gives you the cost you must
+pay if you sell a good on the market.
+(You can think of this as your cost to produce 
+the good.)
+Thus, if your seller cost is 65 and you
+sell a good for 73, then you will have earned a profit of 8.
+If you do not sell a good, you will receive a profit of 0.
+<p>
+To make an offer in the market go to the lower-right
+side of the display, and use
+your mouse to click on the open circle by the value you wish to offer
+(black circles indicate 
+offers that either are not allowed or would cause you to lose
+money).  Remember, try and buy at low prices and sell at high prices!
+<p>
+In the data displays, your information (e.g., transaction, values, etc.)
+ is indicated by darkened squares.
+<p>
+
+.....Good luck!
+<p>
+
+<hr>
+
+<applet code="exp1.class" width=450, height=500>
+Normally, the Java program would be running in this location.
+Unfortunately, it appears that your browser does not support
+Java.....
+</applet>
+
+<hr>
+<h3>
+Here are answers to some frequently asked questions about this experiment:
+</h3>
+
+<b> Q: Who or what is controlling the other players in the experiment? </b>
+<p>
+Each player in the experiment is controlled by a simple adaptive 
+algorithm that uses both the player's Buyer Value (or Seller Cost) and
+some information that is available to everyone in the market to create
+new offers.  Please note that, like you, these players only know
+their own information, and the information that is being displayed at
+the time.  (Thus, for example, they do not know the form of the
+supply and demand curves, etc.)
+<p>
+<b> Q: How do the players take turns?
+</b>
+<p>
+Buyers and sellers are 
+randomly chosen to make offers to buy and sell.  
+<p>
+<b> Q: What is the graph that gets displayed at the end of the
+trading session?
+</b>
+<p>
+This graph gives the supply curve (in red) and demand curve (in blue)
+for the market based on the Buyer Values and Supply Costs (displayed
+in the upper-left) of all of the players in the market.  The time series
+of actual trade prices is given by the magenta line (the square on
+this line indicates your trade, if any).
+<p>
+<b>
+Q: What do "Basic Market Statistics" tell me?
+</b>
+<p>
+The basic market statistics (displayed at the end of the 
+session in the upper-right panel) provide a variety of 
+information.  
+<ul>
+<li> Competitive equilibrium price and quantity:
+these are the price and quantity predictions 
+for the market based on competitive equilibrium
+theory (basically, that the market will equilibrate at a price
+where the quantity supplied equals the quantity demanded---this point
+occurs where the supply and demand curves intersect).
+<li> Average (Std Dev) of price: this is the average (and standard
+deviation in parentheses) of the transaction prices that occured
+in the market.
+<li> Quantity traded: the number of transactions that occured in the market.
+<li> Maximum surplus: this is the maximum amount of total profit available
+in the entire market place, assuming buyers and sellers are optimally
+arranged.  
+<li> Realized surplus: this is the amount of total profit actually
+earned by the buyers and sellers who made trades in the market.
+<li> Efficiency: This is the proportion of maximum profit realized by
+the actual traders (that is, it is equal to (realized surplus)/(maximum surplus)).
+Note that as efficiency gets closer to 1.0, the traders are realizing more
+of the potential profits.
+<li> Your trading efficiency: this is a measure of how well you
+did trading in the market.  It is found by taking your actual profits and
+dividing them by your expected profits if you traded at the competitive 
+equilibrium price.  Thus, if this value is over 1.0 you did better than
+expected, if it is below 1.0 you did worse than if you traded at
+the equilibrium price.
+</ul>
+
+<p>
+<b>
+Q: What am I suppose to learn from all of this?
+</b>
+<p>
+There are a variety of important lessons one can learn from this
+experiment.  
+<p>
+First, it shows how a simple market operates.  Markets
+similar to this one are responsible for allowing the exchange of
+an enormous amount of the world's goods and services (in fact,
+almost all goods and services available have been traded at one time or another by
+similar markets).  
+<p>
+Second, it demonstrates how a simple market allows
+a decentralized group to effectively exchange goods: there
+was no central authority regulating who could trade with whom, 
+very little information was being transmitted (only the bids and
+asks of the various players), and each player was trying to do 
+the best they could in the market, without being forced to trade.
+Also, note that the transaction prices were not dictated, but 
+simply emerged from the actions of the individual players.
+Given these conditions it is always surprising that the market
+is able to get most of the gains from trade (maximum profit) from
+the players (how high was your market's efficiency?).
+<p> 
+<p>
+Finally, it shows how competitive equilibrium theory can
+accurately predict the outcome of such markets.  For most of these
+markets, the competitive equilibrium theory does very
+well at predicting the observed data.  (If you look at the graph,
+the magenta line typically heads for the intersection of the supply and 
+demand curves.)  Again, it is remarkable that in a world in
+which individual players have so little information and 
+no central authority is around to impose prices or trades on the players, 
+that, nonetheless, the simple actions of the players create an aggregate
+behavior that looks as if the players knew the actual
+supply and demand conditions ahead of time.
+
+<p>
+<b>
+Q: This stuff is great!  I would like to learn more about the
+science behind all of this, what should I do?
+</b>
+<p>
+We have developed a book that develops these ideas using
+similar experiments to the one here.  If you want to learn
+more, check out  
+<a href="http://zia.hss.cmu.edu/miller/teaching/eep.html">
+Experiments with Economic Principles</a>.  
+<p>
+<b>
+Q: Something funny happens when I do X, why? 
+</b>
+<p>
+Hmmmm....send email to miller@zia.hss.cmu.edu, and I will look into it.
+
+
+</body>
+</html>

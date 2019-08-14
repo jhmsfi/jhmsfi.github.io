@@ -1,0 +1,215 @@
+	  NYTimes, July 17, 2000
+
+	  Utilities Trying New Approaches to Pricing Energy
+
+	  By MATTHEW L. WALD
+
+	  [W]ASHINGTON, July 16 -- As air-conditioners hum this summer, and
+	  experts issue dire warnings about electricity running short,
+	  a growing number of utilities are varying the price of power
+	  based on supply and demand to make sure there is enough to go
+	  around.
+
+	  The approach is a decidedly novel one for electric utilities,
+	  which have mostly set prices for power without regard to
+	  fluctuations in energy use. And it is inducing companies and
+	  individual consumers to change how they use power and think
+	  harder about what electricity is worth to them at different
+	  times.
+
+	  Wisconsin Electric Power is one of the utilities with a new
+	  approach to pricing power. The company usually has no trouble
+	  meeting demand when temperatures rise in the summer. But
+	  during the second week of May, usually the slack season for
+	  power use, between the winter and summer peaks, the utility
+	  had closed many generating stations for maintenance.
+
+	  So when the temperature in Milwaukee hit an unseasonable 90
+	  degrees, Wisconsin Electric saw a power shortage looming. One
+	  possibility was buying electricity from another company on
+	  the open market, but because other utilities were also caught
+	  short, that would have cost 10 to 20 times the usual price.
+
+	  Instead, the utility called one of its biggest customers, the
+	  Cleveland Cliffs iron ore mine, in Michigan's Upper
+	  Peninsula. How would the mine feel, dispatchers asked, about
+	  taking the afternoon off -- and being paid for it?
+
+	  At first the answer was no. But then plant managers looked at
+	  the pile of crushed ore coming out of the milling machines,
+	  and realized that if the machines shut down for the rest of
+	  the day, no shipments would be delayed.  After some quick
+	  negotiations, a deal was struck: Wisconsin Electric would pay
+	  the mine $82,000 to shut down its ore crushers.
+
+	  "That was a heck of a good deal," said Richard A. Abdoo, the
+	  chairman, president and chief executive of Wisconsin
+	  Electric. His company would be paying Cleveland Cliffs about
+	  30 cents a kilowatt-hour not to use electricity, or about six
+	  times what Wisconsin Electric charges industrial customers
+	  for a kilowatt hour. But it was cheaper than buying power on
+	  the open market.
+
+	  Wisconsin has gotten more sophisticated since May, gathering
+	  the beeper and fax numbers of 80 of its biggest customers. On
+	  hot afternoons, it can alert them to log on to its Web page,
+	  where it offers them cash -- the amount varies, much like the
+	  price of a restaurant's lobster special -- to reduce
+	  consumption at certain hours.
+
+	  There are no statistics on the number of utilities using new
+	  methods to manage energy demand, but more and more companies
+	  seem to be doing it. In Connecticut, Northeast Utilities is
+	  installing Internet-controlled thermostats in 50 houses,
+	  which it can use to bump air-conditioner settings up by 4
+	  degrees when it needs the power, in exchange for a $200
+	  payment to each homeowner for the summer. And around the
+	  country, utilities are installing radio-controlled switches
+	  on central air-conditioners and swimming pool pumps to turn
+	  them off at peak hours.
+
+	  For years, electricity has been sold under a system that is
+	  worthy of the old Soviet Union: a kilowatt-hour has a fixed
+	  price, and you can have as much as you want until it runs
+	  out; then there isn't any for anybody.
+
+	  Allan Schurr, vice president of Silicon Energy, which writes
+	  software for the Internet-controlled thermostats, compared
+	  the traditional system to an airline that keeps a flock of
+	  planes by the gate in case a crowd suddenly wants to fly
+	  somewhere.  "We don't have a reservation system," he said.
+
+	  Not troubling customers with the fluctuations of price worked
+	  fairly well under the old regulated system. A kilowatt-hour,
+	  which the utility typically sold for 8 to 10 cents, often
+	  cost 2 cents but hardly ever more than 12. Now, electricity
+	  is often bought and sold wholesale, with no regulation, and
+	  the cost can temporarily soar to $6 a kilowatt-hour. No
+	  utility can buy much at that price, resell it at 5 or 10
+	  cents, and still make a profit. Some utilities can pass those
+	  costs through and spread them among their customers, but
+	  everyone's costs would be much lower if customers had a
+	  choice to cut consumption when prices became exorbitant.
+
+	  The new pricing structure, with rates varying by the hour,
+	  will take some getting used to. "A lot of people are going to
+	  say, I don't want to face this," said Eric Hirst, a
+	  consultant on electric industry reorganization.  "But others
+	  are going to say, I can make money by cutting consumption
+	  here and increasing consumption there."
+
+	  Pricing by the hour has no impact on energy efficiency -- the
+	  amount of work done per kilowatt-hour -- but it does improve
+	  reliability, he said, because it will minimize power
+	  failures.
+
+	  Some utilities are reluctant to let customers know they do
+	  not have enough power on hand to handle every contingency,
+	  preferring to sell as much power as possible and pass along
+	  occasionally extraordinary prices.
+
+	  "Frankly, there are not a lot of production operations that
+	  keep a lot of inventory around these days," said William T.
+	  McCormick Jr., chairman and chief executive of CMS Energy,
+	  the parent of Consumers Power, of Michigan.
+
+	  And customers can be reluctant.
+
+	  "We don't like to take a plant up and down if we don't have
+	  to," said David L. Gardner, a spokesman for Cleveland Cliffs.
+	  But on that day in May, it worked out that a shutdown
+	  entailed little waste of manpower. "It was a win-win
+	  situation," he said.
+
+	  Cleveland Cliffs is one of many Wisconsin Electric customers
+	  on an "interruptible" contract, which allows the utility to
+	  pull the plug in an emergency. But this was not an emergency,
+	  just a time when the economics favored rewarding the mine to
+	  shut down.
+
+	  The utility has signed up 81 major customers this spring,
+	  with a total demand of 40 megawatts (enough to power 1,000
+	  homes), who are prepared to bid for power interruptions. It
+	  hopes to sign up customers using an added 30 megawatts,
+	  though it is not yet sure how much of that will be
+	  volunteered when it needs relief. But the amount could be a
+	  significant fraction of demand on a bad day. Last year, the
+	  maximum amount of power required simultaneously by all its
+	  customers reached 5,975 megawatts.
+
+	  In a blunt, low-tech way, utilities have tried for years to
+	  cut peaks in demand for power, which they call peak load.
+	  Potomac Electric Power, which serves the District of Columbia
+	  and some Maryland suburbs, has persuaded about a third of its
+	  600,000 residential customers to join a "kilowatchers club."
+	  In exchange for a monthly credit of $9 on their bill, the
+	  utility has installed a second electric meter for their
+	  air-conditioners. It can shut off the air-conditioners by
+	  radio control for 13 minutes every half-hour. Some customers,
+	  in exchange for a $22 monthly payment, have meters that can
+	  shut off their air-conditioners altogether. Last year, demand
+	  for Potomac Electric's power peaked at 5,927 megawatts, but
+	  the kilowatchers can shave 271 megawatts if necessary.
+	  Potomac Electric typically uses the radio control 5 to 10
+	  days a year.
+
+	  Northeast Utilities, in Connecticut, also reduces demand for
+	  its electricity for air-conditioning, but in a more
+	  sophisticated way.
+
+	  At the end of June, David and Elizabeth Yu, of Unionville,
+	  Conn., accepted a $50 payment from their utility, Northeast
+	  Utilities, to let Northeast replace the thermostat that runs
+	  their air-conditioner.
+
+	  Central air-conditioners in houses like the Yus' -- a
+	  16-year-old, four-bedroom Cape -- draw about 3 kilowatts;
+	  raising the thermostat 4 degrees cuts the number of minutes
+	  they run each hour by about 30 percent, said Michael W.
+	  Townsley, a Northeast manager who oversees conservation. If
+	  the family had the thermostat set at 74, for example, the
+	  utility could reset it to 78.
+
+	  Most of the year, the power saved costs only a few cents an
+	  hour. But now that Northeast buys its electricity on the open
+	  market at peak hours, the price can change fast.  Hence the
+	  value of fiddling with the Yus' thermostat from a central
+	  office.
+
+	  "When supply and demand are very tight, you're going to see
+	  tremendous swings," Mr. Townsley said. "In the morning the
+	  price might be down around 2 cents, later, $1 a
+	  kilowatt-hour.  What that says is, there are some potential
+	  economic opportunities there."
+
+	  Many companies are marketing radio-controlled switches that
+	  will turn off an air-conditioner or a pool pump. But the
+	  thermostat, developed with the Carrier Corporation, has a
+	  more subtle impact on the household.
+
+	  The Yus' new thermostat calls in four times a day for
+	  instructions. If the family lets the utility control the
+	  temperature, Northeast will pay them another $150 on Oct. 1.
+	  But if Mrs. Yu finds the house uncomfortably warm, she can
+	  override the setting. Each time she does so, though,
+	  Northeast will deduct $15 from that bounty.
+
+	  "The financial incentive is not that much," Mr. Yu said.
+	  "It'll just get absorbed into the budget." But, being a
+	  gadget-lover, he is attracted by the device itself.
+
+	  Mr. Yu is at work during the hours that Northeast is most
+	  likely to adjust their thermostat. But Mrs. Yu, who is at
+	  home with the couple's three children, said, "It'll be
+	  interesting to see how it changes our lives during the peak
+	  hours."
+
+	  Like all utilities, Northeast already has precise historical
+	  data on how much power customers will demand at any given
+	  level of temperature and humidity; now it wants to know what
+	  that demand curve looks like when price is a factor.
+
+	  "Our interest is primarily reliability, when supply and
+	  demand tend to be outside of equilibrium," Mr. Townsley said.
+	  "But that's also at the time when the economics come in."
+

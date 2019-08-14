@@ -1,0 +1,38 @@
+here is how to have automatic email:
+
+<a href="mailto:miller@zia.hss.cmu.edu"> miller@zia.hss.cmu.edu </a>
+if you are not running netscape, click 
+<a href="mail_miller.html">here </a> for email.
+
+mail_miller.html looks like:
+
+<TITLE>Email to John H. Miller</TITLE>
+<H1>Email to John H. Miller</H1>
+
+<P>
+<EM>Note:</EM>
+This is an HTML form. You must have a
+browser that supports forms in order to use it. If you do not
+see text editing areas below, your browser does not support
+forms. Send mail directly to miller@zia.hss.cmu.edu instead.
+
+<P>Enter your message in the areas provided below. Be sure to
+fill out all of the fields.
+<HR>
+<FORM METHOD="POST" ACTION="http://mat.gsia.cmu.edu/cgi-bin/email">
+<INPUT NAME="name">Your Name<P>
+<INPUT NAME="email">Your Email Address<P>
+<INPUT NAME="subject">Subject<P>
+<INPUT NAME="recipient" VALUE="miller@zia.hss.cmu.edu" TYPE="hidden">
+<P>Text:<P>
+<TEXTAREA NAME="content" ROWS=10 COLS=60></TEXTAREA> <P>
+Click <INPUT TYPE="submit" VALUE="submit"> to submit your
+message. Click <INPUT TYPE="reset" VALUE="reset"> to clear
+your message and start over. 
+<p>
+Thanks to the creators of the <A HREF="http://siva.cshl.org/email/index.html">Simple CGI Email Handler (2.0)</A><p>
+
+
+</FORM>
+<HR>
+

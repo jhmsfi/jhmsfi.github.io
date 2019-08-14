@@ -1,0 +1,155 @@
+MIDTERM GRADE INFORMATION
+
+88-220, Policy Analysis I, Fall, 1997;
+
+IMPORTANT INFORMATION: 
+
+Friends, 
+
+The midterm grade is designed to give you information.  The letter
+grade you receive only indicates how you are doing relative to
+your classmates.  If you get an A, you are doing much better
+than average, a B indicates above average, a C indicates average
+or slightly below, a D indicates below average, and an R indicates
+much worse than average.  
+
+When final grades are calculated, much more consideration will be 
+placed on first trying to place each student within a group 
+that deserves a similar grade, then trying to make
+the best case for each student to have him or her moved to a higher
+category based on unusual external circumstances, and finally assigning
+grades appropriate to each group of students.  It is likely 
+that such a process, if it were done today, would not result in anyone
+receiving a lower grade than indicated, and might well allow some to
+receive a higher grade.  
+
+NOTWITHSTANDING THE PREVIOUS SENTENCE, DO NOT
+IGNORE THE INFORMATION INHERENT IN YOUR MIDTERM GRADE!
+
+If you received a D or R at midterm, you are in SERIOUS trouble,
+and you need to do something about it NOW.  I am very willing to
+help in any way that I can, but YOU need to take responsibility for
+initiating and following up on actions that will better your grade.
+COME AND SEE ME, NOW!  
+
+If you are getting a C, you should also come and see me, as many 
+such students, if they so desire, have been able to alter a few
+behaviors and consequently learn and understand the material in
+such a way that they can achieve much higher grades by the end
+of the semester, if they initiate some action now.
+
+If you are getting a B, good job, make a few adjustments and
+strive for an A.  Come and see me if you want some suggestions. 
+
+If you are getting an A, then please continue the fine work, and
+also consider volunteering to help some of your other classmates
+achieve a better understanding of the material.  This only takes a
+small commitment of time (say one or two hours a week), and in the
+process you will often learn a lot more about the material---teaching
+is an easy route to learning. 
+
+--John
+
+-----------------------------------------------------------
+-----------------------------------------------------------
+
+What graded material is left in the semester:
+
+Homework constitutes 40% of your final grade.  We have
+done about 1/2 of all the homework assignments, thus
+you have about 20% of your final grade remaining in homework.
+
+The first midterm counted for 20% of your grade.  The second
+midterm (coming up on 22 October) and the final count 20% each, thus
+you have 40% of your grade left in this category.
+
+To re cap, there is roughly:
+
+20% of the grade left on homework, and
+40% remaining on exams (the next midterm is 22 October).
+
+-----------------------------------------------------------
+-----------------------------------------------------------
+
+How was the midterm grade calculated?
+
+Your midterm grade was calculated as follows:
+
+1) If you had any missing homework, you received a 0 on that homework.
+You should double check with us if you think we may have inadvertently 
+missed one of your homeworks (we will also try and send out notices to
+those of you with missing grades, but it is still your responsibility to
+check---David will be happy to check your information by request).
+
+2) A midsemester_homework_score was calculated by taking the sum of your 
+points on the four homeworks, and multiplying this sum by 5.  
+Thus, midsemester_homework_scores ranged from 0 to 200 points.
+
+IMPORTANT NOTE: Although we will drop your lowest homework score in calculating
+your final grade, we did not do this for midsemester, as we felt that
+keeping it in provides some useful information.  
+If you failed to turn in an assignment, the 0 you received
+will have a big impact on your midsemester_homework_score---please make sure that you
+turn in EVERYTHING else on time, so that this effect will be mitigated.
+
+3) Your final_midsemester_score was calculated as follows:
+
+final_midsemester_score = (midsemester_homework_score + exam_1_score)/4
+
+Thus, these scores ranged from 0 to 400, and are composed of 1/2 homework
+and 1/2 exams.  (The final grade will be 40% and 60% respectively.)
+ 
+4) Your midsemester letter grade was calculated as follows:
+
+A    >= 90
+B    >= 83
+C    >= 70
+D    >= 60
+R    < 60
+
+Again, these grades are for your information, and do not reflect
+what your actual letter grade would be if these were final grades.
+(As a rough guide, reduce all of the above cutoffs by 3 points.)
+
+---------------------------------------------------------
+---------------------------------------------------------
+
+Here is the final distribution of midterm grades:
+
+Variable        N     Mean   Median   TrMean    StDev   SEMean
+Midterm Grade 105    71.87    73.81    72.90    13.92     1.36
+
+Variable        Min      Max       Q1       Q3
+Midterm Grade 10.00    93.75    64.85    82.32
+
+First column is cumulative count up and down from the median.
+Second column is the tens, last column is one number for each person
+with that last number in their index score.
+ 
+Stem-and-leaf of C2        N  = 105
+Leaf Unit = 1.0
+
+
+    1    1 0
+    1    1 
+    1    2 
+    1    2 
+    3    3 23
+    4    3 7
+    4    4 
+    6    4 58
+   10    5 1233
+   16    5 556999
+
+   26    6 0012223344
+   38    6 555566668899
+
+  (20)   7 00001111122223344444
+   47    7 55566777778899
+   33    8 0011222222
+
+         8 334444444
+   14    8 555666779
+
+    5    9 00333
+

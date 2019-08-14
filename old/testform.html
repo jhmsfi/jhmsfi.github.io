@@ -1,0 +1,161 @@
+<title>Student Information Form </title>
+<h1>Student Information Form</h1><p>
+<hr>
+<p>
+I have found that the following information makes it much easier
+for me to get to know you and direct the class toward your interests.
+I will <em> not </em> distribute the information you provide here.
+
+<p>
+
+<hr>
+<p>
+<form method="POST"
+action="http://zia.hss.cmu.edu/cgi-bin/test.pl">
+
+What class are you in:
+<p>
+ <input type="radio" name="class" value="110"> 73/88-110 (Soc Dec Making) 
+ <input type="radio" name="class" value="220"> 88-220 (Policy Analysis) 
+
+<p>
+<hr>
+
+<p>
+First Name: 
+<input name="firstname" size=12 maxlength=12>
+MI: 
+<input name="middlename" size=2 maxlength=2>
+Last Name: 
+<input name="lastname" size=15 maxlength=15>
+<p>
+During discussions in class I would prefer to call on you using
+your first name.  Sometimes people prefer a variant of their first
+name (e.g., Elizabeth --> Beth, etc.) or some other nickname.  What
+name should I use when I call on you in class?
+<input name="callname" size=12 maxlength=12>
+
+<p>
+<hr>
+<h3> Contact Information </h3>
+
+Email: <input name="email" size=40 maxlength=40 value="@andrew.cmu.edu"> <p>
+Local Address: <input name="localadd" size=40 maxlength=40> <p>
+Local Phone: <input name="localphone" size=8 maxlength=8> <p>
+
+<p>
+<hr>
+<h3> Background Information </h3>
+
+Age: <input name="age" size=2 maxlength=2> <p>
+Class:
+<input type="radio" name = "year" value="F"> Fresh
+<input type="radio" name = "year" value="P"> Soph
+<input type="radio" name = "year" value="J"> Junior
+<input type="radio" name = "year" value="S"> Senior
+<input type="radio" name = "year" value="5"> Senior+
+<input type="radio" name = "year" value="G"> Grad
+<p>
+Major:
+<input type="radio" name = "major" value="IS"> IS
+<input type="radio" name = "major" value="PM"> P&M
+<input type="radio" name = "major" value="PS"> Pol. Sci.
+<input type="radio" name = "major" value="SDS"> SDS
+<input type="radio" name = "major" value="O"> Other
+----major, if other: <input name="majorother" size=10 maxlength=10>
+<p>
+Hometown: <input name="hometown" size=30 maxlength=30> <p>
+How many siblings do you have? <input name="siblings" size=2 maxlength=2> <p>
+What other economics courses have you had?
+<ul>
+<input type="checkbox" name = "econ" value="100D"> 
+   73-100 Principles with Dalton
+<p>
+<input type="checkbox" name = "econ" value="100K"> 
+   73-100 Principles with Klepper
+<p>
+<input type="checkbox" name = "econ" value="100"> 
+   73-100 Principles with someone other than Dalton or Klepper
+<p>
+<input type="checkbox" name = "econ" value="110"> 
+   73/88-110 Social Decision Making
+<p>
+<input type="checkbox" name = "econ" value="micro"> 
+   73-i??? Intermediate Microeconomics
+<p>
+<input type="checkbox" name = "econ" value="macro"> 
+   73-i??? Intermediate Macroeconomics
+<p>
+<input type="checkbox" name = "econ" value="other"> 
+   Other Economics---name, if other: 
+   <input name="econother" size=20 maxlength=20>
+</ul>
+<p>
+
+<select name = "math">
+<option selected> yes
+<option> no
+</select>
+Are you able to use calculus for simple problems?
+<p>
+<hr>
+<h3> And now, the tough questions: </h3>
+
+<p>
+Your favorite musical group is:
+<input name="favmusicalgroup" size=40 maxlength=40>
+<p>
+Your favorite musical solo artist is:
+<input name="favsoloartist" size=40 maxlength=40>
+<p>
+Your favorite scientist is:
+<input name="favscientist" size=40 maxlength=40>
+<p>
+Your favorite world leader (living) is:
+<input name="favworldleader" size=40 maxlength=40>
+<p>
+Your favorite world leader (past) is:
+<input name="favdeadworldleader" size=40 maxlength=40>
+<p>
+Your favorite breed of dog is:
+<input name="favdog" size=40 maxlength=40>
+<p>
+Your favorite dog name is:
+<input name="favdogname" size=40 maxlength=40>
+<p>
+Your favorite cat name is:
+<input name="favcatname" size=40 maxlength=40>
+<p>
+Your favorite vacation spot (that you have been to) is:
+<input name="favvacation" size=40 maxlength=40>
+<p>
+The place you would most like to visit is:
+<input name="favfantasyvacation" size=40 maxlength=40>
+<p>
+Your favorite sport is:
+<input name="favsport" size=40 maxlength=40>
+<p>
+Your favorite CMU class (so far!) is:
+<input name="favcmuclass" size=40 maxlength=40>
+<p>
+Your favorite color:
+<input name="favcolor" size=40 maxlength=40>
+<p>
+Your hobbies:
+<input name="favhobbies" size=40 maxlength=40>
+<p>
+<hr> 
+<h3> Anything else I should know? </h3>
+<p>
+<textarea rows=10 cols=60 name="comments"></textarea><p>
+
+<p>
+<hr>
+<p>
+<em> Before submitting this form, make sure you understand the
+<a href="general.html"> general polices </a>, and in particular the
+policy about <a href="general.html#deadlines"> deadlines </a>.
+<input type=submit value=" Submit Form "> 
+<input type=reset value=" Reset and Start Over ">
+
+<hr>

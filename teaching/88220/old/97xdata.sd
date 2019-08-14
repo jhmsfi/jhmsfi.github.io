@@ -1,0 +1,93 @@
+Friends,
+
+Here is the data for Experiment 1: Supply and Demand (27 August, 1997).
+
+IMPORTANT NOTES:
+
+1) We only ran one round of each session (normally,
+we would have run two rounds of each session).  Some of
+the questions in the lab report and homework ask about
+the last round.  For any of these questions, just use 
+the data for the first round (which is, of course, both
+the first and last round in the session).  A few questions
+ask you to compare what happened in the first round to what
+happened in the last round---just ignore these.  
+
+2) For some conditions, equilibrium prices may be a range of 
+values.  You should clearly indicate that this is the case, 
+but then only use the midpoint of these values when you go 
+about calculating profits, etc.
+
+3) The x-axis scale on Figure H1.1 and H1.2 (p 40, p 44) is 
+too small, please rescale it by doubling each number (that is, 
+it should be 10, 20, 30, 40, instead of 5, 10, 15, 20).
+
+4) Answer question 1, p 48, by using the demanders and suppliers 
+that we had in Session 1 of the experiment.  
+
+Data for Table L1.1:
+
+Session 1, Round 1
+                Buyer   Seller
+Trade	Price	Value	Cost
+1	15	20	10
+2	20	40	10	
+3	19	20	10
+4	15	20	10
+5	35	40	10
+6	19	20	10
+7	20	40	10
+8	25	40	10
+9	25	40	10
+10	20	40	10
+11	20	40	10
+12	15	20	10
+13	15	20	10
+14	20	20	10
+
+Data for Table L1.2:  (same as L1.1, but you don't have to fill it in twice)
+
+
+Data for Table L1.4:
+
+Type              Number        Value    Cost
+low-cost sup       14            --       10
+high-cost sup       7            --       30
+high-val demand     8            40       --
+low-val dem        16            20       --
+
+
+Data for Table L1.5:
+
+Session 2, Round 1
+                Buyer   Seller
+Trade	Price	Value	Cost
+1	35	40	30
+2	20	40	10
+3	35	40	30
+4	20	40	10
+5	30	40	10
+6	35	40	30
+7	25	40	10
+8	30	40	10
+9	35	40	30
+10	32	40	30
+11	30	40	10
+12	20	40	10
+13	32	40	30
+14	33	40	30
+15	35	40	30
+16	20	20	10
+
+Data for Table L1.6:  (same as L1.5, but you don't have to fill it in twice)
+
+
+Data for Table L1.8:
+
+Type              Number        Value    Cost
+low-cost sup        8            --       10
+high-cost sup      15            --       30
+high-val demand    15            40       --
+low-val dem         7            20       --
+
+End of file..................

@@ -1,0 +1,206 @@
+Fall, 1996
+
+1.  CMU issues a number of parking tickets each year to drivers who
+illegally use campus parking.  Unfortunately, some drivers ignore the
+tickets and accumulate massive amounts of fines (you know who you
+are).  Of course, tracking down such scofflaws is very expensive, and
+thus CMU can only afford to prosecute (typically by immobilizing the
+owner's automobile through the use of the ``Denver Boot'') a small
+percentage of these violators.
+
+Currently, CMU randomly prosecutes such violators.  As an alternative,
+suppose CMU announces a policy in which they will prosecute the
+violators in alphabetical order of the license numbers of the cars.
+
+[5] Is the ``ordered'' prosecution policy likely to result in better
+overall compliance, worse compliance, or about the same?
+
+[15] Why?
+
+2.  In Santa Fe, New Mexico, housing prices have risen about 20\% per
+year over the past decade.  A group concerned with affordable housing
+wants to make sure that even modest income families will be able to
+afford a home of their own, and has decided to create a new housing
+development.
+
+The group is willing to sell houses to anyone, but will limit the price
+at which owners are allowed to sell their houses to a ``fair'' return
+of 5\% per year.  Thus, if an owner pays \$100,000 for a house and
+wishes to sell in five years, she would only be allowed to charge
+\$128,000, while if she were to sell it on the open market she could
+get \$248,000.  The group feels that such a policy will allow
+affordable housing on into the future.
+
+[5] Suppose an owner wants to leave Santa Fe after a few years.  Rather
+than selling the house at the controlled price, what kind of behavior
+(without selling the house) could the owner engage in to circumvent the
+selling restriction?
+
+[5] Does this behavior defeat the original goal of allowing these
+houses to be owned by modest income families in the future?
+
+[10] Suppose an owner decides to sell her house after a few years.
+Given the restricted price, what do you expect would happen when the
+house is offered for sale?  How will the final buyer be determined?
+
+[5] How effective is this price restriction policy at meeting the
+group's original goals of long-term affordable housing?
+
+3. A market consists of four buyers with values of \$10, \$25, \$5, and
+\$20, and five sellers with costs of \$22, \$12, \$7, \$12, and \$17.
+Suppose that the market is run and the \$25 buyer trades with a \$12
+seller at a price of \$18, and the \$10 buyer trades with the \$7
+seller at a price of \$9.
+
+[10] In the diagram below plot the supply and demand curves underlying
+the market described above.  (Make sure you label all axes and curves.)
+
+
+Make a prediction of the equilibrium price and quantity, and calculate
+the maximum possible surplus available in the market.
+
+[3] Eq. Price = \hrulefill, [3] Eq. Quantity = \hrulefill
+
+[4] Maximum Possible Surplus = \hrulefill
+
+
+[5] What is the efficiency of the market, given the two trades that
+occurred?
+
+
+Now, assume that the government decides to subsidize all sellers, by
+giving them an additional \$5 for every trade that they make.
+
+[5] In the diagram above, plot any changes in the supply and demand
+curves when the subsidy is in effect using dotted lines. (Make sure you
+label the new curve(s).)
+
+Assuming the subsidy, make a prediction of the equilibrium price and
+quantity, and calculate the maximum possible surplus available in the
+market.  (Hint: Be careful when you calculate the maximum surplus to
+take in to account that the subsidy payments must be made by taxing the
+market participants.)
+
+[3] Eq. Price = \hrulefill,
+
+[3] Eq. Quantity = \hrulefill
+
+[4] Maximum Possible Surplus (with the subsidy) = \hrulefill
+
+[5] Dead weight loss from the subsidy is = \hrulefill
+
+[5] Why do subsidies lead to a dead weight loss?
+
+4. Currently, CMU will put students who want to get into a full class
+on a waiting list on a first-come basis, and then allow them to enter
+the course in order as spaces become available.
+
+[5] Is the outcome of this policy Pareto Efficient?
+
+[5] Why or why not?
+
+[5] Suggest an alternative policy inspired by markets.
+
+[5] Is the outcome of your alternative policy Pareto Efficient?
+
+5. Suppose that the new student center has 15 empty offices that it
+wishes to fill.  Furthermore, assume that there are 5 business that are
+at most willing-to-pay \$100  each per month for these offices, and
+hundreds of student organizations that are willing-to-pay at most \$25
+each per month.
+
+Suppose the student center offers to rent these offices on a market,
+and is willing to accept any price for the 15 offices.
+
+[5] Draw and clearly label the {\it separate} demand curves for this
+situation for the businesses (on the left) and the student
+organizations (on the right).
+
+
+[10] On the diagram {\it below} draw the {\it aggregate demand curve}
+for the Student Center office market and the supply curve.  {\it Use
+this diagram to answer the remaining questions.}
+
+
+[2] Eq. Price = \hrulefill,
+
+[2] Eq. Quantity = \hrulefill,
+
+[3] How many businesses obtain offices at that price? \hrulefill
+
+[3] How many student organizations obtain offices at that price?
+\hrulefill
+
+Student organizations are frustrated with the above outcome and decide
+that a new policy should be invoked.  For every office a business buys,
+it must purchase an office for a student organization as well.
+
+[10] Draw and clearly label the new demand curve for the market under
+this policy.  (Hint: Now, to get a single office, the business must
+purchase two offices (and give one away).)
+
+[3] Eq. Price = \hrulefill,
+
+[3] Eq. Quantity = \hrulefill,
+
+[2] How many businesses obtain offices at that price? \hrulefill
+
+[2] How many student organizations obtain offices at that price
+(including those that get free offices)?\hrulefill
+
+
+6. For each of the following situations, make a prediction about what
+will happen to the equilibrium price and quantity in the market after
+the policy is invoked.  Assume ``normal looking'' supply and demand
+curves, and straight-forward effects.  (It will be very helpful if you
+sketch a supply and demand diagram for each situation.) {\it No partial
+credit will be given in this section.}
+
+[5] In the market for apples, a report is issued that ``an apple a day
+really does keep the doctor away,'' and growing conditions for apples
+are unusually favorable.
+
+Price will: increase, decrease, stay the same, can't tell?
+
+Quantity will: increase, decrease, stay the same, can't tell?
+
+[5] In the cigarette market, the government requires buyers to destroy
+one pack of cigarettes for every pack purchased.
+
+Price will: increase, decrease, stay the same, can't tell?
+
+Quantity will: increase, decrease, stay the same, can't tell?
+
+[5] In the market for web page specialists, schools begin to offer more
+training in this area and software makers begin to make it easier to
+create web pages from within existing word processing software.
+
+Price will: increase, decrease, stay the same, can't tell?
+
+Quantity will: increase, decrease, stay the same, can't tell?
+
+[5] In the market for hard copies of the New York Times, an electronic
+version of the paper is offered free on the web, and {\it Time}
+magazine lowers its cover price.
+
+Price will: increase, decrease, stay the same, can't tell?
+
+Quantity will: increase, decrease, stay the same, can't tell?
+
+[5] In the market for laptop computers, both the quality and costs of
+portable display screens increase.
+
+Price will: increase, decrease, stay the same, can't tell?
+
+Quantity will: increase, decrease, stay the same, can't tell?
+
+[5] In the market for CMU undergraduate degrees, a new report is issued
+indicating that the quality of CMU's undergraduate education programs
+is declining, and wages for non-college educated individuals increase.
+
+Price will: increase, decrease, stay the same, can't tell?
+
+Quantity will: increase, decrease, stay the same, can't tell?
+
+
+

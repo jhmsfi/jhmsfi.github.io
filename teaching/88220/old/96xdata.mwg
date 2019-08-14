@@ -1,0 +1,51 @@
+Friends,
+
+Here is the data for Experiment 5: A Minimum Wage.
+***Note***: We only did Sessions 1 and 2, so ignore all
+questions pertaining to Session 3.
+
+Data for Table L1.5:
+Distribution of Types of Employers and laborers
+Participant	Session 	Session
+Type		1		2
+Employers	10		10
+Type A ($12)	15		15
+Type B ($5) 	15		15
+
+Data for Table L5.2:
+Unemployed Laborers and Their Reservation Wages
+	 	Type A ($12)	Type B($5)
+Session 1	11		1
+Session 2	12		8	
+
+Data for Table L5.3:
+No Minimum Wage:  Session 1--Last Round
+Firm	Laborer 1	Laborer 2
+ID	Wage	Type	Wage 	Type
+1	13	12	10	5
+2	12	5
+3	11	5	10	5
+4	10	5	12	12
+5	10	5
+6	10	5	9	5
+7	15	12	12	5
+8	10	5	13	12
+9	12	5	11	5
+10	7	5	8	5
+
+Data for Table L5.4:
+Binding Minimum Wage:  Session 2--Last Round
+Firm	Laborer 1	Laborer 2
+ID	Wage	Type	Wage 	Type
+1	18	12
+2	15	5
+3	15	5
+4	15	12
+5	17	5
+6	15	5
+7	15	5
+8	15	12
+9	15	5
+10	15	5
+
+End of file..................

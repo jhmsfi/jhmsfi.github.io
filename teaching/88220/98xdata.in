@@ -1,0 +1,81 @@
+Experiment 11: Adverse Selection
+
+The experiment was conducted on 4 November, 1998, at 
+Carnegie Mellon University.
+
+First, thanks to everyone who participated.  I know the lack
+of power and sitting in the hallway was a drag, but I really do
+appreciate all 58 of you who persevered.
+
+Important Notes:
+
+Use the data from the last round of each session for the Lab Report.
+
+Please add the following question to the bottom of page 323:
+
+In Session 3, the total amount of net profit earned by used-car owners 
+who sold their cars on the market was _____, the total amount earned 
+by dealers was ____, and the total amount earned by both was _______.  
+In Session 4, the total amount of net profit earned by used-car owners 
+who sold their cars on the market was _____, the total amount earned 
+by dealers was ____, and the total amount earned by both was _______.
+
+
+Please add the following table to the bottom of page 319, as the 
+information is needed for some of the questions.
+
+Table L11.0: Distribution of Car Type and Dealers by Session:
+                      	Session 2	Session 3	Session 4
+Number Good Car Owners:	9		6		6
+Number Lemon Owners:	9		12		12
+Number of Dealers:	6		6		6
+
+
+In Session 2 there were 9 good used-cars and 9 lemons
+purchased by dealers.
+
+Data for Table L11.1
+Prices Paid by Dealers--Session 2:
+Dealer	Prices		
+ID	Paid
+1       1700	1700	1750	1750	1750	1750	1750 	1750	1750	1750
+2  	400
+3       1700
+4	1700	1800	1700
+5 	1700	1750
+6	1700
+
+
+In Session 3 there were 2 good used-cars and
+12 lemons purchased by dealers.
+
+Data for Table L11.3
+Prices Paid by Dealers--Session 3:
+Dealer	Prices		
+ID	Paid
+1       500 	500	500		
+2	1675
+3	500	500
+4	495	500
+5	2000	500
+6	450	450	480	490
+
+Session 4 
+
+Data for Table L11.5
+Prices Paid by Dealers--Session 4:
+(asterisk by price indicates good car showed, double
+asterisk by price indicates bad car showed, no asterick
+by price indicates no card shown)
+Dealer	Prices		
+ID	Paid
+1       2500*   2500*   450** 
+2       3000* 	500**	500**
+3       2500*	2500*	475**	475**
+4       500**	500**	500**	500**
+5       3000*	490
+6	450** 	480	
+ 
+
+
+End of file..................

@@ -1,0 +1,742 @@
+http://www.isoc.org/isoc/whatis/conferences/inet/96/proceedings/g1/g1_2.htm
+
+The Internet: Access Avenue for Videoconferencing
+
+Ramiro Calvo <_ramiro@apple.com_>
+Apple Computer, Inc.
+1 Infinite Loop, MS 301-4H
+Cupertino, California 95014, USA
+
+Venilde Jeronimo <_jeronimv@cgs.edu_>
+Center for Politics and Economics
+Claremont Graduate School
+170 East Tenth Street
+Claremont, California 91711, USA
+
+Abstract
+
+The affordability of multimedia personal computers, the expanding use of  
+local- and wide-area networks, and the emergence of digital audio and video  
+technologies that make possible transmission of voice and images over  
+existing computer networks are key developments that now allow  
+videoconferencing (VC) systems to become mainstream. Of key importance for  
+the widespread use of VC is the increasing acceptance of the Internet as a  
+new paradigm for communications. This leads us to suggest that the growing  
+global connectivity available through the Internet provides the necessary  
+access avenue for voice and video communications to become mainstream.  
+Furthermore, we suggest that VC will be a sought-after access tool and will  
+make possible a new generation of Internet features for a wide range of uses  
+and users in the commercial and noncommercial sectors. The recent  
+proliferation of Internet voice and video providers and Internet congestion  
+are also addressed in this paper, as well as the question of whether  
+universal service should be redefined to include access to the Internet.
+
+1. Introduction
+
+A century and a half has passed since 1851, when Nathaniel Hawthorne  
+envisioned the information age as upon us [1]:
+
+It's a fact ... that, by means of electricity, the world of matter has  
+become a great nerve, vibrating thousands of miles in a breathless point of  
+time? Rather, the round globe is a vast head, a brain, instinct with  
+intelligence or, shall we say, it itself a thought, nothing but thought, and  
+no longer the substance which we deemed it!
+
+By the early 1960s, Marshall McLuhan used the term "global village" to  
+denote worldwide communication through electronic systems, which he  
+prophesied would lead to a coalescence of human awareness into a single  
+global community [2]. Today, an information society is said to be upon us in  
+which the saturation and importance to daily living of telephones, media  
+systems, and computer networks are characteristic of our increasingly  
+technological lifestyles [3].
+
+The growing need to support technical and social activity that occurs across  
+geographic distances in this information age, however, has not been fully  
+satisfied by the current technologies of phones, faxes, electronic mail, and  
+videoconference rooms [4]. Videoconferencing (VC) systems have been promoted  
+as a technology to support remote collaboration since AT&T introduced the  
+Picturephone in 1964 (Table 1), yet this vision has not been fully realized.  
+A study conducted by Johansen, Hansell, and Green, addressing the question  
+why teleconferencing was not implemented in business environments on the  
+scale envisioned in the early 1970s, suggests that the optimistic demand for  
+forecasts was based on the assumption that readiness factors (e.g., economic  
+and social trends, technological developments) would rapidly evolve into  
+enabling forces (e.g., user-oriented systems, support services, effective  
+user networks) [5]. The Johansen et al. study focused on the use of  
+videoconference rooms in business, but recent technical and infrastructural  
+developments prompt the adoption and use of VC systems on a much larger scale  
+than previously imagined.
+
+Table 1. History of videoconferencing (VC) technology
+
+* 1964: AT&T shows Picturephone, World's Fair, New York
+* 1970: AT&T offers Picturephone for $160 per month
+* 1982: Compression Labs begins selling $250,000 VC system, $1,000 per hour lines
+* 1986: PictureTel's $80,000 VC system, $100 per hour lines
+* 1987: Mitsubishi sells $1,500 still-picture phone
+* 1989: Mitsubishi drops still-picture phone
+* 1991: PictureTel unveils $20,000 black-and-white VC system, $30 per hour lines
+* 1991: IBM and PictureTel demonstrate videophone on PC
+* 1992: AT&T's $1,500 videophone for home market
+* 1994: Cornell develops CU-SeeMe software for Internet
+* 1995: Apple's QuickTime for under $200
+
+Source: Modified from Wall Street Journal (27 February 1996).
+
+First, technological advances have made the cost of VC plummet. In the  
+1970s, color cameras the size of a two-drawer file cabinet required studio  
+lighting and sophisticated daily setup and maintenance at a cost of $50,000  
+to $100,000. In the 1980s, conference environments used shoebox-sized cameras  
+at a cost of $5,000 to $10,000. Today, for $200, an end user can acquire a  
+desktop VC kit that includes a digital camera and software to be used at home  
+or work.
+
+Second, several developments have allowed VC applications to become  
+mainstream: the affordability of multimedia personal computers, the expanding  
+use of local-area networks (LANs) and wide-area networks (WANs), and the  
+emergence of digital audio and video technologies that allow voice and images  
+to be transmitted over existing computer networks. Of key importance for the  
+expanding use of VC applications is the Internet--the network of  
+networks--which is increasingly accepted as a new paradigm for communications  
+[6]. We suggest that the growing global connectivity available through the  
+Internet provides the necessary gateway for the widespread use of audio and  
+video communications. By the end of 1995, there were an estimated 4,852,000  
+Internet hosts worldwide, with Internet access points growing at an estimated  
+50 percent per month and subscriber growth close to 30 percent per month.
+
+The popularity of the Internet as a medium of communication has recently led  
+the America's Carriers Telecommunications Association (ACTA), a trade  
+association of independent long distance carriers, to file a petition with  
+the Federal Communications Commission (FCC) to stop companies from selling  
+software and hardware products that enable use of the Internet to supply  
+voice long-distance and international services unless these companies are  
+regulated as long-distance carriers. This policy development and its  
+implications for Internet video communications, and the question of whether  
+universal service should be redefined to include access to the Internet are  
+briefly discussed in the last section of this paper. The following section  
+defines VC as it is discussed here, as well as the key technological  
+developments responsible for the recent VC revolution. There is a brief  
+section on Internet voice and video communication providers versus telecom  
+carriers and one on concerns about Internet congestion.
+
+2. Videoconferencing technology
+
+2.1. The infrastructure evolution
+
+Videoconferencing has an array of definitions; here we use a simple one: VC  
+is interactive and collaborative audio and video communication between two or  
+more people in different locations. In some cases, collaboration may extend  
+to sharing of documents and applications. This "revolution" is a result of  
+the evolution of a variety of technologies that have been put in place for  
+reasons other than VC. The development of multimedia personal computers and  
+LANs and WANs has played an important role in the development of the VC  
+market. We must first look into these technologies in order to better  
+understand the potential of VC today.
+
+The "dashboard" of the information universe, the personal computer, is  
+playing a key role in the VC revolution. In recent years, multimedia PCs have  
+become commonplace at work and in the home. Multimedia PCs are characterized  
+by their ability to capture and play back audio and video data, their use of  
+100 MHz+ processors, and their built-in networking capabilities.
+
+Apart from the new functions added to personal computers, the most dramatic  
+change is the increase in processor power. In the early 1980s, PCs used a 6  
+MHz processor; today's computers are powered by 200 MHz processors with wide  
+32-bit buses, advanced floating-point units, and extensive use of pipelining.  
+This increase in computational power has made possible software-only audio  
+and video compressors. In effect, as the processing speed increases, so does  
+the compression ratio, which in turn reduces network bandwidth requirements.
+
+At the same time, built-in network interfaces have become commonplace. Many  
+PCs come with 10-megabit Ethernet coupled with high-performance direct memory  
+access (DMA) processors able to handle steady streams of digitized data.  
+Computer peripherals such as monitors have also evolved. Not long ago,  
+12-inch text-only black-and-white (or green) monitors were state of the art.  
+We now see 17- and 21-inch color graphics monitors capable of updating 1024 x  
+768 pixels at 75 times per second, offering much higher picture quality than  
+a television set.
+
+Another key requirement of VC is the availability of interconnected personal  
+computers. When people first started using PCs, the required connectivity  
+was a simple serial interface between the computer and its printer. Then  
+small groups of computer users emerged, creating the need to exchange files  
+among themselves through small LANs. When universities and mid-size to large  
+companies required small workgroups to interact with each other, clusters of  
+Ethernet LANs were tied together into larger campus networks with Fiber  
+Distributed Data Interface (FDDI) backbone networks. Today's campus networks  
+connect to each other, creating a network of networks, through dedicated or  
+shared T1 and T3 leased lines.
+
+With the success of the Internet, Internet service providers (ISPs) are now  
+bringing this network of networks to the home. The result is that we now have  
+a critical mass of computers worldwide connected to one another, just like  
+the telephone system.
+
+Not only is the entire world becoming interconnected, but the networks are  
+getting faster. For example, not too long ago, connectivity between PCs  
+consisted of point-to-point 300-baud modem connections. We now have worldwide  
+connections via the Internet at 28,800 baud (V.34), 128,000 bps (ISDN),  
+1,544,000 bps (T1), and 45,000,000 bps (T3). With cable modems and  
+asynchronous transfer mode (ATM) networks, megabit networks to the home could  
+soon become yet another low-cost alternative for Internet users. At work,  
+LANs have gone from 230 kbps with LocalTalk, to 10 Mbps with Ethernet, to 100  
+Mbps with Fast Ethernet, FDDI, and ATM. This increase in capacity has  
+resulted from improvements in various technical areas: modulation techniques  
+used in modems, encoding schemes for sending high-speed data across copper  
+cable, the development of single-mode fiber optic cable used in  
+cross-continental connections, and low-cost chip technology able to operate  
+at gigahertz speeds.
+
+With the availability of powerful personal computers and easily accessible  
+digital networks, the basic infrastructure for inexpensive VC is now in  
+place. The point of intersection between the required network bandwidth for  
+the transmission of digitized audio and video data and the availability of  
+low-cost network bandwidth represents a major paradigm shift. The paradigm  
+shift for audioconferencing over the Internet occurred within the past year,  
+and we believe a similar shift is now occurring for videoconferencing.
+
+Unfortunately, the dramatic increases in available bandwidth and  
+improvements in data compression will not be enough to prevent congestion on  
+the Internet due to the explosion in the number of Internet users. We predict  
+that aggregate bandwidth needs will most likely overtake technological  
+progress. As a result, we believe ISPs will compete for customers by offering  
+"uncongested" Internet access, creating a huge demand for gigabit networks.  
+This can only be good news for telecom carriers that lease digital networks.
+
+2.2. Inside videoconferencing software
+
+VC solutions build on three fundamental building blocks: audio and video  
+digitizers, fast microprocessors, and a built-in network interface. As  
+mentioned before, all three building blocks are now considered basic  
+functions offered in hundreds of thousands of multimedia PCs. With these  
+building blocks, companies have been able to develop solutions that support  
+point-to-point, multiparty, and broadcast conferencing systems. Since network  
+protocol stacks and compressors/decompressors (CODECs) are implemented in  
+software, VC systems can be easily upgraded over the Internet with  
+algorithmic improvements. It is therefore critical to first build software  
+infrastructures capable of handling a wide variety of network protocols and  
+compression algorithms.
+
+VC software is a union of two of the most challenging computer science  
+topics: real-time processing and distributed processing. Unfortunately, the  
+Internet and the PC were designed for store-and-forward transactions.  
+Developers have therefore relied on raw computational power and simple  
+buffering mechanisms to work around the lack of real-time network and  
+operating system (OS) services.
+
+Simple buffering mechanisms are used to smooth out the variable OS and  
+network response time. To reduce increasing end-to-end delays caused by  
+buffering mechanisms, many conferencing systems use protocols that move data  
+in a best-effort manner with simple error detection algorithms that avoid  
+end-to-end error recovery mechanisms.
+
+Finally, algorithms for monitoring central processing units (CPUs) and  
+network loads are used to dynamically determine the rate at which video data  
+are transmitted. It is critical to avoid overloading CPUs and networks to  
+ensure that existing e-mail and file transfer services are not affected. In  
+addition, overloaded systems typically waste network bandwidth by  
+transmitting data that may never reach or be used by the receiving side.
+
+As the VC market heats up, development for real-time network and OS  
+solutions will increase. With real-time services incorporated into  
+next-generation networks and OSs, applications will be able to count on  
+processor time for network protocols and software CODECs, which would reduce  
+buffering requirements and end-to-end delays. With next-generation routers,  
+efficient use of IP multicast will improve network bandwidth use by avoiding  
+needless duplication of data in multipoint connections. Compression  
+algorithms will continue to improve as the availability of CPU cycles  
+increases. In summary, most solutions being developed are scalable, so they  
+can take advantage of increased processing power, new protocols, and new  
+network infrastructures.
+
+2.3. Standards
+
+A key factor in the success of the telephone and the fax machine has been  
+the ability to communicate without regard to the type of equipment used at  
+either end. The goal of the VC industry must be to have a "video dial tone"  
+if it is to become truly ubiquitous. The most popular VC standard to date is  
+H.320. which ensures interoperability between large boardrooms, roll-abouts,  
+and PC-based VC systems. However, H.320 requires dedicated circuit-switched  
+network services, such as ISDN or T1 lines. With the emergence of the  
+Internet, which uses both circuit- and packet-switched networks, we will see  
+the development of new standards more appropriate for this mixed environment.
+
+Today's Internet VC products are based primarily on proprietary protocols,  
+so they are noninteroperable. The industry is working toward a new set of  
+standards that ensure interoperability in multimedia data formats, as well as  
+for document sharing. The standards come from the Internet Engineering Task  
+Force (IETF) as well as the International Telecommunications Union (ITU), as  
+shown in Table 2.
+
+Table 2. Related Internet videoconferencing standards
+
+
+                       Industry
+Function               Standard         Notes
+--------------------------------------------------------------------------------------------
+Audio input            Line-in signal   * 8, 11, 22, 44 kHz sample rate
+                       level              8 or 16 bits per sample with mono  
+or stereo inputs
+
+Video input            NTSC             * National Television System  
+Committee (used in
+                                          Americas and Asia)
+                       PAL              * Phase Alternation Line (used in  
+Europe, except in
+                                          France, where SECAM is used)
+
+Audio compression      G.711            * 64 kbps, 2:1 compression with a  
+128 kbps source
+                       G.722            * 64 kpbs, 4:1 compression with a  
+256 kbps source
+                       G.728            * 16 kbps, 8:1 compression with a  
+128 kbps source
+                       G.723            * 6.4 kbps, 20:1 compression with a  
+128 kbps source
+                                        * 5.3 kbps, 24:1 compression with a  
+128 kbps source
+                       GSM              * 13.3 kbps, 10:1 compression with a  
+128 kbps source
+
+Video compression      H.261            * Tailored for 50 kbps to 1.2 Mbps  
+data channels
+                                          QSIF = 176 pixels x 144 pixels x  
+24 bits/pixel
+                                          SIF = 352 pixels x 288 pixels x 24  
+bits/pixel
+                       H.263            * Tailored for 15 kbps to 128 kbps  
+data channels
+                                          QSIF = 176 pixels x 144 pixels x  
+24 bits/pixel
+
+Shared network         RTP              * IETF standard
+protocols              H.323            * ITU standard
+
+Collaboration          T.120            * Support for multipoint connections  
+with shared
+                                          whiteboard and file transfer capabilities
+
+Application/document   None             * To date, only proprietary  
+solutions offer
+sharing                                   this function
+--------------------------------------------------------------------------------------------
+
+Source: Authors' compilation.
+
+2.4. What's next?
+
+Despite the enormous progress thus far, much work remains. First, we  
+challenge the Internet Society to provide a "universal" directory service for  
+e-mail as well as IP addresses for VC for those who want to be published.  
+Exchanging e-mail as well as VC IP addresses at social gatherings is becoming  
+the pickup line of the '90s. This information is typically exchanged  
+verbally, but what is really needed are electronic directory services. Some  
+already exist, but they are not broad enough to be truly useful.
+
+Second, we hope ISPs will provide static IP addresses to all subscribers.  
+Currently, dynamic IP addresses make it difficult to create directory  
+services (or phone books) for VC users. Can you imagine how useful (or  
+useless) e-mail would be if your address changed every time you connected to  
+the Internet? This is the case with dynamic IP addresses and VC. As the  
+market matures, software that uses similar network protocols and consistent  
+human interface designs will win customers over. For example, the human  
+interface of the telephone has universally recognizable dial tones, ringing  
+signals, and busy signals. We hope that Internet VC will be just as easy to  
+use and just as universally compatible. Our prediction is that continuous  
+Internet connections will soon become affordable. This will allow users to  
+receive unscheduled VC calls much as they receive telephone calls today.  
+Currently, home users must first connect to the Internet before being able to  
+receive phone calls through the Internet. Until this changes, Internet  
+conferencing will remain a hobby, instead of the true communications tool it  
+promises to be.
+
+Third, the biggest challenge is one of network bandwidth. The number of  
+Internet users is increasing, the bandwidth requirements put on the network  
+by each user are increasing, and the length of time users stay on the network  
+is also increasing--all of which adds up to one very big global traffic jam.  
+Fortunately, digital fiber optic networks have tremendous capacity. For  
+example, a single cable containing 24 fiber optic strands can support  
+approximately 5 million simultaneous videoconferences: n = sb/u, where n is  
+the number of users (5 million), s is the number of strands per cable (24), b  
+is the bandwidth per strand (6 Gbps), and u is the bandwidth per user (28.8  
+kbps).
+
+Internet traffic, with VC as part of it, is finally generating the digital  
+traffic volume for which most phone companies have been waiting. Bandwidth  
+availability may become the main differentiator among private online services  
+and ISPs. Today, these services are evaluated by "on-ramp access speeds"  
+(e.g., 14.4, 28.8, or 128 kbps). In the future, we expect that they will also  
+be evaluated by the backbone network bandwidth available.
+
+3. Internet voice and video communications
+
+Over the past decade, many people have experimented with the idea of  
+bringing the telephone, with its real-time communications technology, to the  
+Internet via the desktop computer. Several programs were released in the  
+beginning of 1995 to support this concept; Apple Computer's QuickTime is an  
+example. These programs do not represent a "half-and-half integration" with  
+conventional telephony, but rather an entirely parallel and independent  
+system [7]. Basically, they allow the Internet to be used to make  
+computer-to-computer long-distance and international audio and video calls.  
+These systems are being targeted for home use (e.g., for personal  
+communications and online shopping) and are expected to become as standard as  
+telephones and faxes are today [8]. Outside of home use, many companies are  
+installing desktop VC systems in branch offices to allow executives and  
+employees to connect to headquarters, other employees, or clients and  
+customers. Phone and videophone connections can now be built into Web pages,  
+which can be useful to the corporate world. For instance, users can have  
+simultaneous face-to-face meetings and, if necessary, jointly view and edit a  
+document on the Web. Educational facilities (e.g., for distance learning),  
+nonprofit organizations, and government entities are also potential users of  
+audio and video systems.
+
+The advent of providers of Internet voice and video systems raises several  
+questions, two of which we briefly discuss here. With the increasing  
+popularity of the Internet as a communications medium, (1) is use of the  
+Internet for voice and video communications a competitive threat to phone  
+companies, and (2) how can ISPs deal with Internet congestion?
+
+3.1. Internet phone and video providers versus phone companies: A simple  
+cost calculation
+
+Internet calling, which began as an amusing pastime a year ago, is now  
+starting to be used by an array of users as a less expensive medium to  
+transmit voice and video and bypass high long-distance and international  
+charges. As the supply (production) of Internet audio and video  
+communications systems increases, the cost of production per unit falls  
+(assuming some learning curve exists). A cost difference appears to exist  
+between telephone companies and Internet phone providers; it is likely to  
+decrease further over time. The cost to a user of Internet telephony is  
+basically the cost for the Internet connection. Unlike phone companies, which  
+charge according to time and distance (the longer you talk and the farther  
+you call, the more you pay), Internet connections (even though they travel  
+the same wires) are sold at flat monthly rates, and the connection to an ISP  
+is usually a local call. For instance, ISPs may charge users approximately  
+$10 for five hours of access and then approximately $3 for each additional  
+hour. Five hours is 300 minutes, divided by $10 is 3.3 cents per minute. The  
+average residential long-distance call costs about 22 cents per minute--seven  
+times as much. Even with additional hours at $3 each, the ISP costs only 5  
+cents per minute, still much less than the 22 cents charged by telephone  
+companies.
+
+Several problems can be identified with Internet calling. First, lack of  
+interoperability imposes a cost. The cost implied by interoperability  
+disappears within just a few years, however, due to faster growth of the  
+industry with interoperable components. Although costs begin at a higher  
+point, production moves quickly down the learning curve, resulting in  
+accelerated growth and lower prices compared to proprietary systems [9].  
+Interoperability is a result of the economic incentives for cooperation that  
+exist among suppliers who are induced by the positive network externalities  
+associated with being on the Internet. Suppliers of Internet voice and video  
+services are multiplying, with many collaborating on interoperable protocols,  
+and third-party developers are also creating the necessary protocols to  
+connect different systems.
+
+Second, a user must have a sound card and a modem, although these are now  
+standard on most personal computers, which are increasingly affordable.
+
+A third drawback to Internet calling is poor quality and convenience (all  
+calling parties must be logged on); however, no one disputes that technology  
+is improving in this area.
+
+Nevertheless, current demand seems to be optimistic. An estimated 1.5  
+million Internet phone products have been shipped [10]; 20,000 individuals  
+now use Internet phone software regularly [11]; and 2,000 downloads are being  
+reported by WebPhone alone [12]. By the end of the year, it will not be a  
+surprise to have Internet telephony as a standard feature in Web browser  
+programs and videophone connections built into many Web pages. Call-back  
+systems are another area in which the Internet can be used to bypass and  
+compete with phone networks.
+
+3.2. Internet traffic jams
+
+As mentioned earlier, the biggest challenge is network bandwidth. While  
+digital networks have tremendous capacity, there is concern about Internet  
+congestion, especially with the increased demand for voice and video  
+communications [13]. With Internet traffic jams, users have begun to  
+experience delays, and some of these users may pay more to circumvent jams.  
+This has led the economic community to characterize the pricing structure of  
+the Internet as suboptimal. Three options to price the Internet for  
+congestion control and interconnection are being discussed: (1) flat-rate  
+pricing, (2) use-sensitive pricing, and (3) transaction-based pricing [14].  
+The first option refers to the fee users pay today to connect, regardless of  
+the amount of information sent; the second and third options are new.
+
+With use-sensitive pricing, users pay a portion of their Internet bill for a  
+connection and a portion for each bit sent or received. Options could  
+include use-sensitive pricing during peak hours and flat-rate pricing off  
+peak. As for the transaction-based pricing option, it is determined by the  
+characteristics of the transaction and not by the number of bits. Some  
+economists argue that, unlike the telephone system, it is difficult for the  
+Internet to support transaction-based pricing because of its distributed  
+computing environment; on the other hand, interconnection points with  
+flat-fee settlements may provide improper incentives for use and may lead to  
+inequitable cost recovery by the interconnected firms [15]. Use-sensitive  
+pricing has recently been introduced by Internet access providers such as  
+BBN, MCI, and Uunet [16]. There does not seem to be a consensus on which  
+pricing option is best for congestion and interconnection problems. There  
+does appear to be a consensus, however, that not all traffic on the Internet  
+needs to be treated the same, and therefore service qualities can affect  
+resource allocation and pricing [17]. This view supports pricing based on  
+service quality as possibly the only way to limit the demand on the  
+guaranteed service quality.
+
+The National Science Foundation (NSF) appears to favor some sort of  
+prioritization of traffic over the Internet [18]. Recently, NSF introduced a  
+new angle to its connections program associated with its concern over  
+congestion. NSF will provide grants to college and university campus network  
+service providers for applications that require high-performance networking.  
+The hope is that the grants will stimulate the development of a technological  
+option for the Internet to provide a new way of connection to give a  
+guaranteed level of service at a national level. NSF's connections program is  
+expected to spur the development of switches and routers to alleviate  
+information bottlenecks. One solution might include prioritization of traffic  
+on the Internet. This is analogous to postal services. To send a package, an  
+individual has several options: overnight mail, first-class mail, or  
+third-class mail. The cost of the package delivery depends on its  
+designation. Another solution might involve diverting specially coded traffic  
+to high-performance special-use networks, such as NSF's vBNS (very high  
+speed Backbone Network Service).
+
+4. Public policy issues
+
+For several decades, telecommunications worldwide were regulated through a  
+public utility paradigm, under the economic auspices of a natural monopoly  
+and a public interest rationale (universal service) [19]. Today, for  
+technical and economic reasons, telecommunications policy is undergoing  
+transition and reevaluation in most countries. The telecommunications sector  
+is being exposed to deregulation, liberalization, and privatization. Many  
+countries are experimenting with flexible decentralization, which suggests  
+that new competitors (many based on computer, mobile, or broadcast  
+technologies) should be allowed to compete to provide a broad range of  
+services, from telecommunications infrastructure to information services.
+
+One medium that is only now receiving attention in policy circles is the use  
+of the Internet for audio and video communications. While the global trend  
+is toward deregulation, a host of issues are now surfacing in regard to  
+whether the Internet needs government oversight:
+
+* Use of the Internet by nontelephone companies to carry voice and video  
+services--should these companies be regulated as long-distance carriers?
+* Phone companies using the Internet for long-distance/international voice traffic
+* Desktop application sharing versus copyright and licensing restriction of  
+software
+* Broadcasting over the Internet
+* First amendment rights versus chat rooms and "Webcasting" content
+* Right to privacy versus Internet "wiretapping"
+* Universal access
+
+All these issues merit attention. Here, we deal with the first and last  
+issues because they are recent issues of public debate.
+
+4.1. Regulating Internet voice and video communications
+
+Currently, long-distance companies are regulated by the FCC and state  
+regulatory commissions. They are required to pay access fees, file tariffs in  
+order to provide long-distance telephone services, and contribute to the  
+Universal Service Fund to extend phone service to the general population. On  
+4 March 1996, ACTA (a trade association founded in 1985 by independent  
+long-distance companies to serve the needs of small businesses) filed a  
+petition [20] aimed at companies and software developers that provide voice  
+services via the Internet but are not regulated by the FCC [21]. ACTA claims  
+that these companies should be regulated in the same manner as all  
+long-distance providers and should not be allowed to "bypass" long-distance  
+charges. Furthermore, ACTA claims that, unlike phone companies, providers of  
+voice services over the Internet do not contribute to the Universal Service  
+Fund and thus do not extend their service to the general population. ACTA  
+argues that Internet voice services are "unfair competition," and it has  
+asked the FCC to define what sorts of communications are permissible over the  
+Internet. The ACTA petition directly targets two-way voice communications,  
+but this development has direct implications for VC, which is also a two-way  
+communication system. Suppliers of such systems may be susceptible to  
+regulations applicable to telecom carriers. Microsoft and Netscape recently  
+announced audio and video strategies for the Internet. Does this mean they  
+are now telecom carriers? Regulating voice and video providers that make use  
+of the Internet as a communications medium would appear to limit these  
+providers' ability to develop alternative distribution channels.
+
+The ACTA development comes shortly after the passage of the 1996  
+Telecommunications Act, signed by President Clinton on 8 February, which  
+narrowly limits the FCC's authority to regulate the Internet [22]. However, a  
+priority of FCC Chairman Reed Hundt is reform of the universal service  
+regulations under the act [23]. Also, the act extends universal service  
+obligations to all long-distance companies, not just the larger ones. The FCC  
+is seeking comments on its public notice and is expected to make a judgment  
+on whether to proceed with the ACTA petition by June. Complaints from phone  
+companies about companies' use of the Internet for voice and video services  
+are a new development in the United States, but the issue has already drawn  
+the attention of governments in other countries, including Ireland,  
+Switzerland, and South Africa [24].
+
+4.2. Universal access
+
+In addition to the ACTA petition asking the FCC to regulate what can be  
+transmitted over the Internet, there is an ongoing public debate about  
+whether the FCC should redefine universal service to include access to the  
+Internet. This would involve the FCC in tracking areas of the country that do  
+or do not have local dial-up access to the Internet and defining which  
+services should be classified under universal access.
+
+A two-year study by the Rand Institute concluded that universal Internet  
+access for every American is "imperative" to the country's future and should  
+be made a national goal [25]. The study advocates access to e-mail accounts  
+and to appropriate computers and communications lines. However, various  
+constituencies--private, nonprofit, and public entities--are concerned about  
+what constitutes an agreed-upon definition of universal access. Does access  
+refer only to an e-mail account, or will it also refer to other Internet  
+features, such as the Web and audio and video communications? Access to a  
+computer is implied, but to what type of connection? And is this access to be  
+provided to each household (modeled after the telephone sector), or through  
+a community point (modeled after the post office)? If the latter, public  
+access points in libraries and other community centers would be established  
+where the general public could gain access to the Internet.
+
+Other concerns arise over who will pay for the information infrastructure  
+and its use: Which mechanisms will cover the cost of providing effective  
+access, and what are the public versus private roles in creating and  
+operating such a service? Also, what role do individual states and  
+communities have in implementing policy goals? The Rand study concludes that  
+the free market alone is unlikely to provide universal access; it recommends  
+government intervention to regulate the development of the information  
+superhighway. Aside from the Universal Service Fund, we suggest an IP and  
+domain name tax as one option to support the development of universal access  
+through community points; another option is a tax levied on the general  
+population.
+
+5. Conclusion
+
+We are witnessing the beginning of a significant phenomenon over the  
+Internet: audio and video communications. The recent proliferation of  
+suppliers of phone and video systems for use via the Internet does not  
+necessarily mean that demand for such products will emerge. The silent  
+underground movement of Internet phone users, however, gives us an indication  
+that the demand for VC systems will indeed proliferate. The acceptance of  
+the Internet as a new medium of communication has become the access avenue  
+for VC to proliferate and become mainstream. This surely will not be a fad.
+
+We mentioned options to price the Internet for congestion control and  
+interconnection, and the question of whether the Internet is a threat to  
+traditional telephone carriers. We briefly touched on recent policy issues,  
+including the ACTA petition and universal access. We believe these must be  
+taken seriously and are important to bring to the attention of the general  
+population, where debate should take place over policy direction.
+
+Acknowledgments
+
+We thank Ke-Chiang Chu, Eric Emerson, and Eric Gradeler, whose comments have  
+contributed to this paper. The views expressed in this paper are solely  
+those of the authors.
+
+Notes
+
+[1] Hawthorne, N., The House of the Seven Gables and the Snow Image and  
+Other Twice-Told Tales (Boston: Houghton, Mifflin, 1851).
+
+[2] McLuhan, M., Understanding Media: The Extensions of Man (New York: New  
+American Library, 1964). While McLuhan is often credited with coining the  
+term "global village," Jarice Hanson, in Understanding Video: Applications,  
+Impact, and Theory (London: Sage, 1987, p. 31), suggests the term actually  
+originated with Samuel Morse, the inventor of the telegraph.
+
+[3] Bell, D., The Coming of the Post-Industrial Society: A Venture in Social  
+Forecasting (Harmondsworth: Penguin, Peregrine Books, 1976); Martin, J., The  
+Wired Society (Englewood Cliffs, New Jersey: Prentice-Hall, 1978); Poster,  
+M. The Mode of Poststructuralism and Social Context (Cambridge: Polity,  
+1990); Webster, F., Theories of the Information Society (London: Routledge,  
+1995, p. 1).
+
+[4] Tang, J. C., and E. A. Isaacs, "Why Do Users Like Video? Studies of  
+Multimedia-Supported Collaboration," Computer Supported Cooperative Work  
+1:163, 1993.
+
+[5] Johansen, R., K. J. Hansell, and D. Green, "Growth in Teleconferencing:  
+Looking Beyond the Rhetoric of Readiness," Telecommunications Policy 5(4),  
+December 1981.
+
+[6] For a thorough history of the Internet, see Hart, Jeffrey A., Robert R.  
+Reed, and Francois Bar, "The Building of the Internet: Implications for the  
+Future of Broadband Networks," Telecommunications Policy, November 1992.
+
+[7] Hapgood, F., "I-Phone," Wired 3(10):140, October 1995.
+
+[8] Bulkeley, W., "Picture-Phone Marketers Target the Home PC," Wall Street  
+Journal, 27 February 1996, p. B1.
+
+[9] This observation was made by McKnight in reference to high-definition TV  
+systems, although it appears to be applicable to VC systems in our case.  
+Refer to McKnight, L., "Economics of Interoperability," Internet Economics  
+Workshop, MIT, Cambridge, Massachusetts, 9-10 March 1995,  
+_http://rpcp.mit.edu/workshops/cfp.html_.
+
+[10] Verity, John W., "Try Beating These Long-Distance Rates," Business  
+Week, 22 April 1996, p. 131.
+
+[11] Mills, M., "Freebie Heebie-Jeebies: New Long Distance Calling via the  
+Internet Scares Small Phone Firms," Washington Post, 8 March 1996, p. F1.
+
+[12] Consummate Winsock Apps List, _http://www.cwsapps.com_.
+
+[13] The Internet may be prone to abusive behavior by its users, leading to  
+a degradation in that resource, as in Hardin's "tragedy of the commons"  
+(Science, 1968). Economic theory suggests that the Internet can also be  
+included as a common good, since it is a shared resource common to all  
+Internet users. This has led to the conclusion that the growth of the  
+Internet generates positive network externalities gained through the  
+Internet's reliance on interoperable protocols. Refer to Bailey and McKnight,  
+who consider the Internet not only in terms of its economic feature of  
+positive externalities, but also in terms of its technical characteristics of  
+statistical sharing and its policy objective of interoperability. Bailey, J.  
+P., and L. W. McKnight, "Internet Economics: What Happens When  
+Constituencies Collide," Internet Economics Workshop, MIT, Cambridge,  
+Massachusetts, 9-10 March 1995, _http://rpcp.mit.edu/workshops/_.
+
+[14] The challenge, then, is to develop an effective Internet pricing  
+mechanism but, in doing so, not lose the benefits of interoperability and the  
+positive network externalities currently gained through the Internet's  
+reliance on statistical sharing (Bailey and McKnight 1995).
+
+[15] Bailey and McKnight 1995.
+
+[16] Verity 1996, p. 132.
+
+[17] Shenker, S., "Service Models and Pricing Policies for an Integrated  
+Services Internet," in B. Kahin and J. Keller (Eds.), Public Access to the  
+Internet (Cambridge, Massachusetts: MIT Press, 1995).
+
+[18] National Science Foundation, press release, 14 March 1996 (contact:  
+Mark Luker <_mluker@nsf.gov_>).
+
+[19] Refer to Kahn, Alfred E., The Economics of Regulation, Vol. 1 (New  
+York: Wiley, 1970) and Vol. 2 (1971); Panzar, John C., and Robert D. Willig,  
+Contestable Markets and the Theory of Industry Structure (New York: Harcourt  
+Brace Jovanovich, 1982); Fowler, Mark S., Albert Halprin, and James D.  
+Schlichting, "Back to the Future: A Model of Telecommunications," Federal  
+Communications Law Journal 38(2), August 1986.
+
+[20] Federal Communications Commission. Report No. CC 96-10. Public Notice  
+No. 2124: Common Carrier Bureau Clarifies and Extends Request for Comment on  
+ACTA Petition Relating to "Internet Phone" Software and Hardware (RM No.  
+8775), March 1996, _http://www.fcc.org/_.
+
+[21] Barmann, T., "Internet's 'free' Calling Irks Telephone Companies,"  
+Providence Journal Bulletin, 15 March 1996, p. 1F; Kramer, A., "Internet  
+Calling Bypasses Old Phone Routes," Atlanta Journal and Constitution Daily  
+On-line Guide, Cyberscene, 16 March 1996; "ACTA Coalition Attempts to Make  
+Its Competition Illegal," NorthStar Newsletter, No. 13, 17 March 1996.
+
+[22] _http://www.fcc.gov/telecom.html_; refer also to  
+_http://www.technologylaw.com/techlaw/act.html_.
+
+[23] The FCC was originally mandated under the 1934 Communications Act to  
+provide universal service: the ability for individuals to purchase basic  
+telephone services at a fair and reasonable rate regardless of geography.  
+Extending basic telephone service to the general population was considered a  
+public good that displayed positive externalities. See reference National  
+Science Foundation (1996) for citations.
+
+[24] Hapgood 1995, p. 140.
+
+[25] Anderson, Robert H., Tora K. Bikson, Sally Ann Law, and Bridger M.  
+Mitchell, "Universal Access to E-Mail: Feasibility and Societal  
+Implications," Center for Information Revolution Analyses, Rand, 1995,  
+_http://www.rand.org/publications/MR/MR650/_.

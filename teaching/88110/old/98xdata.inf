@@ -1,0 +1,77 @@
+Experiment 11: Adverse Selection
+
+The experiment was conducted on 16 October, 1998, at 
+Carnegie Mellon University.
+
+Important Notes:
+
+Use the data from the last round of each session for the Lab Report.
+
+Please add the following question to the bottom of page 323:
+
+In Session 3, the total amount of net profit earned by used-car owners 
+who sold their cars on the market was _____, the total amount earned 
+by dealers was ____, and the total amount earned by both was _______.  
+In Session 4, the total amount of net profit earned by used-car owners 
+who sold their cars on the market was _____, the total amount earned 
+by dealers was ____, and the total amount earned by both was _______.
+
+
+Please add the following table to the bottom of page 319, as the 
+information is needed for some of the questions.
+
+Table L11.0: Distribution of Car Type and Dealers by Session:
+                      	Session 2	Session 3	Session 4
+Number Good Car Owners:		8		6		6
+Number Lemon Owners:		9		11		11		
+Number of Dealers:		6		6		6		
+
+
+Here is the remaining data:
+
+In Session 2 there were 8 good used-cars and 9 lemons
+purchased by dealers.
+
+Data for Table L11.1
+Prices Paid by Dealers--Session 2:
+Dealer	Prices		
+ID	Paid
+28	1900	1975
+40	1875	1875	1925	1925
+54	1890	1890	1980
+45	1975	1975
+68	1950	1950	1995
+65	1900	1950	1996
+
+
+In Session 3 there were 0 good used-cars and
+11 lemons purchased by dealers.
+
+Data for Table L11.3
+Prices Paid by Dealers--Session 3:
+Dealer	Prices		
+ID	Paid
+28	490
+54	400	450	495
+45	450	490
+65	400	490	496
+68	400	400
+40	no sales
+
+Session 4 
+
+Data for Table L11.5
+Prices Paid by Dealers--Session 4:
+(asterisk by price indicates good car showed, double
+asterisk by price indicates bad car showed, no asterick
+by price indicates no card shown)
+Dealer	Prices		
+ID	Paid
+28	3000*	3000*	495**	495**
+40	3200*	3200*	495**
+54	475**	475**	480**	3200*
+45	484**
+68	490**	495**	495**
+65	3000*	495**
+
+End of file..................

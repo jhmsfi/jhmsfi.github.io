@@ -1,0 +1,240 @@
+Policy Analysis I, 88--220, Fall 1994                  Second Exam
+Prof. John H. Miller, Carnegie Mellon
+
+
+Please show all relevant work and {\bf clearly mark all of your final
+answers}.  Points per question are indicated by the quantities in square
+brackets (200 points are possible---comprising 20\% of your final
+grade).  Answers should be short and concise (excessively long and
+rambling answers will be penalized).
+The exam is 8 pages long. 
+
+Good luck.
+
+
+
+[5] Draw something interesting in the space below:
+
+
+
+
+Part I: Quickies
+
+I-1. Charles has the following set of indifference curves between
+music and flowers (higher levels of utility are indicated 
+by higher numbers), and faces either budget constraint $B_1$ or
+$B_2$:
+
+
+(see drawing given in class)
+                                 
+I-1.a. [5] Under $B_1$ what bundle will be chosen (label this point in
+the diagram with a $1$)?
+
+I-1.b. [5] Under $B_2$ what bundle will be chosen (label this point in
+the diagram with a $2$)?
+
+I-1.c. [5] Are the above preferences well-behaved (why or why not)?
+
+
+
+I-2. Use the following diagram for these questions:
+
+(see drawing given in class)
+
+
+I-2.a. [10] In the above diagram, draw a set of indifference curves such that
+the individual likes parks but doesn't care about swimming pools?
+
+I-2.b. [5] Suppose parks cost \$5,000 to build, and swimming pools cost
+only \$1,000 each.  If this person has \$100,000 to spend, what bundle
+will she choose?
+
+I-2.c. [5] What is unusual about this person's MRS at her optimal choice?
+
+
+
+
+I-3. Consider the market for dogs and cats, and suppose that the 
+price of dogs is \$5 and the price of cats is \$1.  
+
+[10] Suppose that an individual enters the market with 5 dogs
+and 10 cats.  Draw this individual's budget set.
+
+
+(see drawing given in class)
+
+
+
+I-4. 
+There are a number of goods in the world where the quantity demanded
+of the good is {\it not} very responsive to price, and yet
+they are priced at low levels (e.g., drinking water, addictive
+drugs, etc.).  
+
+[10] 
+Why does the price of these goods stay so low?
+
+I-5. 
+There are two goods, books and movies, both priced at
+\$1 each.  Suppose that an individual initially has \$20 in
+income. 
+
+
+I-5.a. [5] 
+Suppose that income goes up to \$30 and the price of
+movies increases to \$2. What can you say about the change
+in this individual's welfare caused by the price and income 
+change?
+
+I-5.b. [5] 
+Suppose that under the initial price and income conditions
+you also know that the individual was consuming 10 movies and 10 books.
+What can you say about the change
+in this individual's welfare caused by the price and income 
+change that occurred in the previous question?
+
+
+I-6. Some questions about taxes and subsidies:
+
+I-6.a. [5] In general, do subsidies cause economic inefficiency?
+Why or why not?
+
+I-6.b. [5]
+Under what two conditions will sellers best be able to pass on a tax?
+
+I-6.c. [5]
+Under what two conditions will a tax {\it not} lower economic efficiency?
+
+
+
+
+I-7. Currently, CMU will place students on a waiting list when a course
+fills to capacity.  
+
+I-7.a. [5] Is this Pareto efficient? Why or why not?
+
+I-7.b. [5] 
+Suppose a waiting list has already been created. 
+Suggest a new policy that would improve Pareto efficiency.
+
+
+Part II: Longer Problems
+
+
+II-1. 
+Below are the demand functions for kids and adults for
+milk.
+
+(see drawing given in class)
+
+
+[5] Using this information plot the market demand function.
+
+[5] Suppose it is currently the case that only half the kids
+are drinking milk.  Draw a feasible supply curve (that is responsive
+to price) in the diagram
+above that is consistent with this scenario, and label the
+equilibrium price ($P^*$) and quantity ($Q^*$).
+
+The government is concerned with the fact that not all kids
+are consuming milk, and has decided to subsidize the drinking of
+milk by everyone to the point where all kids will be drinking milk
+(i.e., you consume a glass of milk, the government will pay you
+\$$s$).  
+
+[5] In the market diagram above indicate the size of the subsidy needed
+to achieve this outcome (label it $s$).
+
+[5] Label the new price paid by the buyers ($P_d$) and received
+by the sellers ($P_s$) in the diagram.
+
+[5] Provide a sound economic reason for {\it not} implementing
+this policy.  (Hint:  Think about a less expensive way to structure
+the subsidy and still achieve
+the same ends.)
+
+
+
+II-2.
+A set of preferences is said to be quasilinear when the indifference
+curves are just vertically shifted versions of one another (that is,
+you take one indifference curve and then move every point upward by
+the same amount to get a new indifference curve).
+
+(see drawing given in class)
+
+[10] Since quasilinear indifference curves are simply vertical
+copies of one another, what must be true about the slope of
+each indifference curve at a fixed level of $x$? (Hint: draw
+a vertical line in the diagram above, and think about the slope
+at each point where the line intersects the indifference curves.)
+
+[5] Now, thinking carefully about your answers to the above, what will
+the income consumption curves look like in this diagram?  Why? 
+
+[5] How will changes
+in income effect the demand for good $x$ (i.e., what do the Engle
+curves look like)?
+
+
+II-3. 
+Consider the market for heroin (a highly addictive narcotic).  
+Assume that quantity
+demanded is completely unresponsive to price changes (due to addiction).
+
+[5] In the diagram below, draw a representative set of supply and
+demand curves assuming heroin use was {\it legal}.  Label the
+equilibrium price ($P^*$) and quantity ($Q^*$).
+
+
+[5] If we outlaw all heroin trades, will the resulting market be Pareto
+efficient?  Why or why not?
+
+
+[5] Provide a simple argument as to why we might see an illegal
+market form under this policy?
+
+
+[10] 
+Suppose that we impose a policy that makes the selling of heroin
+illegal (but not the consumption), and if you are caught selling, you will
+pay a penalty. Using the
+diagram above, graph the new supply and demand conditions in this market
+and label the equilibrium price ($P^\prime$) and quantity ($Q^\prime$).
+
+[5] 
+Give a cogent economic argument for legalizing this market.
+
+
+II-4. 
+CMU is concerned with the fact that many incoming students do not
+have proper access to the electronic media necessary to do well at
+the university.
+Suppose CMU forces all students to spend \$500 on a ``communications
+terminal'' when they enroll in school.  This communications terminal
+is at least as good as any other system available for \$500 or less. 
+Students are allowed to buy a better computer if they wish, but
+if they do so, their communications terminal is of no use, and
+it will be sold for \$250 on the used terminal market.  (Thus, if
+you want to buy a better computer you will have to sacrifice 
+\$250 (which is equal to the \$500 you originally spent on the
+terminal less the \$250 you received when you sold it back) and
+then pay at least \$500 on a new computer.)
+
+[10] In the diagram below, plot the budget constraint facing a
+CMU student with an income of \$2000. Clearly label all significant
+quantities and dollar amounts.
+
+
+[5] In the above diagram draw a well-behaved indifference curve that
+would indicate the student will only have the terminal (label 
+this curve $I_t$).
+
+[5] In the above diagram draw a well-behaved indifference curve that
+would indicate the student will buy a better computer (label 
+this curve $I_b$).
+
+[5] Suggest an alternative policy that will make students at least
+as well off, and justify your answer.
+

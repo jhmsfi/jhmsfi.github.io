@@ -1,0 +1,65 @@
+Experiment 3: A Sales Tax
+
+The experiment was conducted on 20 September, 1996, at 
+Carnegie Mellon University by John H. Miller and Elizabeth Newlon
+
+Data for Table L3.1:
+Distribution of Types of Agents
+Sup. 	Seller	Num. 	Dem.	Buyer	Num.
+Type	Cost	Market	Type	Value	Market
+A	28	3	A	20	3
+B	23	3	B	25	3
+C	18	3	C	30	3
+D	13	3	D	35	3
+E	8	3	E	40	3
+F	3	3	F	45	3
+
+Data for Table L3.2: 
+Transactions in Session 1-Last Round
+(No taxes)
+Trade	Price	BValue	SCost
+1	20	25	3
+2	25	40	8
+3	20	25	3
+4	15	40	8
+5	25	40	18
+6	25	35	18
+7	30	45 	28
+8	20	35	8
+9	20	30	13
+10	16	35	3
+11	21	45	13
+12	20	45	13
+13	24	45	23
+14	24	30	23
+15	25	30	18
+
+Data for Table L3.3: 
+Transactions in Session 2-Last Round
+(Sellers Pay Sales Tax)
+Trade	Price	BValue	SCost
+1	31	45	3
+2	33	45	8
+3	30	40	8
+4	28	30	3
+5	30	35	13
+6	35	40	13
+7	30	35	8
+8	34	45	18
+9	25	30	3
+10	30	35	13
+
+Data for Table L3.4: 
+Transactions in Session 3-Last Round
+(Buyers Pay Sales Tax)
+Trade	Price	BValue	SCost
+1	20	45	3
+2	15	45	3
+3	18	45	8
+4	19	35	18
+5	18	40	8
+6	20	40	8
+7	15	35	3
+8	15	40	13
+9	15	35	13
+10	14	30	13

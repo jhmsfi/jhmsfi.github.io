@@ -1,0 +1,109 @@
+>From "Computer Shopper Magazine"
+
+Web address  
+http://www.zdnet.com/computershopper/edit/cshopper/content/9807/318209.html
+
+What Ever Happened to... WordStar?
+
+by John C. Dvorak
+
+One of the most interesting stories in the history of computing surrounds  
+the dominant word processor of the late 1970s and early '80s: WordStar. The  
+brain behind the product was industry pioneer Seymour Rubenstein, who also  
+developed a spreadsheet program initially called Surpass and later named  
+Quattro Pro. Rubenstein worked with his mentor Bill Millard at IMSAI, where  
+he met superstar assembly-language coder Rob Barnaby.
+
+After his stint with IMSAI, Rubenstein decided to start a software company,  
+which he named Micropro International. The first two products released by  
+this company were a word processor and a sorting program, which he recruited  
+Barnaby to code. In just a few months, while coding two products  
+simultaneously, Barnaby produced Supersort and Wordmaster. Both were released  
+in September 1978 at a computer show in New York. Rubenstein made a $12,000  
+profit at the show and was officially in business.
+
+According to Rubenstein, Barnaby was the "mad genius of assembly-language  
+coding," and his later work proved it.
+
+Words Into Type
+
+Word processors at the time typically employed separate programs for  
+printing the documents after you edited them. The Electric Pencil, arguably  
+the first modern word processor, incorporated printing into the program, and  
+dealers wanted the Micropro product to do the same thing.
+
+In October 1978, a month after its introduction, Barnaby began coding  
+WordStar. In four months, Barnaby wrote 137,000 lines of bullet-proof  
+assembly-language code. Rubenstein later checked with some friends from IBM  
+who calculated that Barnaby's output was equal to 42 man years.
+
+Sales and Storm
+
+Sales were flying for WordStar and Micropro. For the fiscal year 1979, the  
+company earned $500,000. Sales jumped to $1.8 million in 1980 and then to  
+$5.2 million in 1981. Micropro then ported the product from CP/M to CP/M-86  
+and PC-DOS, and released it for the IBM PC in April 1982, when sales  
+skyrocketed to $23 million. It reached $45 million in 1983. In 1984, just as  
+the company was going public, the sales were up to $70 million. At the time,  
+Micropro was the largest software company in the country.
+
+Two months before the public offering in 1984, however, disaster struck  
+Rubenstein: He suffered a heart attack. In 1980, he made the mistake of  
+bringing in a venture capitalist named Fred Adler whom he had met through his  
+brother's brother-in-law.
+
+"It was the biggest mistake I ever made in my life," Rubenstein says. Adler  
+sent Fred Haney into Rubenstein's hospital room with a document to sign. The  
+paper was an agreement to convert all his stock into non-voting stock "or the  
+public offering would be killed." Rubenstein says he was so frightened by  
+the heart attack that he wasn't in the mood to argue with anyone about  
+anything. From that moment, the company lost its edge. Haney, an  
+ex-Sperry-Univac guy, took over as CEO at Adler's request.
+
+Soon, newcomers to the word processing scene cropped up. Volkswriter,  
+WordPerfect, XyWrite, Word, NewWord, and a host of competitors began to  
+battle for hegemony. Eventually, WordPerfect rose to the top, based on its  
+superior support program.
+
+Rubenstein's original vision for the company, which was renamed WordStar  
+International, was to bring out a complete suite of integrated systems. In  
+the early 1980s, the company released Calcstar and Datastar, and integrated  
+them with WordStar in a system called Starburst. It was phenomenal for its  
+era. In fact, it was the original "office" suite. Adler and company killed  
+the idea.
+
+Although WordStar was still the best word processor on the market until the  
+mid-1980s, it still lacked some features, which annoyed users. As DOS was  
+improved and Unix-like paths were added, WordStar could not accommodate  
+paths. Worse, it had no undo key. The code base by now was turning into  
+spaghetti code, and Barnaby wasn't around to fix things. In 1985, the company  
+produced WordStar2000, a copy-protected program nothing like the older,  
+lovable WordStar.
+
+Though many pundits, including Esther Dyson, predicted great things for  
+WordStar2000, users rejected it. The product was big, slow, and expensive and  
+copy-protected.
+
+WordStar might have been the most pirated software in the world, which in  
+many ways accounted for its success. So when WordStar2000 arrived with a  
+copy-protection scheme, everyone could have predicted its immediate demise.  
+Books for WordStar sold like hot cakes, and the authors knew they were  
+selling documentation for pirated copies of WordStar. The company itself  
+should have sold the documentation alone to increase sales.
+
+WordStar2000 symbolized the downturn and general muddy thinking that took  
+over the company. The original WordStar code base was replaced by a WordStar  
+clone called NewWord, which was just like WordStar, but incorporated undo and  
+other features. Barnaby worked it well and kept the product alive long  
+enough for WordStar International to sell everything to Softkey, where the  
+decline continued until it was bought out by Corel.
+
+WordStar basically invented the idea of "what you see is what you get"  
+(WYSIWYG). It invented numerous features, including overlays, which later  
+evolved into DLLs. It was the first product with dynamic pagination and even  
+help levels, among other features. All modern word processors owe their  
+existence to WordStar--perhaps one of the greatest single software efforts in  
+the history of computing.
+
+ Send Feedback to John C. Dvorak_
+

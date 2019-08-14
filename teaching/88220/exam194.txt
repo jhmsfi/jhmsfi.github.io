@@ -1,0 +1,113 @@
+Policy Analysis I, 88--220, Fall 1994     First Exam
+Prof. John H. Miller                      Carnegie Mellon
+
+1. A market consists of three buyers with values of \$15, \$10,
+and \$5, and four sellers with costs of \$6, \$9, \$12, and \$15.   
+Suppose that the market is run and the \$15 buyer trades with the
+\$12 seller at a price of \$14, and the \$10 buyer trades with the
+\$6 seller at a price of \$8.  
+
+[10] Is the outcome of this market
+Pareto efficient (justify your answer with a specific example)?
+
+[10] If a market results in an economically efficient outcome, what
+must be true about the total profits achieved by the buyers and sellers?
+
+[10] In the diagram below plot the supply and demand curves underlying
+the market described above.
+
+[10] Make a prediction of the equilibrium price and quantity, and provide
+a measure of the market efficiency that resulted from the two trades
+discussed above.
+
+
+2. [30] What advantages do well-functioning markets have over central planning
+in making social decisions?
+
+3. Instead of finishing their undergraduate degree in four 
+years, many students consider taking an extra year to
+finish the degree.  
+
+[10] What are the obvious direct costs of such a decision?
+
+[10] There are also considerable opportunity costs of such a decision.
+What are the opportunity costs?
+
+[10] Make a rough estimate (in dollars)  of the full {\it additional}
+economic cost of taking an extra year to finish your degree?
+
+
+IGNORE QUESTION 4
+
+4. When students at CMU need to use a computer they have a choice
+between going to a cluster located close to their dormitory room
+verses walking across campus and using a computer in one of the main
+clusters.  Suppose that it takes 10 minutes (5 minutes each way) to
+walk across campus to a main cluster, but once students arrive on campus a computer is
+always available.  If, however, students
+go to the dormitory cluster, it takes no time to get there, but
+the waiting time in minutes will be
+equal to the number of people in the cluster divided by the
+number of computers in the cluster (for example, if there are 50
+people and 25 computers, the waiting time will be 2 minutes).
+For the following questions, assume that students only care about
+their time walking to and from the clusters.
+
+[10] Suppose that there are 100 people needing computers and 20 
+computers in the dormitory cluster.  What is the total time
+that a student will spend getting a computer and returning to their
+room if they go to the dormitory cluster?  How long will it take
+if they go to the main cluster?  If an additional person showed up,
+which cluster would they go to?
+
+[10] Suppose there are 200 people needing computers and 10 computers
+in the dormitory cluster.  What is the best prediction about the
+number of people who will go to the dormitory cluster verses to
+those on the main campus?
+
+[10] The 200 students needing computers complain to CMU because they
+can't find enough time in the day to finish their homework.  
+CMU suggests a policy by which they will double the number of computers
+available in the dormitory cluster.
+Is this an effective policy?  Why or why not?
+
+
+5. For years CMU students have complained about the high cost
+of off-campus housing.  The administration is considering the 
+following program to alleviate this problem: each student
+living off campus will be given a voucher worth \$200 towards
+the rent of an off-campus apartment (the vouchers are given directly
+to the landlord who can then cash them in at CMU). Assume that the supply
+of off-campus housing offered is {\bf NOT} responsive to changes in prices.
+
+[10] Using the diagram below, draw the supply and demand curves
+(labeled $S$ and $D$, respectively) before the policy is put into effect.  
+label the equilibrium price and quantity as $P^\star$ and $Q^\star$ in the
+diagram.
+
+[10] In the same diagram, draw in the new supply and demand curves
+(labeled $S^\prime$ and $D^\prime$, respectively), and indicate
+the equilibrium price and quantity as $P_v$ and $Q_v$.
+
+[10] Using the above results, should CMU implement the policy?
+Why or why not?  (Assume CMU only cares about its student's
+welfare.)
+
+
+6. Suppose that due to landfill space shortages, Pittsburgh 
+requires that each home can only leave at most two standard
+size bags of trash for weekly pickup.
+
+[10] Is the resulting situation Pareto efficient (why or why not)?
+
+As an alternative, Pittsburgh gives each home 104 (52 weeks $\times$ 2) 
+special bags per year, and will only pick up trash
+that is placed in these bags (regardless of the number of bags used).  
+Each of the bags is coded to the respective house and cannot be used
+elsewhere.
+
+[10] Does this policy improve efficiency (why or why not)?
+
+[10] Suggest a market alternative that builds on the last idea
+and improves efficiency even more.
+

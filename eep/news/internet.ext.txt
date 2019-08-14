@@ -1,0 +1,360 @@
+[banner]
+[toolbar]
+
+          [Image]
+
+          June 29-30, 1996                                              -----------------
+                                                                         Gridlock on the
+                                                                            Internet
+          Explosive Growth Clogs
+          The Internet's Backbone                                       Explosive Growth
+                                                                         Clogs Internet
+          By JAMIE MURPHY and CHARLIE HOFACKER                              Backbone
+
+           [B]andwidth has become the Holy Grail of the Internet,        No Shortage of
+              the unspoken contingency clause upon which virtually       Bottlenecks for
+          all software developers and most content developers are       Internet Traffic
+          mortgaging their future.
+                                                                          Will Olympics
+          Video conferencing? Videophones? Net phones? Movies on          Traffic Bring
+          demand? Voice e-mail? Virtual Reality? Each of these           Down the Net?
+          gizmos and many others already exist in some form, ready
+          to run on both the server to which you're connected and
+          the PC on your desk or lap.                                   -----------------
+
+          But the pipes between your computer and whatever data         Related Articles
+          you're trying to get from the Internet are invariably
+          clogged. So while investors line up to wager millions of           Earlier
+          dollars into the next exotic Internet technology, you            CyberTimes
+          sit waiting on line like some high-tech peasant in a 10        Coverage of the
+          kilometer bread queue.                                          Backbone and
+                                                                            Internet
+          How, you wonder, are we going to add all the wonders you          Resources
+          keep hearing about -- the Java applets, the real-time
+          video and audio, the Shockwave animation and sundry           -----------------
+          other fancy technologies -- if we're already stalled in
+          bumper-to- bumper traffic on the Information                      Graphics
+          Superhighway?                                                  Traffic on the
+                                                                            Internet:
+          When will they widen the highway and raise the speed              A Graphic
+          limit?                                                            Glossary
+
+          There Is No "They"                                              Comparing the
+                                                                        Size of the Pipe
+           [T]he answer is that there is no answer because with
+              the Internet there is no "they" -- at least not in
+          the sense that humans are accustomed to organizing
+          societies, governments and cultural institutions.
+
+          Which is why more and more industry observers are
+          voicing suspicions that the anarchy of the Internet may
+          be its undoing.
+          Nowhere is this more evident than in the development of       -----------------
+          the Internet's so-called backbones, the super-high-speed      Backbone:[Image]
+          pipelines in which all the packets of bits and bytes          The
+          traveling between you and some remote server merge with       high-speed
+          packets being exchanged by millions of other users, some      fiber-optic
+          human, some robotic, all vying for a bigger, faster ride      cables which
+          through the pipe.                                             shuttle
+                                                                        information
+          --------------------------                                    through the
+          [Image] There is no                                           internet at 45
+          economic model to support                                     million to 155
+          the continued growth of                                       million bits per
+          high-bandwidth use on the                                     second--more
+          global computer network.[Image]                               than 10,000
+                                                                        times faster
+                                                                        than a 14.4
+          Robert Raisch                                                 modem.
+          --------------------------                                    -----------------
+
+          But whereas you can petition government agencies or
+          government-regulated utilities for a bigger sewer or
+          water line or an expanded roadway, the owners and
+          operators of the public portion of the Internet backbone
+          are private businesses. And they are frankly perplexed
+          about how they're going to make a return on the enormous
+          investment it will take to widen the highway and unclog
+          the pipes.
+
+          In a recent interview, Robert Raisch, chief scientist of
+          the Internet Company, a server host and developer,
+          stated flatly, "There is no economic model to support
+          the continued growth of high-bandwidth use on the global
+          computer network."
+          And that, says Hal Varian, dean of the School of
+          Information Management and Systems at the University of
+          California, Berkeley, is the problem with the Internet:
+          The lack of an economic rationale for raising the
+          Internet's speed limit is a major cause of its latency
+          -- at times outright gridlock -- and a gaping pothole
+          smack in the middle of the road to the network's future.
+
+          Much of the Internet's backbone system consists of
+          common information conduits, and the companies that
+          manage them hesitate to spend money upgrading them,
+          because the investment could benefit competitors who
+          also make use of those conduits.
+
+          One result of that reluctance is that the Internet is
+          becoming, in Raisch's words, "a thirsty garden."
+
+          "Huge portions of the garden will wither, blacken and
+          die for want of moisture," Raisch predicted. "The
+          weather is turning, and there is a major drought on the
+          horizon. But is not for want of water itself. We simply
+          can't afford the hoses."
+
+          From NSFNET to Commercial Control
+
+           [T]he backbones of today's Internet trace their history
+              to the mid-1980s, when the National Science
+          Foundation created the NSFNET. The idea was to make the
+          foundation's five supercomputers available to scholars
+          via the NSFNET information pipeline at the
+          then-unbelievable speed of 56,000 bits per second.
+
+          Yet increasing network traffic soon overwhelmed the
+          servers and telephone lines of the NSFNET. So in 1987,
+          International Business Machines Corporation and MCI, in
+          partnership with Merit Network Inc., the State of
+          Michigan's educational network, upgraded the network's
+          backbone to a T1 speed -- 1.5 million bits per second.
+          And in 1991, the foundation lifted the restrictions on
+          the commercial use of the network and upgraded its
+          backbone to a T3 speed, or 45 million bits per second.
+
+          Other networks, including Advanced Network & Services
+          Inc. and the very-high-speed Backbone Network Service,
+          or vBNS, evolved to handle the increased demand on the
+          Internet and to test new technologies.
+
+          Advanced Network Services, originally a not-for-profit
+          consortium of IBM, MCI, Northern Telecom and Merit,
+          began in 1990 and was acquired by America Online in
+          February 1995.
+
+          vBNS, which is sponsored by the National Science
+          Foundation, returns the NSFNET to the old days of a
+          closed-access research system linking the same five
+          supercomputers: the Pittsburgh and San Diego
+          Supercomputing Centers, the Cornell Theory Center, the
+          National Center for Supercomputer Applications in
+          Urbana, Ill., and the National Center for Atmospheric
+          Research in Colorado.
+
+          Now the vBNS speed is OC-3, or 155 million bits per
+          second, and it's projected to reach OC-12, 622 million
+          bits per second, by early next year at the latest.
+
+          MCI is the vBNS provider and one of the major Internet
+          backbone providers, along with Advanced Network &
+          Services, Sprint, and MFS Data Services/UUNET.
+
+          In addition to the lines themselves, the backbone system      -----------------
+          consists of huge hubs where all the intersecting              Hubs:
+          high-speed lines merge to reroute billions of packets of      Metropoli[Image]
+          data and send them on their way to their next stop --         Area
+          either the Internet service provider from which they've       Exchanges
+          been requested or, along a different line, to another         (MAEs) are
+          hub for further routing.                                      maintained for a
+                                                                        profit by
+          There are two kinds of hubs -- Naps (for Network Access       companies like
+          Points) and Maes (for Metropolitan Area Exchanges). The       MFS
+          only significant difference between them is their             Communications.
+          origins: Naps were officially chartered by the National       They sell
+          Science Foundation when it turned the Internet over to        bandwidth to
+          the public sector in 1995.                                    service
+                                                                        providers.
+          The Naps were assigned to Pacific Bell, Sprint,
+          Ameritech and MFS Data Services/UUNET.                        Network  [Image]
+                                                                        Access
+          Maes, though not officially chartered, do the same work       Points
+          as Naps. MFS Data Services/UUNET operates about a dozen       (NAPs) act as
+          Maes and has announced plans to add more in the United        intersections,
+          States, Germany and France.                                   like MAEs, but
+                                                                        are chartered by
+                                                                        the National
+                                                                        Science
+                                                                        Foundation.
+                                                                        -----------------
+
+          MCI is also investing heavily in public- and commercial-      -----------------
+          access portions of the Internet backbone. It recently         Related Article:
+          announced a joint venture with British Telecom that will      2 Phone Giants
+          boost total Internet capacity by 30 percent. The              to Merge
+          venture, dubbed Concert InternetPlus, will initially          High-Speed Data
+          combine the two companies' existing backbone systems          Networks (June
+          into eight new regional Internet superhubs, similar to        11)
+          Naps or Maes, to avoid having to route most traffic           -----------------
+          through the United States, said Allen Clark, a spokesman
+          for MCI.
+
+          "These will expand within the year to a total of 20 hubs
+          in key locations around the world," Clark said.
+          The free-market rules in the Telecommunications Act of        -----------------
+          1996 will be the ultimate arbiter of the future shape of      Related Article:
+          the Internet's backbones. For example, MFS Data               MFS
+          Services/UUNET is now an Internet service provider, as        Communications
+          well as the owner of both a Nap and is now an Internet        to Acquire
+          Maes. Microsoft has a seat on its board.                      Internet Service
+                                                                        Provider (May 1)
+          Catch 22: Growing Bandwidth,                                  -----------------
+          Explosive Demand
+
+           [B]ut as fast as the backbone might appear to be
+              expanding, it faces almost insatiable demand, as
+          telephone companies, cable companies and Internet
+          service providers all rush to offer higher bandwidth to
+          their customers.
+          And here lies the Catch-22 of bandwidth. The more users       -----------------
+          venture beyond 28.8 Kbps modems into high-speed               Graphic:
+          connections, the more crowded the backbone becomes. So        Comparing the
+          increasing your access speed at home or at the office         Size of the Pipe
+          contributes to the slowing down of the Internet as a          -----------------
+          whole.
+
+          --------------------------
+          It all boils down to how
+          much improvement is
+          profitable.
+          --------------------------
+
+          For example, BellSouth, which has no investment in the
+          Internet's backbone, is active in developing and
+          implementing high-speed access schemes like Asymmetrical
+          Digital Subscriber Lines (or ADSL, capable of receiving
+          data at up to 7 megabits per second over existing copper
+          phone lines), cable modems (capable of receiving 10
+          megabits per second) and Asynchronous Transfer Mode
+          (which guarantees needed bandwidth for streaming
+          applications like real-time audio and video).
+
+          "We are preparing to soon move our development work in
+          ADSL from the lab stage to trial stage," said
+          BellSouth's spokesman, Ted Creech. "We have also just
+          introduced our cable modem-based trial of interactive
+          and video services to some 8,000 customers in Chamblee,
+          Ga., and our ISDN service has never been more popular."
+          Some observers are skeptical of such claims on the part
+          of the telephone companies because, they note, emerging
+          Internet phone technologies could grab a big chunk of
+          the phone companies' existing business.
+
+          "All of the telcos have fiber optic lines they have no
+          idea how to sell -- without cannibalizing their existing
+          business," said Raisch.
+
+          Even so, all the telephone companies are talking the
+          talk. Morgan Littlewood, director of Internet services
+          marketing for Cisco, a leading supplier of networking
+          technologies, said of the phone companies, "If the
+          applications are there, such as electronic commerce,
+          they will be interested" in high bandwidth service.
+
+          It all boils down to how much improvement is profitable.
+
+          BellSouth's Creech said that providing high technology
+          just for the sake of doing it wouldn't serve the
+          company's customers or its stockholders in the long run.
+
+          And Betty Jo Chang, director of technology programs for
+          the Global Network Services Company of MFS Data
+          Services/UUNET, observed, "A lot of telco folks got
+          burned with video-on-demand games a couple years ago --
+          just like some are going to get burned by the Internet
+          toaster game now."
+
+          UC-Berkeley's Varian agrees, adding that the Baby Bells
+          are holding back on ISDN lines, for example, out of fear
+          that they'll see their investment washed away by cable
+          modems or some other developing technology. "They don't
+          want to invest in an obsolete technology," Varian said.
+          "And who can blame them?"
+
+          Toward a New Billing Model?
+
+           [H]owever things shake out on the client end of the
+              Internet, MCI's Clark argues that free-market forces
+          will ensure enough bandwidth at the backbone end to make
+          the Internet viable.
+
+          "With more companies investing in Internet technology,"
+          he said, "market forces will drive the Internet industry
+          to respond."
+
+          But the market also requires profits throughout the
+          system. While competition among Internet service
+          providers has whittled the price point for unlimited
+          consumer access to about $20 a month, many observers
+          argue that if bandwidth is ever to increase, the billing
+          model itself must change.
+          There are now three basic billing models:                     -----------------
+                                                                        Related Link
+             * Flat rate, in which a user pays a certain fee for        The Berkeley
+               unlimited access.                                        School of
+                                                                        Information
+             * Metered usage, in which the user pays by the amount      Management &
+               of data sent or received.                                Systems web site
+                                                                        includes a
+             * Timed charges, in which the user pays by the minute      discussion of
+               or other fraction of an hour.                            Usage-Based
+                                                                        Pricing Schemes.
+          There is a growing consensus that only metered billing        -----------------
+          can provide enough profits for service providers and
+          backbone administrators to expand their bandwidth. In
+          other words, you're probably going to be paying a lot
+          more in the future for fancy real-time audio and video
+          on the Net than you'll be paying to send and receive
+          your e-mail.
+          Without metered pricing, the Internet service provider
+          will suffer most, Raisch predicts. "They will need to
+          raise prices to both consumer and server to support the
+          required load," he said. "This is why I believe the
+          mom-and-pop local ISP is doomed."
+
+          The industry may already be realizing Raisch's
+          prediction.
+
+          Mae east, operated by MFS Data Services/UUNET, is seeing
+          an increase in high speed, giga-switch, connections and
+          a decrease in slower, ethernet connections, says Chang.
+          That, she says, is "indicative of the slow but sure
+          shakedown into large national ISPs and smaller regional
+          ISPs."
+
+          But some observers also see a silver lining in a metered
+          plan set at a price point designed to guarantee plenty
+          of bandwidth for multimedia applications.
+
+          "If the Net is engineered to support real-time video,
+          then everything else is essentially free," said Varian.
+          "Just because you can reserve high-priority bandwidth
+          doesn't mean that low-priority bandwidth can't remain
+          very cheap.
+
+          "My guess is that we'll see a mixture of flat rate and
+          metered pricing. The flat rate network will work fine
+          for e- mail and other slow traffic. Real-time
+          communication will require metering."
+
+          And when will this happen? That, Varian suggests,
+          depends on how crowded the backbone gets in the near
+          term.
+
+          "We can probably live with a flat-rate network that
+          looks like L.A. at rush hour," Varian said, "but not one
+          that looks like Bangkok at rush hour."
+
+                           -----------------------
+          Jamie Murphy is a doctoral student in communication at
+          Florida State University. Charlie Hofacker is a
+          professor in FSU's Marketing Department. Brian Massey, a
+          doctoral candidate in communication, contributed to this
+          article.
+
+              Home | Sections | Contents | Search | Forums | Help
+
+                   Copyright 1996 The New York Times Company
+
+           ----------------------------------------------------------

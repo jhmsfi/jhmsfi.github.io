@@ -1,0 +1,90 @@
+Experiments with Economic Principles						
+Auctions						
+
+88-110, 21 November, 2003 (collected by JHM)
+
+Below are the data needed to complete your lab notes and homework.
+
+pg 370  Table 13.1:  Outcome of English Auction
+
+                                Group A Group B 
+        Highest Bid                54      94      
+        High Bidder's Buyer Value  97      95 
+        High Bidder's Profits
+        Highest Buyer Value        97      95   
+        2nd-Highest Buyer Value    53      94      
+
+pg 370
+        Table 13.2:  Outcome of Dutch Auction
+
+                                Group A Group B 
+        Winning Bid                  80      84    
+        Winning Bidder's Buyer Value 89      86
+        Winning Bidder's Profits
+        Highest Buyer Value          89      86  
+        2nd-Highest Buyer Value      54      75
+
+pg 371
+        Table 13.3:  Outcome of Sealed-Bid, First-Price Auction
+
+                                Group A Group B 
+        Highest Bid                 90      70 
+        High Bidder's Buyer Value   99      79
+        High Bidder's Profits
+        Highest Buyer Value         99      79   
+        2nd-Highest Buyer Value     96      39  
+
+pg 371
+        Table 13.4:  Outcome of Sealed-Bid, Second-Price Auction
+
+                                Group A Group B 
+        Highest Bid                 84      95
+        Second-Highest Bid          75      71     
+        High Bidder's Buyer Value   84      95  
+        High Bidder's Profits
+        Highest Buyer Value         95      95  
+        2nd-Highest Buyer Value     84      71
+
+***END OF POSTING***
+
+
+The data below is not needed for the workbook, but we will
+refer to it in class.
+
+$1 auction (escalation auction)
+The highest bid was $2.60, the second highest bid was $2.50.
+(Thus, the $1 was sold for $5.10.)
+
+Rubber Band Auction.  There were 29 rubber bands in the box (thus, the good
+was worth $29 to the buyer).
+
+The bids were (first number is x10, remaining number are second digits):
+10 1
+.
+.
+5 1100000000
+4 1100000000
+3 3100000000
+2 3000100000
+1 0000102030
+
+Accountant auction.  The average was $120 (thus, the good was worth
+$120 to the buyer).
+
+The bids were (along with the associated estimates):
+
+170 (120)
+160 (160)
+150 (150)
+138 (170)
+130 (130,170))
+125 (100)
+115 (140)
+100 (130,160)
+95 (150)
+89 (90,140)
+70 (100)
+50 (70)
+32.5 (70)
+
+***END OF POSTING***						

@@ -1,0 +1,60 @@
+Experiment 11: Adverse Selection
+
+The experiment was conducted on 18 October, 1996, at 
+Carnegie Mellon University by Elizabeth Newlon
+
+In Session 2 there were 13 good used car owners,
+13 lemon owners, and 6 sellers.
+
+In Sessions 3, and 4 there were 9 good car owners, 
+18 lemon owners, and 6 sellers.
+ 
+In Session 2 there were 13 good used cars purchased,
+and 13 lemons.
+
+Data for Table L11.1
+Prices Paid by Dealers--Session 2:
+Dealer	Prices		
+ID	Paid
+3829	1001	1001	1001	2000	2000	2000	2000	2000	
+	2100	2085	2085
+2440	1850
+9897	2000	2000	2000
+9264	1000	1053	1200	1800	1900	1999	1999
+7271	1601	1601
+7680	1999	1999
+
+
+In Session 3 there were 0 good used cars purchased,
+and 18 lemons.
+
+Data for Table L11.3
+Prices Paid by Dealers--Session 3:
+Dealer	Prices		
+ID	Paid
+3356	461	500	500	500
+7615	---
+0518	475	475	475
+7687	300	500	500	510	510	510	510	510	510
+	510	510
+0317	---
+6542	---
+
+
+Session 4 (I've altered the data so that it is comparable to Session 3)
+
+Data for Table L11.5
+Prices Paid by Dealers--Session 4:
+(asterisk by price indicates good car showed, double
+asterisk by price indicates bad car showed, no asterick
+by price indicates no card shown)
+Dealer	Prices		
+ID	Paid
+2440	2400*	450**	400**
+5186	425**	425**	425**
+1986	450**	450**	450**	450**
+3829	2350*	2500*
+9264	400**	400**	400**	3000*	3000*
+3216 	2500*	3000*	3100* 	2500* 	450**	425**	450**	425**	450**	450**		
+
+End of file..................

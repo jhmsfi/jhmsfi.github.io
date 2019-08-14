@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font: 400 15px/1.8 "Lato", sans-serif;
+  color: *#777;
+}
+
+a:link, a:visited 
+{
+    color: white;
+}
+li{ display: inline;}
+
+/* The navigation bar */
+.navbar {
+   opacity: 0.85;
+   overflow: hidden; 
+   color: #000;
+   background-color: #2a6773;
+   position: fixed; /* Set the navbar to fixed position */
+   top: 0; /* Position the navbar at the top of the page */
+   width: 100%; /* Full width */
+}
+/* Links inside the navbar */
+.navbar a {
+    float: left;
+    display: block;
+    color: #fff;
+    background: #2a6773; 
+    text-align: center;
+    padding: 10px 10px;
+    text-decoration: none;
+}
+/* Change background on mouse-over */
+.navbar a:hover {
+    background: #fff;
+    color: black;
+}
+
+.bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4 {
+  position: relative;
+  opacity: 0.75;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bgimg-1 {
+  background-image: url("tes.jpg");
+  min-height: 85%;
+}
+.bgimg-2 {
+  background-image: url("muley.jpg");
+  min-height: 50%;
+}
+.bgimg-3 {
+  background-image: url("exmach.jpg");
+  min-height: 50%;
+}
+
+.bgimg-4 {
+  background-image: url("glyphinvert.jpg");
+  min-height: 75%;
+}
+
+.caption {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+
+.caption span.border {
+  background-color:#2a6773;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 10px;
+}
+
+.bottombar {
+    background-color: #2a6773;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 10%;
+}
+
+/* Main content */
+.main {
+   margin-top: 10px; /* Add a top margin to avoid content overlay */ 
+}
+
+h3 {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font: 20px "Lato", sans-serif;
+  color: #111;
+}
+hr {
+ color:#2a6773;
+ height:25px;
+ }
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+    .bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4 {
+        background-attachment: scroll;
+    }
+}
+
+
+</style>
+</head>
+
+<body>
+
+<div class="bgimg-1">
+  <div class="caption">
+    <span class="border">John H. Miller</span>
+  </div>
+</div>
+
+<div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;">
+ <!-- <h3 style="text-align:center;">Welcome</h3>
+  <p>
+-->
+At the conclusion of <i> Origins of the Species,</i> Darwin notes that "There is grandeur in this view of life, with its several powers, having been originally breathed into a few forms or into one...from so simple a beginning endless forms most beautiful and most wonderful have been, and are being, evolved."
+Through a remarkable convergence of ideas, technology, and scientific and engineering imperative, we now stand ready to exploit this "view of life" in a quest to understand and control complex adaptive social systems.
+</p>
+</div>
+
+<div class="bgimg-2">
+<div class="caption">
+  <div class="caption">
+    <span class="border">Bio</span>
+  </div>
+</div>
+</div>
+
+<div style="position:relative;">
+<div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;">
+<p>
+John H. Miller received a B.A. in Economics and B.S. in Finance from the University of Colorado in 1982, a M.A. and Ph.D. in Economics from the University of Michigan in 1988, where he worked with Ted Bergstrom and Hal Varian. In 1988 he joined the Santa Fe Institute as their first post doctoral fellow. He started as an Assistant Professor in the Department of Social and Decision Sciences at Carnegie Mellon University in 1990, becoming an Associate Professor in 1995, and Professor in 2000. He headed the Department of Social and Decision Sciences at Carnegie Mellon from 2002-2014 (and the Information Systems program from 1998-2001).  He has been continually involved with the Santa Fe Institute since 1988, holding numerous appointments, and is currently on the external faculty and chair of the Institute's Science Steering Committee (along with ex officio appointments to its Science Board and Board of Trustees).  His scientific interests surround complex adaptive social systems, behavioral economics, adaptive algorithms, and computational modeling.  He has published articles on these topics in various literatures, including  anthropology, complex systems, decision science, economics, law, management, medicine, physics, political science, as well as general science journals.  He has written a number of books, including A Crude Look at the Whole (Basic) and Complex Adaptive Social Systems (with Scott Page, Princeton University Press).  He was born and raised in Denver, Colorado, the fourth generation of a family of cattle ranchers.
+</p>
+</div>
+</div>
+
+<div class="bgimg-3">
+<div class="caption">
+<span class="border"><i> Ex Machina </i></span>
+</div>
+</div>
+
+<div style="position:relative;">
+<div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;">
+<!--<div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
+-->
+<p>
+Is social life inevitable?
+<p>
+Suppose we engage in Gould's experiment of "replaying life's tape" and rewind the tape of Earth's deep history back to the start, and rerun the world anew.  Will social behavior arise yet again?  Will it be similar to what we have now?  Or, suppose we happen upon alien life.  Will it be social?  If so, in what way?
+<p>
+I'm currently exploring these questions using a computational scientific apparatus---the social science equivalent of a particle accelerator in physics.  Like a particle accelerator, it is designed to understand the fundamental elements of our world and, in so doing, give us insights into both our origins and our current reality.  Like its physics analog, we can run our accelerator and carefully observe its output, in hopes of identifying those critical collisions that give us insights into the most fundamental elements and processes that could have formed our social world.  This approach, following Ken Boulding's notion that "science
+consists of testable and partially tested fantasies about the real world,"  
+allows us to engage in new, and ultimately insightful, fantasies about our world. 
+</p>
+</div>
+</div>
+
+<div class="bgimg-4">
+<!--
+<div class="caption">
+<div style="color: #000;background-color:#2a6773;text-align:center;padding:25px 50px;text-align: justify;">
+Petroglyph, Muley Point, UT.
+</div>
+-->
+</div>
+
+<!--
+<div class="bottombar">
+</div>
+-->
+
+<div class="navbar">
+<ul>
+<li>
+<a href="research.html">Research</a>  
+<li>
+<a href="teaching.html">Teaching</a> 
+<li>
+<a href="biovita.html">Bio/Vita</a>  
+<li>
+<a href="misc.html">Misc</a>  
+<li>
+<a href="contact.html">Contact </a> 
+<li style="float:right">
+<A HREF="http://www.cmu.edu">Carnegie Mellon</A>
+<A HREF="http://www.hss.cmu.edu/departments/sds/">SDS &nbsp &nbsp &nbsp</A>
+<li style="float:right">
+<A HREF="http://www.santafe.edu">SFI</A>
+</ul
+</div>
+
+
+</body>
+</html>

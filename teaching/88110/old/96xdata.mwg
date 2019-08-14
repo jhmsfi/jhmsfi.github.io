@@ -1,0 +1,67 @@
+Experiment 5: A Minimum Wage
+
+The experiment was conducted on 27 September, 1996, at 
+Carnegie Mellon University by John H. Miller and Elizabeth Newlon
+
+Data for Table L5.1:
+Distribution of Types of Employers and laborers
+Participant	Session 	Session		Session
+Type		1		2		3
+Employers	9		9		9	
+Type A ($12)	12		12		12
+Type B ($5) 	12		12		12
+
+Data for Table L5.2:
+Unemployed Laborers and Their Reservation Wages
+	 	Type A ($12)	Type B($5)
+Session 1	11		1
+Session 2	7		8	
+Session 3	0		0 
+
+Data for Table L5.3:
+No Minimum Wage:  Session 1--Last Round
+Firm	Laborer 1	Laborer 2
+ID	Wage	Type	Wage 	Type
+1	11	5
+2	12	5
+3	10	5	9	5
+4	10	5
+5	9	5	9	5
+6	12	12
+7	9	5
+8	9	5	9	5
+9	11	5
+
+
+Data for Table L5.4:
+Binding Minimum Wage:  Session 2--Last Round
+Firm	Laborer 1	Laborer 2
+ID	Wage	Type	Wage 	Type
+1	15	12
+2	15	5
+3	15	12
+4	15	12
+5	15	5
+6	15	5
+7	15	5
+8	15	12
+9	15	12
+	
+***Note*** due to an error in the orignal data, I have eliminated the
+last laborer hired by firm 8.
+
+Data for Table L5.5:
+Non-Binding Minimum Wage:  Session 3--Last Round
+Firm	Laborer 1	Laborer 2	Laborer 3	Laborer 4
+ID	Wage	Type	Wage 	Type	Wage	Type	Wage 	Type
+1	18	12	18	12	18	5	18	5
+2	18	5	18	12	18	5	19	5
+3	19	5	19	12	19	5
+4	20	5	20	12	20	12
+5	19	12	18	12
+6	18	12
+7	18	5	19	12
+8	18	5	19	5	19	12
+9	20	12	20	12
+
+End of file..................

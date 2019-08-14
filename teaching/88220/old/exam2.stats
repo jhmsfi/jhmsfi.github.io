@@ -1,0 +1,53 @@
+Statistics for Exam 2, 25 October, 1995.
+
+Stem-and-leaf of exam2     N  = 101
+Leaf Unit = 1.0
+
+~R
+    1    8 3
+    2    8 9
+    2    9 
+    3    9 8
+    5   10 14
+    8   10 889
+    9   11 2
+~D
+   10   11 9
+   14   12 0014
+   20   12 577789
+   26   13 011224
+~C
+   34   13 55577788
+   38   14 1123
+   42   14 5568
+   48   15 012333
+   (8)  15 56778889
+   45   16 12233344
+~B
+   37   16 5556666788889
+   24   17 00011344
+   16   17 5666679
+
+~A (including 177+)
+    9   18 24444
+    4   18 7
+    3   19 33
+    1   19 
+    1   20 4
+
+MTB > Describe 'exam2'.
+
+                N     MEAN   MEDIAN   TRMEAN    STDEV   SEMEAN
+exam2         101   151.03   157.00   151.85    24.69     2.46
+
+              MIN      MAX       Q1       Q3
+exam2       83.00   204.00   133.00   168.50
+
+
+*ROUGH* grade breakpoints:
+A    177 and above
+B    165 to 176
+C    135 to 164
+D    119 to 135
+R    118 or below
+

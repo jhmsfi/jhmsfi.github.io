@@ -1,0 +1,92 @@
+Experiment 5: A Minimum Wage.  88-220, Fall 1998, 21 Sept 98.
+
+Some important notes:
+
+We only did Sessions 1 and 2, so ignore all questions 
+pertaining to Session 3.
+
+In tables L5.1, L5.2, L5.3, L5.4, and L5.5 and the associated questions (pp 151-154): 
+All references to "Type A" and "Type B" workers on these pages should be changed 
+to "$12 Reservation Wage" and "$5 Reservation Wage."  Thus, whenever you read
+"Type A" replace it with "$12 Reservation Wage," and whenever you read "Type B"
+replace it with "$5 Reservation Wage." 
+
+Question 3 and Table L5.9 (p 159): 
+The distribution of reservation wages is the same for all sessions. 
+The labor supply asked for in this question and table is for a single session.
+
+Question 3 and Table L5.10 (p 160): 
+The value of workers to firms is identical in Sessions 1 and 2. 
+The labor demand asked for in this question and table should 
+be for each individual session, and not the total demand for 
+both sessions combined. 
+
+Figure L5.1, p 161: 
+The x-axis may be too small depending on the number of students in 
+the class.  Feel free to rescale it or go into the right margin. 
+
+Question 2 (p 163): The question should read: "Complete Table L5.12 to compare 
+the competitive equilibrium predictions about wage rates and number of 
+laborers employed in each session with the observed values." 
+
+Question 1 and Table H5.1 (p 171): 
+Remove the words "competitive equilibrium" from the second line of the
+question, and alter the title of Table H5.1 to "Employment and 
+Labor Income--Theoretical Predictions."  Note that the "theoretical 
+prediction" may differ from "competitive equilibrium" when the 
+minimum wage is binding. 
+
+Question 3, p. 171: 
+Change the word "involuntary" to "voluntary" on the last line of the question. 
+
+
+
+And here is the data:
+
+Data for Table L1.5:
+Distribution of Types of Employers and laborers
+Participant		
+Type		Sess 1	Sess 2
+Employers	10	10
+Type A ($12)	15	15
+Type B ($5) 	15	15
+
+Data for Table L5.2:
+Unemployed Laborers and Their Reservation Wages
+	 	Type A ($12)	Type B($5)
+Session 1	10		2
+Session 2	12		8
+
+Data for Table L5.3:
+No Minimum Wage:  Session 1--Last Round
+Firm	Laborer 1	Laborer 2
+ID	Wage	Type	Wage 	Type
+1	13	12	8	5
+2	13	5	8.25	5
+3	16	12	9	5
+4	12	5	10	5
+5	17	12
+6	15	12	9	5
+7	16	5	8	5
+8	16	5	8	5
+9	12	12	
+10	10	5	10	5
+
+	
+
+Data for Table L5.4:
+Binding Minimum Wage:  Session 2--Last Round
+Firm	Laborer 1	Laborer 2
+ID	Wage	Type	Wage 	Type
+1	16	5
+2	15	5
+3	15.5	5
+4	17	5
+5	16	12
+6	15.25	5
+7	16	12
+8	15	12
+9	15	5
+10 	15	5	
+
+End of file..................

@@ -1,0 +1,74 @@
+Experiments with Economic Principles						
+Experiment 13:  Auctions						
+
+88-110, 27 November, 2001 (collected by JHM)						
+Below are the data needed to complete your lab notes and homework.						
+pg 370	Table 13.1:  Outcome of English Auction					
+				Group A	Group B	Group C
+	Highest Bid		59	61	73
+	High Bidder's Buy V	95	89	94
+	High Bidder's Profits		
+	Highest Buyer Value	95	89	94
+	2nd-Highest Buyer V	59	61	72
+
+pg 370						
+	Table 13.2:  Outcome of Dutch Auction					
+				Group A	Group B	Group C
+	Winning Bid		82	66	71
+	Winning Bidder's Buy V	87	66	92
+	Winning Bidder's Profits					
+	Highest Buyer Value	87	67	95
+	2nd-Highest Buyer V	68	66	92
+
+pg 371						
+	Table 13.3:  Outcome of Sealed-Bid, First-Price Auction					
+				Group A	Group B	Group C
+	Highest Bid		90	86	65
+	High Bidder's Buy V	96	96	83
+	High Bidder's Profits				
+	Highest Buyer Value	99	96	83
+	2nd-Highest Buyer V	96	67	71
+
+pg 371						
+	Table 13.4:  Outcome of Sealed-Bid, Second-Price Auction					
+				Group A	Group B	Group C
+	Highest Bid		75	90	78
+	Second-Highest Bid	59	87	75
+	High Bidder's Buy V	82	93	80
+	High Bidder's Profits				
+	Highest Buyer Value	82	93	89
+	2nd-Highest Buyer V	62	92	80
+
+The data below is not needed for the workbook, but we will
+refer to it in class.
+
+$1 auction (escalation auction)
+The highest bid was $2.50, the second highest bid was $2.00.
+(Thus, the $1 was sold for $4.50.)
+
+Paper clip auction.  There were 30 paper clips (thus, the good
+was worth $30 to the buyer).
+
+The bids were (first number is x10, remaining number are second digit):
+4 5
+3 553000
+2 988543211100
+1 75
+
+Accountant auction.  The average was $120 (thus, the good was worth
+$120 to the buyer).
+
+The bids were (along with the associated estimate):
+
+150 (150)
+140 (160,120,110,140)
+135 (160)
+130 (100,170,170,130)
+125 (130)
+115 (70)
+110 (70)
+100 (120,140,150)
+91 (90)
+75,63,50,48 (90,100,80,80)
+
+***END OF POSTING***						

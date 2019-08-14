@@ -1,0 +1,41 @@
+Statistics for the first exam, Fall, 1996.
+
+
+                N     MEAN   MEDIAN   TRMEAN    STDEV   SEMEAN
+exam1         101   143.02   144.00   144.48    29.03     2.89
+
+              MIN      MAX       Q1       Q3
+exam1       68.00   186.00   128.00   166.00
+
+Here is the distribution:
+
+Stem-and-leaf of exam1     N  = 101
+Leaf Unit = 1.0
+
+    #    grade     
+    1    6 8
+    5    7 4579
+    6    8 8
+    9    9 246
+   14   10 02257
+   20   11 126789
+   27   12 0037889
+   44   13 01112344555688889
+  (10)  14 0223344788
+   47   15 333355566689
+   35   16 00001144557778
+   21   17 000011467789
+    9   18 233333666
+
+Thus, starting from the top of the diagram, we have grades of
+68 (1st line), 74, 75, 77, 79 (2nd line), etc.
+
+A ROUGH distribution of grades is as follows:
+
+110+ D
+127+ C
+157+ B
+172+ A
+
+
+

@@ -1,0 +1,356 @@
+The Wall Street Journal Interactive Edition November 3, 1997
+
+			Airlines Rely on Technology To Manipulate Fare
+			Structure
+
+			By SCOTT MCCARTNEY Staff Reporter of THE WALL
+			STREET JOURNAL
+
+			The gap in the air has never been wider.
+
+While airlines continue to woo leisure travelers with sales, they are
+squeezing business travelers like never before. Discounts on
+unrestricted fares have become as rare as in-flight dinners, and with
+business fares already up by 20% this year, carriers pushed through an
+additional 5% across-the-board increase in September. In contrast,
+prices for leisure tickets have actually fallen slightly, according to
+American Express Travel Services.  "They've got you and they know it,"
+grumbles construction executive Tony Konosky, who recently wasted a
+week trying to find a ticket from Houston to Bombay, India, for less
+than $2,500. "It's like there's a target on your chest."
+
+Mr. Konosky isn't far off, given the advanced technology that carriers
+now have at their disposal to set and manipulate fares. Computers allow
+airlines to constantly tell each other about fare changes, tamping down
+the chances that any one will gain even a momentary price advantage.
+And an obscure mathematical science known as "yield management"
+empowers airlines to project almost precisely how many last-minute
+business travelers will show up willing to pay whatever it takes to get
+on a given flight.
+
+Cheap Seats
+
+Such tactical tools have transformed airline economics during the past
+year. Fare sales once were few and fleeting when traffic was strong and
+fares were high, as has been the case this year. But with a firmer
+handle on the demand for high-fare business tickets, carriers have run
+almost continuous leisure sales and significantly expanded the supply
+of cheap, advance-fare seats.
+
+For business travelers, that has meant packed planes as well as high
+fares. Load factors -- the percentage of seats filled -- have run at
+record levels, more than 70%, and many popular flights are completely
+filled all the time. "Ten years ago I would have said to you we
+probably couldn't get load factors as high as they've been in 1997,"
+says Robert Crandall, chairman and chief executive of American Airlines
+and its parent AMR Corp.  This fall, American will begin phasing in a
+new, even more powerful yield-management system that is expected to
+boost its annual revenue by as much as $200 million.  With surprisingly
+high traffic and fares in September, airlines are posting record
+third-quarter earnings. Unit revenues are at all-time highs, and 1997
+will mark the third-consecutive year of record profits for the airline
+industry, a milestone reached only twice before in its regulated days.
+What's more, an expected record 1998 will mark the first time in
+aviation history of four-consecutive record years of profits.
+
+			Fewer Attacks
+
+			Airlines also have benefited from a strong
+			economy, limited capacity increases and muted
+			competition, particularly among low-fare
+			start-ups. But many executives say airlines
+			have simply learned to more effectively price
+			their product, instead of attacking each other
+			to gain market share.
+
+			Major carriers have grown reluctant to undercut
+			each others' fares, knowing retaliation can be
+			expensive.  Besides, airlines have found that
+			business travelers are more swayed by
+			convenient schedules and frequent-flier
+			programs than by price. Because of such
+			factors, and heavy demand, carriers have
+			readily endorsed each others' business-fare
+			increases rather than trying to undermine them.
+			"We've evolved from one of these cataclysmic,
+			World War III industries to some equilibrium
+			that's good for shareholders and employees and
+			communities," says Gordon Bethune, Continental
+			Airlines' chairman and chief executive.
+
+			Much of that pricing mastery has come from
+			recent advances in yield management, which
+			began as simple overbooking of flights. Before
+			deregulation in 1978, all carriers offered the
+			same government-set fares; discounts were rare
+			beyond night or weekend flights.  People
+			Express introduced low fares nationwide in the
+			early 1980s; old-line carriers, with higher
+			costs, couldn't match without losing millions.
+
+			Bell's Formula
+
+			In response, Mr. Crandall developed the first
+			true yield-management system. It allowed
+			American to offer a limited number of seats on
+			a plane at a People Express price, while still
+			selling high-fare tickets to business
+			travelers.
+
+			Those early systems, however, lacked the
+			computing muscle to track booking trends or to
+			gauge the systemwide impact of seat-filling
+			discounts offered on an individual route.
+			Inevitably, carriers either sold too many cheap
+			seats and left behind big-ticket customers, or
+			held back too many business seats and flew
+			sparsely filled airplanes.
+
+			But in 1988, Bell Laboratories patented a
+			mathematical formula that could perform rapid
+			calculations on fare problems with thousands of
+			variables. That led to further advances in
+			software, enabling yield-management gurus to
+			use simple business computers to perform
+			complicated fare-crunching and seat-allocating
+			that even a Cray supercomputer couldn't handle
+			just a few years before. By meshing massive
+			historical databases on ridership with
+			up-to-the-minute bookings, carriers could
+			predict with almost pinpoint accuracy how many
+			business customers would want seats on a
+			particular flight. As a result, "high fares get
+			higher and low fares get lower," says Robert
+			Cross, whose Aeronomics Inc. sells
+			yield-management systems to airlines.
+
+			Indeed, the resulting price spread can be
+			staggering.  Take Flight 2015, American's
+			popular 5:30 p.m. departure from Chicago to
+			Phoenix. Its 125 coach seats are divided among
+			seven fare "buckets," with round-trip tickets
+			ranging from $238 to $1,404. In the weeks
+			before each Chicago-Phoenix flight, American's
+			yield-management computers constantly adjust
+			the number of seats available in each bucket,
+			taking into account tickets sold, historical
+			ridership patterns and connecting passengers
+			likely to use the route as one leg of a longer
+			trip.
+
+			If advance bookings are slim, American adds
+			seats to low-fare buckets. If business
+			customers buy unrestricted fares earlier than
+			expected, the yield-management computer takes
+			seats out of the discount buckets and preserves
+			them for last-minute bookings that the database
+			predicts will still show up.
+
+			With 69 of 125 coach seats already sold four
+			weeks before one recent departure of Flight
+			2015, American's computer began to limit the
+			number of seats in lower-priced buckets. A week
+			later, it totally shut off sales for the bottom
+			three buckets, priced $300 or less.  To a
+			Chicago customer looking for a cheap seat, the
+			flight was "sold out," although
+			advance-purchase fares were still available to
+			New York-to-Phoenix customers connecting in
+			Chicago, because the overall fare structure for
+			that one-stop trip was higher and because
+			American had lots of seats available on the
+			connecting New York-Chicago flights.
+
+			One day before departure, with 130 passengers
+			booked for the 125-seat flight, American still
+			offered five seats at full fare because its
+			computer database indicated 10 passengers were
+			likely not to show up or take other flights.
+			Flight 2015 departed full and no one was
+			bumped.
+
+			Scalping Complaint
+
+			While carriers boast that yield management
+			allows them to extend leisure discounts to more
+			travelers and reserve seats for their best
+			customers, critics contend that it amounts to
+			high-tech scalping. "Yield management is good
+			for airlines, but it certainly isn't good for
+			travelers," says Nancy Barrows, chief operating
+			officer of Woodside Travel Trust, a major
+			corporate-travel agency. "It's pushed business
+			fares artificially high."
+
+			The effects are most striking in airline hub
+			cities, where one carrier can dictate pricing.
+			In Denver, where UAL Corp.'s United Airlines is
+			king, business fares are up 24% this year --
+			and leisure fares are down 51%. In Dallas,
+			where American dominates, business fares are up
+			26%, while leisure fares are down 20%,
+			according to American Express.
+
+			Philadelphia-to-Houston has one of the highest
+			average fares of any U.S. route of under 1,500
+			miles. Business fares there are up 18% this
+			year, according to Topaz Enterprises Inc., a
+			Portland, Ore., airfare-auditing firm, even
+			though US Airways Group has added two nonstop
+			flights to compete with rival Continental,
+			which dominates with 66% of the market.
+
+			Tanker-ship manager Kevin Coyne's company
+			recently paid Continental $1,484 for a one-day
+			round trip to Houston.  In contrast,
+			Philadelphia-based chemical executive Dan Smith
+			drove 90 minutes and made the same trip from
+			Baltimore, where Continental competes with
+			low-fare Southwest Airlines. "It makes no sense
+			to me," says Mr.  Smith, who paid Continental a
+			mere $280.
+
+			Competitive pressures aren't likely to drive
+			business fares down, thanks to Airline Tariff
+			Publishing Co.  Located in a black-glass
+			building at Washington, D.C.'s Dulles Airport,
+			ATPCO is owned by a group of 24 international
+			airlines, including the seven largest U.S.
+			carriers.
+
+			World-Wide Posting
+
+			Every carrier sends its fare changes to ATPCO,
+			whose centralized computer system sends a
+			download seven times a day to
+			computer-reservation systems used by travel
+			agents -- and to the airlines themselves. The
+			system was started by the industry's lobbying
+			group, the Air Transport Association, before
+			deregulation. Airlines contend it still is
+			necessary to make sure fares are posted
+			world-wide simultaneously and correctly.
+
+			ATPCO says its two mainframe computers create a
+			perfect marketplace, akin to a gas-station
+			owner being able to watch prices his competitor
+			posts across the street.  "The reason for our
+			being is to allow carriers to as easily as
+			possible manage their fares and get them into
+			the marketplace," says Michael Ferrier, ATPCO's
+			president.
+
+			Indeed, ATPCO insures that no pricing change
+			goes undetected. Some airlines' internal
+			computers suggest responses to ATPCO-announced
+			fare changes, based on the competitors' market
+			share and other factors. A few carriers even
+			allow their computers to automatically change
+			fares, though most require a human to sign
+			off.
+
+			At Houston-based Continental, pricing experts
+			meet three times daily to review ATPCO-reported
+			fare changes, especially those involving
+			Continental's major business routes. Within
+			minutes, a Continental response can be on its
+			way back to ATPCO with a simple keystroke or
+			one-page fax. "We tend to always match," fare
+			changes, says James Compton, Continental's head
+			of pricing.
+
+			Consumer advocates argue that ATPCO lessens
+			pressure to lower prices because it removes
+			competitive fears. In a 1992 crackdown, the
+			Justice Department did bar airlines from using
+			ATPCO to post, or "signal," proposed fare
+			changes and then withdraw them if competitors
+			didn't go along. Now, a fare change must be
+			available as soon as it goes into the central
+			computer.
+
+			Weekend Boosts
+
+			In practice, however, carriers often initiate
+			fare boosts late in the week, then watch to see
+			if competitors will match over the weekend,
+			when travel agencies are closed and few
+			business tickets are sold.  If that doesn't
+			happen, increases typically are pulled Sunday
+			night. "That is signaling," complains Alexander
+			Anolik, a travel lawyer who represents airlines
+			and travel agencies. "It's better than it used
+			to be for the consumer, but it's still
+			signaling."
+
+			During the first weekend in September, several
+			airlines raised business fares 5%. That Sunday
+			night, however, United instructed ATPCO to roll
+			back the increase in markets where it competes
+			with Southwest Airlines, which hadn't matched
+			the increase. When ATPCO mistakenly rolled back
+			the increase in all United markets, major
+			carriers like American immediately followed
+			suit. Early Monday morning, United reinstituted
+			the 5% increase in its non-Southwest markets.
+			Within 24 hours, other major carriers had done
+			the same.
+
+			"It certainly looks like they have a way of
+			getting everybody to do the same thing," says
+			Pitts Carr, an Atlanta attorney who sued
+			carriers for anticompetitive pricing practices
+			in 1992. (He negotiated a settlement with the
+			airlines.)
+
+			Justice Department officials say the system is
+			legal as long as fares are immediately for
+			sale, noting that, even over a weekend, a
+			carrier takes a risk leading a fare increase
+			because competitors will be priced lower.
+
+			Thin Margins
+
+			Airlines argue that if they were gouging
+			customers and colluding on prices, they would
+			be earning more money.  Despite the hefty
+			earnings of the past three years, which are
+			expected to total $13.9 billion by the end of
+			1997, airline profit margins are still
+			relatively skinny, and credit ratings for some
+			major carriers remain below investment-grade.
+			In the third quarter, American posted its
+			highest pretax profit margin ever in its
+			history, but it was only 10.1%. "We're just now
+			approaching the average returns for most
+			industries in this country," says Gerard Arpey,
+			American's chief financial officer.
+
+			Still, in an industry with a cutthroat
+			reputation, some carriers seem downright shy
+			about head-to-head competition. Trans World
+			Airlines, for instance, has taken to offering
+			discount coupons through Kroger Co.  grocery
+			stores. And some travel agents have found that
+			airlines will give them special deals, but only
+			over the telephone and only if they think
+			competitors won't find out. "As long as it
+			doesn't provoke a response, they'll do it to
+			keep my business," says Seattle travel agent
+			Steve Danichek, who says he recently persuaded
+			US Airways to knock $1,400 each off the price
+			of some Seattle-to-Baltimore tickets.
+
+			Such machinations are tough to stomach for
+			salesman Gerald Davis. To save almost $1,000
+			over the cost of a direct flight from Dallas,
+			he recently went through Washington to get to
+			New York. "They've made it a game that gets
+			very irritating," he says. "I feel violated
+			every time I get on a plane."
+
+					 Return to top of page
+
+			 Copyright  1997 Dow Jones & Company, Inc. All
+			 Rights
+					       Reserved.

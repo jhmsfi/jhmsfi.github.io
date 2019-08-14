@@ -1,0 +1,62 @@
+Experiment 12: Auctions
+
+The experiment was conducted on 21 November, 1997, at
+Carnegie Mellon University by John H. Miller 
+
+Data for Table L12.1
+Outcome of English Auctions
+		Grp A	Grp B	Grp C	Grp D
+Highest Bid	97	91	
+High Bid BV	99	92	
+High Bid Profit	
+Highest BV	99	92	
+2nd Highest BV	97	91	
+
+Data for Table L12.2
+Outcome of Dutch Auctions
+		Grp A	Grp B	Grp C	Grp D
+Winning Bid	91	76	91	89	
+Winning Bid BV	97	77	93	90	
+Winning Bid Profit
+Highest BV	97	77	96	90
+2nd Highest BV	94	76	93	85	
+
+Data for Table L12.3
+Outcome of Sealed-Bid, First-Price Auction
+		Grp A	Grp B	Grp C 	Grp D
+Highest Bid	80	95	89	93
+High Bid BV	93	97	91	94
+High Bid Profit
+Highest BV	93	97	91	94
+2nd Highest BV	77	61	88	84
+
+Data for Table L12.4
+Outcome of Sealed-Bid, Second-Price Auction
+		Grp A	Grp B	Grp C	Grp D
+Highest Bid	99	96	85	94
+2nd Highest Bid	98	92	78	91
+High Bid BV	73	97	86	94	
+High Bid Profit	
+Highest BV	100	97	85	94
+2nd Highest BV	89	93	78	92	
+
+Results from the dollar auction:  
+Highest Bid    	1.70 
+2nd Highest Bid 1.60
+
+Results from the common value auction:
+The bag of coins was worth $2.85, the high bid was $4.20
+
+Here is the distribution of bids:
+# Bids	Range
+10	< 100  
+2	100 < 150
+5	150 < 200
+7	200 < 250
+8	250 < 300
+4	300 < 350
+2	350 < 400
+3	>= 400
+
+End of file..................
+

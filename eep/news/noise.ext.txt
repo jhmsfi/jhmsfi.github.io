@@ -1,0 +1,165 @@
+From tedb@knute.econ.ucsb.edu Wed Nov 12 01:08:33 1997
+Return-Path: <tedb@knute.econ.ucsb.edu>
+Received: from econ.ucsb.edu (econ.econ.ucsb.edu) by zia.hss.cmu.edu.zia.hss.cmu.edu (4.1/SMI-4.1)
+	id AA23247; Wed, 12 Nov 97 01:08:32 EST
+Received: from knute.econ.ucsb.edu by econ.ucsb.edu (SMI-8.6/ECON.UCSB-v1.1)
+	id WAA03340; Tue, 11 Nov 1997 22:08:15 -0800
+Received: by knute.econ.ucsb.edu (NX5.67g/NX3.0S)
+	id AA03818; Tue, 11 Nov 97 22:06:56 -0800
+Message-Id: <9711120606.AA03818@knute.econ.ucsb.edu>
+Content-Type: text/plain
+Mime-Version: 1.0 (NeXT Mail 4.1mach v148)
+Received: by NeXT.Mailer (1.148.RR)
+From: Ted Bergstrom <tedb@knute.econ.ucsb.edu>
+Date: Tue, 11 Nov 97 22:06:55 -0800
+To: miller@zia.hss.cmu.edu (John H. Miller)
+Subject: Re: noise
+Reply-To: tedb@econ.ucsb.edu
+References: <9711111549.AA22124@zia.hss.cmu.edu.zia.hss.cmu.edu>
+Status: RO
+
+Here is a website for anti-noise cranks.  It looks like a pretty good source  
+for articles and news about pollution, but including the whole thing may be  
+a bit overwhelming for students.
+
+http://www.nonoise.org/index.htm
+
+Below I give you a couple of reasonably interesting selections from this site.
+
+**
+
+
+_Mayor of Ohio Town Wants a New Noise Ordinance; Some Residents Oppose the Idea
+
+_PUBLICATION: The Cincinnati Enquirer
+DATE: July 23, 1997
+SECTION: Metro, Pg. B03
+BYLINE: Janet Wetzel
+DATELINE: Deer Park, Ohio
+ACTIVISTS, INDIVIDUALS, AND GROUPS MENTIONED: Francis Healy, Mayor
+
+The Cincinnati Enquirer reports that a new noise ordinance is being  
+considered by the city council in Deer Park, Ohio to deal mostly with loud  
+car stereos. The proposed ordinance has the support of the city's mayor, but  
+is being opposed by at least two outspoken residents.
+
+According to the article, Deer Park Mayor Francis Healy said the new  
+ordinance is needed to control loud car stereos. He said, "I get a lot of  
+complaints, particularly about loud boom boxes in cars," with some "playing  
+so . . . loud you couldn't hear a fire engine if it pulled up beside you."  
+The mayor added that the new ordinance would give police the power to tell  
+drivers of such vehicles to turn down the volume. Critics say the city's  
+disturbing the peace law covers the problem, but that law requires someone to  
+sign a warrant. Many people are afraid to sign their name to a warrant, the  
+mayor said, because they don't want the noise violator to find out they  
+complained to the police. The proposed noise ordinance would not require a  
+resident to sign a warrant.
+
+The article goes on to report that at least two residents, Tom Callahan and  
+Hermann Tegenkamp, are loudly opposing the proposed ordinance. According to  
+Callahan and Tegenkamp, the proposed ordinance could lead to abuses by  
+neighbors who could complain anonymously. In addition, Tegenkamp argues that  
+the proposed ordinance would allow police to cite people who they believe are  
+too noisy without a clear definition of what is too noisy. Both men agree  
+that the language in the ordinance is too broad and too vague, prohibiting  
+loud "human voice" and "plainly audible" audio emissions 50 feet away, with  
+no decibel guideline. Callahan said he plays in a band that practices at his  
+home, and although he's worked to be considerate of his neighbors, he's  
+worried that the new ordinance could create problems. Tegenkamp added, "I've  
+talked to a lot of people in Deer Park, and everyone I've talked to is  
+against it. We have an ordinance that works. It's called 'disturbing the  
+peace.' There's no need to have a new one."
+
+The article says that Mayor Healy responded to the criticisms by saying  
+"police are not going to to be out there picking on anyone," and citations  
+likely would be infrequent. He added that noise ordinances are common, and  
+that the cities of Cincinnati, Sharonville, and Springdale have them.
+
+The article concludes that at a July 14 city council meeting, councillors  
+turned down the mayor's request to pass the ordinance as an emergency  
+measure, saying they wanted more input from residents. The mayor said he has  
+heard no opposition to the ordinance except from Tegenkamp and Callahan, and  
+hopes the council will pass it on August 11. The council voted down a similar  
+proposed ordinance about five years ago after deciding the disturbing the  
+peace law was adequate, said David O'Leary, safety service director.
+
+
+
+**********************************************************************_
+
+_Maine Residents Complain About Personal Watercraft on Local Lakes
+
+_PUBLICATION: Bangor Daily News
+DATE: July 25, 1997
+DATELINE: Cherryfield and Surry, Maine
+
+The Bangor Daily News printed the following letter-to-the-editors from  
+residents in Surry and Cherryfield, Maine regarding noise from personal  
+watercraft on local lakes:
+
+To the editor:
+
+I am writing in response to the article of Monday, July 21 on the front page  
+titled, "Case made for personal watercraft." I was quite dismayed at the  
+lack of concern for the wildlife, and for the apparent lack on reporting one  
+side of the controversial story. I have lived on a lake for over 10 years and  
+have seen the different progression of technology and development of the  
+personal watercraft. Maybe my story is one-sided, but true.
+
+Let me tell you what I have seen. I have seen people towing skiers without a  
+spotter, how can you spot with your back to the water skier? I have seen  
+operators, oblivious to rocks jutting out of the water, running down loons,  
+cutting off slow-moving fishing boats. I have been personally cut off in my  
+path while water skiing. I have heard the mournful shrill of a loon calling  
+out to her mate with the approach of a fast moving watercraft. How can you  
+pick up an injured or tired skier if you already have a passenger with you on  
+your watercraft?
+
+I don't pay my waterfront taxes to have my solitude interrupted by the  
+buzzing of one of those personal watercrafts.
+
+People who sell these things are very conscientious, the majority of the  
+people who buy them are not.
+
+The key phrase is this, "How are we going to make people use them wisely?"  
+Mandatory training and education including a practical exam, you need one for  
+motorcycles and automobiles, maybe this will work. I believe this is  
+something the watercraft dealers should sponsor, but they should be  
+implemented by an impartial party.
+
+It is ignorance, inexperience, and lack of conscience that irritate me the  
+most. But it is this population that is giving the jet skiers a bad  
+reputation. They, by far, outweigh the responsible owners. It is unfortunate  
+that the policing of these is left to the few game wardens we have on our  
+fresh water lakes.
+
+Theresa Richardson, Surry resident
+
+To the editor:
+
+My family, at a sand beach with another large family, are enjoying a  
+wonderful day on quiet Spring River Lake in Township 10.
+
+Suddenly from the other end of the lake, four personal watercraft machines  
+zoom toward us, swinging around in a large circle, actually causing young  
+children, mothers and fathers to immediately go to the beach, where they  
+stand in awe as these machines were in front of us. The noise is awful. The  
+peace and quiet of a pristine lake has been destroyed.
+
+The people on these machines even stop in front of us. It seems that they  
+may think we are impressed with their tremendous noise and circling  
+maneuvers. To the man nearest us I say, "We don't need this, we don't need  
+you!" He thrusts his finger up toward me then continues his circling for some  
+five minutes. Then the four zoom toward the other end of the lake.
+
+I operate a bed and breakfast business in Cherryfield. Spring River Lake is  
+a primary recommendation for our visiting guests. Our local people love to  
+take children to the lake. Personal watercraft, with the horrible noise and  
+dangerous maneuvers, will destroy the quiet and beauty of their lake.
+
+It is my hope that many Mainers will contact their state representatives and  
+implore them to not give in to efforts of the people who want to sell these  
+machines. And why any compromise? Ban them completely.
+
+William Conway, Cherryfield resident
+

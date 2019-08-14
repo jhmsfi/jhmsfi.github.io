@@ -1,0 +1,54 @@
+Experiment 10: Comparative Advantage
+
+The experiment was conducted on 8 November, 1996, at 
+Carnegie Mellon University by John H. Miller
+
+There were 10 Richlanders and 20 Poorlanders in the experiment.
+
+Data for Table L10.1
+Output and Payoffs in Richland, Session 2, Final Round
+ID	Fish	Bread	Final Fish	Final Bread	Payoff
+	Prod	Prod	Holdings	Holdings	
+1	20	0	10		10		10
+2	20	0	10		10		10
+3	20	0	10		10		10
+4	20	0	10		10		10
+5	20	0	10		10		10
+6	20	0	10		10		10
+7	20	0	10		10		10
+8	20	0	10		10		10
+9	20	0	10		10		10
+10	20	0	10		10		10
+	
+Note: In the first round of this session, all but three of the
+Richlanders did as above.  Two of these produced 14F and 4 Bread
+(both ended up with 9F and 9B), and the remaining person made 11F 
+and 6B (ending with 9F and 10B).
+	
+Data for Table L10.2
+Output and Payoffs in Poorland, Session 2, Final Round
+ID	Fish	Bread	Final Fish	Final Bread	Payoff
+	Prod	Prod	Holdings	Holdings	
+1	0	10	5		5		5
+2	0	10	5		5		5
+3	0	10	5		5		5
+4	0	10	5		5		5
+5	0	10	5		5		5
+6	0	10	5		5		5
+7	0	10	5		5		5
+8	0	10	5		5		5
+9	0	10	5		5		5
+10	0	10	5		5		5
+11	0	10	5		5		5
+12	0	10	5		5		5
+13	0	10	5		5		5
+14	0	10	5		5		5
+15	0	10	5		5		5
+16	0	10	5		5		5
+17	0	10	5		5		5
+18	0	10	5		5		5
+19	0	10	5		5		5
+20	0	10	5		5		5
+
+
+End of file..................
