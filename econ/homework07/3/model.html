@@ -1,0 +1,58 @@
+<html>
+<head>
+<title>Congestion and Parking Lot Efficiency</title>
+</head>
+<body>
+<center>
+<h1> Congestion and Parking Lot Efficiency</h1><br>
+<h2> Sera Linardi / Tobias Lorenz</h2><br>
+Homework for SFI 2007 graduate workshop <br>
+</center><br><br>
+
+<center><pre><a href="index.html">Research Question</a>     <a href="model.html">The Model</a>       <a href="results.html">The Results</a>      <a href="extensions.html">Possible Extensions</a> </pre></center>
+
+
+<b>The Model</b> <br><br>
+
+
+<p>The shopping center is designed as a double strip parking lot, i.e. a road in the middle with one lane of parking spots on each side. The applet below illustrates this. Cars are entering the lot according to a distribution f(x). It is only possible to drive through the lot in one direction. Cars can see shoppers approaching their car and may decide to stop driving and wait for the shopper to vacate his spot. In the animation, a car will only wait up to a threshold time value without finding a free parking spot before leaving the parking lot without parking. In the applet cars intending to park will appear grey, parking cars will be displayed as blue. A car which will soon free its spot will turn yellow and cars on the leave are coloured black. The time that cars spend parking on average can be varied through the slider. Cars that leave without shopping or can't enter the parking lot are lost customers. 
+<br><br><br>
+<OBJECT
+  classid = "clsid:8AD9C840-044E-11D1-B3E9-00805F499D93"
+  codebase = "http://java.sun.com/update/1.4.2/jinstall-1_4-windows-i586.cab#Version=1,4,0,0"
+  WIDTH = "410" HEIGHT = "375">
+  <PARAM NAME = CODE VALUE = "com/xj/anylogic/animation/AnimationApplet.class">
+  <PARAM NAME = ARCHIVE VALUE = "parkingspot.jar,xjanylogic5engine.jar">
+  <PARAM NAME = "type" VALUE = "application/x-java-applet;version=1.4">
+  <PARAM NAME = "scriptable" VALUE = "false">
+  <PARAM NAME = "root" VALUE = "parkingspot.Main$Simulation">
+  <PARAM NAME = "progressbar" VALUE = "true">
+  <COMMENT>
+  <EMBED 
+    type = "application/x-java-applet;version=1.4" \
+    CODE = "com/xj/anylogic/animation/AnimationApplet.class" \
+    ARCHIVE = "parkingspot.jar,xjanylogic5engine.jar" \
+    WIDTH = "410" \
+    HEIGHT = "375" \
+    scriptable = false \
+    root = "parkingspot.Main$Simulation" \
+    progressbar ="true" \
+    pluginspage = "http://java.sun.com/products/plugin/index.html#download">
+    <NOEMBED>
+    </NOEMBED>
+  </EMBED>
+  </COMMENT>
+</OBJECT>
+
+
+
+<p>There are several assumptions underlying the model: Cars only enter the lot if the entry is clear. In addition cars park on the first empty spot on their way. The distribution of minutes spent shopping is distributed normally and its mean is one of the parameters of interest. The time a car spends parked is the time spent looking for parking, plus the time spent shopping, plus a "loading" time. In order to leave a spot, a car must be able to back out onto the road; it must wait if the road is occupied. All cars drive at the same speed and the spots on the road can only be occupied by one car each point in time. <br><br>
+
+
+
+
+
+
+</body>
+</html>
+

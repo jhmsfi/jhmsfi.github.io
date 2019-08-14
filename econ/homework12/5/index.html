@@ -1,0 +1,249 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+  <title>Sasson and Thomas - Spring is in the Air</title>
+  <style type="text/css">
+  </style>
+</head>
+
+<body class="c9">
+  <h2 class="c0">Spring is in the Air<br />
+  Isaac Sasson and Trey Thomas</h2>
+
+  <h2 class="c0">Scenario</h2>
+
+  <p class="c0">People in different parts of a country, and across countries, begin
+  to want a change in government.</p>
+
+  <h2 class="c0">Conceptual Framework</h2>
+
+  <p class="c0">We approach this modeling scenario from the perspective that
+  country-level factors play a role in shaping the development of revolution among
+  individual citizens. &nbsp;We imagine that a country generally predisposed to
+  opposition (from a history of oppression, perhaps) is more likely to suffer from
+  revolution than one historically predisposed to loyalty. &nbsp;Revolution, we suggest,
+  is dependent on a long history of preceding events and so we account for differences in
+  such predispositions across countries. &nbsp;</p>
+
+  <p class="c6 c0"></p>
+
+  <p class="c0">Additionally, we imagine that the density of a country&rsquo;s
+  population can moderate the extent to which loyalty or opposition views spread.
+  &nbsp;While a very sparsely populated country would likely rise in opposition only when
+  individuals are generally predisposed to revolution, a massively dense population may
+  be more susceptible to rapid increases in opposition as communication among neighbors
+  is commonplace.</p>
+
+  <p class="c6 c0"></p>
+
+  <p class="c0">Lastly, we imagine the process by which a desire for a change in
+  government develops over time at the individual-level - conditioned on the views of
+  one&rsquo;s neighbors. &nbsp;Given our focus on country-level predispositions, it
+  follows that an individual would consider the views of his/her neighborhood relative to
+  the country at large. &nbsp;A moderate individual living in a moderate neighborhood in
+  Country A, might be a moderate living in very extremism neighborhood in Country
+  B.</p>
+
+  <h2 class="c0"></a>The
+  Model</h2>
+
+  <p class="c0">We envision revolutions developing across space - both nationally
+  and internationally. Therefore, we start with four countries in a 2x2 grid. The
+  countries are all equally-sized, with each able to populate up to 2,500 individuals.
+  Since space is fixed within each country, changing the population size in effect
+  determines the country&rsquo;s population density.</p>
+
+  <p class="c6 c0"></p>
+
+  <p class="c0"><b>Assumptions:</b></p>
+
+    <li>Individuals are randomly placed in space and their location
+    remains fixed over time.</li>
+
+    <li>Individual support for revolution is measured on a continuous
+    scale from -10 to 10, where 10 is highly supportive of the revolution, 0 is neutral,
+    and -10 is highly opposing the revolution (i.e., supportive of the current
+    regime).</li>
+
+    <li>The initial level of individual support for revolution is
+    drawn from a N(mu<sub>i</sub>, sd) distribution, where
+    mu<sub>i</sub>&nbsp;is the mean national level of support
+    in country<sub>i</sub>&nbsp;and&nbsp;sd
+    reflects the initial heterogeneity in individuals&rsquo; support, which is constant
+    across countries.</li>
+
+    <li>In each time step, individuals update their level of support
+    based on their position relative to neighbors in some radius, and how the
+    neighborhood fares relative to the nation as a whole.</li>
+
+    <li>If the mean national level of support crosses a threshold
+    (e.g., 6), a revolution ensues.</li>
+
+  <p class="c6 c0"></p>
+
+  <p class="c0"><b>Parameters:</b></p>
+
+    <li>Population size (determines density) for each country: ranges
+    from 0 to 2,500</li>
+
+    <li>Initial mean national support (mu<sub>i</sub>): ranges from -5 to 5</li>
+
+    <li>Radius of neighborhood: either 1 or 3</li>
+
+  <p class="c6 c0"></p>
+
+  <p class="c0"><b>Rules for Interaction:</b></p>
+
+  <p class="c0">Although support is measured on a continuous scale (at both the
+  individual and national levels), we introduce the binary construct of extreme vs.
+  moderate individuals/neighborhoods. Individuals are considered moderate if they are
+  within one standard deviation (defined in starting conditions) of their neighborhood
+  mean; otherwise they are considered extremists, either supporting the revolution or
+  opposing it (i.e., strongly supporting current government). Similarly, neighborhoods
+  are considered moderate if they are within one standard deviation from the national
+  mean level of support for the revolution; otherwise, they are considered extreme. With
+  this formulation, individuals act based on their position relative to the neighborhood,
+  which in term is defined in relation to the national mean level of support.</p>
+
+  <p class="c6 c0"></p>
+
+  <p class="c0"><i>Between individuals (within country) rules:</i></p>
+
+  <p class="c0">If neighborhood is moderate relative to national
+    mean:</p>
+
+
+    <li>Moderate individual -&gt; stay the same</li>
+
+    <li>Extreme individual -&gt; become more moderate (multiply by
+    [1-c])</li>
+
+  <p class="c0">If neighborhood is extreme relative to national
+    mean:</p>
+
+
+    <li>Moderate individual -&gt;move toward neighborhood mean (add
+    the difference between individual and neighborhood support multiplied by
+    [c])</li>
+
+    <li>Extreme individual -&gt; become more extreme (multiply by
+    [1+c])</li>
+
+
+  <p class="c6 c0"></p>
+
+  <p class="c0"><i>Between countries rule:</i></p>
+
+  
+    <li>If revolution occurs only Von Neumann neighbors are affected;
+    a proportion <span class="c8">p&nbsp;of agents in those
+    neighboring countries now become very extreme.</li>
+
+
+  <p class="c6 c0"></p>
+
+  <p class="c0"><b>Constants:</b></p>
+
+  
+    <li>Threshold = 6</li>
+
+    <li>sd = 0.5</li>
+
+     <li>c = 0.2&nbsp;is the proportional
+    change factor for individual becoming more moderate/extreme.</li>
+
+     <li>p = 0.2&nbsp;is the proportion of
+    extreme agents arising in adjacent countries following revolution.</li>
+  </ol>
+
+  <p class="c0 c6"></p>
+
+  <h2 class="c0">Results</h2>
+
+  <p class="c0">The model can result in one of two outcomes for each state: either
+  a revolution ensues or the population (not necessarily individuals) converges to some
+  mean national level of support anywhere below the threshold. The following insights
+  follow:</p>
+
+    <li>Not surprisingly, all else being equal, &ldquo;neutral&rdquo;
+    countries (mu<span class="c5">i&nbsp;= 0) tend to remain stable
+    over time. Populations already predisposed toward support or opposition to revolution
+    tend to become slightly more extreme in that direction, on average, but then
+    stabilize too.</li>
+
+    <li>Population density matters for promoting or inhibiting a
+    revolution. Interestingly, this effect is moderated by neighborhood size. Large
+    neighborhoods inhibit extremism (in either direction) in high-density populations,
+    but foster extremism in low-density populations (and vice versa).</li>
+
+    <li>Once a revolution occurs in one country it may propagate to
+    adjacent countries, but only if they are moderately predisposed to revolution at the
+    time. Otherwise, the disturbance will diminish and the population level of support
+    will re-stabilize close to prior conditions.</li>
+
+  <h2 class="c0">Interesting Future Directions</h2>
+
+  <p class="c0">One foreseeable addition to our model would be the inclusion of
+  government actors as agents in the model, who would seek to punish/imprison/attack
+  individuals or neighborhoods that have extreme opposition views. &nbsp;For example, it
+  would be possible to program a class of &lsquo;police&rsquo; agents to increase in
+  number as the country mean approached higher levels of opposition, up to some threshold
+  whereby the regime would &lsquo;run out of&rsquo; police reserves and suffer from
+  revolution. &nbsp;How many would be needed, and in what force, would regime-backed
+  police be able to sequester a regime? &nbsp;What population densities and
+  predispositions of opposition could overcome even a well-entrenched
+  government?</p>
+
+  <p class="c6 c0"></p>
+
+  <p class="c0">A second, and visually appealing, addition would include the
+  restructuring of the model&rsquo;s spatial landscape to better approximate the
+  real-world. &nbsp;For example, our four country grid might be transformed into a five
+  or six country &lsquo;continent&rsquo; wherein adjacency varied across the landscape.
+  &nbsp;Would changing the spatial landscape (and potentially limiting, or increasing
+  adjacencies) impact the spread of revolution across countries? &nbsp;What spatial
+  configurations set the stage for a cascade of revolutions?</p>
+
+  <p class="c6 c0"></p>
+
+  <h2 class="c0">Application to
+  Other Social Science Applications</h2>
+
+  <p class="c0">Our model and approach may be useful for studying social science
+  questions involving the propagation of an opinion, view, or behavior (measured on a
+  continuous scale) among individuals within groups of individuals and subsequently
+  across spatial units. &nbsp;The spread of pro-war sentiment, desire to mitigate carbon
+  emissions, or even feelings of happiness could (potentially) be modeled given the
+  above.</p>
+
+  <p class="c6 c0"></p>
+
+  <p class="c0">As an illustrative example, if a researcher was interested in the
+  culture of graduate student cohorts within a university program our model would be
+  easily applicable. &nbsp;Say that each cohort has a predisposition toward vigorous
+  competition or collective solidarity among students, and that cohorts differed in their
+  sizes. &nbsp;In the model, the competitiveness or solidarity of individual students
+  would naturally adjust over time compared to other students around them, relative to the
+  predisposition/mean of each cohort. &nbsp;Under what conditions would solidarity among
+  graduate prevail over entrenched competition?</p>
+
+  <p class="c6 c0"></p>
+
+  <h2 class="c0">The Netlogo Model</h2>
+
+  <p class="c6 c0">Download the .nlogo file <a href="./GWCSS_project.nlogo">here</a> to edit the model.</p>
+
+  <p class="c0">Note that individual agents are colored on a scale according to
+  their level of support against the current government: (white=highest
+  level of opposition, black=highest level of support for current government). </p>
+  
+  <applet code="org.nlogo.lite.Applet"
+        archive="NetLogoLite.jar"
+        width="1000" height="481">
+  <param name="DefaultModel"
+         value="GWCSS_project.nlogo">
+  <param name="java_arguments"
+         value="-Djnlp.packEnabled=true">
+</applet>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="824.1">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 24.0px Arial}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 24.0px Arial; min-height: 28.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 24.0px Arial}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Arial; min-height: 16.0px}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Arial}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Arial}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times New Roman; min-height: 15.0px}
+    p.p8 {margin: 0.0px 0.0px 0.0px 27.0px; text-indent: -27.0px; font: 14.0px Arial; min-height: 16.0px}
+    p.p9 {margin: 0.0px 0.0px 0.0px 27.0px; text-indent: -27.0px; font: 14.0px Arial}
+    p.p10 {margin: 0.0px 0.0px 0.0px 27.0px; text-indent: -27.0px; font: 12.0px Andale Mono}
+    p.p11 {margin: 0.0px 0.0px 0.0px 58.5px; text-indent: -22.5px; font: 12.0px Andale Mono}
+    p.p12 {margin: 0.0px 0.0px 0.0px 27.0px; text-indent: -27.0px; font: 18.0px Arial}
+  </style>
+</head>
+<body>
+<p class="p1"><b>Your Turn</b></p>
+<p class="p1"><b>by</b></p>
+<p class="p1"><b>Scott Christley and Yasmina Khoury</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p2"><b></b><br></p>
+<p class="p3"><b>The Problem</b></p>
+<p class="p4"><br></p>
+<p class="p5">Consider the following situation:</p>
+<p class="p4"><br></p>
+<p class="p5">A group of, say, ten students each need to give a five minute talk, one after the other.<span class="Apple-converted-space">  </span>The order of presentations is not specified.<span class="Apple-converted-space">  </span>What happens?</p>
+<p class="p4"><br></p>
+<p class="p3"><b>Approach</b></p>
+<p class="p4"><br></p>
+<p class="p5">The approach we decided to take was to model just the decision process, and leave open the question about the actual implementation of performing the presentations and the time issues involved.<span class="Apple-converted-space">  </span>We thought about the more complicated task of modeling the process of deciding how to decide; i.e. a discussion among the agents about a protocol for determining the presentation order.<span class="Apple-converted-space">  </span>In the end, we decided to develop two (canonical) models; one with an external entity driving the decision and another where the agents communicated amongst themselves.</p>
+<p class="p4"><br></p>
+<p class="p3"><b>Model 1 (Matching Algorithm)</b></p>
+<ul>
+  <li style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Arial">Each agent has a private preference ranking over slots (total ordering).</li>
+  <li style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Arial">One agent chosen at random proposes to take most preferred slot. If the slot is already taken then goes on proposing to next favorite slot until reaches an empty slot with which he is matched.</li>
+</ul>
+<p class="p6"><b>Algorithm Analysis</b></p>
+<ul>
+  <li style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Arial">Pair wise stable, two agents are not willing to switch slots.</li>
+  <li style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Arial">Pareto efficient, no one can be made better off without making someone else worse off.</li>
+  <li style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Arial">Not necessarily fair in terms of total score.<span class="Apple-converted-space"> </span></li>
+</ul>
+<p class="p6"><b>Example of unfairness</b></p>
+<p class="p7"><br></p>
+<p class="p5">Given 5 agents with following preferences:</p>
+<p class="p5"><span class="Apple-converted-space"><span class="Apple-converted-tab">    </span></span>A1: 2,3,4,5,1</p>
+<p class="p5"><span class="Apple-converted-space"><span class="Apple-converted-tab">    </span></span>A2: 2,4,5,1,3</p>
+<p class="p5"><span class="Apple-converted-space"><span class="Apple-converted-tab">    </span></span>A3: 1,2,3,4,5</p>
+<p class="p5"><span class="Apple-converted-space"><span class="Apple-converted-tab">    </span></span>A4: 5,4,3,2,1</p>
+<p class="p5"><span class="Apple-converted-space"><span class="Apple-converted-tab">    </span></span>A5: 5,4,2,1,3</p>
+<p class="p4"><br></p>
+<p class="p5">Outcome of algorithm for A1 chosen to move first:</p>
+<p class="p5"><span class="Apple-converted-space"><span class="Apple-converted-tab">    </span></span>Slot 1: A3</p>
+<p class="p5"><span class="Apple-converted-space"><span class="Apple-converted-tab">    </span></span>Slot 2: A1</p>
+<p class="p5"><span class="Apple-converted-space"><span class="Apple-converted-tab">    </span></span>Slot 3: A5</p>
+<p class="p5"><span class="Apple-converted-space"><span class="Apple-converted-tab">    </span></span>Slot 4: A2</p>
+<p class="p5"><span class="Apple-converted-space"><span class="Apple-converted-tab">    </span></span>Slot 5: A4</p>
+<p class="p4"><br></p>
+<p class="p5">Fairness metric: 5 points for first choice, decrease by one point for each lower choice.</p>
+<p class="p4"><br></p>
+<p class="p5">Score: 20</p>
+<p class="p4"><br></p>
+<p class="p5">Not globally optimal because the following outcome produces a score of 23.</p>
+<p class="p5"><span class="Apple-converted-space"><span class="Apple-converted-tab">    </span></span>Slot 1: A3</p>
+<p class="p5"><span class="Apple-converted-space"><span class="Apple-converted-tab">    </span></span>Slot 2: A2</p>
+<p class="p5"><span class="Apple-converted-space"><span class="Apple-converted-tab">    </span></span>Slot 3: A1</p>
+<p class="p5"><span class="Apple-converted-space"><span class="Apple-converted-tab">    </span></span>Slot 4: A5</p>
+<p class="p5"><span class="Apple-converted-space"><span class="Apple-converted-tab">    </span></span>Slot 5: A4</p>
+<p class="p4"><br></p>
+<p class="p5">The code for this model is available <a href="./model1.tgz">here</a>.</p>
+<p class="p4"><br></p>
+<p class="p3"><b>Extensions to Model 1</b></p>
+<p class="p4"><br></p>
+<p class="p6"><b><span class="Apple-converted-space"> </span>‘Arranged marriage’ Algorithm</b></p>
+<p class="p4"><br></p>
+<p class="p5">Look for a fairer match, reduce probability of people ending up with least preferred slots.</p>
+<p class="p4"><br></p>
+<p class="p5"><b>Mechanism</b></p>
+<ul>
+  <li style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Arial">Preferences are private information, hand them to outside agent who:</li>
+  <li style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Arial">Matches each agent to his 1st choice. If a slot is taken by one agent, then assigns the match.<span class="Apple-converted-space"> </span></li>
+  <li style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Arial">Continues to add 1<sup>st</sup> and 2nd choice of all agents not yet in an assigned match. If a slot contains one match, then is assigned, and so on. If reach tie, random choice.</li>
+</ul>
+<p class="p4"><br></p>
+<p class="p5"><b>Algorithm Analysis</b></p>
+<ul>
+  <li style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Arial">Creates incentive to truthfully reveal ones preference.<span class="Apple-converted-space"> </span></li>
+  <li style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Arial">Outcome is ‘fair’ so that it maximizes possible score.</li>
+  <li style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Arial">Pareto optimal outcome, in previous example, reach desired score.</li>
+</ul>
+<p class="p4"><br></p>
+<p class="p5"><b>Example:</b></p>
+<p class="p4"><br></p>
+<p class="p5">Round1: slot1: A3; slot2:A1,A2; slot5:A4,A5.</p>
+<p class="p5"><span class="Apple-converted-space"><span class="Apple-converted-tab">    </span></span>Outcome: slot1:A3</p>
+<p class="p5">Round2: slot2:A1,A2, slot3:A1, slot4:A2,A4,A5, slot5:A4,A5.</p>
+<p class="p5"><span class="Apple-converted-space"><span class="Apple-converted-tab">    </span></span>Outcome: slot3:A1, slot2:A2</p>
+<p class="p5">Round3: slot4:A4,A5, slot5: A4,A5</p>
+<p class="p5"><span class="Apple-converted-space"><span class="Apple-converted-tab">    </span></span>Outcome: random.</p>
+<p class="p5">Score=23</p>
+<p class="p4"><br></p>
+<p class="p6"><b>Simultaneous mechanism to sequential mechanism:</b></p>
+<ul>
+  <li style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Arial">Preferences are no longer deterministic, but with weights and evolving according to history of past presentations. An agent’s strategy would then evolve according to his perception of the quality of his presentation and how agents presenting before/after could affect the public’s perception.<span class="Apple-converted-space"> </span></li>
+  <li style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Arial">Slots have preferences on the sequence of presentations, which could occur if the presentations are preferred to be ordered by content or topic.<span class="Apple-converted-space"> </span></li>
+</ul>
+<p class="p4"><span class="Apple-converted-space"><span class="Apple-converted-tab">        </span></span></p>
+<p class="p3"><b>Model 2 (Agent-based Consensus)</b></p>
+<p class="p8"><br></p>
+<p class="p9">With the matching algorithm, there is an implicit notion of an external entity that is driving the algorithm by randomly picking agents, maintaining the presentation order, etc.<span class="Apple-converted-space">  </span>We wanted to experiment with a completely decentralized model whereby agents communicate one-on-one and attempt to reach a consensus about the presentation order.</p>
+<p class="p8"><br></p>
+<p class="p9">As a starting point for our model, we took Axelrod’s Cultural Dissemination model (Axelrod) as a loose basis for how agent's preferences would get disseminated through the population.<span class="Apple-converted-space">  </span>In Axelrod's model, each agents maintains a feature vector representing its culture and culture gets disseminated through agent interaction.<span class="Apple-converted-space">  </span>Each agent maintains its own version of the presentation order which somewhat corresponds to the cultural feature vector. However, our model differs significantly for both the spatial aspect and the actual interaction.<span class="Apple-converted-space">  </span>For our model, space is a "soup" meaning that any agent can interact with any other agent.<span class="Apple-converted-space">  </span>For our interaction, one agent must convince the other agent<span class="Apple-converted-space">  </span>of their desire for their preferred slot; while, Axelrod's agent interact with a probability based upon their similarity.</p>
+<p class="p8"><br></p>
+<p class="p10">Each agent picks one slot as its preferred slot.</p>
+<p class="p10">Each agent has a probability (weight) for how much it "desires" that slot.</p>
+<p class="p10">Each agent maintains an internal version of the presentation order.</p>
+<p class="p10">Each agent records its preferred slot into its presentation order.</p>
+<p class="p10">Loop</p>
+<p class="p10"><span class="Apple-converted-space"><span class="Apple-converted-tab">    </span></span>Randomly pick 2 agents to interact.</p>
+<p class="p10"><span class="Apple-converted-space"><span class="Apple-converted-tab">    </span></span>Agent1 asks Agent2 for its slot.</p>
+<p class="p11">If (If slot is empty in Agent1's presentation order) then</p>
+<p class="p11"><span class="Apple-converted-space"><span class="Apple-converted-tab">    </span></span>// no conflict so Agent2 gets the slot</p>
+<p class="p11"><span class="Apple-converted-space"><span class="Apple-converted-tab">    </span></span>Agent1 records Agent2’s slot in its presentation order.</p>
+<p class="p11">If (If Agent1 has some agent in that slot) then</p>
+<p class="p11"><span class="Apple-converted-space"><span class="Apple-converted-tab">    </span></span>// Agent2 tries to convince Agent1</p>
+<p class="p11"><span class="Apple-converted-space"><span class="Apple-converted-tab">    </span></span>Random number compare to Agent2's "desire".</p>
+<p class="p11"><span class="Apple-converted-space"><span class="Apple-converted-tab">    </span></span>if (Agent1 is convinced) then</p>
+<p class="p11"><span class="Apple-converted-space"><span class="Apple-converted-tab">        </span></span>Agent1 records Agent2's slot in its presentation order.</p>
+<p class="p11"><span class="Apple-converted-space"><span class="Apple-converted-tab">        </span></span>If Agent2 overwrites Agent1’s slot then</p>
+<p class="p11"><span class="Apple-converted-space"><span class="Apple-converted-tab">            </span></span>// Agent2 took over our slot!</p>
+<p class="p11"><span class="Apple-converted-space"><span class="Apple-converted-tab">            </span></span>Agent1 picks new random slot and new random probability.</p>
+<p class="p10">Repeat until all agents converge to the same presentation order.</p>
+<p class="p4"><br></p>
+<p class="p5">The code for this model is available <a href="./model2.tgz">here</a>.</p>
+<p class="p4"><br></p>
+<p class="p3"><b>Extensions to Model 2</b></p>
+<ul>
+  <li style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Arial">Instead of using the "soup" space, the dynamics can be made more complex by imposing a lattice or (more interesting) a social network on the agents.<span class="Apple-converted-space">  </span>The social network could represent agents' notion about the content of other agents' material, or it may be relationships between agents like colleagues, collaborators and/or nemeses.<span class="Apple-converted-space">  </span>Such a social network could drive communication and structural positions like high centrality and high betweeness could be explored to see how it affects results and whether the agents converge on a single presentation order.</li>
+  <li style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Arial">The model has the agents reach agreement on the complete presentation order.<span class="Apple-converted-space">  </span>What could be done is that agents reach agreement on one presentation at a time; so after each presentation, agents can take the content, quality, etc of the presentation into account when deciding the next presentation.<span class="Apple-converted-space">  </span>This would probably require that agents have a more sophisticated belief about their preferred slot, or maybe a more fuzzy one like not wanting to go first, not wanting to go last, etc.</li>
+</ul>
+<p class="p2"><b></b><br></p>
+<p class="p3"><b>Results</b></p>
+<p class="p4"><br></p>
+<p class="p9">We ran 100 simulations of each model, calculated a metric value for the final presentation order, then averaged the metric to compare the two models.</p>
+<p class="p8"><br></p>
+<p class="p9">The metric is a simple scoring mechanism which gives 10 points to an agent if it gets its first preferred slot, and decrease by one point for each successively lower preferred slot; the metric value can reach zero but not go negative. With 10 agents, the maximum score is 100 which means each agent gets its first preference, but this max score can be less for any random set of preference lists because a conflict (two agents prefer the same slot) means that one agent must get a lower score.</p>
+<p class="p8"><br></p>
+<p class="p9">For Model1, we got mean = 87.71 and standard deviation = 3.44.</p>
+<p class="p8"><br></p>
+<p class="p9">For Model2, we got mean = 81.23 and standard deviation = 10.03.</p>
+<p class="p4"><br></p>
+<p class="p3"><b>Discussion</b></p>
+<p class="p8"><br></p>
+<p class="p12"><b>Why is Model2 performance worse than Model1?</b></p>
+<p class="p8"><br></p>
+<p class="p9">One behavior that may be driving Model2's metric score down is if an agent has to pick new slot, because another agent convinces the agent for the slot, that agent is picking a random slot and it is likely that the spot has a conflict with another agent.<span class="Apple-converted-space">  </span>This means that an agent may have to keep randomly picking slots until it comes across a non-conflict, which drives down that agent's score.<span class="Apple-converted-space">  </span>A possible change to the behavior is that and agent picks only an open spot, thus reducing possible conflict.</p>
+<p class="p8"><br></p>
+<p class="p9">The difference between the approaches of the two models highlights the difference between a central authority model and full consensus model.<span class="Apple-converted-space">  </span>While our results seem to indicate that having a central authority just pick people to fill slots provides the best total outcome, it would be interesting to explore whether there are scenarios where the consensus model does better and what are the conditions.</p>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>Aaron Bramson and Dominic Rohner SFI SS06 HW</title>
+<style type="text/css">
+<!--
+  :link { color: rgb(110, 0, 110); } 
+  :visited { color: rgb(110, 0, 110); } 
+  body { margin-left: 5px; font-family: arial, sans-serif; 
+         background: #bbbbbb; font-size: 12pt; text-align: justify; } 
+  h2 { background: rgb(166,172,255); 
+       font-size: 15pt; 
+       padding-left: 6px; padding-right: 6px; padding-top: 6px; 
+       padding-bottom: 6px; } 
+  p { margin-left: 10px; text-align: justify; } 
+  pre { margin-left: 13px; background: rgb(225,225,225); 
+        font-family: monospace; padding-left: 3px; padding-right: 3px; 
+        padding-top: 3px; padding-bottom: 3px; } 
+-->
+</style>
+</head>
+<body>
+
+<center>
+<table width=737 cellpadding=10 cellspacing=0 marginwidth=0 marginheight=0 topmargin=0 leftmargin=0 border=1 bgcolor="#ffffff"><tr><td>
+
+<center>
+<h1> Musical Chairs in the Airplane</h1>
+<h2><a href="http://www.bramson.net" target=_blank>Aaron Bramson</a> and <a href="http://http://www.econ.cam.ac.uk/phd/dr296/" target=_blank>Dominic Rohner</a></h2>
+</center>
+<br>
+<p>In this version passengers who are initially the single occupiers of a given seat are free to move and they can stay in the corridor for some time until a desirable seat is available. When we run the model we can see that in this second case the utility of the players does only initially decrease but gets then eventually back near to the initial level.  In order to model the undesirability of constantly moving around we impose an "activations" limit that is uniformly distributed from 0 up to a parameter value (e.g. 16) that determines how many times an agent will look for a new seat.  Finally, so that we can check the effects of information on the total utility we included a "checks" variable that specifies how many seats an agents will consider when looking for a higher-utility seat. </p>
+<center>
+<applet code="org.nlogo.window.Applet"
+        archive="NetLogoLite.jar"
+        width="845" height="450">
+  <param name="DefaultModel"
+         value="Airplane%20Seating-b.nlogo">
+</applet>
+<p>view/download model file:
+<a href="Airplane%20Seating-b.nlogo">Airplane Seating-b.nlogo</a>
+</p>
+</center>
+<br>
+
+<h3>Extensions and applications</h3>
+
+<p>A variant of the present model could quite easily be implemented in reality. One observes that most airlines do already offer the possibility of online check-in and seat reservations. However, so far customers can only choose seats without knowing who sits next to them. Also, they do not have the opportunity to change the virtual booking at a later stage. It would seem efficient if passengers could choose their seat a few days before departure, taking into account some basic information about other passengers who have already reserved their seats. In this way undesirable matches can be avoided and passengers are more likely to fly again with the same airline in the future. One could imagine a plan of the airplane that is online available for the booking and where information such as the sex, age and preference for silence/chatting of each passenger are indicated. Given this profile of other passengers, the person who does the seat booking can make a more optimal decision. Further, it might also be possible to combine such an online seat booking with dating services such as speed flirting.</p>
+
+<br>
+<center>Page 2</center>
+</td></tr></table></center>
+
+</body>
+</html>

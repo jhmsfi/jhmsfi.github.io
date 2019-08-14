@@ -1,0 +1,55 @@
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<title>A model of parking at the mall</title>
+<style><!--
+.Section1
+	{page:Section1;}
+-->
+</style>
+</head>
+<body bgcolor=#FFFFFF link=blue vlink=purple class="Normal" lang=EN-US>
+<div class=Section1> 
+  <p><b><i><u><span style='font-size:14.0pt'>Model III:</span></u></i></b></p>
+  <p><b>Description:</b> This model is an unsuccessful attempt at developing a 
+    useful adaptive version of the previous model. Two algorithms were tested, 
+    one in which the threshold was modified after each parking event based on 
+    the normalized ratio of regret to time spent driving. This model always moved 
+    quickly to a uniform threshold value of 0, notable as the worst possible threshold 
+    from a utility maximization perspective. The second model was an attempt to 
+    use a cognitively simple update procedure based on the same two variables 
+    such that if the regret was non zero the threshold was updated to be 10% more 
+    risk seeking. If the driving time exceeded the maximum distance of the parking 
+    row the threshold was updated to be 10% less risk seeking. This was normalized 
+    primitively by disallowing a threshold that exceeds 1. This dynamic drives 
+    the threshold for all agents to 1; another non-optimal result.</p>
+  <p><b>Space:</b> Linear, same as Models I and II</p>
+  <p><b>Time:</b>&nbsp; Synchronous/Asynchronous: same as Models I and II</p>
+  <p><b>Agents:</b> Heterogeneous variation based on threshold.</p>
+  <p><b>Decision Structure:</b> &nbsp;See Figure 1.</p>
+  <p><b>Parameters tested for robustness: </b></p>
+  <ul type=disc>
+    <li>None</li>
+  </ul>
+  <p><b>Criteria for judging outcomes:</b></p>
+  <ul type=disc>
+    <li>Average distance to Mall</li>
+    <li>Average time to park</li>
+    <li>Trip Cost </li>
+  </ul>
+  <p><b>Model</b></p>
+  <applet code="org.nlogo.window.Applet"
+        archive="NetLogoLite.jar"
+        width="767" height="464">
+    <param name="DefaultModel"
+         value="testable-model-adaptive.nlogo">
+  </applet>
+  <p></p>
+  <p><b>Outcomes:</b></p>
+  <p>No outcomes are reported for this model as it is believed to be incomplete 
+    and only partially functional.</p>
+  <p>&nbsp;</p>
+  <p><a href="model4.html">Continue to Model IV</a></p>
+</div>
+</body>
+</html>

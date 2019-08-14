@@ -1,0 +1,473 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<link rel=File-List href="GAJokes/filelist.xml">
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<link rel=themeData href="GAJokes/themedata.thmx">
+<link rel=colorSchemeMapping
+href="GAJokes/colorschememapping.xml">
+
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-fareast-font-family:Calibri;
+	mso-bidi-font-family:"Times New Roman";}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-fareast-font-family:Calibri;
+	mso-bidi-font-family:"Times New Roman";}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:831218684;
+	mso-list-template-ids:67698719;}
+@list l0:level1
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+
+-->
+</style>
+</head>
+
+<body lang=EN-US style='tab-interval:.5in'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='text-align:center'><b style='mso-bidi-font-weight:
+normal'><span style='font-size:16.0pt;line-height:115%'>Modeling the Evolution
+of Cannibal Jokes with a Genetic Algorithm<o:p></o:p></span></b></p>
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+  <p class=MsoNormal align=center style='text-align:center'><span style='font-size:14.0pt;line-height:115%'>Dana Jackman (UMich) and Santiago Olivella (WashU)<o:p></o:p></span></p>
+  
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoListParagraph style='margin-left:.25in;mso-add-space:auto;
+text-indent:-.25in;mso-list:l0 level1 lfo1'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span style='font-size:16.0pt;line-height:
+115%;mso-bidi-font-family:Calibri'><span style='mso-list:Ignore'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span></b><![endif]><b
+style='mso-bidi-font-weight:normal'><span style='font-size:16.0pt;line-height:
+115%'>Introduction<o:p></o:p></span></b></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>In this project we model the evolution of a specific
+class of jokes, viz. cannibal jokes. We begin by examining several cannibal jokes. </p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>•<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Did
+you hear about the cannibals who <b style='mso-bidi-font-weight:normal'>passed</b>
+his <i style='mso-bidi-font-style:normal'>brother</i> in the woods?</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>•<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Why
+won’t cannibals eat divorced <i style='mso-bidi-font-style:normal'>women</i>? Because
+they’re very <b style='mso-bidi-font-weight:normal'>bitter</b>.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>•<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>What
+do cannibals eat for <i style='mso-bidi-font-style:normal'>dessert</i>?
+Chocolate covered <b style='mso-bidi-font-weight:normal'>aunts</b>.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>We note that cannibal jokes are modular. Each joke relies on
+a play on words (bolded above) and the subject (italicized above) upon which
+the play on words acts. In addition, we note that the play on words is essential
+to the funniness of the joke, and the subject must be appropriate (i.e. must
+match the play on words in some way).</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>We also note that mixing jokes leads to new jokes, such as</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>•<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Did
+you hear about the cannibals who <b style='mso-bidi-font-weight:normal'>passed</b>
+his <i style='mso-bidi-font-style:normal'>aunt</i> in the woods?</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Inventing new jokes based on modifications of existing jokes
+leads to more jokes,</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>•<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Did
+you hear about the cannibals who <b style='mso-bidi-font-weight:normal'>passed</b>
+his <i style='mso-bidi-font-style:normal'>mother-in-law</i> in the woods?</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>•<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Did
+you hear about the cannibal who passed the pope in the woods?</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>It is clear from the above that some jokes will not be funny
+to everyone, and some jokes may offend some hearers.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Finally, we note from our personal experience that jokes can
+be over told, and so lose popularity. </p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoListParagraph style='margin-left:.25in;mso-add-space:auto;
+text-indent:-.25in;mso-list:l0 level1 lfo1'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span style='font-size:16.0pt;line-height:
+115%;mso-bidi-font-family:Calibri'><span style='mso-list:Ignore'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span></b><![endif]><b
+style='mso-bidi-font-weight:normal'><span style='font-size:16.0pt;line-height:
+115%'>Model<o:p></o:p></span></b></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoListParagraph style='margin-left:.3in;mso-add-space:auto;
+text-indent:-.3in;mso-list:l0 level2 lfo1'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span style='font-size:14.0pt;line-height:
+115%;mso-bidi-font-family:Calibri'><span style='mso-list:Ignore'>2.1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+style='font-size:14.0pt;line-height:115%'>Representation<o:p></o:p></span></b></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>The modular structure of cannibal jokes and the ability to
+mix and insert new elements to create new jokes drives our decision to use a
+genetic algorithm. Any joke can be visualized as DNA, consisting of two genes. See Figure 1.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Figure 1: Genetic visualization of a cannibal joke</p>
+
+<p class=MsoNormal><!--[if gte vml 1]><v:shapetype id="_x0000_t75" coordsize="21600,21600"
+ o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe" filled="f"
+ stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+
+ <v:imagedata src="GAJokes/image001.png" o:title=""
+  croptop="-383f" cropbottom="-3146f"/>
+ <o:lock v:ext="edit" aspectratio="f"/>
+</v:shape><![endif]--><![if !vml]><img width=163 height=57
+src="GAJokes/image002.gif" v:shapes="Object_x0020_1"><![endif]></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Alternatively, we can present a joke as a pair of numbers {<span
+class=SpellE>p<sub>j</sub></span>, <span class=SpellE>s<sub>j</sub></span>} for
+play on words and subject, respectively. For
+example, the “cannibal passing his brother in the woods” joke could be given by
+{7<span class=GramE>,3</span>} or in binary {111,011}.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoListParagraph style='margin-left:.3in;mso-add-space:auto;
+text-indent:-.3in;mso-list:l0 level2 lfo1'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span style='font-size:14.0pt;line-height:
+115%;mso-bidi-font-family:Calibri'><span style='mso-list:Ignore'>2.2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+style='font-size:14.0pt;line-height:115%'>Key Assumptions and Parameters<o:p></o:p></span></b></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>We begin with N randomly generated jokes. We then associate
+with each joke a randomly generated neutrality parameter, <span
+style='font-family:Symbol;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+Calibri;mso-char-type:symbol;mso-symbol-font-family:Symbol'><span
+style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>p</span></span><sub>j</sub>, designed to capture how offensive the joke may be.
+We calculate the popularity of each joke in the population, and compare each
+joke’s prevalence to a saturation parameter, <span style='font-family:Symbol'>t</span>.
+If a joke’s popularity exceeds the saturation threshold, we consider it to be
+over told and reduce its frequency in the population (to a single instance of the joke).</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>We then determine the funniness of every joke, and sample
+pairs of jokes from the population (with replacement) in proportion to funniness(i.e. roulette sampling);
+funnier jokes are more likely to be selected than less funny jokes. These pairs
+of jokes (i.e. parents) produce two new jokes (i.e. offspring). New jokes may
+be clones of the parents, may reflect recombination of the parent jokes, or may
+result from mutation (i.e. innovation or mistakes) of these offspring. The probability of
+recombination is given by an exogenously specified crossover parameter, p<sub>c</sub>,
+and the location of the crossover is randomly generated every time. <span
+style='mso-spacerun:yes'> </span>The probability of mutation is given by the
+exogenously set parameter, p<sub>m</sub>. The offspring jokes are retained and
+the parent jokes are eliminated in order to form the new generation.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Funniness is clearly a nontrivial concept. We, nevertheless,
+attempt to capture the core elements of funniness in a funniness function, <span
+class=GramE>F(</span><span class=SpellE>p<sub>j</sub></span>, <span
+class=SpellE>s<sub>j</sub></span>, <span class=SpellE>&pi<sub>j</sub><span>) that serves as the fitness function of the
+genetic algorithm. We define, <span class=GramE>F(</span><span class=SpellE>p<sub>j</sub></span>,
+<span class=SpellE>s<sub>j</sub></span>,<span class=SpellE>&pi<sub>j</sub><span>) = <span class=SpellE>p<sub>j</sub></span>
++ <span style='font-family:Symbol'>&pi</span><span class=SpellE><sub>j</sub>r</span>(<span
+class=SpellE>p<sub>j</sub></span>, <span class=SpellE>s<sub>j</sub></span>)
+where r(<span class=SpellE>p<sub>j</sub></span>, <span class=SpellE>s<sub>j</sub></span>)
+= 1 if <span class=SpellE>p<sub>j</sub></span> and <span class=SpellE>s<sub>j</sub></span>
+are both even or both odd and 0 otherwise. This specification reflects the
+importance of the play on words, the relatedness of the play on words and the
+subject, and the neutrality of the joke. Neutrality, <span style='font-family:
+Symbol'>&pi</span><sub>j</sub>, can be interpreted as the proportion of the human
+population who would find the joke acceptable, or similarly, the probability
+that the hearer would not be offended by the joke.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoListParagraph style='margin-left:.25in;mso-add-space:auto;
+text-indent:-.25in;mso-list:l0 level1 lfo1'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span style='font-size:16.0pt;line-height:
+115%;mso-bidi-font-family:Calibri'><span style='mso-list:Ignore'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span></b><![endif]><b
+style='mso-bidi-font-weight:normal'><span style='font-size:16.0pt;line-height:
+115%'>Results<o:p></o:p></span></b></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>We fix the crossover and mutation parameters to be p<sub>c</sub>
+= 0.7 and p<sub>m</sub> = 0.01. We also fix the number of jokes at any given generation at N = 500. Each
+run of the model consists of 90 iterations. We then generate results for
+different saturation thresholds from 0.1 to 0.9, incrementing by 0.1. The R code used to perform the simulations, as well as generate the graphics, is available <a href="GAJokes/Jokes.R">here</a> </p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>We arrive at three core results, regarding joke persistence
+and average funniness. First, when the saturation threshold is low, multiple
+jokes persist. When the saturation threshold is high, only one joke persists.
+The intuition of this result is that when the human population has a preference
+for novelty or less repetition in the jokes they hear, more jokes survive. When
+the human population is more complacent, fewer jokes persist because incentives
+for novelty are low. Figures 2a and 2b show the jokes that persist after 90
+generations for <span style='font-family:Symbol'>t</span> = 0.1 and <span
+style='font-family:Symbol'>t</span> = 0.9, respectively. The vertical axis
+represents the subject of the <span class=GramE>joke,</span> the horizontal axis
+represents the play on words; each square is therefore a distinct joke. Darker colors (brown and red) represent greater
+popularity (i.e. greater relative frequency in the joke population), with red being the highest. Lighter colors (yellow and white)
+represent lower (or no) popularity. </p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Figure 2a: Joke popularity after 90 iterations with
+saturation threshold of 0.1</p>
+
+<p class=MsoNormal><!--[if gte vml 1]><v:shape id="_x0000_i1026" type="#_x0000_t75"
+ style='width:290.25pt;height:288.75pt'>
+ <v:imagedata src="GAJokes/image003.emz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=387 height=385
+src="GAJokes/image004.gif" v:shapes="_x0000_i1026"><![endif]></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Figure 2b: Joke popularity after 90 iterations with
+saturation threshold of 0.9</p>
+
+<p class=MsoNormal><!--[if gte vml 1]><v:shape id="_x0000_i1027" type="#_x0000_t75"
+ style='width:4in;height:287.25pt'>
+ <v:imagedata src="GAJokes/image005.emz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=384 height=383
+src="GAJokes/image006.gif" v:shapes="_x0000_i1027"><![endif]></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Second, jokes that persist in the presence of other jokes tend
+to have high values for play on words. This result is also observable in
+Figures 2a and is consistent with our assumption, embedded in the funniness
+function, that play on words is very important to funniness. The low value of
+play on words in the scenario with high <span style='font-family:Symbol'>t</span>
+is likely a result of minimal selection pressure as described below.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Third, the average funniness of jokes, after 90 iterations,
+tends to be higher for intermediate saturation thresholds and lower at extreme
+saturation thresholds. In fact, low saturation threshold not only leads to
+relatively low funniness after 90 iterations, but is relatively flat throughout
+the model run. The intuition for low saturation thresholds is that low
+thresholds force the prevalence of all jokes, good and bad, to remain too low
+to adequately invade the population. High saturation thresholds lead to more
+variability in funniness over time, but low funniness at the end of 90
+iterations. The intuition here may be that high thresholds permit the proliferation
+of funny and less funny jokes, but the complacency implied by the high
+threshold doesn’t select heavily enough for very funny jokes. Intermediate
+saturation thresholds appear to suffer neither of these shortcomings. The solid
+line in Figure 3 illustrates the average funniness in every generation for five
+runs of the model. The dotted lines show 90% confidence intervals obtained from multiple runs of the model using the same parameters.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Figure 3: Average funniness for saturation thresholds 0.1,
+0.5, and 0.9</p>
+
+<p class=MsoNormal><!--[if gte vml 1]><v:shape id="_x0000_i1028" type="#_x0000_t75"
+ style='width:467.25pt;height:152.25pt'>
+ <v:imagedata src="GAJokes/image007.emz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=623 height=203
+src="GAJokes/image008.gif" v:shapes="_x0000_i1028"><![endif]></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>While the very limited number of experiments conducted and
+presented here yield some interesting results, we believe that a more thorough
+examination of the parameter space would be interesting and perhaps even more
+revealing. For example, the crossover rate for cannibal jokes may be much lower
+than 0.7 while the rate of mistakes or invention is much higher than 0.01.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoListParagraph style='margin-left:.25in;mso-add-space:auto;
+text-indent:-.25in;mso-list:l0 level1 lfo1'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span style='font-size:16.0pt;line-height:
+115%;mso-bidi-font-family:Calibri'><span style='mso-list:Ignore'>4.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span></b><![endif]><b
+style='mso-bidi-font-weight:normal'><span style='font-size:16.0pt;line-height:
+115%'>Extensions<o:p></o:p></span></b></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Potential extensions of the model are numerous. First, it is
+clear that the very simple representation of jokes could be enhanced to better
+reflect the nuance of jokes and language. Inspection of a long list of cannibal
+jokes reveals that there are several classes of cannibal jokes. Additional
+modules that capture those differences might lead to more realistic results. In
+addition, we recombine jokes randomly. Given the nature of language and jokes,
+it may make more sense to define an alternate means of determining nature of
+crossovers.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Second, all parameters are exogenous. It may be reasonable to
+generate some of these values endogenously. For example, it may be more realistic to
+tie rate of mutation to joke distributions and the prevalence threshold.
+Crossover rates and mutation rates may depend strongly on the human population
+in which these jokes reside (think of five year olds versus adults). Perhaps
+crossover and mutation rates could depend on some representation of the human
+population – a population that is diverse, ages, and responds to joke
+distributions.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Third, the neutrality of each joke is randomly generated. It
+may be possible to endogenously generate neutrality.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Fourth, though not entirely arbitrary, the funniness
+function is not at all realistic. Alternatives to the funniness function
+include 1) other mathematical specifications, 2) constructing and training a
+neural network to rate funniness, or 3) employing many individuals through the use
+of the internet to rate each generation of jokes.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoListParagraph style='margin-left:.25in;mso-add-space:auto;
+text-indent:-.25in;mso-list:l0 level1 lfo1'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span style='font-size:16.0pt;line-height:
+115%;mso-bidi-font-family:Calibri'><span style='mso-list:Ignore'>5.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span></b><![endif]><b
+style='mso-bidi-font-weight:normal'><span style='font-size:16.0pt;line-height:
+115%'>Applications<o:p></o:p></span></b></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>We use six characteristics of this model to identify other
+applications: modularity, recombination, mutation, fitness, and a
+prevalence threshold. Thus, other language based applications of this model
+could include other forms of jokes (e.g. “knock knock” jokes, “why did the
+chicken cross the road?” jokes, and less formulaic jokes). Fads, such as
+fashion, ideas, and consumer products are somewhat obvious applications. </p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>A timely social science application is the communication of
+climate change messages in the media. Specifically, media messages regarding
+climate change consist of various scientific, social, and political elements
+such as temperature, migration, and taxation. Messages in the media about
+climate change consist of some combination of these types of ideas that can be
+recombined from one time period to the next. New information and mistakes, akin
+to mutation, also occur in each time step. Effectiveness (a.k.a. fitness) of
+these messages could be measure in terms of the media recipients’ level of
+understanding of climate issues, and saturation thresholds could be determined
+an implemented that <span class=GramE>reflect</span> the tendency to ignore or
+reject messages when they are overly prevalent.</p>
+
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal> Finally, the modular nature of our model could make it appropriate to study the generation of omnibus legislation in congress, and particularly the cosponsorship patterns that such bills present. Saturation in our model can be construed as a cap on the number of bill cosponsors that are acceptable to the system, which is known to go down as the ideological polarization increases. It has been shown (e.g. Krutz 2001) that things like issue fragmentation within committees (produced, among other things, by ideological polarization) leads to greater frequency and diversity of omnibus bills, which is therefore consistent with our finding that lower saturation thresholds (i.e. lower acceptable number of cosponsors) is related to a greater diversity of popular jokes. </p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+</div>
+
+</body>
+
+</html>

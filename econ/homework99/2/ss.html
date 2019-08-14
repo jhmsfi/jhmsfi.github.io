@@ -1,0 +1,536 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.51 [en] (X11; U; SunOS 5.7 sun4u) [Netscape]">
+</head>
+<body>
+
+<center>
+<h1>
+<b><font face="Arial,Helvetica">Workshop on Economics: Computational Modeling
+and Complexity</font></b></h1></center>
+
+<center>
+<h1>
+<b><font face="Arial,Helvetica">June 1999, Santa Fe Institute</font></b></h1></center>
+
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>&nbsp;</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+
+<center>
+<h2>
+Taste and Buzz:</h2></center>
+
+<center>
+<h2>
+A Computational Model of Movie Demand</h2></center>
+
+<center>
+<h3>
+Sonia Schulenburg and Sean Gailmard, in no particular order</h3></center>
+
+<p><br>
+<p><b><font size=+1>I. INTRODUCTION</font></b>
+<p><font face="Times New Roman,Times"><font size=+1>The present model is
+about two factors affecting movie attendance of members of a delimited
+peer group. First are the "tastes" of individuals-how people (heterogeneously)
+evaluate the intrinsic attributes of movies that cause them to see movies
+independently of others. Second is the effect of "buzz" on movie attendance.
+Buzz in turn has two components: what people who saw the movie say about
+it, and how many people saw the movie (e.g., <i>The English Patient, Star
+Wars</i>-numbers give reason for seeing a movie even if it's no good).
+That is, buzz contains an issue of movie quality as conveyed by peers (which
+of course implies that buzz is indirectly influenced by those individuals'
+heterogeneous reactions to the same movie), and of the "faddishness" of
+a movie.</font></font>
+<br>&nbsp;
+<br>&nbsp;
+<p><b><font face="Times New Roman,Times"><font size=+1>II. THE MODEL</font></font></b>
+<p><font face="Times New Roman,Times"><font size=+1>The model is implemented
+as a learning classifier system. This allows representation of a large
+number of agents (100 in our initial trials), each of which makes a decision
+(about movie attendance in our case) in response to its environment. Part
+of its environmental message, in turn, is composed of the decisions of
+other agents. A classifier system specifies a collection of decision rules,
+which map environmental conditions into decisions. A decision rule is then
+one and the same with the agent it represents.</font></font>
+<ul>
+<li>
+<font face="Times New Roman,Times"><font size=+1>The interactive component
+of this model is that part of an agent's environmental condition is itself
+a function of the decisions of other agents. For simplicity, we model each
+agent as having three possible decisions: "see the movie and like it,"
+"see the movie and dislike it," and "don't see the movie." (Note that for
+convenience in implementation, an agent does not actually know which decision
+it makes when going to see the movie, as by assumption people don't see
+movies they know they won't enjoy. Rather, the enjoyment is determined
+probabilistically for agents who see the movie.) An agent's enjoyment of
+the movie is reported to all other agents, who are more likely to see the
+movie if peers who have seen it like it. Agents are also more likely to
+see a movie if a large number of peers have seen it, regardless of their
+enjoyment. This is the "fad effect" or, more appropriately, the "<i>English
+Patient </i>effect."</font></font></li>
+</ul>
+
+<ul>
+<li>
+<font face="Times New Roman,Times"><font size=+1>The intrinsic, non-interactive
+(at least not directly) aspects of the movie are common in the environment
+faced by each agent. In this model, the intrinsic aspects are: the "type"
+of movie (here comedy or drama, but easily generalizable to multinomial
+and/or multidimensional type spaces such as star power or director); the
+report of critics (either favorable or unfavorable); and whether the movie
+is likely to be crowded (either crowded or not). Type and critical reviews
+are fixed at the start for a given movie, but crowdedness can vary over
+time, to account for the fact that movies are generally more crowded on
+opening weekend. See below for more on the disconnect between crowdedness
+and whether any agents have seen the movie. This is certainly a restriction
+and eliminates movies like <i>Life is Beautiful</i> that get more crowded
+well into their releases, as a result of the buzz. Certainly the model's
+parameters could easily be altered to allow for movies that become more
+popular into their releases, but it must be taken as exogenous. Learning
+classifier systems allow for heterogeneous reactions to the same movie
+on the part of different agents because the decision rule used is can be
+made probabilistic; this is to be interpreted as a decision with a component
+that is random to an outside observer.</font></font></li>
+</ul>
+<font face="Times New Roman,Times"><font size=+1>One of the most useful
+features of the learning classifier system for our purposes is that it
+allows for an endogenous determination of the faddishness of a movie. If
+early viewers see it and like it, later viewers facing the same environmental
+condition are also more likely to see it and like it. Similarly, if early
+viewers see it and dislike it, later viewers in the same environmental
+conditions are more likely to see it and dislike it. This results from
+the dynamic alteration in the probability a given decision rule is selected
+under any given conditions, a general feature of learning classifier systems:
+if a decision rule fires at any time, its probability of firing later is
+changed.</font></font>
+<p><font face="Times New Roman,Times"><font size=+1>The model assumes away
+problems of budget constraint, transportation, distance to theater, theater
+characteristics, and especially problem of finding a date. Movie budgets
+could actually be included, by assuming different people require much more
+favorable conditions for a movie before they become very likely to see
+it.</font></font>
+<p><font face="Times New Roman,Times"><font size=+1>Agents do not evaluate
+the gamble they face over movie attendance in an expected utility sense.
+Agents can face negative expected utility from attending--e.g., if conditional
+on seeing the movie they are extremely likely to dislike it in a certain
+condition--and still attend. The interpretation is as a sort of bounded
+rationality, if an admittedly somewhat ad hoc one.</font></font>
+<p><font face="Times New Roman,Times"><font size=+1>It is possible for
+"crowds" to be big even though no agents see the movie, or even if all
+agents have seen the movie. The interpretation is that a group of agents
+represents a group of friends, not the entire moviegoing population (even
+in a given area). Also note that agents infer nothing about the movie quality
+from the size of the crowd.</font></font>
+<br>&nbsp;
+<br>&nbsp;
+<p><b><font face="Times New Roman,Times"><font size=+1>III. IMPLEMENTATION</font></font></b>
+<p><font face="Times New Roman,Times"><font size=+1>In this section we
+explain some important features of learning classifier systems and some
+specifics of our implementation.</font></font>
+<p><font face="Times New Roman,Times"><font size=+1>In a classifier system
+information flows from the environment to the agent through its detectors,
+which decode the information into one or more messages, usually represented
+in binary strings whose values are members of the alphabet {0,1}. These
+messages activate zero, one or more classifier rules at any given time,
+and out of these matching classifiers, an auction takes place to determine
+the current winner, which posts its action in the environment through the
+effectors.&nbsp; The classifier rule consists of two parts: &lt;condition>:&lt;action>.</font></font>
+<p><font face="Times New Roman,Times"><font size=+1>All matching classifiers
+make bids according their <i>strength</i>&nbsp; i.e, according to how successful
+they have been. The winner can be chosen by selecting the one offering
+the highest bid or by adding some normally distributed, zero-mean noise
+with a specified noise deviation <i>bidsigma</i> into its deterministic
+<i>bid</i>, called effective bid -<i>ebid</i>.</font></font>
+<p><font face="Times New Roman,Times"><font size=+1>When starting the program
+we provide a seed (a real value between 0 and 1) which initializes the
+random number generator. In the next section, we provide results of runs
+with different seed values.</font></font>
+<p><font size=+1>This is a rudimentary description to acquaint the reader
+with the basic idea. For more on learning classifier systems and complete
+descriptions of the parameters used, refer to chapter 6 of David E. Goldberg's
+<i>Genetic Algorithms in Search, Optimization and Machine Learning</i>
+(Reading, MA: Addison-Wesley, 1989).</font>
+<br><font size=+1></font>&nbsp;
+<p><b><font face="Times New Roman,Times"><font size=+1>Representation</font></font></b>
+<p><font face="Times New Roman,Times"><font size=+1>The environmental message
+and the condition part of the classifiers are both represented in a bit
+string of length 6, where the classifier's string is part of the alphabet
+{0,1,#}. The # is a "don't care" symbol matching both, a 0 or a 1 in the
+incoming message. The action is a string one bit long which takes any of
+the same three values.</font></font>
+<p><font face="Times New Roman,Times"><font size=+1>The environmental message
+provides the following to the classifier's condition part:</font></font>
+<ul>
+<li>
+<font face="Times New Roman,Times"><font size=+1>Movie attributes. Specify
+the type of movie in question: comedy (1) or drama (0).</font></font></li>
+
+<li>
+<font face="Times New Roman,Times"><font size=+1>Critics. Reports that
+are either favorable (1) or unfavorable (0), but are not given by friends
+(i.e. they are sources of public information such as magazines, newspapers,
+etc.). This variable is represented randomly with equal probability of
+having it 0 or 1.</font></font></li>
+
+<li>
+<font face="Times New Roman,Times"><font size=+1>Opinion of peers. The
+average of the friend's opinions.</font></font></li>
+
+<li>
+<font face="Times New Roman,Times"><font size=+1>The number of friends
+who have actually seen the movie. It takes two bits for the classifier
+rule to represent the percentage of friends who have seen the movie. It
+ranges from 0-24, 25-49, 50-74, 75-100%, and it is represented as 00, 01,
+10 and 11 respectively.</font></font></li>
+
+<li>
+<font face="Times New Roman,Times"><font size=+1>Crowd. We have arbitrarily
+defined it as being "big" during the first 1/4 of the time span of the
+experiment (resembling the firsts few weeks of the release of a movie),
+and "small" after that period.</font></font></li>
+</ul>
+<font face="Times New Roman,Times"><font size=+1>The classifier's action
+can take any of these values:</font></font>
+<ul>
+<li>
+<font face="Times New Roman,Times"><font size=+1>0 when the agent saw the
+movie and did not like it</font></font></li>
+
+<li>
+<font face="Times New Roman,Times"><font size=+1>1 when it saw it and liked
+it</font></font></li>
+
+<li>
+<font face="Times New Roman,Times"><font size=+1># when did not see it.</font></font></li>
+</ul>
+<font size=+1>Time is discrete and indexed as <i>t. </i>At any given instant
+in time, the agent's actions are collected and added to the statistics
+of opinions. At <i>t </i>= 0, no agents have seen the movie because it
+has just been released. As time progresses, the agents are receiving a
+richer state of the environment as more and more friends have seen it.
+The general opinion of peers is evaluated from the subtraction of the number
+of friends who liked it and the ones who disliked it. If this is a positive
+number, the opinion of peers is favorable. Agents who have seen the movie
+from here on will be called <i>viewers</i>.&nbsp; Note that <i>viewers</i>
+not only have seen the movie in question, but they have also given their
+opinions about it.</font><font size=+1></font>
+<p><font size=+1>The number of agents in the model is set to be 100, but
+it can easily be replaced by any other number. We though 100 represents
+most of the space of possibilities. Results of runs with different seed
+values and either with noise or without it are given in the following section.</font>
+<br>&nbsp;
+<br>&nbsp;
+<p><b><font face="Times New Roman,Times"><font size=+1>IV.&nbsp; RESULTS</font></font></b>
+<p><font size=+1>Although we performed several simulations, we are only
+presenting results of some of them. These seeds were selected because they
+show the range of effects of adding random noise; also within a noise treatment
+they show the sensitivity of results on the seed. For other seeds, the
+effect of adding noise lies somewhere between these results. Within a noise
+treatment, there is a strong non-monotonicity with respect to changes in
+seed.</font>
+<p><font size=+1>Each example consists of 100 agents, each making an attendance
+decision and giving a report about the movie. Viewers who see the movie
+and like it are listed as "happy viewers," and viewers who see it and don't
+like are denoted "unhappy viewers."</font>
+<br>&nbsp;
+<p>
+<hr WIDTH="100%">
+<br><i><font size=+1>1. Seed 0.3, Noise Off</font></i>
+<br>
+<hr WIDTH="100%"><font size=+1></font>
+<p><font size=+1>Happy Viewers&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= 38&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //&nbsp; Agents who saw
+and liked the movie</font>
+<br><font size=+1>Unhappy Viewers&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =&nbsp;
+30&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //&nbsp;&nbsp; Agents who saw and
+disliked the movie</font>
+<br><font size=+1>Total Viewers&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= 68&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //&nbsp;&nbsp; Add Happy
+plus Unhappy viewers</font>
+<br><font size=+1>Did not see it&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= 32&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //&nbsp;&nbsp;&nbsp; Chose
+not to see the movie</font>
+<p><font size=+1>The following are just a few examples of the types of
+rules that fired during the simulation:</font>
+<br>&nbsp;
+<table BORDER WIDTH="80%" NOSAVE >
+<tr NOSAVE>
+<td NOSAVE><font size=+1>Rule</font></td>
+
+<td NOSAVE><font size=+1>Matching Environmental State</font></td>
+
+<td><font size=+1>Action / Decision</font></td>
+</tr>
+
+<tr>
+<td><font size=+1>101111:0</font></td>
+
+<td><font size=+1>Comedy / Bad Critics / Peers liked it /&nbsp; 75-100%
+friends have seen it / it is crowded</font></td>
+
+<td><font size=+1>Went-disliked it</font></td>
+</tr>
+
+<tr>
+<td><font size=+1>#1110#:#</font></td>
+
+<td><font size=+1>Does not care about type /&nbsp; Good Critics / Peers
+liked it / 50-74% friends have seen it / does not care about crowds</font></td>
+
+<td><font size=+1>Did not go</font></td>
+</tr>
+
+<tr>
+<td><font size=+1>&nbsp;101101:1</font></td>
+
+<td><font size=+1>Comedy / Bad Critics / Peers liked it / 50-74% friends
+have seen it / it is crowded</font></td>
+
+<td><font size=+1>Went - liked it</font></td>
+</tr>
+</table>
+<font size=+1></font>
+<p><font size=+1>The ratio of happy viewers to unhappy viewers is 1.27.</font>
+<p>
+<hr WIDTH="100%">
+<br><i><font size=+1>2. Seed 0.4, Noise Off</font></i>
+<br>
+<hr WIDTH="100%">
+<p><font size=+1>Happy Viewers&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+=&nbsp;&nbsp; 43</font>
+<br><font size=+1>Unhappy Viewers&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =&nbsp;
+30</font>
+<br><font size=+1>Total Viewers&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+=&nbsp;&nbsp; 73</font>
+<br><font size=+1>Did not see it&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+=&nbsp;&nbsp; 27</font>
+<p><font size=+1>Type of classifier rules that fired:</font>
+<br>&nbsp;
+<table BORDER WIDTH="80%" NOSAVE >
+<tr NOSAVE>
+<td NOSAVE><font size=+1>Rule</font></td>
+
+<td NOSAVE><font size=+1>Environmental State</font></td>
+
+<td><font size=+1>Action / Decision</font></td>
+</tr>
+
+<tr>
+<td><font size=+1>100001:0</font></td>
+
+<td><font size=+1>Comedy / Bad Critics / Peers did not like it /&nbsp;
+0-24% friends have seen it / it is crowded</font></td>
+
+<td><font size=+1>Went-disliked it</font></td>
+</tr>
+
+<tr>
+<td><font size=+1>101001:1</font></td>
+
+<td><font size=+1>Comedy /&nbsp; Bad Critics / Peers liked it / 0-24% friends
+have seen it / it is crowded</font></td>
+
+<td><font size=+1>Went - liked it</font></td>
+</tr>
+
+<tr>
+<td><font size=+1>&nbsp;111011:0</font></td>
+
+<td><font size=+1>Comedy / Good Critics / Peers liked it / 25-49% friends
+have seen it / it is crowded</font></td>
+
+<td><font size=+1>Went-disliked it</font></td>
+</tr>
+</table>
+
+<p><font size=+1>The ratio of happy viewers to unhappy viewers is 1.43.</font>
+<p>
+<hr WIDTH="100%">
+<br><i><font size=+1>3. Seed 0.3, Noise On</font></i>
+<br>
+<hr WIDTH="100%">
+<p><font size=+1>Happy Viewers&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+=&nbsp;&nbsp; 59</font>
+<br><font size=+1>Unhappy Viewers&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =&nbsp;
+28</font>
+<br><font size=+1>Total Viewers&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+=&nbsp;&nbsp; 31</font>
+<br><font size=+1>Did not see it&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+=&nbsp;&nbsp; 41</font>
+<p><font size=+1>Type of classifier rules that fired:</font>
+<br>&nbsp;
+<table BORDER WIDTH="80%" NOSAVE >
+<tr NOSAVE>
+<td NOSAVE><font size=+1>Rule</font></td>
+
+<td NOSAVE><font size=+1>Environmental State</font></td>
+
+<td><font size=+1>Action / Decision</font></td>
+</tr>
+
+<tr>
+<td><font size=+1>#0##0#:1</font></td>
+
+<td><font size=+1>Does not care about type / Bad Critics / Does not care
+about peers /&nbsp; Cares only if 0-24% or 50-74% have seen it / does not
+care about crowds</font></td>
+
+<td><font size=+1>Went-liked it</font></td>
+</tr>
+
+<tr>
+<td><font size=+1>100011:1</font></td>
+
+<td><font size=+1>Comedy /&nbsp; Bad Critics / Peers disliked it / 25-49%
+friends have seen it / it is crowded</font></td>
+
+<td><font size=+1>Went-liked it</font></td>
+</tr>
+
+<tr>
+<td><font size=+1>&nbsp;100001:0</font></td>
+
+<td><font size=+1>Comedy / Bad Critics / Peers disliked it / 0-24% friends
+have seen it / it is crowded</font></td>
+
+<td><font size=+1>Went-disliked it</font></td>
+</tr>
+</table>
+
+<p><font size=+1>The ratio of happy viewers to unhappy viewers is 2.1.</font><i><font size=+1></font></i>
+<p>
+<hr WIDTH="100%">
+<br><i><font size=+1>4. Seed 0.4, Noise On</font></i>
+<br>
+<hr WIDTH="100%">
+<p><font size=+1>Happy Viewers&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+=&nbsp;&nbsp; 68</font>
+<br><font size=+1>Unhappy Viewers&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =&nbsp;
+38</font>
+<br><font size=+1>Total Viewers&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+=&nbsp;&nbsp; 30</font>
+<br><font size=+1>Did not see it&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+=&nbsp;&nbsp; 32</font>
+<p><font size=+1>Type of classifier rules that fired:</font>
+<br>&nbsp;
+<table BORDER WIDTH="80%" NOSAVE >
+<tr NOSAVE>
+<td NOSAVE><font size=+1>Rule</font></td>
+
+<td NOSAVE><font size=+1>Environmental State</font></td>
+
+<td><font size=+1>Action / Decision</font></td>
+</tr>
+
+<tr>
+<td><font size=+1>101101:#</font></td>
+
+<td><font size=+1>Comedy / Bad Critics / Peers liked it /&nbsp; 50-74%
+friends have seen it / it is crowded</font></td>
+
+<td><font size=+1>Did not go</font></td>
+</tr>
+
+<tr>
+<td><font size=+1>&nbsp;111001:1</font></td>
+
+<td><font size=+1>Comedy /&nbsp; Good Critics / Peers liked it / 0-24%
+friends have seen it / it is crowded</font></td>
+
+<td><font size=+1>Went - liked it</font></td>
+</tr>
+
+<tr>
+<td><font size=+1>&nbsp;111011:0</font></td>
+
+<td><font size=+1>Comedy / Good Critics / Peers liked it / 25-49% friends
+have seen it / it is crowded</font></td>
+
+<td><font size=+1>Went-disliked it</font></td>
+</tr>
+</table>
+
+<p><font size=+1>The ratio of happy viewers to unhappy viewers is 1.79.</font><font size=+1></font>
+<p><i><font size=+1>General Comments</font></i><font size=+1></font>
+<p><font size=+1>The results show in each case that for a given seed, adding
+random noise to a rule's effective bid dampens the "fad effect" of a movie.
+In every case, however, the results and associated dynamics also show a
+clear duality of influence on movie demand--namely, the buzz created by
+peers who see a movie early, and the influence of movie attributes independent
+of the buzz.</font>
+<br>&nbsp;
+<p><b><font size=+1>Dynamics</font></b>
+<p><font size=+1>Preliminary observations of the results gave us some insight
+about changes in the agents' opinions about the movie and their desire
+to go and see it. For example, early viewers tend to see the movie and
+enjoy it:&nbsp;viewers after the first few to see and enjoy the movie tend
+to have similar environments (e.g., crowdedness and number of peers who
+have seen the movie). The same decision fires because of its success early
+on in this environment. As the environment changes over time, that advantage
+is dampened and the rule of "see the movie and dislike it" tends to get
+chosen. The emerging pattern is that the satisfied viewers, <i>as a proportion
+of those who have decided to see the movie, starts</i> out fairly close
+to 1. Over time that proportion declines to anywhere from 2/3 to 1/2, depending
+on parameters.&nbsp; Moreover, this pattern was evident in the No Noise
+treatments. When random noise was added to effective bids, even early on
+the ration of satisfied viewers to all viewers tended to be close to 1/2,
+as expected.</font><font size=+1></font>
+<p><font size=+1>The punch line is that people who see a movie early tend
+to be excited about it, and are captured in our model as satisfied viewers.
+Essentially, there is a selection bias operating on early viewers. Later
+viewers, however, are later viewers for a reason--they are not so excited
+about the movie and tend to be less satisfied with it. (We note the important
+caveat that the model does not allow for repeat viewing:&nbsp;there is
+no Leonardo DiCaprio in our world.)</font>
+<br><font size=+1></font>&nbsp;
+<br><font size=+1></font>&nbsp;
+<p><b><font face="Times New Roman,Times"><font size=+1>V. EXTENSIONS AND
+FUTURE WORK</font></font></b>
+<p><font face="Times New Roman,Times"><font size=+1>Several extensions
+have already been described above. For example, we could easily make the
+"type space" of the movie multinomial and multidimensional. For example,
+a "Leonardo DiCaprio effect"&nbsp;could be easily included by expanding
+the length of the bit string representing environmental messages.</font></font><font face="Times New Roman,Times"><font size=+1></font></font>
+<p><font face="Times New Roman,Times"><font size=+1>In addition, the initial
+probability that a decision rule is the one to fire under a particular
+condition is the same for each possible decision rule. This could be relaxed
+by altering the initial strength associated with each decision rule. This
+latter extension is a simple way to implicitly represent preferences in
+the learning classifier system framework. Alternatively, preferences could
+be included as part of the environmental conditions. The latter route is
+worth exploring, because its explicitness is more satisfying.</font></font>
+<p><font face="Times New Roman,Times"><font size=+1>For a multi-movie setting,
+the action space of the model could be easily generalized to size n3. The
+conditions space could also be generalized, to account for heterogeneity
+in tastes for comedies, the weight of movie critics, and movie budgets.
+In principle, the multi-movie model could be calibrated with actual data,
+enabling recommendations of conditions which are favorable for release
+of a certain type of movie. In addition, for movies with a particular release
+date (e.g., summer, when many other movies are out there), the model could
+recommend characteristics a movie should have (e.g., star power).</font></font>
+<p><font size=+1>Although classifier systems and genetic algorithms are
+complementary to each other, in the present model the genetic action is
+disabled, meaning that it does not evolve new rules as time progresses
+-it only uses preexisting ones. The genetic algorithm is built in the system,
+so it would be very interesting to run simulations and observe the effect
+evolution would have in the patterns of the agents' preferences.</font>
+<br>&nbsp;
+<br>&nbsp;
+</body>
+</html>

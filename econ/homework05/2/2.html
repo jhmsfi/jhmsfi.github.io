@@ -1,0 +1,317 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>SFI 2005-Grus and Joyce</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body>
+<p align="center"><strong><font size="6">Your Turn</font></strong></p>
+<p align="center"><font size="6"><strong>Random Serial Dictatorship with a Nemesis</strong></font></p>
+<p align="center"><font size="5">Joel Grus<br>
+  Social Science<br>
+  <em>California Technical Institute</em></font></p>
+<p align="center"><font size="5">Kyle A. Joyce<br>
+  Political Science<br>
+  <em>The Pennsylvania State University</em></font></p>
+<p align="center"><font size="5">July 13, 2005</font></p>
+<p align="center"><font size="5"></font></p>
+<p><strong><font size="5">Problem</font></strong></p>
+<p>A group of, say, ten students each need to give a five minute talk, one after 
+  the other. The order of presentations is not specified. What happens?</p>
+<p> Model, using whatever techniques you wish, the above scenario.</p>
+<p> Explicitly state your model and key assumptions.<br>
+  Summarize key results.<br>
+  Suggest some potentially interesting future directions and questions for the 
+  model. </p>
+<p>Suggest some standard social science scenarios that could be usefully modeled 
+  using such a process.</p>
+<p><strong><font size="5">Model</font></strong></p>
+<p>We viewed this problem as a one-sided matching problem; 10 presentation slots 
+  needed to be filled by ten students. We assumed that students had preferences 
+  over both the slot in which they presented and the presenter immediately preceding 
+  them.</p>
+<p><strong><font size="5">Student Types</font></strong></p>
+<p>Our first assumption was that students have preferences over the order in which 
+  they present. Some students might prefer going toward the beginning, others 
+  prefer going somewhere in the middle, and some prefer going towards the end. 
+  We represented these preferences by creating three types of agents.</p>
+<p>1) Prefers going toward the beginning<br>
+  2) Prefers going in the middle<br>
+  3) Prefers going toward the end</p>
+<p>The following table lists each student type's ranking of the possible presentation 
+  slots, from most-preffered to least-preferred.</p>
+<table width="47%" border="1">
+  <tr> 
+    <td width="32%">Student Type 1</td>
+    <td width="32%">Student Type 2</td>
+    <td width="36%">Student Type 3</td>
+  </tr>
+  <tr> 
+    <td>1</td>
+    <td>5</td>
+    <td>10</td>
+  </tr>
+  <tr> 
+    <td>2</td>
+    <td>6</td>
+    <td>9</td>
+  </tr>
+  <tr> 
+    <td>3</td>
+    <td>4</td>
+    <td>8</td>
+  </tr>
+  <tr> 
+    <td>4</td>
+    <td>7</td>
+    <td>7</td>
+  </tr>
+  <tr> 
+    <td>5</td>
+    <td>3</td>
+    <td>6</td>
+  </tr>
+  <tr> 
+    <td>6</td>
+    <td>8</td>
+    <td>5</td>
+  </tr>
+  <tr> 
+    <td>7</td>
+    <td>2</td>
+    <td>4</td>
+  </tr>
+  <tr> 
+    <td>8</td>
+    <td>9</td>
+    <td>3</td>
+  </tr>
+  <tr> 
+    <td>9</td>
+    <td>1</td>
+    <td>2</td>
+  </tr>
+  <tr> 
+    <td>10</td>
+    <td>10</td>
+    <td>1</td>
+  </tr>
+</table>
+<div align="center"></div>
+<p><font size="5"><strong>Nemesis</strong></font></p>
+<p>If these were the students' only preferences, then a random serial dictatorship 
+  would produce an optimal allocation. The instructor randomly selects one student, 
+  who chooses her most-preferred slot. Then the instructor randomly chooses another 
+  student, who chooses his most-preferred slot from those remaining. This process 
+  continues until all students have chosen.</p>
+<p>However, we also assume that each student might have a &quot;nemesis&quot; 
+  -- a student whom they don't want to immediately follow. It's easy to imagine, 
+  for instance, that no one wants to present immediately after John Miller. We 
+  assume that presenting immediately after your nemesis is the worst of all possibilities. 
+  We examine five nemesis scenarios:</p>
+<p>1) Each student has no nemesis<br>
+  2) Each student has the same nemesis<br>
+  3) Half the students have one nemesis, the other half have another<br>
+  4) Each student's nemesis is the next student (e.g., 1 fears 2, 2 fears 3, ... 
+  , 10 fears 1)<br>
+  5) Each student's nemesis is chosen randomly</p>
+<p><strong><font size="5">Random Serial Dictatorship</font></strong><br>
+  <br>
+  As mentioned above, the basic selection process is a random serial dictatorship. 
+  We randomly choose a permutation of the students and allow them to pick their 
+  most-preferred slots in that order.</p>
+<p><strong><font size="5">Student Strategies</font></strong></p>
+<p>Every time an agent chooses a slot, all the agents who have picked previously 
+  have the option of abandoning their slots. We consider two different abandonment 
+  strategies:</p>
+<p>1) Abandon your slot if your nemesis has picked the slot immediately preceding 
+  you.<br>
+  2) Abandon your slot if a more preferred slot is empty or if your nemesis has 
+  picked the slot immediately preceding you.</p>
+<p>If a student abandons her slot she moves to the end of the choosing order and 
+  chooses a new slot after all other students have chosen.</p>
+<p><strong><font size="5">Student Scores</font></strong></p>
+<p>Each student receives a score for the slot they have to present in. Students 
+  receive a ten if they obtain their first preference, a one if their receive 
+  their last preference, and a zero if their nemesis presents immediately before 
+  them.</p>
+<table width="59%" border="1">
+  <tr> 
+    <td width="24%">Student Type 1</td>
+    <td width="24%">Student Type 2</td>
+    <td width="27%">Student Type 3</td>
+    <td width="25%">Score</td>
+  </tr>
+  <tr> 
+    <td>1</td>
+    <td>5</td>
+    <td>10</td>
+    <td>10</td>
+  </tr>
+  <tr> 
+    <td>2</td>
+    <td>6</td>
+    <td>9</td>
+    <td>9</td>
+  </tr>
+  <tr> 
+    <td>3</td>
+    <td>4</td>
+    <td>8</td>
+    <td>8</td>
+  </tr>
+  <tr> 
+    <td>4</td>
+    <td>7</td>
+    <td>7</td>
+    <td>7</td>
+  </tr>
+  <tr> 
+    <td>5</td>
+    <td>3</td>
+    <td>6</td>
+    <td>6</td>
+  </tr>
+  <tr> 
+    <td>6</td>
+    <td>8</td>
+    <td>5</td>
+    <td>5</td>
+  </tr>
+  <tr> 
+    <td>7</td>
+    <td>2</td>
+    <td>4</td>
+    <td>4</td>
+  </tr>
+  <tr> 
+    <td>8</td>
+    <td>9</td>
+    <td>3</td>
+    <td>3</td>
+  </tr>
+  <tr> 
+    <td>9</td>
+    <td>1</td>
+    <td>2</td>
+    <td>2</td>
+  </tr>
+  <tr> 
+    <td>10</td>
+    <td>10</td>
+    <td>1</td>
+    <td>1</td>
+  </tr>
+  <tr> 
+    <td>Nemesis</td>
+    <td>Nemesis</td>
+    <td>Nemesis</td>
+    <td>0</td>
+  </tr>
+</table>
+<p><br>
+  <strong><font size="5">Experiment</font></strong></p>
+<p>The experiment proceeds as follows:</p>
+<p>1) Randomly assign a type to each student<br>
+  2) Randomly assign the order in which the students choose their slots<br>
+  3) For each nemesis &amp; strategy scenario, repeat the following until all 
+  agents have slots:<br>
+  <br>
+  a) Each agent chooses the remaining slot which is most preferred<br>
+  b) After each selection, agents decide whether to abandon their slots</p>
+<p>4) Calculate scores</p>
+<p>This process was repeated for 10,000 simulations. </p>
+<p>The python code used is available <a href="nemesis.py" target="_blank">here</a>.</p>
+<p><strong><font size="5">Results</font></strong></p>
+<p align="center"><strong><font size="4">Average Score by Nemesis Scenario</font></strong></p>
+<p align="center"><img src="graph1.jpg" width="492" height="288"></p>
+<p align="center">Having no nemesis results in a higher average score than any 
+  of the other nemesis scenarios.</p>
+<p align="center"><strong><font size="4">Average Score by Student Type &amp; Nemesis</font></strong></p>
+<table width="84%" border="1" align="center">
+  <tr> 
+    <td width="11%">&nbsp;</td>
+    <td width="8%">&nbsp;</td>
+    <td colspan="5"><div align="center"><strong>Nemesis Type</strong></div></td>
+  </tr>
+  <tr> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td width="14%">No Nemesis</td>
+    <td width="16%">Same Nemesis</td>
+    <td width="12%">Odd/Even</td>
+    <td width="19%">Next Student</td>
+    <td width="20%">Random</td>
+  </tr>
+  <tr> 
+    <td rowspan="3"><strong>Student<br>
+      Strategy</strong> </td>
+    <td height="25">First</td>
+    <td>8.13</td>
+    <td>7.70</td>
+    <td>8.02</td>
+    <td>8.10</td>
+    <td>8.10</td>
+  </tr>
+  <tr> 
+    <td>Middle</td>
+    <td>8.23</td>
+    <td>7.39</td>
+    <td>7.85</td>
+    <td>8.04</td>
+    <td>8.02</td>
+  </tr>
+  <tr> 
+    <td>Last</td>
+    <td>8.28</td>
+    <td><strong>7.22</strong></td>
+    <td><strong>7.63</strong></td>
+    <td><strong>7.85</strong></td>
+    <td><strong>7.85</strong></td>
+  </tr>
+  <tr> 
+    <td>&nbsp;</td>
+    <td>Total</td>
+    <td>24.64</td>
+    <td>22.31</td>
+    <td>23.5</td>
+    <td>23.99</td>
+    <td>23.97</td>
+  </tr>
+</table>
+<p align="center">Students who prefer going last are hurt more by having a nemesis 
+  compared to the other two student types.</p>
+<p align="center"><strong><font size="4">Distribution of Scores by Nemesis Scenario</font></strong><br>
+</p>
+<p align="center"><img src="graph2.jpg" width="790" height="503"></p>
+<p align="center">Most students get one of their top four slots.</p>
+<p align="center"><strong><font size="4">Count of Zero Scores by Player Type</font></strong></p>
+<p align="center"><img src="graph3.jpg" width="492" height="288"><br>
+  <br>
+  Students who prefer going last are much more likely to end up presenting immediately 
+  after their nemesis.</p>
+<p align="left"><font size="5"><strong>Conclusions</strong></font></p>
+<p> 1) Having a nemesis hurts you, and having the same nemesis as everyone else 
+  hurts you even more.<br>
+  2) With random preferences, most students get one of their top 4 choices.<br>
+  3) Preferring to present early is a good way of avoiding your nemesis.<br>
+  4) Choice of strategy had no significant effect on the student's scores.</p>
+<p><strong><font size="5">Possible Extensions</font></strong></p>
+<p>1) Multiple nemeses.<br>
+  2) Two-sided nemises preferences -- agents don't want to present immediately 
+  before or after nemesis<br>
+  3) Less-restrictive preferences -- maybe an agent doesn't want to go first but 
+  would like to go second.</p>
+<p><strong><font size="5">Other Social Science Scenarios</font></strong></p>
+<p>1) Housing allocation when you care about who your neighbor is. For example, 
+  you might not want to live downwind from someone who never showers.<br>
+  2) Seating in a full theatre. For example, you might not want to sit next to 
+  someone who never showers.<br>
+</p>
+<p align="center"><br>
+</p>
+<p><br>
+</p>
+</body>
+</html>

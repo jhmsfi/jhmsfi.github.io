@@ -1,0 +1,371 @@
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<title>Homework SFI 2004 - Letzler and Ussher</title>
+<style><!--
+.Normal
+	{font-size:12.0pt;
+	font-family:"Times New Roman";}
+.MsoBodyTextIndent
+	{font-size:12.0pt;
+	font-family:"Times New Roman";}
+-->
+</style>
+</head>
+<BODY><TABLE><TR><TD lang=EN-US class="Normal" bgcolor="#FFFFFF">
+<div style='layout-grid:18.0pt'> 
+  <table width="100%" border="0" cellspacing="0" cellpadding="1">
+    <tr> 
+      <td></td>
+    </tr>
+    <tr> 
+      <td> 
+        <div align="center"> 
+          <h2><b>Go Lance!</b></h2>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td> 
+        <p align="center"><b>By</b><br>
+          Rob Letzler - University of California at Berkeley<br>
+          Leanne Ussher - New School University<br>
+          July 13, 2004</p>
+      </td>
+    </tr>
+  </table>
+  <p>We provide a simple model that simulates the ranking of a cycle race. Our 
+    cyclists have bounded rationality and simple cycling rules that result in 
+    interesting and realistic looking ranking dynamics. Cyclists end up clustering 
+    together into groups, with the fastest cyclists forging ahead of their competitors. 
+    Cyclists begin with randomly given stamina and energy levels, and reciprocation 
+    is assumed. A Java program of our model is available as two files (<a href="ListMembers.java.txt" target="_blank" > 1</a>) 
+    and (<a href="lance.java.txt" target="_blank" > 2</a>).</p>
+  <h2><b>I. Model and Key Assumptions:</b></h2>
+  <p>Each agent has a comfort speed at which they can remain in a steady state, 
+    without tiring or reducing their energy stock.  All cyclists want to ride 
+    at a speed that doesn’t draw down their energy during the race but stay as 
+    far towards the front of the race as possible.  Stores of energy are desired 
+    at the end when they deplete them to sprint to the finish line.  Energy is 
+    a function of comfort speed CS, stock of energy E, and position <span>a</span> 
+    and try to keep dE/dt = 0.</p>
+  <p align="center"><i>E = f( CS, E, </i><i><span>a</span>)</i></p>
+  <p>The specifications of our model are:</p>
+  <ul type=disc>
+    <li>20 Cyclists that take turns in deciding their speed asynchronously.</li>
+    <li>Race space is flexible - range is from last cyclist to first cyclist, 
+      the finish is always far away.</li>
+    <li>Each cyclist can decide to race at actual speeds S[t] at time t of 
+      <div style='layout-grid:18.0pt'>1= Slow speed<br>
+        2 = Medium speed<br>
+        3 = Fast speed<br>
+        4 = Very Fast speed<br>
+        5 = Breakneck speed </div>
+    </li>
+  </ul>
+</div>
+<div style='layout-grid:18.0pt'>
+  <ul type=disc>
+    <li>Speed is represented by each cyclist moving S spaces ahead, in their turn.</li>
+    <li>Each agent has a randomly endowed comfort speed CS <span>~</span> {1,2,3}.  
+      This is the speed at which a <i>lone</i> rider has constant energy levels.</li>
+    <li>Each agent has an initial endowment of energy E[0] ~U[1,20]</li>
+    <li>Energy level E[t] of each cyclist is dependent the previous energy level, 
+      how fast they are going S[t], relative to their nominal comfort speed CS, 
+      and their position in the pack at <i>a[t]</i> which determines their real 
+      comfort speed level.</li>
+  </ul>
+  <table width="54%" border="0" cellspacing="0" cellpadding="1" align="center">
+    <tr> 
+      <td colspan="2"><i>E[t]<sub> </sub>= E[t-1] + (CS-S[t]) + </i><i><span>a</span>[t]  
+        </i></td>
+    </tr>
+    <tr> 
+      <td width="23%"> 
+        <div align="right">where if   <i><span></span></i></div>
+      </td>
+      <td width="77%"><i><span>a</span> = 0,        </i> the cyclist is a <b>loner</b><i></i></td>
+    </tr>
+    <tr> 
+      <td width="23%">&nbsp;</td>
+      <td width="77%"><i><span>a</span> = 1.2,     </i>the cyclist is a <b>follower</b><i></i></td>
+    </tr>
+    <tr> 
+      <td width="23%">&nbsp;</td>
+      <td width="77%"><i><span>a</span> = 0.5</i>      the cyclist is a <b>leader</b> 
+      </td>
+    </tr>
+  </table>
+  <ul type=disc>
+    <li>Along with energy values, agents <b>use local information</b> from the 
+      cyclists directly in front of them and behind them to make their relative 
+      speed decision: speed up, stay at the same speed or slow down.  The value 
+      of alpha represents the extra momentum given to a cyclist depending on their 
+      position relative to other cyclists. The leader uses additional information, 
+      looking behind him calculating how many cyclists <i>n </i>are benefiting 
+      from his draft.</li>
+  </ul>
+</div>
+<div style='layout-grid:18.0pt'>
+<h4><b>Sequence of Movements</b></h4>
+  <p> Cyclists take their turn in deciding their speed.  The order of sequence 
+    is from the front rider to the last, in each round.  Their decision choice 
+    is based on their position, energy levels and surrounding agent speed levels.<span style='font-family:&quot;Arial Unicode MS&quot;;
+display:none;'></span></p>
+  <p>Each cyclist has the same goals:<span style='font-family:"Arial Unicode MS"'></span></p>
+</div>
+<ul>
+  <li> 
+    <div style='layout-grid:18.0pt'>be close to the front to beat as many other 
+      cyclists as possible</div>
+  </li>
+  <li> 
+    <div style='layout-grid:18.0pt'>have more <b>energy </b>for the final sprint 
+      than other cyclists</div>
+  </li>
+  <li>
+    <div style='layout-grid:18.0pt'>group membership affects chances of winning, 
+      utility gains through stockpiling energy so reciprocity assumed. </div>
+  </li>
+</ul>
+<div style='layout-grid:18.0pt'>Each cyclist has the same speed decision dependent 
+  on their position at time t.</div>
+<blockquote> 
+  <div style='layout-grid:18.0pt'></div>
+</blockquote>
+<div style='layout-grid:18.0pt'> 
+  <ul type=disc>
+    <li><b>Loner </b>will decide his speed first based on the speed of the agent 
+      in front of him – 2 or more spaces away. If his CS+1 is greater than or 
+      equal to the agent in front’s speed, then sprint ahead to catch up with 
+      the group, else look at the cyclist behind them.  If the loner’s CS+1 is 
+      greater than the speed of the agent behind, then they remain a loner. If 
+      they are running out of energry (E&lt;1) they slow down by 1 each period 
+      until they can reach a group to renew their energy.</li>
+    <li><b>Followers</b>, cyclists who are behind another cyclist, have an increasing 
+      energy of 0.2 per turn, because their energy levels are given a boost from 
+      the draft.  They choose to travel at CS+1</li>
+    <li><b>Leaders</b>, that agent which is out in front, depletes their energy 
+      losing 0.5 per turn and also choose to travel at CS+1.  If the leader remains 
+      at the front of the group, he does so basing his decision on reciprocity 
+      in relation to the other free riders in his group.   He will decide to stay 
+      in front drawing down his energy by E[t]/n[t].  At this point he will decide 
+      to slow down and move only CS spaces ahead, with the cyclist behind him 
+      becoming the new leader. </li>
+  </ul>
+  <p>Thus the simple heuristics of our model are:</p>
+</div>
+<ul>
+  <li> 
+    <div style='layout-grid:18.0pt'>Tired?  Stay with the group or slow down <span
+style='font-family:"Arial Unicode MS"'></span></div>
+  </li>
+  <li> 
+    <div style='layout-grid:18.0pt'>Member of a group?  Move at comfort speed 
+      + 1 and recharge. </div>
+  </li>
+  <li> 
+    <div style='layout-grid:18.0pt'>Do “fair share” of leading:  lead until I’ve 
+      sacrificed 1/(#group members) of my energy; then slow to CS</div>
+  </li>
+  <li> 
+    <div style='layout-grid:18.0pt'>Alone? look for advantageous groups to join 
+      in the range of the right speed.  Feasible groups ahead are preferred to 
+      groups behind.</div>
+  </li>
+</ul>
+<div style='layout-grid:18.0pt'> 
+  <p>We expect that agents with the same comfort speeds will group together and 
+    race at a group speed of CS+1, with cooperation taking place where each agent 
+    takes their turn at being at the front.<sub></sub></p>
+  <h2><b>II. Key Results:</b></h2>
+  <p>We run a simulation of 100 time periods. Blank lines are gaps that occur 
+    between cyclists with varying speeds.  Comfort speeds of our ranked agents 
+    are presented in table 1.  Cyclists are sorted by their race rank from left 
+    to right, with the fastest person on the far left.  Table 2 presents the changing 
+    rank of our cyclists, which are assigned numbers 1 to 20.  </p>
+  <p><b>Simulation 1.</b></p>
+  <p><b><a href="comfort.htm" target="_blank" >Table 1. Rank of Cyclists for each <i>t</i>, by 
+    comfort speed</a></b></p>
+  <p><b><a href="actual_speed.htm" target="_blank" >Table 2. Rank of Cyclists for each <i>t</i>, 
+    by actual speed</a></b></p>
+  <p><b><a href="rider.htm" target="_blank" >Table 3. Rank of Cyclists for each <i>t</i>, by ID 
+    tag</a></b></p>
+  <p><b><a href="energy.htm" target="_blank" >Table 4. Rank of Cyclists for each <i>t</i>, by energy 
+    levels</a></b></p>
+  <p>&nbsp;</p>
+  <p><b>Actual Speed:</b></p>
+  <p>-The group speed heuristic is active for almost every rider in almost every 
+    turn since riders begin in a group; do much of their filtering still in a 
+    big pack; and are already members of their final group by the time they break 
+    away from the initial pack. This causes most riders to choose comfort_speed 
+    + 1 in almost every turn.<br>
+    -The next most important heuristic in choosing speeds is that group leaders 
+    reduce their speeds when their energy level drops. This leads to people cycling 
+    from the front to the back of their groups.<br>
+    -The low energy heuristics and group joining heuristics are sometimes important.<br>
+    -Sometimes the group speed heuristics and the group joining heuristics lead 
+    to irrational &quot;yo-yo&quot; patterns where a fast leader uses the group 
+    member heuristic to move at comfort speed +1 and breaks away from a slower 
+    follower; only to drop back. An excerpt from a different simulation is presented 
+    below, taken from periods 6-10, this &quot;yo-yo&quot; result happened to 
+    the race leader before there was good sorting. The image for this example 
+    shows each speed decision after it has had its effect.</p>
+  <pre>
+    4 3 3 2 4 4 3 3 4 4 3 2 _3 3 3 __2 2 2 2 2 (here 4 moved #11 to the front)
+    4 _3 3 4 4 3 3 4 4 3 3 3 _3 3 3 ___2 2 2 2 2 (now 4 causes #11 to break away
+    2 3 4 4 3 3 4 4 3 3 3 3 _3 3 3 ____2 2 2 2 2 (he slows down to 2 and meets 
+    the group again)
+    4 _4 4 3 3 4 4 3 3 3 3 3 __3 3 2 _____2 2 2 2 1 (here, 4 leads him to break 
+    away; meanwhile other fast guys have also passed the slow riders)
+    4 4 2 3 4 4 3 3 3 3 3 3 __3 3 3 _______2 2 2 2 1 (here, choosing 2 lands him 
+    in third since the fast riders pass him when he slows down)
+
+    11 17 16 18 7 8 14 13 3 2 19 20 _6 9 4 __15 12 10 5 1
+    11 _17 16 7 8 18 14 3 2 13 19 20 _6 9 4 ___15 12 10 5 1
+    11 17 7 8 16 18 3 2 14 13 19 20 _6 9 4 ____15 12 10 5 1
+    11 _7 8 17 16 3 2 18 14 13 19 20 __9 4 6 _____12 10 5 1 15
+    7 8 11 17 3 2 16 18 14 13 19 20 __9 4 6 _______10 5 1 15 12
+  </pre>
+  <p><b>Comfort Speed:</b></p>
+  <p>These heuristics lead to a general and rapid sorting by comfort speed in 
+    <a href="comfort.txt" target="_blank" > table 1</a> where the first line are the initial ordering:</p>
+  <p>After the first decisions, comfort speeds are fairly randomly distributed, 
+    where initial ordering and time period 1 are shown below:<br>
+  </p>
+  <p>2 2 2 2 1 2 2 2 2 2 3 3 3 2 2 2 1 3 1 3<br>
+    2 2 2 2 _2 2 2 2 3 3 3 2 2 2 2 3 1 3 1 1</p>
+  <p>By the 14th time period, this run led to perfect sorting and significant 
+    clustering by comfort speed.</p>
+  <p>3 3 3 __3 _3 2 2 2 2 ____2 2 2 2 2 2 2 2 __________1 1 1</p>
+  <p> However, there can be cases when the sorting is slightly imperfect. In the 
+    example below, from a different simulation, there was a similar random order 
+    in the first turn; by the 11th time period, there was almost perfect sorting, 
+    except that an actor with a comfort speed of 2 is leading the group of people 
+    with comfort speeds of 1. An examination of the energy data shows that he 
+    has low energy. His tired of leading heuristic seems to have been activatived, 
+    which has slowed him to his comfort speed which is the same as the followers' 
+    group speed (comfort_speed +1).</p>
+  <p>2 2 1 3 3 3 2 1 1 3 2 3 1 3 2 3 3 2 3 3<br>
+    3 3 3 3 ____3 3 ___3 3 3 3 2 2 ___2 2 2 ___2 1 1 1 1</p>
+  <p>&nbsp;</p>
+  <p><b>Jockying for Position:</b></p>
+  <p>Agents become ranked by comfort speed quite early, and teamwork rotation 
+    occurs with each pack. Looking at the rank of cyclists in <a href="rider.txt" target="_blank" > ID 
+    table 3</a> we can see a very realistic teamwok formation within each pack. 
+    If one looks at the end of our time series all three packs have the leader 
+    slowing down and falling to the back of the pack, and riders rotating through 
+    the pack to maximize group speed and energy levels. This can be seen when 
+    comparing IDs with energy from <a href="energy.txt" target="_blank" >  table 4</a> listed for 
+    each cyclist in each period. The leader of a pack slows down to his comfort 
+    speed, moves to the back of the pack and then regains speed and energy to 
+    keep with the pack benefiting from the draft created by the bike rider in 
+    front of them. As the next leader does the same, each follower moves up one 
+    position through the pack each time period.</p>
+  <p>In another simulation that we ran, we have the interesting phenomenon of 
+    the trailing pack having a cyclist with comfort speed 2 leading the pack. 
+    This allows followers behind him to stay in their same sequence and free ride 
+    off the leader. Unfortunately, for this leading cyclist, he did not catch 
+    up with the faster speed group in time.</p>
+  <p>The position of a cyclists within his pack, is more constant the smaller 
+    the pack, easily seen in comparing the groups coming second and third. A smaller 
+    group In the pack coming last cyclists change leadership every time period. 
+    In the middle pack with the much larger group of </p>
+  <p>In our simulation at line 12, we can see that a gap opens up as the leading 
+    pack with the faster speed breaks away, forming a gap between the leading 
+    pack and cyclist number 20, who has a medium comfort speed of 2. Cyclists 
+    1 and 3 further back, have fast comfort speeds and come up through the pack 
+    to overtake the leader - cyclist 20. They must sprint to catch up with the 
+    leading pack, increasing their <a href="actual_speed.txt" target="_blank" > speeds</a> to breakneck 
+    speed and depleting their <a href="energy.txt" target="_blank" > energy</a>.</p>
+  <p><b>Cyclist Energy Levels:</b></p>
+  <p>Cyclist lose energy as they become leaders and then gain energy as they move 
+    to the back of the feild, slowing down for one period to CS which takes them 
+    to the back of the pack and then returning to CS+1 in the pack.</p>
+  <p>Cyclist number 1 came from the very <a href="rider.txt" target="_blank" > back of the pack</a>, 
+    last in the starting line, with a randomly selected energy level of 13 units 
+    and comfort speed of fast. By the time he makes his way up to the leading 
+    pack, having to sprint between packs, his energy is now down to 3.5. Eventually 
+    he takes his turn at the <a href="rider.txt" target="_blank" > lead</a> and by the end of our 
+    simulation he has an energy of 16.1 units. If the size of our bicycle race 
+    was larger, then one being able to catch up to the front pack, which is increasingly 
+    getting away, may not be possible, e.g if cyclist number 1's energy had run 
+    out to 1 before reaching the leading pack. This happened in other simulations 
+    that we performed, and it results in the faster rider leading a slower pack, 
+    with no teamwork involved, all riders behind him can afford to be complete 
+    free riders, and attempts to break away from the pack usually lead in the 
+    decline in energy and then return to the slower pack.</p>
+  <h2><b>III. Possible Future Directions:</b></h2>
+  <ul type=disc>
+    <li>We could extend this model by adding greedy agents who choose not to lead, 
+      along with the reciprocating agents currently included.</li>
+    <li>Cyclists with large accumulating energy levels might decide to sprint 
+      ahead and join a group riding at CS+2 for a time period until his energy 
+      stock falls below a certain level and then he will move back to join his 
+      original slower group, or ride as a loner.</li>
+    <li>Energy levels could be made into real numbers instead of natural numbers.</li>
+    <li>The range of comfort levels could be increased</li>
+    <li>Distance from the leader might also be taken into account</li>
+  </ul>
+  <h2>IV. Applications to other social science processes</h2>
+  <p>The two primary features of this model are variable transaction costs depending 
+    on ones relation to other agents, free riding, the provision of a public good 
+    or positive externality through intentional or unintentional cooperative behavior, 
+    and fragile alliances.  Some examples of how such a process may be applicable 
+    to social sciences include:<span
+style='display:none;'></span></p>
+  <h3>Innovation</h3>
+  <ul type=disc>
+    <li>There may be excessive startup costs to innovating a new product, but 
+      once it has begun, it may generate spin offs through information and increasing 
+      skill base of workers, leading to declining costs for those that follow. 
+      <div style='layout-grid:18.0pt'></div>
+    </li>
+  </ul>
+</div>
+<div style='layout-grid:18.0pt'>
+  <div style='layout-grid:18.0pt'>
+    <p>E.g. Government innovation of the internet, for its own interest, and for 
+      the public good. Pharmaceutical Companies, with a large stock of cash (energy) 
+      can afford to invest in high costs research, with expected future payoffs.  
+      Other companies that follow in producing generic drugs can profit later.</p>
+    
+  </div>
+</div>
+<div style='layout-grid:18.0pt'>
+<p class=MsoBodyTextIndent>Entrepreneur e.g. Bill Gates, might have initial 
+    large stock pile of intelligence or cash, and can hop from group to group 
+    restoring energy each period, giving spin offs to others, eventually becoming 
+    the leader of the pack, and he may even decide to pull away from the pack 
+    (form a monopoly) if his comfort speed is higher than everyone elses, therefore 
+    denying his intellectual property to others, removing his public good.</p>
+  <h3>Team work</h3>
+  <ul type=disc>
+    <li>Union protests. One person has to risk the initiation of a protest and 
+      may get punished for his individual action by the employer, but if enough 
+      other workers strike or protest along with him for the same benefits, then 
+      as a group they will gain and individual won’t be punished.  </li>
+  </ul>
+  <ul type=disc>
+    <li>It may be that some peoples comfort level to never cause trouble, others 
+      might be inclined to initiate trouble, and others might be indifferent, 
+      but can be persuaded to join if the costs of doing over the long run are 
+      low compared to the returns.</li>
+  </ul>
+  <ul type=disc>
+    <li>Army formation, attacking an enemy on the ground, front line may be rotated 
+      back.</li>
+  </ul>
+  <ul type=disc>
+    <li>Political formation where ‘comfort speed’ is endogenous.  Eg. Ralph Nader’s, 
+      political bid, leads to his own considerable transaction costs to increase 
+      his support base. But each year green or independent parties are increasing.  
+      Ralph might ultimately use up all his energy and fall back but a new reenergized 
+      leader can take his place.<span style='display:none;'></span></li>
+  </ul>
+  <hr>
+  <p><a href="http://zia.hss.cmu.edu/econ/homework04.html" target="_blank" > Homework Problem (2003)</a></p>
+  <p>&nbsp;</p>
+</div>
+</TD></TR></TABLE></BODY><BR>
+</html>

@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <title>
+      Elizabeth Bruch and Daniel Reeves -- Age Discrimination at a Cocktail Party
+    </title>
+  </head>
+
+  <body>
+    <h1>Age Discrimination at a Cocktail Party</h1>
+    <h2>Elizabeth Bruch and Daniel Reeves</h2>
+
+    <h3>The Model</h3>
+	The model we used to represent the room at the cocktail party consists of a 10 by 10 lattice. We initially place 21 agents randomly on the lattice. Each agent is assigned a random age from 18 to 80 years. Agents prefer to mingle in groups where the mean age of the other members of the group is as close as possible to the agent's own age. Agents try to cluster in groups of 3-4. A cluster of agents is defined as any contiguous group of agents surrounded by empty cells.
+    <p>
+	The utility of a cell is a function of both cluster size and average age. An agent in a cluster of ideal size is willing to tolerate a mean age difference of up to 34.06 years before it prefers to be alone. 
+    <p>
+	In each time step, each of the agents updates sequentially in random order.  Agents check all empty cells within a certain radius of their current location and jump to the cell with highest utility (ties broken randomly).  We run the model for 30 iterations.  In the following figures, the agents' ages are represented by grayscale value -- 18 is black and 80 is white.
+    <h3>Results</h3>
+	Below are initial and final results for radius 1.   
+    <p>
+<img src="radius1-first.gif" width=300>
+<img src="radius1-last.gif" width=300>
+    <p>
+	Here is an animation of the first thirty time steps. 
+    <p>
+<img src="radius1-anim.gif" width=300>
+    <p>
+	Below are initial and final results for radius 3. 
+    <p>
+<img src="radius3-first.gif" width=300>
+<img src="radius3-last.gif" width=300>
+    <p>
+	Here is an animation of the first thirty time steps. 
+    <p>
+<img src="radius3-anim.gif" width=300>
+    <p>
+
+     <h3> Conclusion and Future Work </h3>
+Our model is motivated by Thomas Schelling's models of residential segregation.  He argues that even mild preferences for one's own group can produce extreme patterns of clustering.
+We were not able to run our model for more than about 30 time steps due to memory limitations, but within that time frame we see mild clustering of agents into age-segregated groups.  We predict that segregation would be more severe if the system ran to equilibrium, assuming one exists.
+<p>
+In future work, we would like to give agents additional charactaristics such as sex and attractiveness to other agents.  We would then investigate how the relative weight agents give to different attributes of other agents, as well as cluster size, changes the dynamics of the model.
+<p>
+
+ 
+
+     <h3> Appendix: Mathematica Source Code </h3>
+<a href="Elizabeth-Dan.nb">elizabeth-dan.nb</a>
+
+
+  </body>
+</html>

@@ -1,0 +1,227 @@
+<html>
+<head>
+<title>Living the Dream: Modeling Social Influence and Academic Topic Choice</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+body {
+	background-color: #FFFFFF;
+	font-family: Arial, Helvetica, Geneva, sans-serif;
+	font-size: 10pt;
+	margin:10;
+	padding:10;
+}
+h1 {
+  font-size:32pt; 
+	text-align:center; 
+	font-weight:bold;
+  margin-bottom:-10pt;
+  margin-top:0pt;
+}
+h2 {
+  font-size:14pt;
+	line-height: 14pt;
+	margin-bottom: 1pt;
+	font-weight:bold;
+}
+
+-->
+</style>
+
+<script type="text/javascript">
+
+ var _gaq = _gaq || [];
+ _gaq.push(['_setAccount', 'UA-21305822-1']);
+ _gaq.push(['_trackPageview']);
+
+ (function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+ })();
+
+</script>
+</head>
+<table width="750" border="0">
+<tr>
+<td colspan="2">
+
+
+<div align=center>
+
+
+<h1>Living the Dream: Modeling Social Influence and Academic Topic Choice</h1>
+<br>
+<hr>
+<h2><font size='6'>Is this heaven?</font></h2>
+<h2><font size='6'>No, it's academia.</font></h2> 
+
+
+
+<br>
+
+
+<hr>
+<br>
+<h2>Elizabeth Roberto and Robert Bond</h2>
+<br>
+<hr>
+
+<div align="left">
+<h2><center>Assumptions</center></h2>
+<br>
+
+
+<p>
+We began our model by making three primary assumptions about how students would choose academic topics:
+</p>
+
+
+<p>
+<ol>
+
+<li>The choice of topics in graduate school influences academics' subsequent topic choices.
+<li>There is a matching process between students and topics. This process is analogous to dating and mate selection: it involves multiple rounds of decision making with various levels of commitment.
+<li>The social influence of a student's advisor and peers also plays a key role in the choice of topics.
+</ol>
+</p>
+
+<h2><center>The Model</h2></center>
+<br>
+<p>
+Our model features a cohort of graduate students. Each graduate student has an advisor, and each chooses their topic from a fixed set of possible topics.
+</p>
+
+<p>
+Each student has three characteristics:
+
+<ol>
+<li> Students have a degree of general interest in each topic. This represents a students general affect for studying a topic. We implement this as a random uniform variable that ranges from 0 to 1, where 0 represents not caring at all about the topic and 1 represents caring a great deal. </li>
+<li> Students care about the salience of a topic. Some students highly value salient topics, while for others salience is not important. We implement this as a random uniform variable that ranges from 0 to 1, where 0 represents not caring at all about salience and 1 represents caring a great deal.</li>
+<li> Students are more and less prepared to study different topics. Students either have the necessary prep to begin studying a topic or they do not. We represent this as a dichotomous variable (0,1), where 0 represents a student being unprepared to begin a program and 1 represents a student being prepared to begin a program. </li>
+</ol>
+</p>
+
+<p>
+Topics also have three characteristics:
+<ol>
+<li> Topics vary in their salience. Some topics have timely implications (they speak to the day's biggest questions, whether in popular culture or in academia), and others are more established, traditional areas of study in a field. We implement this as a random uniform variable that ranges from 0 to 1, where 0 represents a topic that is not at all salient and 1 represents a topic that is very salient. </li>
+<li> Support for studying topics is more or less available within certain academic departments. Support may include courses, research centers, or expertise. We implement this variable as a random uniform that ranges from 0 to 1, where 0 represents a topic that a department does not support and 1 represents a topic is highly supported. </li>
+<li> Topics require various types of preparation or training. (For simplicity, we have modeled this as the quality of the match between topics and students - the type of preparation required to study a topic and the student's prior preparation. See student characteristic three above.)</li>
+</ol>
+</p>
+
+<p>
+The initial match score of each student topic pair is calculated as:
+
+<p>
+[1 - |(student's salience score) - (topic salience score)| ] + [(student's general interest) * (topic availability)] + [student topic preparation]
+</p>
+
+<p>
+We divide this sum by 3 so that the score ranges from 0 to 1, where 0 represents a very poor student-topic match and 1 represents a very strong student-topic match. We then record the topic that the student evaluates as being the best match for themes -- this is their choice of topic prior to any social influence.
+</p>
+
+
+<p>
+In the next stage of the model, we introduce the influence of students' advisors and peers into the topic selection process.
+</p>
+
+
+<p>
+We assign an advisor to each student, and each advisor has three characteristics:
+</p>
+
+<p>
+<ol>
+<li> Advisors have a general evaluation of each topic. Advisors will think that some topics are generally more worthy of study than other topics. We implement this variable as a random uniform that ranges from 0 to 1, where 0 represents a topic that an advisor thinks is not worthy of study and 1 represents a topic that is very worthy of study.</li>
+<li> Advisors have more expertise about some topics. Advisors will be able to advise on some topics very well, but be far less able for other topics. We implement this variable as a random uniform that ranges from 0 to 1, where 0 represents a topic that an advisor is unable to advise on and 1 represents a topic that an advisor is very able to advise on. </li>
+<li> Advisors have an opinion about each topic's appropriateness for the student. Advisors believe that there are some topics better suited for a particular student than others. We implement this variable as a random uniform that ranges from 0 to 1, which is then multiplied by the student topic initial match score indicating that the advisor takes into consideration aware of the students self evaluation of their match with a topic, where 0 represents a topic that an advisor thinks is not a good fit for the student 1 represents a topic that is a very good fit. </li>
+</ol>
+</p>
+
+<p>
+We modeled influence of the advisor by first creating a variable for the advisor's influence. To do this we added together the advisor's evaluation of each topic, the advisor's level of expertise on a topic and the advisor's opinion of the appropriateness of the topic for the student, and divided this sum by 3. This score ranges from 0 to 1, where 0 represents topics that the advisor thinks are not good matches for the student and 1 represents topics that the advisor thinks are good matches.
+</p>
+
+<p>
+Students may also be influenced by their peers. We thought that students would be attracted to topics that other students in their cohort found interesting, as they may have more access to peer learning and support on these types of topics. Therefore, we calculated a total popularity score for each topic by taking the average of each topic's student-topic match score from above. These scores are the same for everyone.
+</p>
+
+<p>
+The model produces three scores -- student's topic match score without influence, advisor's influence score, and peer influence score -- as well as the students' final choice of topics. We modeled how differential weighting of each of the three scores affects ultimate topic choice. 
+</p>
+
+
+<h2><center>Results</h2></center>
+<br>
+
+<p>
+We vary the weighting of student's initial topic match evaluation, advisor influence, and peer influence from 0 to 1. We analyze the frequency of changes from the students' initial topic match evaluation to their ultimate choice based on social influence.
+</p>
+
+
+<p>
+<center><img src="hw1plot.2.png" height='700'></center>
+</p>
+
+
+
+<p>
+The above figure shows this variation. Each panel shows how the number of changes from the student's choice based on matching evolves as the student weighs their choice based on matching more heavily. In each panel, the weight of the student's choice based on matching varies from 0 to 1. The panels are broken down based on two factor variables that represent the quartiles of the two types of social influence, peer and advisor influence. 
+</p>
+
+
+
+<p>
+The above figure shows this variation. Each panel shows how the number of changes from the student's choice based on matching evolves as the student weighs their choice based on matching more heavily. In each panel, the weight of the student's choice based on matching varies from 0 to 1. The panels are broken down based on two factor variables that represent the quartiles of the two types of social influence, peer and advisor influence. 
+</p>
+
+
+<p>
+However, we realized that the above plot was not particularly informative about the dynamics in our model. So, we decided to hold one of the weights in the model fixed and allow the other two to vary. We decided that it was most interesting to hold a student's initial match score constant and to allow the two types of social influence to take place. For this analysis we held the weight of the student's initial match score constant at 1 and and allowed the weights for the two types of social influence to vary between 0 and 2, so that at the extreme values students care exclusively about their own evaluations of topics (0) or are more sensitive to social influence (2).
+</p>
+
+
+<center><img src="graphic2.png" height='700'></center>
+
+<p>
+The above figure shows the results of the model when the student's initial match score is held constant. As expected, when either type of social influence increases in weight, students become more likely to change their topic choice. Interestingly, as advisors have more weight, more changes are made. This is somewhat surprising, given that advisor's opinions are at least in part a function of the student's match score. On the other hand, peer influence has a strong central tendency, so the influence is somewhat muted given the current parameter specifications.
+</p>
+
+
+
+
+<h2><center>Extensions</h2></center>
+<br>
+<p>
+Possible extensions to the model include:
+</p>
+
+<ol>
+<li>adding multiple rounds of topic choice, and ultimately being wed to a topic (as in the dating/marriage analogy)</li>
+<li>adding a peer network structure</li>
+<li>introducing exogenous shocks, such as new salient issues or new advisors</li>
+<li>additional agent heterogeneity, such as different susceptibility to social influence</li>
+<li>additional heterogeneity in topics and advisors</li>
+<li>including random noise or heuristic decision making
+</ol>
+</p>
+
+<h2><center>Other Applications</h2></center>
+<br>
+<p>
+This model may also be useful for studying social influence related to advice seeking and decision making, or differentiation of status among similar products, such as in fashion and fads.
+</p>
+
+
+</div>
+<hr>
+
+</td>
+</tr>
+
+</body>
+
+
+</html>
+

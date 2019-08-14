@@ -1,0 +1,75 @@
+<html>
+<head>
+<title>Aaron Bramson and Dominic Rohner SFI SS06 HW</title>
+<style type="text/css">
+<!--
+  :link { color: rgb(110, 0, 110); } 
+  :visited { color: rgb(110, 0, 110); } 
+  body { margin-left: 5px; font-family: arial, sans-serif; 
+         background: #bbbbbb; font-size: 12pt; text-align: justify; } 
+  h2 { background: rgb(166,172,255); 
+       font-size: 15pt; 
+       padding-left: 6px; padding-right: 6px; padding-top: 6px; 
+       padding-bottom: 6px; } 
+  p { margin-left: 10px; text-align: justify; } 
+  pre { margin-left: 13px; background: rgb(225,225,225); 
+        font-family: monospace; padding-left: 3px; padding-right: 3px; 
+        padding-top: 3px; padding-bottom: 3px; } 
+-->
+</style>
+</head>
+<body>
+
+<center>
+<table width=737 cellpadding=10 cellspacing=0 marginwidth=0 marginheight=0 topmargin=0 leftmargin=0 border=1 bgcolor="#ffffff"><tr><td>
+
+<center>
+<h1> Musical Chairs in the Airplane</h1>
+<h2><a href="http://www.bramson.net" target=_blank>Aaron Bramson</a> and <a href="http://http://www.econ.cam.ac.uk/phd/dr296/" target=_blank>Dominic Rohner</a></h2>
+</center>
+<h3>The general setting</h3>
+
+<p>The present model is about passengers choosing an optimal seat in an airplane. The general setting for the airplane  has a policy of free choice of seats. Passengers are allowed to decide in which seat they would like to sit with the only constraint of not having more than one passenger per seat. If more than one passenger aims for the same seat, one of them has to leave. This can be implemented economically by administrating a first price auction between the different passengers who are interested in the same seat.</p>
+
+<p>More precisely, the game takes place in an airplane with 100 seats organized in 25 rows with two seats to the left and two seats to the right of the aisle. There are 100 passengers who will ultimately each have their own seat; sitting in the corridor is not allowed.</p>
+
+<h3>The preferences of the passengers</h3>
+
+<p>Passengers are assumed to care about three different issues. First of all, they have a preference over sitting next to the window or the aisle. The preferred choice results in a score of 1, while the less preferred seats obtain a score of 0. Second, they care about the level of attractiveness of their direct neighbor. The attractiveness score is taken to be an objective value that includes factors such as being slim, have a good level of body hygiene and being considerate. This implies that each player has an attractiveness score between 0 and 9. Third, players also have subjective preferences about their neighbor. In fact, they belong to two groups (say, the blues versus the reds). This variable could capture characteristics such as racial background, sex, age etc. This third variable takes the value 0 if the adjacent seat's passenger type is different, and 1 if it is the same as the passenger in question. The different passengers are heterogeneous with respect to the relative weights attributed to the three different variables, but the ranges are chosen so that on average the values of the three considerations are given equal weight.</p>
+
+<p><b>Utility Function: </b>(alpha * window) + (beta * attractiveness of neighbor) + (gamma * style)<br><br>
+window = {0,1}<br>
+attractiveness = {0,1,...9}<br>
+style = {0,1}<br>
+alpha = {0,1,...,19}<br>
+beta = {0,1,2}<br>
+gamma = {0,1,...,19}<br>
+
+<center>
+<applet code="org.nlogo.window.Applet"
+        archive="NetLogoLite.jar"
+        width="845" height="448">
+  <param name="DefaultModel"
+         value="Airplane%20Seating-a.nlogo">
+</applet>
+
+<br>
+
+<p>view/download model file:
+<a href="Airplane%20Seating-a.nlogo">Airplane Seating-a.nlogo</a>
+</p>
+
+</center>
+
+<h3>The outcomes of the model</h3>
+
+<p>At first all passengers simultaneously choose a seat. At this time they only focus on whether it is a window or aisle seat, as they do not know yet who will be their neighbor. For the remainder of the simulation we consider two specifications. In the simpler case the passengers who have targeted chairs that are also chosen by other passengers have to move (actually, all but one of the occupiers are randomly chosen for moving). The moving continues until all seats are occupied. We can see that in this first case the utility of the agents will decrease.  This decrease results from the fact that people are leaving their seats to find that the values regarding the neighbor's attractiveness and style are usually worse than the expected (mean) values. </p>
+
+<p>This model assumes that people who are dissatisfied with their seats will not move when given the opportunity.  We remove this assumption in an <a href="bramson-rohner2.html">expanded version on page 2</a>.  </p>
+
+<br>
+<center>Page 1</center>
+
+</td></tr></table></center>
+</body>
+</html>

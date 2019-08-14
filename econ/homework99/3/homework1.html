@@ -1,0 +1,145 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="Generator" content="Microsoft Word 97">
+   <meta name="Template" content="C:\PROGRAM FILES\MICROSOFT OFFICE\OFFICE\html.dot">
+   <meta name="GENERATOR" content="Mozilla/4.61 [en] (Win95; I) [Netscape]">
+   <title>A Model of the Impact on Movie Demand of Social Networks and Word</title>
+</head>
+<body link="#0000FF" vlink="#800080">
+
+<center><b><font size=+1>A Model of the Impact on Movie Demand of Social
+Networks and Word</font></b>
+<p><b><font size=+1>of Mouth Recommendation</font></b>
+<p><i><font size=-1>David Robalino &amp; Mike Gibney</font></i></center>
+
+<p><b>Introduction &amp; Motivation</b>
+<p><font size=-1>&nbsp;We wanted to examine the demand for a movie over
+time with particular attention to the role played by social networks in
+determining the behavior of the potential audience. As an organizing question
+we asked: If a theatre manager was able to give away a number of free tickets
+to a performance, what strategies should he adopt in order to best promote
+different types of movie? Secondly would the manager be able to discriminate
+between the impact on demand of the properties of the movie itself and
+the social characteristics of the potential market place? In addressing
+these questions we would like to understand the emergence of two phenomena:
+a) why socially accepted good movies may have low success while bad movies
+have good success; b) why the demand for a given movie starts to expand
+only late in its release cycle.</font>
+<p><img SRC="historical_data.gif" height=340 width=544>
+<p><b><font size=-1>Figure 1: Historical Demand Data for Two well known
+Movies</font></b>
+<p>&nbsp;<b>The Model</b>
+<p><font size=-1>We constructed a model of a community of networked agents
+randomly distributed in a two dimensional space. To formalize this idea
+we define a graph:</font>
+<br>&nbsp;
+<p><img SRC="Image1.gif" HSPACE=12 height=21 width=72 align=LEFT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size=-1>
+(1)</font>
+<p><font size=-1>there V is the set of vertices and E is the set of edges.
+As usual we define the neighborhood of an agent i by the set:</font>
+<p><img SRC="Image2.gif" HSPACE=12 height=22 width=145 align=LEFT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font size=-1>(2)</font>
+<p><font size=-1>We assume that the probability of two agents being connected
+is given as a function of their distance through an exogenously defined
+connectivity parameter
+<i>m.</i></font>
+<p><font size=-1>To formalize agents’ decision of going to the movie we
+use a simple binomial choice model. Hence, we assume that the utility that
+a given agent derives by watching a movie depends on its individual characteristics
+as well as its expectations about the quality of the movie. The expected
+utility for an agent <i>i</i> of undertaken choice <i>w</i>={1=watching
+a movie, 2=not watching the movie} is given by:</font>
+<p><img SRC="Image3.gif" HSPACE=12 height=33 width=252 align=LEFT><font size=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(3)</font>
+<p><font size=-1>where <b>x~N(Ex,Vx) </b>is a vector of agents’ characteristics,
+<i>Ec</i>
+the agent expectation about the quality of the movie is also normally distributed
+(c ~N(<img SRC="Image7.gif" height=21 width=34>) ),
+<i>P</i> is the cost
+of the movie and <font face="Symbol">e</font> is a random shock. Therefore,
+the probability that an agent <i>i</i> will watch the movie is given by:</font>
+<p><img SRC="Image4.gif" HSPACE=12 height=25 width=240 align=LEFT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font size=-1>(4)</font>
+<br>&nbsp;
+<p><font size=-1>Under the assumptions that <font face="Symbol">e</font>
+is extreme value distributed we can write:</font>
+<p><img SRC="Image5.gif" HSPACE=12 height=49 width=318 align=LEFT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font size=-1>(5)</font>
+<br>&nbsp;
+<p><font size=-1>Equation (5) is the expression that we use to compute
+the probability that a given agent will watch the movie. To implement this
+calculation we first need to define an expression for the dynamics of <i>Ec</i>.
+To do so we a very simple learning model that assumes that agents learn
+about the quality of a movie from their neighbors. Of course, an agent
+also learns about the quality of movie by watching the movie. To formalize
+these ideas we define:</font>
+<br>&nbsp;
+<p><img SRC="Image6.gif" HSPACE=12 height=69 width=252 align=LEFT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font size=-1>(6)</font>
+<br>&nbsp;
+<br>&nbsp;
+<p><font size=-1>where <font face="Symbol">w</font> is a weight that agents
+put in their observations. This weigth depends on how different is the
+agent that provides the information. When obs results from the agent watching
+the movie we have <font face="Symbol">w</font> =1.</font>
+<p><b>Results</b>
+<p><i><font size=-1>General Model Dynamics</font></i>
+<p><font size=-1>The model has eight parameters<i> </i></font><i>(<font face="Symbol">a</font><sub>0
+</sub>,
+<font face="Symbol">a</font><sub>1</sub>,
+<font face="Symbol">a</font><sub>2</sub>,
+<font face="Symbol">a</font><sub>3</sub>,
+Ex,Vx,&nbsp;<img SRC="Image8.gif" height=21 width=34>, m). </i><font size=-1>These
+parameters where calibrated to replicate observed dynamics in the demand
+for movies (see Figure 1). In Figure 2 we present a sample of three Monte
+Carlo simulation of the model. The Y-axis represents the audience while
+the X-axis represents time measured in days. We observe that the demand
+for a given movie can have very different dynamics depending on initial
+agents expectations. Hence in the blue line, the demand for the movie peaks
+early and falls relatively quickly (a path similar to the one observed
+in Figure 1). On the other hand, the green lines shows a dynamics where
+the demand for the movie starts to increase only late in the release after
+more information has become available.</font>
+<p><img SRC="vague1.gif" height=294 width=498>
+<p><b><font size=-1>Figure 2: Three Samples of Possible Dynamics for the
+Demand for Movies</font></b>
+<p><i><font size=-1>Effects of Connectivity and Heterogeneity</font></i>
+<p><font size=-1>In a second type of simulation, we computed the average
+path over 50 Monte Carlo simulations of the demand for movies, for four
+sub-regions of the parameter space defined by the following two pairs.&nbsp;
+1) Densely and Sparsely Connected Societies; and 2) Homogeneous and Heterogeneous
+Communities of Agents.</font>
+<p><font size=-1>The results of this simulation are presented in Figure
+3. The Y-axis represents the number of agents viewing the movie in any
+single time step, and X-axis represents the number of weeks. We observe
+that both connectivity and heterogeneity have important effects in the
+dynamics of the demand for movies. In particular in more connected societies
+the demand for good movies tends to stay at high levels for longer periods
+of time. We also observe that in more heterogeneous societies the demand
+for good movies increases faster during the first weeks and reaches a higher
+peak. One possible explanation for this phenomena is that in heterogeneous
+societies negative information about movies has less impact on agent's
+expectations.</font>
+<p><img SRC="good_movie_results.gif" height=429 width=573>
+<p><b><font size=-1>Figure 3: Demand for Good Movies</font></b>
+<p><b>Conclusions</b>
+<p><font size=-1>An interesting result from the analysis is that the vagaries
+of history are likely to important determinants of the demand for movies.
+Hence, good movies may end up having low demand while bad movies can have
+high demand., depending on the initial agents expectations and their propagation
+through the social network.</font>
+<p><font size=-1>As expected, densely connected social networks promoted
+demand for good movies and depressed the demand for bad ones. This makes
+sense because densely connected networks favor the propagation of information
+through the society. More interestingly still, heterogeneous societies
+encouraged demand for good movies even more strongly than homogenous societies.
+This result ran counter to our initial intuition that homogenous societies
+propagated information more efficiently because agents trusted each others
+opinions more strongly in such societies. We conjecture that heterogeneous
+agents discount the incorrect information they receive that the movie is
+a bad one that they receive early in the simulation.</font><font size=-1></font>
+<p><font size=-1>david_robalino@rand.org &amp; M.A.Gibney@qmw.ac.uk</font>
+</body>
+</html>

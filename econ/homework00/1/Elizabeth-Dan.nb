@@ -1,0 +1,296 @@
+(***********************************************************************
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used on any computer system with Mathematica 4.0,
+MathReader 4.0, or any compatible application. The data for the notebook 
+starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do one of 
+the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing the 
+word CacheID, otherwise Mathematica-compatible applications may try to 
+use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+***********************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      8785,        230]*)
+(*NotebookOutlinePosition[      9551,        257]*)
+(*  CellTagsIndexPosition[      9507,        253]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell[BoxData[
+    \( (*\ 
+      Elizabeth\ Bruch\ and\ Daniel\ Reeves\[IndentingNewLine]Modelling\ a\ \
+cocktail\ \(party\ --\)\ agents\ prefer\ clusters\ that\ are\ not\ too\ big\ \
+and\ not\ too\ small\ and\ clusters\ with\ average\ age\ close\ to\ their\ \(\
+\(own\)\(.\)\)\[IndentingNewLine]*) \)], "Input"],
+
+Cell[BoxData[
+    \(\(Needs["\<Graphics`Animation`\>"];\)\)], "Input"],
+
+Cell[BoxData[
+    \( (*\ CONSTANTS\ *) \)], "Input"],
+
+Cell[BoxData[{
+    \(\(numAgents = 21;\)\), "\[IndentingNewLine]", 
+    \(\(roomSize = 10;\)\), "\[IndentingNewLine]", 
+    \(\(idealMin = 3;\)\), "\[IndentingNewLine]", 
+    \(\(idealMax = 4;\)\)}], "Input"],
+
+Cell[BoxData[
+    \( (*\ INITIALIZE\ THE\ ROOM\ *) \)], "Input"],
+
+Cell[BoxData[{
+    \(insertInitialAgent[agent_, pos_] := \(initialSociety = 
+        ReplacePart[initialSociety, agent, pos]\)\), "\[IndentingNewLine]", 
+    \(\(initialSociety = 
+        Table[\(-1\), {3*roomSize}, {3*
+              roomSize}];\)\), "\[IndentingNewLine]", 
+    \(\(initialSociety = 
+        ReplacePart[initialSociety, 0, 
+          Flatten[Table[{i, j}, {i, roomSize + 1, 2*roomSize + 1}, {j, 
+                roomSize + 1, 2*roomSize + 1}], 1]];\)\), "\n", 
+    \(For[i = 1, 
+      i \[LessEqual] 
+        numAgents, \(i++\), \[IndentingNewLine]While[\(randPos = {Random[
+              Integer, {roomSize + 1, 2*roomSize + 1}], 
+            Random[Integer, {roomSize + 1, 2*roomSize + 1}]}; 
+        Extract[initialSociety, randPos] =!= 
+          0\)\(,\)]; \[IndentingNewLine]insertInitialAgent[
+        agent[Random[Integer, {18, 80}], Random[Integer]], 
+        randPos];\[IndentingNewLine]]\)}], "Input"],
+
+Cell[BoxData[
+    \(distFromRange[x_, {min_, max_}] := 
+      Which[x \[LessEqual] min, min - x, x \[GreaterEqual] max, x - max, 
+        True, 0]\)], "Input"],
+
+Cell[BoxData[
+    \(clusterUtil[agent[myAge_, mySex_], agents_] := 
+      Module[{size = Length[agents], \ averageAge, 
+          averageSex}, \[IndentingNewLine]averageAge = 
+          Apply[Plus, \ Map[First, \ agents]]/
+            If[size > 0, size, 1]\ ; \[IndentingNewLine]averageSex = 
+          Apply[Plus, \ Map[#[\([2]\)] &, \ agents]]/
+            If[size > 0, size, 1]\ ; \[IndentingNewLine]ageDiff = 
+          Abs[myAge - 
+              averageAge]; \[IndentingNewLine]\(-2\)*\((ageDiff - \((80 - 
+                      18)\))\)/\((80 - 18)\) - 
+          Log[1 + distFromRange[size, {idealMin, idealMax}]]]\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\( (*\ 
+      determining\ the\ age\ difference\ at\ which\ an\ agent\ would\ just\ \
+as\ soon\ be\ alone, \ 
+      even\ though\ the\ cluster\ is\ of\ ideal\ size\ *) \)\(\
+\[IndentingNewLine]\)\(Solve[\(-2\)*\((d - \((80 - 18)\))\)/\((80 - 
+                18)\) \[Equal] 2 - Log[3. ], d]\)\)\)], "Input"],
+
+Cell[BoxData[
+    \({{d \[Rule] 34.056980948711406`}}\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(neighborhood[cell_, radius_] := 
+      Map[Function[x, cell + x], 
+        Flatten[Table[{i, j}, {i, \(-radius\), radius}, {j, \(-radius\), 
+              radius}], 1]]\)], "Input"],
+
+Cell[BoxData[
+    \(\(\( (*\ take\ a\ location, \ 
+      return\ list\ of\ locations\ within\ a\ radius\ of\ it\ that\ have\ \
+agents\ *) \)\(\[IndentingNewLine]\)\(occupiedCells[society_, cell_, 
+        radius_] := 
+      Map[#[\([2]\)] &, 
+        Cases[Map[{Extract[society, #], #} &, 
+            neighborhood[cell, radius]], {_agent, _}]]\)\)\)], "Input"],
+
+Cell[BoxData[
+    \(\(\( (*\ take\ a\ location, \ 
+      return\ list\ of\ locations\ within\ a\ radius\ of\ it\ that\ are\ not\ \
+occupied\ *) \)\(\[IndentingNewLine]\)\(emptyCells[society_, cell_, radius_] := 
+      Map[#[\([2]\)] &, 
+        Cases[Map[{Extract[society, #], #} &, 
+            neighborhood[cell, radius]], {0, _}]]\)\)\)], "Input"],
+
+Cell[BoxData[
+    \(\(\( (*\ 
+      take\ a\ list\ of\ cells\ with\ agents\ and\ return\ a\ bigger\ list\ \
+that\ includes\ adjacent\ cells\ with\ agents\ \
+*) \)\(\[IndentingNewLine]\)\(octopus[society_, cells_] := 
+      Apply[Union, Map[occupiedCells[society, #, 2] &, cells]]\)\)\)], "Input"],
+
+Cell[BoxData[
+    \(spreadInk[society_, cell_] := 
+      FixedPoint[octopus[society, #] &, {cell}]\)], "Input"],
+
+Cell[BoxData[
+    \(agentUtil[me_, society_, cell_] := 
+      If[Extract[society, cell] === \(-1\), \(-Infinity\), 
+        clusterUtil[me, spreadInk[society, cell]]]\)], "Input"],
+
+Cell[BoxData[{
+    \( (*\ 
+      shuffle\ a\ list\ *) \[IndentingNewLine]\(randomize[{}]\  := \ {};\)\), \
+"\[IndentingNewLine]", 
+    \(\(randomize[
+          lis_]\  := \[IndentingNewLine]\t\(Transpose[
+            Sort[Map[{Random[], \ #} &, \ lis]]]\)[\([2]\)];\)\)}], "Input"],
+
+Cell[BoxData[
+    \(\(\( (*\ 
+      given\ a\ state\ of\ the\ room\ \((society)\)\ and\ the\ location\ of\ \
+an\ agent, \ 
+      return\ a\ new\ state\ where\ that\ agent\ has\ moved\ to\ cell\ of\ \
+highest\ utility\ within\ a\ radius\ of\ where\ it' 
+        s\ currently\ at\ *) \)\(\[IndentingNewLine]\)\(update[society_, 
+        cell_, radius_] := 
+      Module[{me = Extract[society, cell], s = society, possibleBests, 
+          bestcell}, \[IndentingNewLine]If[\(! MatchQ[
+              Extract[society, cell], _agent]\), 
+          Return[society]]; \[IndentingNewLine]s = 
+          ReplacePart[s, 0, 
+            cell]; \[IndentingNewLine]possibleBests = \(Transpose[\(Split[
+                  Sort[Map[{agentUtil[me, s, #], #} &, 
+                      emptyCells[s, cell, 
+                        radius]], #1[\([1]\)] > #2[\([1]\)] &], #1[\([1]\)] \
+\[Equal] #2[\([1]\)] &]\)[\([1]\)]]\)[\([2]\)]; \[IndentingNewLine]bestcell = 
+          possibleBests[\([Random[
+                Integer, {1, 
+                  Length[possibleBests]}]]\)]; \[IndentingNewLine]ReplacePart[
+          s, Extract[society, cell], 
+          bestcell]\[IndentingNewLine]]\)\)\)], "Input"],
+
+Cell[BoxData[
+    \(\(\( (*\ Update\ each\ agent, \ 
+      in\ random\ order\ *) \)\(\[IndentingNewLine]\)\(updateEach[society_, 
+        radius_] := 
+      FoldList[update[#1, #2, radius] &, society, 
+        randomize[Position[society, _agent]]]\)\)\)], "Input"],
+
+Cell[BoxData[
+    \(imageList[societies_] := 
+      Map[Graphics[
+            RasterArray[#\  /. \n\t\t\t\t\t\t\t{0 -> 
+                    RGBColor[0, 0, 1], \n\t\t\t\t\t\t\t\t\(-1\) -> 
+                    RGBColor[0, 1, 0], \n\t\t\t\t\t\t\t\tagent[age_, 
+                      sex_] \[Rule] 
+                    Apply[RGBColor, 
+                      Table[\((age - 18)\)/\((80 - 
+                              18)\), \ {3}]]}]] &, \n\t\t\tsocieties]\)], \
+"Input"],
+
+Cell[BoxData[
+    \(showFrames[societies_] := 
+      ShowAnimation[imageList[societies]]\)], "Input"],
+
+Cell[BoxData[
+    \(run[n_, radius_] := 
+      Nest[Join[#, updateEach[Last[#], radius]] &, {initialSociety}, n] // 
+        showFrames\)], "Input"],
+
+Cell[BoxData[
+    \(runSparse[n_, radius_] := 
+      NestList[Last[updateEach[#, radius]] &, initialSociety, n] // 
+        showFrames\)], "Input"],
+
+Cell[BoxData[
+    \(runSparse[30, 1]\)], "Input"]
+},
+FrontEndVersion->"4.0 for Microsoft Windows",
+ScreenRectangle->{{0, 1024}, {0, 695}},
+WindowSize->{1015, 668},
+WindowMargins->{{-10, Automatic}, {Automatic, 0}},
+PrintingCopies->1,
+PrintingPageRange->{Automatic, Automatic},
+CellLabelAutoDelete->True,
+Magnification->1.25
+]
+
+
+(***********************************************************************
+Cached data follows.  If you edit this Notebook file directly, not using
+Mathematica, you must remove the line containing CacheID at the top of 
+the file.  The cache data will then be recreated when you save this file 
+from within Mathematica.
+***********************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1717, 49, 311, 5, 98, "Input"],
+Cell[2031, 56, 70, 1, 35, "Input"],
+Cell[2104, 59, 52, 1, 35, "Input"],
+Cell[2159, 62, 208, 4, 98, "Input"],
+Cell[2370, 68, 64, 1, 35, "Input"],
+Cell[2437, 71, 929, 18, 203, "Input"],
+Cell[3369, 91, 159, 3, 35, "Input"],
+Cell[3531, 96, 634, 11, 140, "Input"],
+
+Cell[CellGroupData[{
+Cell[4190, 111, 329, 6, 77, "Input"],
+Cell[4522, 119, 67, 1, 35, "Output"]
+}, Open  ]],
+Cell[4604, 123, 201, 4, 56, "Input"],
+Cell[4808, 129, 361, 7, 77, "Input"],
+Cell[5172, 138, 350, 6, 77, "Input"],
+Cell[5525, 146, 296, 5, 77, "Input"],
+Cell[5824, 153, 111, 2, 35, "Input"],
+Cell[5938, 157, 179, 3, 56, "Input"],
+Cell[6120, 162, 281, 6, 98, "Input"],
+Cell[6404, 170, 1182, 22, 287, "Input"],
+Cell[7589, 194, 264, 5, 77, "Input"],
+Cell[7856, 201, 468, 10, 140, "Input"],
+Cell[8327, 213, 101, 2, 35, "Input"],
+Cell[8431, 217, 148, 3, 35, "Input"],
+Cell[8582, 222, 147, 3, 35, "Input"],
+Cell[8732, 227, 49, 1, 35, "Input"]
+}
+]
+*)
+
+
+
+
+(***********************************************************************
+End of Mathematica Notebook file.
+***********************************************************************)
+

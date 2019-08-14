@@ -1,0 +1,267 @@
+<HTML>
+<HEAD><TITLE>Seating Simulating</TITLE></HEAD>
+<BODY>
+<CENTER>
+<H1>Computational Economics 1998 - Seating Simulation</H1>
+<H3>Ravinder Bhavnani</H3>
+<H3>John W. Patty</H3>
+<H3>Jianping Shen</H3>
+<H3>William Vachula</H3>
+</CENTER>
+<H2>Introduction</H2>
+<P>We develop a simple model in which agents enter an auditorium and select a seat, 
+based on their locational preference, on group dynamics, and on their desire for solitude.  
+Our model permits us to introduce any number of factors that determine the seating 
+preferences of agents, by virtue of its structure.  The results presented here are based 
+on an experiment in which 50 agents enter the auditorium sequentially, once the agent 
+ahead of them has been seated.  We present an overview of agent characteristics, 
+describe the auditorium, step through the algorithm for our model, and discuss results 
+and possible extensions in the sections below. </P>
+<H2>Parameters of the Model </H2>
+
+<P> Our model possesses three defining characteristics. 
+These are
+
+<UL>
+	<LI>the layout of the lecture hall,
+
+	<LI>the preferences and types of the attendees, and
+
+	<LI>the algorithm by which attendees find seats.
+
+</UL>
+
+The design of our framework was motivated by a desire for flexibility.
+At its most general, the model can accomodate almost any plausible 
+location, agent population, and decision algorithm(s). In particular,
+we make the following assumptions for our numerical runs.
+
+<H3> Assumptions </H3>
+
+<OL>
+
+	<LI> The auditorium has 10 rows of 10 seats each, with a walkway encircling the entire body of seats.
+
+	<LI> Agents costlessly observe the characteristics of all seats and already seated individuals.
+
+	<LI> Agents move to their seat costlessly (<i>i.e.</i> agents are indifferent with respect to the distance walked to their seat).
+
+	<LI> Agents enter the auditorium one at a time (in a random order) and seat themselves before the next agent enters.
+
+	<LI> Each agent is either a member of group 1 or she is not.
+
+	<LI> An agent must remain seated after choosing her most preferred seat.
+
+</OL>
+
+The attributes a seat is allowed to have include the following:
+
+<UL>
+
+	<LI> Is the seat in the front row?
+
+	<LI> Is the seat in the back row?
+
+	<LI> Is the seat on an aisle (<i>i.e.</i> in columns 1 or 10)?
+
+	<LI> Are there people already seated directly to the left and/or right of the seat?
+
+	<LI> Are there people in group 1 seated directly to the left and/or right of the seat?
+
+</UL>
+
+Thus, we allow individuals to care not only about the location
+of the seats (front, back, aisle, none of the above), but also
+about the number of people (0,1, or 2) seated to their left and/or 
+right and the group membership of any such neighbors.  We make the 
+simplifying assumption that attendees prefer to sit next to people
+in their own group rather than those in the other group. We also 
+allow individuals to prefer sitting alone to sitting next to anyone 
+at all, regardless of group. The function we use to calculate the value of seat s to agent i is 
+given by
+
+<p><DIR><b>f(s;i) = <BR>&nbsp; &nbsp;P[i,1] * # Neighbors in Your Group <BR>+ P[i,2] * I{Is seat s on an aisle?} <BR>+ P[i,3] * I{Is seat s in front?} <BR>+ P[i,4] * I{Is seat s in back?} <BR>+ P[i,5] * I{Is seat s neither aisle, front, or back?} <BR>+ P[i,6] * # Neighbors <BR>+ e[i,s],</b></DIR>
+
+where # neighbors is either 0, 1, or 2, I{x} is the indicator function which takes on a value of 1 if x is true and -1 otherwise, and e[i,s] is an agent and seat-specific random variable uniformly distributed between 0 and 1.
+
+<P> Thus we see that an agent is defined by the following type, t[i]:
+
+<P><DIR><B>t[i]=(v[i], h[i], g[i], P[i,1], ..., P[i,6], e[i,1], ..., e[i,100]),</B></DIR>
+
+where v[i] and h[i] represent the row and column coordinates of agent i, respectively, and g[i] is either 1 or -1, depending on whether or not agent i is a member of group 1 (1 => member of group 1, -1 => not a member).
+
+<H3>The Algorithm</H3>
+
+<P> We generated 50 agents randomly, with each agent's types being drawn independently.  In addition, 
+the draws of the components of an agent's type were independent as well. Finally, agent 1 was 
+allowed to choose her most preferred seat in the empty auditorium, with agent 2 following her, 
+and so forth, until all 50 agents were seated, at which point one run of the numerical analysis 
+of the model was complete.
+
+
+<H2>Results</H2>
+<P>The computational model, described above, is executed many times for 
+the purpose of observing the effects that each parameter has on the agent’s l
+ocation or seat, especially group dynamics and externality effects.  Below are the 
+results from a single representative run of the model.  This particular run used the 
+following model parameter settings:</P>
+<P>A 10X10 auditorium with an aisle on each side and one entrance</P>
+<P>50 independent agents</P>
+<P>Aisle, front, back, and middle seat preferences independently and randomly assigned</P>
+<P>Group dynamics of one variable, randomly assigned the value of 1 or -1</P>
+<P>A matching preference where like prefers to sit next to like (also 1 or -1)</P>
+<P>One externality variable, called solitude, randomly assigned the value of 1 or -1</P>
+<P>The results of the model run are shown as tables that represent a bird’s eye view of the auditorium.  The 10X10 matrix in the middle of the table represents the seats and the surrounding -1 values the aisles (front, sides, and back).  The front of the auditorium is the top row of seats.</P>
+<H3>Position</H3>
+<TABLE>
+<TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TR>
+<TD><CENTER>-1</CENTER></TD><TD><CENTER>21</CENTER></TD><TD><CENTER>47</CENTER></TD><TD><CENTER>20</CENTER></TD><TD><CENTER>16</CENTER></TD><TD><CENTER>45</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>41</CENTER></TD><TD><CENTER>35</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>19</CENTER></TD><TD><CENTER>-1</CENTER></TD><TR>
+<TD><CENTER>-1</CENTER></TD><TD><CENTER>44</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>18</CENTER></TD><TD><CENTER>2</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TR>
+<TD><CENTER>-1</CENTER></TD><TD><CENTER>39</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>3</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>30</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>22</CENTER></TD><TD><CENTER>-1</CENTER></TD><TR>
+<TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>36</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>23</CENTER></TD><TD><CENTER>-1</CENTER></TD><TR>
+<TD><CENTER>-1</CENTER></TD><TD><CENTER>14</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>32</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>33</CENTER></TD><TD><CENTER>37</CENTER></TD><TD><CENTER>-1</CENTER></TD><TR>
+<TD><CENTER>-1</CENTER></TD><TD><CENTER>46</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>40</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>12</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>26</CENTER></TD><TD><CENTER>-1</CENTER></TD><TR>
+<TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>25</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>43</CENTER></TD><TD><CENTER>38</CENTER></TD><TD><CENTER>49</CENTER></TD><TD><CENTER>-1</CENTER></TD><TR>
+<TD><CENTER>-1</CENTER></TD><TD><CENTER>15</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>31</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>9</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TR>
+<TD><CENTER>-1</CENTER></TD><TD><CENTER>10</CENTER></TD><TD><CENTER>27</CENTER></TD><TD><CENTER>48</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>5</CENTER></TD><TD><CENTER>24</CENTER></TD><TD><CENTER>11</CENTER></TD><TD><CENTER>7</CENTER></TD><TD><CENTER>42</CENTER></TD><TD><CENTER>-1</CENTER></TD><TR>
+<TD><CENTER>-1</CENTER></TD><TD><CENTER>8</CENTER></TD><TD><CENTER>28</CENTER></TD><TD><CENTER>34</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>29</CENTER></TD><TD><CENTER>4</CENTER></TD><TD><CENTER>17</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>6</CENTER></TD><TD><CENTER>13</CENTER></TD><TD><CENTER>-1</CENTER></TD><TR>
+<TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TR>
+</TABLE>
+
+<P>This table shows the seating location of all fifty agents.  Each agent is individually numbered.  Note that since the seating preferences for each agent are dominated by &quot;edges&quot; (aisle, front, and back) over the middle, most agents are located at the &quot;edges&quot;.</P>
+<H3>Aisle Preference</H3>
+<TABLE>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+</TABLE>
+
+
+<P>This table shows each seated agent’s aisle seat preference, either 1 (prefer) or -1 (do not prefer).  Note that most of the seated aisle agent’s preferences are met.</P>
+<H3>Front Preference</H3>
+<TABLE>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+</TABLE>
+
+
+<P>This table shows each seated agent’s front seat preference, either 1 (prefer) or -1 (do not prefer).  Note that most of the seated front agent’s preferences are met.</P>
+<H3>Back Preference</H3>
+<TABLE>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+</TABLE>
+
+<P>This table shows each seated agent’s back seat preference, either 1 (prefer) or -1 (do not prefer).  Note that most of the seated back agent’s preferences are met.</P>
+<H3>Middle Preference</H3>
+<TABLE>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+</TABLE>
+
+<P>This table shows each seated agent’s middle seat preference, either 1 (prefer) or -1 (do not prefer).  Note that more of the seated middle agent’s preferences are not met.  This may be due to the effects of group dynamics and/or solitude.</P>
+<H3>Group Dynamics</H3>
+<TABLE>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+</TABLE>
+
+
+<P>This table shows each seated agent’s group type, either 1 or -1.  Note that clusters of agents of the same type are occurring.</P>
+<H3>Solitude</H3>
+<TABLE>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>-1</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+<TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TD><CENTER>0</CENTER></TD><TR>
+</TABLE>
+
+
+<P>This table shows each seated agent’s solitude preference, either 1 (prefer to be next to others) or -1 (prefer to be alone).  Note that most, if not all, agents that prefer to be alone have a neighbor.  This is due to the fact that this parameter is dominated by all other parameters, but also, more importantly, that an agent’s solitude changes when other agents who enter the auditorium after that particular agent sit next to her.  Most of the agents that prefer solitude have an agent that prefers others sitting next to her.  This effect occurs because solitude is a preference that can not be observed by incoming agents and thus an entering agent sees all other agents as the same.</P>
+
+
+<H2>Extensions and Future Work</H2>
+
+<P>The current model is rudimentary, but constructed in a manner so that modifications and extensions can easily be implemented and executed.  The following is a list of extensions that could be built upon the current model.</P>
+
+<P>Aggregate Utility - Agents have a utility not only for the event, but also due to the combined effects of all of their preferences (friends, solitude, etc.)  The utilities of the seated agents can be combined into an aggregate utility.  What is that aggregate utility and how can it be increased?</P>
+
+<P>Exiting - Agents have an individual utility for the lecture and if their seating preferences are not met, then this utility may fall below a threshold upon which the agent then decides to leave the auditorium.</P>
+
+<P>Auditorium Structure - The configuration of the auditorium can be altered and the new aggregate effects observed.  This could help in determining better configurations for particular types of participants.  Aisles could be placed in the center, either vertically or horizontally.  The number of seats, row widths, number of rows could all be changed.</P>
+
+<P>Generic Seat Values - Instead of having just aisle, front, back, and middle seat types, each seat could have its own individual value in any configuration.</P>
+
+<P>Moving - It could take time and cost to move from the entrances to your seat and the agents could move over this time, changing their location for each step until they finally sit down.</P>
+
+<P>Multiple Active Agents - There could be more than one agent looking for a seat at the same time.  When included with moving, an agent could lose her preferred seat because another agent sits in it before she can get to it.</P>
+
+<P>Groups of Agents - Small groups of agents can arrive simultaneously, either with common preferences, or not.  In addition, the group can either act as a whole or with a leader whose preferences dominate.  There could also be communication between the group members.</P>
+
+<P>Scanning/Updating - Agents may not be able to &quot;see&quot; the entire auditorium a can only scan an area of their preference.  This scanning could be joined with moving for an agent to be able to update her preference while moving toward her seat.</P>
+
+<P>Time-dependent Preferences - An agent’s set of preferences could change due to the amount of time either before or after the beginning of the event.</P>
+
+<P>Moving to Another Seat - An agent remains active, even after sitting down and continues to scan the room for a seat that may be now more preferred to her current location.  This could generate some very interesting and complex dynamics.</P></BODY>
+
+
+
+</BODY>
+</HTML>

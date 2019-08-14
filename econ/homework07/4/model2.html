@@ -1,0 +1,65 @@
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<title>A model of parking at the mall</title>
+<style><!--
+.SpellE
+	{}
+.GramE
+	{}
+.Section1
+	{page:Section1;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" link=blue vlink=purple class="Normal" lang=EN-US>
+<div class=Section1> 
+  <h1></h1>
+  <p style='line-height:normal'><b><i><u><span
+style='font-size:14.0pt'>Model II:</span></u></i></b></p>
+  <p style='line-height:normal'><b>Description:</b> This model differs from the 
+    basic model in that it limits the information available to drivers as a function 
+    of the variable radius. While drivers still know the size of the parking lot, 
+    they can only collect information about the cars and spaces within their range 
+    of vision.</p>
+  <p style='line-height:normal'><b>Space:</b> Linear, same as Model I</p>
+  <p style='line-height:normal'><b>Time:</b>  Synchronous/Asynchronous: same as 
+    Model I</p>
+  <p style='line-height:normal'><b>Agents:</b> Homogenous, same as Model I</p>
+  <p style='line-height:normal'><b>Decision Structure:</b>  See Figure 1.</p>
+  <p style='line-height:normal'><b>Parameters tested for robustness: </b></p>
+  <ul type=disc>
+    <li style='line-height:normal;'>Number of cars (0-20)  </li>
+    <li style='line-height:normal;'>Threshold (0-1)</li>
+    <li style='line-height:normal;'>Radius (0-20)</li>
+  </ul>
+  <p style='line-height:normal'><b>Criteria for judging outcomes:</b></p>
+  <ul type=disc>
+    <li style='line-height:normal;'>Average distance to Mall</li>
+    <li style='line-height:normal;'>Average time to park</li>
+    <li style='line-height:normal;'>Trip Cost </li>
+  </ul>
+  <p style='line-height:normal'><b>Model</b></p>
+  <applet code="org.nlogo.window.Applet"
+        archive="NetLogoLite.jar"
+        width="767" height="464">
+  <param name="DefaultModel"
+         value="parking-testable-model.nlogo">
+</applet>
+  <p style='line-height:normal'><b>Outcomes:</b></p>
+  <div id="Parking Model Results_25439" align=center x:publishsource="Excel"><img
+src="Page2_files/Parking%20Model%20Results_25439_image001.gif"
+alt="Model II Parameter Sweep"></div>
+  <p style='line-height:normal'>The second model is represented above with a threshold 
+    of .6 to represent a moderate value. Similar graphs for parameter values of 
+    0 to 1 show roughly similar patterns with extreme results for 0 and 1. The 
+    model responds as expected with increased radius allowing for better outcomes 
+    for drivers. Radius is less important with lower numbers of cars because cars 
+    can usually see an empty space and will continue moving forward. The effect 
+    of a low radius (between 0 and 4) has the largest relative effect for low 
+    to moderate numbers of cars.</p>
+  <p style='line-height:normal'><strong><em><a href="model3.html">Continue to 
+    See Model III</a></em></strong></p>
+</div>
+</body>
+</html>

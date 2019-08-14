@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>Congestion and Parking Lot Efficiency</title>
+</head>
+<body>
+<center>
+<h1> Congestion and Parking Lot Efficiency</h1><br>
+<h2> Sera Linardi / Tobias Lorenz</h2><br>
+Homework for SFI 2007 graduate workshop <br>
+</center><br><br>
+
+<center><pre><a href="index.html">Research Question</a>     <a href="model.html">The Model</a>       <a href="results.html">The Results</a>      <a href="extensions.html">Possible Extensions</a> </pre></center>
+
+
+<b>The Result</b> <br><br>
+
+This model investigates the way parking habits of shoppers interact with the design of the parking lot to affect business. In particular we ask two questions:
+<li>whether a business that has a shorter average shopping time such as a fast food restaurant should design their lot differently than one with a longer average shopping time, such as a mall. 
+<li>whether a business with more frequent arrivals (eg. a busy coffeeshop) would be affected differently than a quieter one (such as an antique shop).  
+<br><br>
+
+<b>Rate of lost customers as a function of shopping time</b><br>
+
+<img src="lostcust_waiting_shoppingTime2.jpg">
+<p>This first graph shows the percentage of customers lost to parking problems in a 10 hour (600 minute) day given shopping time between 20 to 60 minutes. For this simulation, customers arrive every 20 minutes. It takes 10 minutes from the time a customer appears in the parking lot after shopping (and becomes visible to a car searching for parking) to the time they are ready to back out. 
+
+<p>The model suggests that the tendency to wait increases the percentage of lost customers due to a blocked entrance of the parking lot. Interestingly shorter shopping time does not always lead to fewer lost customers. 
+
+<p>The frequency of cars backing out of the lot increases the percentage of time that a road is blocked either by the car itself, or by other cars that are eyeing its spot. This is particularly acute when shoppers take a long time to load their car and the majority of cars is idle and waits for spots to become available.  In figure 2, we double the loading time to 20 minutes. A shop where customers shop for an average of 60 minutes retains 10% more customer than one where customers shop for 20 minutes. 
+<br>
+<img src="lostcust_waiting_shoppingTime3.jpg">
+
+
+<br><br>
+<b>Rate of lost customers as a function of rate of arrival and shopping time</b><br>
+
+<p>The next two figures show the impact of changing rates of car arrivals when all cars wait for approaching shoppers to vacate their spaces. In this case, lost customers are mainly a function of the capacity of the lot, hence the more frequent the arrivals, the more customers are lost. <br>
+<img src="graphWaitTime1_AlwaysWait.jpg"><br>
+<img src="graphWaitTime2_AlwaysWait.jpg"><br>
+
+
+<p>However, this is not the case when cars do not wait. The next two graphs show the other extreme, which is when not all cars wait for approaching shoppers.  <br>
+<img src="graphWaitTime1_NoWait.jpg"> <br>
+<img src="graphWaitTime2_NoWait.jpg"> <br>
+
+</body>
+</html>
+

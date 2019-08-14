@@ -1,0 +1,323 @@
+<html>
+    <head>
+    <TITLE>CompEcon02 HW: Gazzale & Sirakaya</TITLE>
+    </head>
+    <body>
+    <H3>Uncovering a Scandal:
+A Prisoner’s Dilemma Search Problem with Externalities Interpretation
+</H3>
+<P ALIGN=CENTER>Robert Gazzale
+<BR>
+Sibel Sirakaya</P>
+<H4>Overview</H4>
+    <P>Our framework captures some important features of the "uncovering a scandal" environment.</P>
+    <P>First, there are some basic complementarities in the uncovering process.  We assume an endogenous team size of two, and say that this team will perform better if both reporters cooperate on the task at hand.  We also assume that scandals are best uncovered when many different teams are working diligently on the problem.  While there are of course scandals that are uncovered by one news team, this seems to be a good approximation of a majority of scandals.</P>
+<P>
+Second, within each team, it seems natural to assume that there are some incentives to not cooperate.  In practice, we can think of this "defecting" as shirking. It thus makes sense that if one of both shirks, the chance of your team contributing to the uncovering is decreased.
+</P>
+
+<P>
+Finally, the value a team receives from contributing to the uncovering of a scandal depends on what other teams do.  If too few teams work hard on the scandal, the full details will not be uncovered.  If too many teams work hard on the scandal, the scandal gets fully uncovered, but your team gets less credit.  Thus, from the perspective of the reporters, there is an optimal number of fully cooperating teams.
+</P>
+
+<P>
+We thus have a prisoner’s dilemma game where the actions in any one stage game create an externality on the payoffs of other stage games.  Furthermore, this externality can be positive or negative.
+</P>
+
+<H4>The Model</H4>
+
+<P>
+In order to better span strategy space, we assume that there are 200 reporters divided into 100 teams of 2.
+</P>
+
+<P>
+Our starting point is the stage game represented by the following normal form game.
+</P>
+
+<table border=1 cellspacing=0 cellpadding=0 style='margin-left:80.7pt;
+ border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=195 valign=top style='width:117.0pt;border:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='line-height:150%'><![if !supportEmptyParas]>&nbsp;<![endif]><b><span
+  style='font-size:14.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></b></p>
+  </td>
+  <td width=195 valign=top style='width:117.0pt;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;line-height:150%'><b>Defect</b><b><span
+  style='font-size:14.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></b></p>
+  </td>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;line-height:150%'><b>Cooperate</b><b><span
+  style='font-size:14.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=195 valign=top style='width:117.0pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='line-height:150%'><b>Defect</b><b><span
+  style='font-size:14.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></b></p>
+  </td>
+  <td width=195 valign=top style='width:117.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;line-height:150%'>4,
+  4<span style='font-size:14.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=210 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;line-height:150%'>8,
+  3<span style='font-size:14.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=195 valign=top style='width:117.0pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='line-height:150%'><b>Cooperate</b><b><span
+  style='font-size:14.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></b></p>
+  </td>
+  <td width=195 valign=top style='width:117.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;line-height:150%'>3,
+  8<span style='font-size:14.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=210 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;line-height:150%'>6,
+  6<span style='font-size:14.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<P>
+In order to incorporate the effects of externalities, we modify the game as follows.
+</P>
+
+<table border=1 cellspacing=0 cellpadding=0 style='margin-left:80.7pt;
+ border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=195 valign=top style='width:117.0pt;border:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='line-height:150%'><![if !supportEmptyParas]>&nbsp;<![endif]><b><span
+  style='font-size:14.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></b></p>
+  </td>
+  <td width=195 valign=top style='width:117.0pt;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;line-height:150%'><b>Defect</b><b><span
+  style='font-size:14.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></b></p>
+  </td>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;line-height:150%'><b>Cooperate</b><b><span
+  style='font-size:14.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=195 valign=top style='width:117.0pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='line-height:150%'><b>Defect</b><b><span
+  style='font-size:14.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></b></p>
+  </td>
+  <td width=195 valign=top style='width:117.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;line-height:150%'>4,
+  4<span style='font-size:14.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=210 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;line-height:150%'>8-F(N),
+  3-F(N)<span style='font-size:14.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=195 valign=top style='width:117.0pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='line-height:150%'><b>Cooperate</b><b><span
+  style='font-size:14.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></b></p>
+  </td>
+  <td width=195 valign=top style='width:117.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;line-height:150%'>3-F(N),
+  8-F(N)<span style='font-size:14.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=210 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;line-height:150%'>6-F(N),
+  6-F(N)<span style='font-size:14.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+<P>
+N=Number of others who Cooperate-Cooperate
+</P>
+
+<P>
+F(N)=|N-40|*B
+</P>
+
+<P>
+While it might appear odd to have the scandal fully uncovered only with at least 40 fully cooperating teams, we do not feel that this is qualitatively different than needing 4 out of 10 teams.
+</P>
+
+<P>
+2 state automata defines Player strategies. Strategies move from generation to generation via Genetic Algorithm.
+</P>
+
+<P>
+In the beginning of every generation, players are matched.  For the initial generation, all matches are random. In subsequent generations, we keep the best performing teams together, and randomly rematch the remaining reporters.
+</P>
+
+<P>
+In each generation, each team plays the infinitely repeated game.  Payoffs are calculated for each player based upon the strategies employed by both players in the team, modified by the outcomes of other games.  Fitness is then assigned to the strategies by limit of he means payoffs.
+</P>
+
+<P>
+For the next generation, a new strategy population is generated, with stronger strategies more likely to reproduce via a roulette mechanism.  Strategies are then mutated, with the probability of a mutation to a bit of the strategy string determined by a mutation rate which we can vary.
+</P>
+
+<H4>Results</H4>
+
+<P>
+For mutation rates equal to 0, .003, and .03, we look at externality size B ranging from .003 to .03.  The following table details the maximum per-reporter payoff available.  As a consequence of the externality taking place only for cooperate-cooperate, the maximal per-reporter payoff is found only for 60 players playing CD or DC in every round, with the rest cooperating.
+</P>
+<table border=1 cellspacing=0 cellpadding=0 style='margin-left:152.7pt;
+ border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=165 valign=top style='width:99.0pt;border:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=NormalBold align=center style='margin-left:0in;text-align:center;
+  text-indent:0in;mso-list:none;tab-stops:.5in'><b style='mso-bidi-font-weight:
+  normal'>B<o:p></o:p></b></p>
+  </td>
+  <td width=216 valign=top style='width:129.3pt;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=NormalBold align=center style='margin-left:0in;text-align:center;
+  text-indent:0in;line-height:normal;mso-list:none;tab-stops:.5in'><b
+  style='mso-bidi-font-weight:normal'>Max. Per-Reporter<o:p></o:p></b></p>
+  <p class=NormalBold align=center style='margin-left:0in;text-align:center;
+  text-indent:0in;line-height:normal;mso-list:none;tab-stops:.5in'><b
+  style='mso-bidi-font-weight:normal'>Payoffs<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=165 valign=top style='width:99.0pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=NormalBold style='margin-left:0in;text-indent:0in;mso-list:none;
+  tab-stops:.5in'><span style='mso-bidi-font-weight:bold'>.003<o:p></o:p></span></p>
+  </td>
+  <td width=216 valign=top style='width:129.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=NormalBold style='margin-left:0in;text-indent:0in;mso-list:none;
+  tab-stops:.5in'><span style='mso-bidi-font-weight:bold'>5.82<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=165 valign=top style='width:99.0pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=NormalBold style='margin-left:0in;text-indent:0in;mso-list:none;
+  tab-stops:.5in'><span style='mso-bidi-font-weight:bold'>.01<o:p></o:p></span></p>
+  </td>
+  <td width=216 valign=top style='width:129.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=NormalBold style='margin-left:0in;text-indent:0in;mso-list:none;
+  tab-stops:.5in'><span style='mso-bidi-font-weight:bold'>5.7<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=165 valign=top style='width:99.0pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=NormalBold style='margin-left:0in;text-indent:0in;mso-list:none;
+  tab-stops:.5in'><span style='mso-bidi-font-weight:bold'>.03<o:p></o:p></span></p>
+  </td>
+  <td width=216 valign=top style='width:129.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=NormalBold style='margin-left:0in;text-indent:0in;mso-list:none;
+  tab-stops:.5in'><span style='mso-bidi-font-weight:bold'>5.7<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+
+<p ALIGN=CENTER>
+<img width=900 height=675 src="hw_fig1.jpg">
+<BR>Figure 1</p>
+
+<P>
+Figure 1 reports experiments with mutation rate equal to 0. We see that even low values of B (B=.003), results in too little cooperation.  When we increase B to B=.03, performance appears to suffer markedly, most likely due to the difficulty in finding strategy pairs that cycle through CD and DC.
+</P>
+
+<P ALIGN=CENTER><img width=900 height=675
+src="hw_fig2.jpg">
+<BR>Figure 2</p>
+
+<P>
+As we begin to introduce mutation, performance worsens.  This is demonstrated in figure 2, where payoffs for both B=.003 and B=.03 worsens relative to mutation rate equal zero.  We conjecture that since it is difficult to find a pair of cycling strategies, as we increase the mutation rate, it becomes more difficult to maintain these pairs, especially with partner rematching.  This is supported by the date from higher mutation rates.
+</P>
+
+<P ALIGN=CENTER><img width=900 height=675
+src="hw_fig3.jpg">
+<BR>Figure 3</p>
+
+
+<P>
+Finally, Figure 3 reports runs with a mutation rate of .03.  We see a further deterioration in performance, as defection-defection becomes increasingly popular.
+</P>
+
+<H4>Discussion</H4>
+<P>
+While our interpretation of the uncovering a scandal was a little unorthodox, the Prisoner’s Dilemma Search Problem with Externalities is not an uncommon framework.  Many large organizations rely heavily on combined input of many performing teams.
+</P>
+
+<P>
+With this interpretation, we can view the overall game: maybe the firm works best when some teams work at highest effort and some teams work at a high level (CD pays 11 in the no externality stage game compared with 12 for CC).  An unintended finding of our work is, in hindsight, not so surprising: the structure of payoffs (i.e. incentives) matter in the ability to find equilibrium.  The asymmetry in the payoffs to the high but not highest performing teams made it very difficult for teams to find, and particularly for high mutation rates, stay at the required cycling strategies.
+</P>
+
+<P>
+
+</P>
+
+    </body>
+    </html>

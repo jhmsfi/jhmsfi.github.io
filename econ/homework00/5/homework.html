@@ -1,0 +1,323 @@
+<HTML>
+
+<HEAD>
+<TITLE>
+Partynomics
+</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1 ALIGN="CENTER">
+Partynomics
+</H1>
+
+<H3 ALIGN="CENTER">
+by 
+</H3>
+
+<H3 ALIGN="CENTER">
+Stephanie Chow and Paolo Patelli
+</H3>
+
+<HR>
+
+<P>
+
+At parties, you talk, eat, drink, and hopefully have fun. At any time,
+a few people
+may be found standing alone along the edge of the wall, but the
+majority are found in little groups scattered around the room. In
+these groups, you have conversations with fellow partygoers, and these
+conversations may be interesting or not. If the conversation is bad,
+you will probably leave, perhaps staying a little while out of
+politeness before making an excuse, and if the conversation is good,
+you will likely stay longer, unless you need another drink. If you are
+alone, or have just left a group, you may choose to join the same one,
+or another, especially if the people in that group look like they are
+enjoying themselves. Thus groups form, change and dissolve, as people
+move around the room.
+
+<P>
+
+This webpage contains a model of a party with 21 people. The purpose
+is to model partygoer decisionmaking in a party, and the resulting
+formation, perturbation and dissolution of the groups they form.
+
+<P>
+
+In this model, people have the following choices. They may
+
+<OL>
+<LI> join a group
+<LI> leave a group
+<LI> do neither
+</OL>
+
+and as a result, they may
+
+<OL>
+<LI> be in a group (of at least two people)
+<LI> be alone
+</OL>
+
+To simplify the description, from now on, a person who is alone at the
+party will be considered to form a group of size one.
+
+<P>
+
+A person's decision is based on how happy he is in his group, as well
+as his propensity to be alone if he is not. There are other factors,
+such as thirst, which also affect his choice. The effect of these
+other factors are modelled by including randomness in his decision.
+
+<P>
+
+While in a group, a person's level of happiness depends on the
+characteristics of the group members, and their resulting
+interactions.
+
+<HR>
+
+<H3>
+Notation:
+</H3>
+
+Let N = {1, 2, ... , 21} be the set of partygoers.
+
+<P>
+
+For partygoer i in N, let i's propensity to be alone be denoted a_i,
+which is a real number. In the model, this is chosen from a uniform
+distribution between -5 and 5.
+
+<P>
+
+If S is a group or subset of partygoers contained in N, let f denote a
+function which assigns to each possible subset of partygoers a real
+number which represents the happiness of the group. The
+characteristics of f will be defined <A HREF="#ghfunc">later</A>. This
+value is also chosen to be between -5 and 5 uniformly.
+
+<HR>
+
+<A NAME="assumptions">
+<H3>
+Assumptions:
+</H3>
+</A>
+
+<OL>
+<LI> a group member's happiness level is the same as the happiness
+level of the group; as group members interact, they will affect each
+others moods until they are all equally happy or unhappy
+<LI> partygoers do not know their effect on a group when they join or
+leave, and do not learn
+<LI> partymembers arrive simultaneously, and are initially alone;
+whether or not people arrive at once or apart makes no difference in
+the long run due to the model setup, but is done for convenience in
+programming; this will be clear from the model setup
+</OL>
+
+<HR>
+
+<H3>
+Model Setup:
+</H3>
+
+The model occurs in discrete time. At each time t, each partygoer i
+has the following decision:
+
+<UL>
+<LI> if i is in a group S, to stay or leave; i decides to leave with
+probability exp(a_i)/(exp(a_i) + exp(f(S)); in this way, i leaves
+with higher probability when he is unhappy in the group, or he does
+not mind being alone
+<LI> if i leaves, or was already alone, he randomizes among the groups
+and being alone; if G is a group at time t, then i joins G with
+probability exp(f(G))/(sum(f(H)) + exp(a_i)), where the sum is over
+all groups H at time t except the group of consisting of only i
+<LI> a variant of this which is not done is where i joins each group
+with equal probability  
+</UL>
+
+<HR>
+
+<A NAME="ghfunc">
+<H3>
+Group Happiness Function:
+</H3>
+</A>
+
+When a person leaves or joins a group, this may either lower or raise
+that group's happiness. The way in which this happens depends on an
+interconnectedness parameter k, which ranges from 1 to 21, the number
+of people at the party.
+
+<P>
+
+When k is one, group happiness is just the average contribution of
+each group member.
+
+<P>
+
+When k is two, group happiness is the average contribution of each
+possible pair of people in the group (there are k choose 2 pairs),
+which captures the idea that group member interactions make up group
+happiness. 
+
+<P>
+
+A given value of k means that group happiness is the average of the
+contribution of all size-k subsets of the group when the group is at
+least as big as k. When the group size is less than k, then the
+happiness of group G is given by f(G).
+
+<P>
+
+Therefore the addition or deletion of a group member will add or drop
+terms from the calculation of happiness. By the 
+<A HREF="#ghfunc">definition of f</A>, the average change is zero,
+and by <A HREF="#assumptions">an assumption</A>, people do not learn
+the parameters of f, so this justifies the use of group happiness to
+choose a group to join.
+
+<HR>
+
+<H3>
+Simulation Setup:
+</H3>
+
+To show the effect of interconnectedness, we run three versions: k=1,
+where contributions to happiness are linear; k=2, where
+contributions depend on pairwise interactions or contributions; and
+k=21, where group happiness is a function of the entire group.
+
+<H3>
+Results:
+</H3>
+
+<H4>Happiness</H4>
+For each k, we compare its effect by plotting average group happiness.
+
+<HR>
+
+<H3>k=1</H3>
+ 
+<P><IMG SRC="k1_h.gif" ALT="[Happiness vs. Time, k=1]" ALIGN="CENTER">
+
+<HR>
+
+<H3>k=2</H3>
+ 
+<P><IMG SRC="k2_h.gif" ALT="[Happiness vs. Time, k=2]" ALIGN="CENTER">
+
+<HR>
+
+<H3>k=21</H3>
+ 
+<P><IMG SRC="k21_h.gif" ALT="[Happiness vs. Time, k=21]" ALIGN="CENTER">
+
+<HR>
+
+<P>First, it is clear that happiness varies a lot over time. In all
+three cases, though, it starts off below 0 and ends up on average
+above 0, so people become happier as the party progresses. By
+inspection, people are happiest when k=2. For k=1, everyone's
+contribution enters into the group happiness calculation. The variance
+in happiness is due to group size - a few small happy groups add to
+happiness more than one big happy group, for instance. 
+
+<P>For k=2, there is complementarity. People who get along can join the
+same group, while those who don't can avoid each other. By inspection,
+average group happiness tends to be higher.
+
+<P>For k=21, happiness depends on the group. Recall that for group
+sizes less than k, happiness is a function of the whole group, not any
+average of subgroup contributions, and this is chosen
+randomly. Nonetheless, on average, it appears that average happiness
+in the longer run is about the same as that for k=2.
+
+<HR>
+
+<H4>Group Sizes</H4>
+
+<P>Group sizes also vary over time.
+
+<HR>
+
+<H3>k=1</H3>
+ 
+<P><IMG SRC="k1_g.gif" ALT="[Group Size vs. Time, k=1]" ALIGN="CENTER">
+
+<HR>
+
+<H3>k=2</H3>
+ 
+<P><IMG SRC="k2_g.gif" ALT="[Group Size vs. Time, k=2]" ALIGN="CENTER">
+
+<HR>
+
+<H3>k=21</H3>
+ 
+<P><IMG SRC="k21_g.gif" ALT="[Group Size vs. Time, k=21]" ALIGN="CENTER">
+
+<HR>
+
+<P><IMG SRC="k1_g.gif" ALT="[Happiness vs. Time, k=1]" ALIGN="CENTER">
+
+<P>For k=2
+ 
+<P><IMG SRC="k2_g.gif" ALT="[Happiness vs. Time, k=1]" ALIGN="CENTER">
+
+<P>For k=21
+
+<P><IMG SRC="k21_g.gif" ALT="[Happiness vs. Time, k=1]" ALIGN="CENTER">
+
+<HR>
+
+<P>Group sizes show less variance. Happiness changes with each change
+in group composition, but group size can stay the same if the same
+number leave as come in.
+
+<H3>
+Conclusions:
+</H3>
+
+<P>The evidence suggests that a higher interconnectedness parameter k
+results in slightly happier people, and possibly smaller groups. The
+difficulty with using k large, is that a small change in group
+composition can result in a drastic change in group happiness,
+especially when the group size is less than k. This may be
+unrealistic.
+
+<P>In a mathematical note, 
+if we define a state to be the set of groups at a given time, there
+are a finite number of states, since the number of partygoers is
+finite. Since we are using a random utility model, every state can
+result in everyone being alone, and when everyone is alone, it is
+strictly possible for any state to follow. Thus the system is ergodic,
+and an invariant distribution of states exists. With 21 partygoers,
+there are many states, so calculating the invariant distribution would
+take a very long time and will not be done.
+
+<HR>
+
+<H3>
+Future Directions and Questions:
+</H3>
+
+<P>The data is very noisy. For future research, many more rounds, or the
+inclusion of some "inertia", in partygoer movement from group to group
+may result in a better long-term/end of party predictions, or a more
+realistic model of parties.
+
+<P>A more complete analysis would include testing all different values of
+k, and the effect of different propensities to be alone on the speed
+of convergence and the final results.
+
+<P>Applications of this analysis naturally include the formation of
+networks: social, economic or political.
+</BODY>
+
+</HTML>

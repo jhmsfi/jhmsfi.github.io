@@ -1,0 +1,133 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<META NAME="Generator" CONTENT="Microsoft Word 97">
+<TITLE>Hollywood or Paris</TITLE>
+</HEAD>
+<BODY>
+
+<FONT SIZE=4><P ALIGN="CENTER">Hollywood or Paris? </P>
+<P ALIGN="CENTER">A Model of Spatial Demand for Movies’ Demand</P>
+</FONT><P ALIGN="CENTER">Alessandra Cassar and Artur Minkin</P>
+<FONT SIZE=4><P ALIGN="CENTER">&nbsp;</P>
+
+<UL>
+</FONT><P ALIGN="JUSTIFY"><LI>Why the same movie can be successful in Paris but not in Hollywood?</LI></P>
+<P ALIGN="JUSTIFY"><LI>What determines the length of life of The Rocky Horror Picture Show?</LI></P>
+<P ALIGN="JUSTIFY"><LI>Why good movies can be unsuccessful and bad movies win the Oscar?</LI></P></UL>
+
+<P ALIGN="JUSTIFY">&nbsp;</P>
+<P ALIGN="JUSTIFY">&nbsp;</P>
+<P ALIGN="JUSTIFY">&nbsp;</P>
+<P ALIGN="JUSTIFY">  <B>The Hypothesis</P>
+</B><P ALIGN="JUSTIFY">In the first part we are modeling in a very simple way what may induce individuals in different locations to go and see a movie the first time it shows in a movie theater. None of them know the quality of the movie, therefore they need to take a decision based on whatever information they can gather. In our case, where all the agents are assumed to be arranged on a circle, each agent use the two most immediate right and left neighbors in order to infer some information about the quality of the movie. In particular, more neighbors are expected to go and see the movie, the higher the probability an agent is going to see the movie, either because he think neighbors have more information about the quality, or because it is simply more fun going to the movie theater with some companion. Everyone behaves exactly in the same way, so that unless there is something, which differs across location, agents at every location are expected to go to the movie theater exactly with the same probability. We found this result for the static equilibrium. On the other hand, if it is assumed that each location has a different cultural background, differences among locations become the norm. </P>
+<P ALIGN="JUSTIFY">There are many possible extensions. First would be interesting to change the structure of the interactions and observe how robust are the results. The best approach would be using a computational model and simulate our framework on a lattice. We expect to find interesting clustering or group behavior. Second it would be very interesting to model cultural diffusion and look for absorbing sets in which part of the population go and see the movie while other not, without any incentive for a single agent surrounded by agents having the same strategy to unilaterally change action. Also for this kind of problem, a computational model would constitute a better methodology. </P>
+<P ALIGN="JUSTIFY">&nbsp;</P>
+<B><P ALIGN="JUSTIFY">Assumptions:</P>
+<OL>
+
+</B><P ALIGN="JUSTIFY"><LI>Movies come in several types unknown to the potential spectator. Assume <IMG SRC="Image8.gif" WIDTH=13 HEIGHT=18> to be the parameter defining the type movie: good quality <IMG SRC="Image9.gif" WIDTH=40 HEIGHT=22>and bad quality <IMG SRC="Image10.gif" WIDTH=40 HEIGHT=22>.</LI></P>
+<P ALIGN="JUSTIFY">&nbsp;</P>
+<I><P ALIGN="JUSTIFY"><LI>M</I> heterogeneous agents are arranged on a circle. Deciding of going to the movie theater or not is a random choice. Each agent <I>i</I>, depending on whether he decide to go (<I>a=1</I>) or not (<I>a=0</I>), has her own individual perception <IMG SRC="Image11.gif" WIDTH=37 HEIGHT=24>, on whether they are going to like the movie or not.  </LI></P>
+<P ALIGN="JUSTIFY">      Randomness comes from 2 sources: movie quality is unknown and each individual</P>
+<P ALIGN="JUSTIFY">      receives a random shock to his utility.</P>
+<P ALIGN="JUSTIFY">&nbsp;</P>
+<P ALIGN="JUSTIFY"><LI>Utility for agent <I>i</I>:        </LI></P></OL>
+
+<P ALIGN="CENTER"><IMG SRC="Image12.gif" WIDTH=172 HEIGHT=53></P>
+<P ALIGN="JUSTIFY">where <I>p</I> represent the price of the movie ticket.</P>
+<P ALIGN="JUSTIFY">&nbsp;</P>
+<B><P ALIGN="JUSTIFY">The model:</P>
+</B><I><P ALIGN="JUSTIFY">Individual demand</P>
+</I><P ALIGN="JUSTIFY">Agent <I>i</I> chooses <IMG SRC="Image13.gif" WIDTH=40 HEIGHT=24> if:</P>
+<I><P ALIGN="CENTER"><IMG SRC="Image14.gif" WIDTH=142 HEIGHT=24></P>
+</I><P ALIGN="JUSTIFY">Each agent does not know <IMG SRC="Image8.gif" WIDTH=13 HEIGHT=18> before seeing the movie, so that he forms an expectation depending on whether the most immediate neighbors are expected to do. Neighbors are assumed to do the same. In particular each agent will expect:</P>
+<P ALIGN="CENTER"><IMG SRC="Image15.gif" WIDTH=244 HEIGHT=39></P>
+<P ALIGN="JUSTIFY">Since each agent does not know exactly what the neighbors are doing, he takes some expectation about their choices: </P>
+<P ALIGN="CENTER"><IMG SRC="Image16.gif" WIDTH=82 HEIGHT=28> , <IMG SRC="Image17.gif" WIDTH=83 HEIGHT=23>.</P>
+<P ALIGN="JUSTIFY">Agent have rational expectations so that <IMG SRC="Image18.gif" WIDTH=90 HEIGHT=30>.</P>
+<I><P ALIGN="JUSTIFY">&nbsp;</P>
+<P ALIGN="JUSTIFY">The static equilibrium</P>
+</I><P ALIGN="JUSTIFY">Solving for the rational expectation equilibrium</P>
+<P ALIGN="JUSTIFY"><IMG SRC="Image19.gif" WIDTH=335 HEIGHT=73></P>
+<P ALIGN="JUSTIFY"><IMG SRC="Image20.gif" WIDTH=349 HEIGHT=51></P>
+<P ALIGN="JUSTIFY">Since <FONT SIZE=2> <IMG SRC="Image21.gif" WIDTH=32 HEIGHT=24> </FONT>is assumed to be extreme valued distributed: </P>
+<P ALIGN="CENTER"><IMG SRC="Image22.gif" WIDTH=357 HEIGHT=113></P>
+<P ALIGN="JUSTIFY">&nbsp;</P>
+<P ALIGN="JUSTIFY">So that:</P>
+<P ALIGN="CENTER"><IMG SRC="Image1.gif" WIDTH=405 HEIGHT=64></P>
+<I><P ALIGN="JUSTIFY">&nbsp;</P>
+<P ALIGN="JUSTIFY">Symmetric Solution</P>
+</I><P ALIGN="JUSTIFY">If <IMG SRC="Image23.gif" WIDTH=49 HEIGHT=24> for every agent, then we obtain a unique symmetric solution, which means that all individuals form the same expectation about neighbors’ decision:</P>
+<P ALIGN="CENTER"><IMG SRC="Image24.gif" WIDTH=169 HEIGHT=50></P>
+<I><P ALIGN="JUSTIFY">&nbsp;</P>
+<P ALIGN="JUSTIFY">Asymmetric Solution: Location Matters</P>
+</I><P ALIGN="JUSTIFY">If we now assume that <IMG SRC="Image25.gif" WIDTH=49 HEIGHT=24> then the story becomes interesting. Each location will have a different demand depending on the parameter representing their cultural background. We propose to use an agent based computational model at this point, in order to understand how the equilibrium solution changes.</P>
+<FONT SIZE=2><P>&nbsp;</P>
+</FONT><B><P ALIGN="CENTER">The Gibbs Sampler</P>
+</B><P>&nbsp;</P>
+<P>The equation </P>
+<P ALIGN="CENTER"><IMG SRC="Image1.gif" WIDTH=405 HEIGHT=64>,</P>
+<P>&nbsp;</P>
+<P>which determines the static equilibrium in heterogeneous case becomes very difficult to solve numerically when the number of agents is large.</P>
+<P>&nbsp;</P>
+<P>Constructing a Gibbs Sampler is a possible way out. To use it we have to adjust our model in the following way. From now on agents do not have expectations about their neighbors’ choices.</P>
+<P>&nbsp;</P>
+<I><P>Remark</I>. The fact that agents do not form expectations about their neighbors’ choices allows a different interpretation for <IMG SRC="Image2.gif" WIDTH=16 HEIGHT=24>’s: it can be explained as a reaction to the movie.</P>
+<P>&nbsp;</P>
+<P>Instead we assume that the conditional distribution of agents’ choices given the choices of their neighbors is</P>
+<P><IMG SRC="Image26.gif" WIDTH=418 HEIGHT=54></P>
+<P>To approximate the joint distribution of the a<SUB>i</SUB>’s it is enough to construct the series of random states a<SUP>1</SUP>,…, a<SUP>B</SUP> using the Gibbs sampling. At every scan we update each a<SUB>i</SUB> from the corresponding conditional distribution treating a<SUB>i-1</SUB> and a<SUB>i+1</SUB> as given. Generalized law of large numbers ensures that empirical averages accurately approximate features of the joint distribution.</P>
+<P>&nbsp;</P>
+<I><P ALIGN="JUSTIFY">Dynamics</P>
+</I><FONT SIZE=2><P>&nbsp;</P>
+</FONT><P>The dynamics of the system can be modeled in the following way.</P>
+<P>Let the number of periods the movie runs be <I>T</I>.</P>
+<P>&nbsp;</P>
+<P>Stage 0.</P>
+<P>Assume that individual’s <I>i</I> &quot;mood&quot; i.e. probability distribution of the quality of the movie is given by</P>
+<P><IMG SRC="Image27.gif" WIDTH=190 HEIGHT=29>, </P>
+<P>where <IMG SRC="Image28.gif" WIDTH=13 HEIGHT=21> is a vector of external shocks: reviews, commercials, etc and <IMG SRC="Image29.gif" WIDTH=14 HEIGHT=14> is the vector of corresponding coefficients. The conditional distribution of <I>i-</I>th individual’s choice will be the following</P>
+<P><IMG SRC="Image26.gif" WIDTH=418 HEIGHT=54></P>
+<P>&nbsp;</P>
+<P>Use the Gibbs Sampler to approximate a joint distribution of choices among M<SUB>0</SUB> = M individuals. Estimate the <IMG SRC="Image30.gif" WIDTH=82 HEIGHT=24> for every agent.</P>
+<P>&nbsp;</P>
+<P>Stage 1.</P>
+<OL TYPE="i">
+
+<LI>Draw a random realization of <IMG SRC="Image31.gif" WIDTH=16 HEIGHT=24>’s according to the probabilities above. M<SUB>1</SUB> is the number of people who did not see the movie in the first period.</LI>
+<LI>Let the individuals’ &quot;moods&quot; be determined by</LI></OL>
+
+<P><IMG SRC="Image32.gif" WIDTH=455 HEIGHT=26></P>
+<P>Similarly to the Stage 0 use the Gibbs Sampler to approximate a joint distribution of <IMG SRC="Image33.gif" WIDTH=16 HEIGHT=24>’s.</P>
+<P>&nbsp;</P>
+<P>Stage 2.</P>
+<OL TYPE="i">
+
+<LI>Draw a random realization of <IMG SRC="Image31.gif" WIDTH=16 HEIGHT=24>’s. <IMG SRC="Image34.gif" WIDTH=25 HEIGHT=22>is the number of people who did not see the movie.</LI>
+<LI>Let again the &quot;moods&quot; be determined by</LI></OL>
+
+<P><IMG SRC="Image35.gif" WIDTH=443 HEIGHT=28> ....</P>
+<P>&nbsp;</P>
+<P>The process repeats itself until one of the following conditions is met</P>
+<OL TYPE="a">
+
+<LI><IMG SRC="Image36.gif" WIDTH=57 HEIGHT=24>, or</LI>
+<LI><IMG SRC="Image37.gif" WIDTH=50 HEIGHT=20></OL>
+.</LI>
+<P>&nbsp;</P>
+<P>Repeat from the Stage 1 B number of times. </P>
+<P>Given the series of movie demand dynamics we can construct an average path of number of people who went to see the movie.</P>
+<P>It would be interesting to do the calibration exercise for that model in order to find a combination of parameters, where our model generates behavior observed in he real life.</P>
+<P>&nbsp;</P>
+<B><P ALIGN="CENTER">Extensions</P>
+</B><FONT SIZE=2><P>&nbsp;</P>
+<OL>
+
+</FONT><LI>External shocks <IMG SRC="Image28.gif" WIDTH=13 HEIGHT=21> can have a spatial structure. For example, we can model this way that people in different cities read different reviews.</LI>
+<LI>In some cities there are movie theaters where movies are shown a couple of months after they were released at low prices. This feature can be captured in our model as well if we allow prices for the movies to decrease over time.</LI>
+<LI>The spatial structure of the model can be generalized as well. Assume that at the beginning we randomly connect people in the society. In that case an individual’s probability that the movie is of the good quality will depend not on just two neighbors’ choices, but on the choices of everybody who is the peer group of that individual. </LI></OL>
+
+<P>&nbsp;</P>
+<FONT SIZE=2><P>&nbsp;</P></FONT></BODY>
+</HTML>

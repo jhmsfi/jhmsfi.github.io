@@ -1,0 +1,158 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<META NAME="Generator" CONTENT="Microsoft Word 97">
+<TITLE>IS THERE A LEMON MARKET FOR MOVIES</TITLE>
+<META NAME="Template" CONTENT="C:\PROGRAM FILES\MICROSOFT OFFICE\OFFICE\html.dot">
+</HEAD>
+<BODY LINK="#0000ff" VLINK="#800080">
+
+<B><FONT SIZE=4><P ALIGN="JUSTIFY">IS THERE A LEMON MARKET FOR MOVIES?</P>
+</B><P ALIGN="JUSTIFY">Kelly Lautt and Brit Grosskopf</P>
+<P ALIGN="JUSTIFY">&nbsp;</P>
+</FONT><B><P ALIGN="JUSTIFY">MOTIVATION</P>
+</B><P ALIGN="JUSTIFY">How often have you gone to a movie that is really popular and hated it? How is it that a really bad movie can sometimes gain high popularity? What are the mechanisms underlying such a phenomenon and what does the pattern of sales over time suggest in terms of an explanation?</P>
+<P ALIGN="JUSTIFY">&nbsp;</P>
+<B><P ALIGN="JUSTIFY">SETUP</P>
+</B><I><P ALIGN="JUSTIFY">The Movies</I>: There are eight movies from which agents can chose. Each movie is characterized by 3 traits: quality, type and ad campaign. For our preliminary, rather simple model, each trait is binary. Quality is either good (1) or bad (0). It is either a Science Fiction movie (1) or a Drama (2). The movie has either had an aggressive ad campaign (1) or it has not (0). Clearly any of these parameters can be expanded for the future. </P>
+<B><U><P ALIGN="JUSTIFY">The Movie Characteristics</P>
+</B></U><FONT SIZE=2><P ALIGN="JUSTIFY">&nbsp;</P></FONT>
+<TABLE BORDER CELLSPACING=1 CELLPADDING=7 WIDTH=576>
+<TR><TD WIDTH="26%" VALIGN="TOP">
+<P ALIGN="CENTER">Movie Number</TD>
+<TD WIDTH="26%" VALIGN="TOP">
+<P ALIGN="CENTER">Type</TD>
+<TD WIDTH="26%" VALIGN="TOP">
+<P ALIGN="CENTER">Quality (q<SUB>1</SUB>)</TD>
+<TD WIDTH="23%" VALIGN="TOP">
+<P ALIGN="CENTER">Ad Campaign (a<SUB>1</SUB>)</TD>
+</TR>
+<TR><TD WIDTH="26%" VALIGN="TOP">
+<P ALIGN="CENTER">Movie 1</TD>
+<TD WIDTH="26%" VALIGN="TOP">
+<P ALIGN="CENTER">1</TD>
+<TD WIDTH="26%" VALIGN="TOP">
+<P ALIGN="CENTER">0</TD>
+<TD WIDTH="23%" VALIGN="TOP">
+<P ALIGN="CENTER">1</TD>
+</TR>
+<TR><TD WIDTH="26%" VALIGN="TOP">
+<P ALIGN="CENTER">Movie 2</TD>
+<TD WIDTH="26%" VALIGN="TOP">
+<P ALIGN="CENTER">1</TD>
+<TD WIDTH="26%" VALIGN="TOP">
+<P ALIGN="CENTER">1</TD>
+<TD WIDTH="23%" VALIGN="TOP">
+<P ALIGN="CENTER">1</TD>
+</TR>
+<TR><TD WIDTH="26%" VALIGN="TOP">
+<P ALIGN="CENTER">Movie 3</TD>
+<TD WIDTH="26%" VALIGN="TOP">
+<P ALIGN="CENTER">1</TD>
+<TD WIDTH="26%" VALIGN="TOP">
+<P ALIGN="CENTER">0</TD>
+<TD WIDTH="23%" VALIGN="TOP">
+<P ALIGN="CENTER">0</TD>
+</TR>
+<TR><TD WIDTH="26%" VALIGN="TOP">
+<P ALIGN="CENTER">Movie 4</TD>
+<TD WIDTH="26%" VALIGN="TOP">
+<P ALIGN="CENTER">1</TD>
+<TD WIDTH="26%" VALIGN="TOP">
+<P ALIGN="CENTER">1</TD>
+<TD WIDTH="23%" VALIGN="TOP">
+<P ALIGN="CENTER">0</TD>
+</TR>
+<TR><TD WIDTH="26%" VALIGN="TOP">
+<P ALIGN="CENTER">Movie 5</TD>
+<TD WIDTH="26%" VALIGN="TOP">
+<P ALIGN="CENTER">2</TD>
+<TD WIDTH="26%" VALIGN="TOP">
+<P ALIGN="CENTER">0</TD>
+<TD WIDTH="23%" VALIGN="TOP">
+<P ALIGN="CENTER">1</TD>
+</TR>
+<TR><TD WIDTH="26%" VALIGN="TOP">
+<P ALIGN="CENTER">Movie 6</TD>
+<TD WIDTH="26%" VALIGN="TOP">
+<P ALIGN="CENTER">2</TD>
+<TD WIDTH="26%" VALIGN="TOP">
+<P ALIGN="CENTER">1</TD>
+<TD WIDTH="23%" VALIGN="TOP">
+<P ALIGN="CENTER">1</TD>
+</TR>
+<TR><TD WIDTH="26%" VALIGN="TOP">
+<P ALIGN="CENTER">Movie 7</TD>
+<TD WIDTH="26%" VALIGN="TOP">
+<P ALIGN="CENTER">2</TD>
+<TD WIDTH="26%" VALIGN="TOP">
+<P ALIGN="CENTER">0</TD>
+<TD WIDTH="23%" VALIGN="TOP">
+<P ALIGN="CENTER">0</TD>
+</TR>
+<TR><TD WIDTH="26%" VALIGN="TOP">
+<P ALIGN="CENTER">Movie 8</TD>
+<TD WIDTH="26%" VALIGN="TOP">
+<P ALIGN="CENTER">2</TD>
+<TD WIDTH="26%" VALIGN="TOP">
+<P ALIGN="CENTER">1</TD>
+<TD WIDTH="23%" VALIGN="TOP">
+<P ALIGN="CENTER">0</TD>
+</TR>
+</TABLE>
+
+<P ALIGN="JUSTIFY">&nbsp;</P>
+<I><P ALIGN="JUSTIFY">The Play</I>: 100 agents are placed on a 10x10 raster. Each agent has a group of friends (their N, S, E, W neighbours on the wrap-around raster). Each agent begins with the same propensity toward the two movie types (that is .5 toward Drama and .5 toward SciFi). Each agent then chooses one of the eight movies to see based on four criteria (in the current formulation, each agent plays in every round and every agent must chose a movie to see). Each agent sees their chosen movie and decides whether or not she likes it.</P>
+<P ALIGN="JUSTIFY">Each agent then updates all her information and preferences and plays again.</P>
+<P ALIGN="JUSTIFY">&nbsp;</P>
+<B><P ALIGN="JUSTIFY">PLAY DETAILS AND DECISION RULES</P>
+<P ALIGN="JUSTIFY">&nbsp;</P>
+<I><P ALIGN="JUSTIFY">Step 1:</P>
+</B></I><P ALIGN="JUSTIFY">In every round <I>t</I>, each agent must choose a movie <I>j</I> to see. Every agent <I>i </I>has a probability of seeing each movie (the sum of the probabilities of seeing each individual movie is one). This probability is calculated for each movie as follows:</P>
+<P ALIGN="JUSTIFY">&nbsp;</P>
+<P ALIGN="JUSTIFY"><IMG SRC="Image11.gif" WIDTH=144 HEIGHT=60></P>
+<P ALIGN="JUSTIFY">&nbsp;</P>
+<P ALIGN="JUSTIFY">where <IMG SRC="Image12.gif" WIDTH=300 HEIGHT=44>is a kind of propensity to see a movie. </P>
+<P ALIGN="JUSTIFY">&nbsp;</P>
+<I><P ALIGN="JUSTIFY">Ad Campaign (a</I><SUB>1</SUB>): Some of the movies have had an aggressive ad campaign (before opening). This campaign has a decreasing effect over time on the agent’s probability of seeing the movie:</P>
+<P ALIGN="JUSTIFY"><IMG SRC="Image7.gif" WIDTH=36 HEIGHT=24></P>
+<P ALIGN="JUSTIFY">&nbsp;</P>
+<I><P ALIGN="JUSTIFY">Learning from friends<IMG SRC="Image8.gif" WIDTH=30 HEIGHT=24></I>: Each agent has four friends around them and the agent is more likely to see a movie when more of her friends who have seen the movie have also liked it. </P>
+<P ALIGN="JUSTIFY">FL = # of friends who have seen the movie and liked it</P>
+<P ALIGN="JUSTIFY">FS = # of friends who have seen it</P>
+<P ALIGN="JUSTIFY">&nbsp;</P>
+<I><P ALIGN="JUSTIFY">The FAD factor</I>:<I> </I>Each agent is more likely to see a movie that a large number of people in the entire population have seen (no matter its quality, its type or how many of her friends did or did not like it)</P>
+<I><P ALIGN="JUSTIFY">TotalS(t)</I> = The total number of agents in the entire population who have seen the movie</P>
+<I><P ALIGN="JUSTIFY">Total</I> = The total number of agents in the population</P>
+<P ALIGN="JUSTIFY">&nbsp;</P>
+<B><I><P ALIGN="JUSTIFY">Step 2:</P>
+</B><P ALIGN="JUSTIFY">Decision about whether the agent liked the movie or not:</P>
+</I><P ALIGN="JUSTIFY">Once the movie has been seen, each agent either likes the movie or does not in a probabilistic way that is skewed by the quality of the film:</P>
+<P ALIGN="JUSTIFY">If film quality is bad, q = 0: <IMG SRC="Image3.gif" WIDTH=214 HEIGHT=25></P>
+<P ALIGN="JUSTIFY">If film quality is good, q = 1: <IMG SRC="Image4.gif" WIDTH=245 HEIGHT=25></P>
+<P ALIGN="JUSTIFY">Where <I>p</I> is a random number between zero and one, thought to capture an intrinsic mood of liking or disliking any movie independently of the quality (e.g. mood of the day, partner who one sees the movie with…)</P>
+<P ALIGN="JUSTIFY">&nbsp;</P>
+<B><I><P ALIGN="JUSTIFY">Step 3:</P>
+</B><P ALIGN="JUSTIFY">Updating the agents’ movie type propensity (prop):</P>
+</I><P ALIGN="JUSTIFY">If the agent liked the movie (determined from <I>prob_lik</I> in the same manner the movie seen was determined from <I>prob</I>), then the agent’s propensity toward the type of movie he just saw increases as such:</P>
+<P ALIGN="JUSTIFY"><IMG SRC="Image5.gif" WIDTH=177 HEIGHT=25></P>
+<P ALIGN="JUSTIFY">If he did not like the movie:</P>
+<P ALIGN="JUSTIFY"><IMG SRC="Image6.gif" WIDTH=177 HEIGHT=25></P>
+<P ALIGN="JUSTIFY">&nbsp;</P>
+<P ALIGN="JUSTIFY">Again we thought to model a decreasing inclination to change one's taste toward a certain type of movie over time. As one gets older one may not be as open for changes.</P>
+<P ALIGN="JUSTIFY">&nbsp;</P>
+<B><I><P ALIGN="JUSTIFY">Step 4: </B>Start again with Step 1.</P>
+</I><B><P ALIGN="JUSTIFY">&nbsp;</P>
+<P ALIGN="JUSTIFY">PATTERNS</P>
+</B><P ALIGN="JUSTIFY">When a movie first opens (ie. Before any agent has seen it), the movie may have had an aggressive ad campaign attached to it. Other than that, a person is only encouraged to go if they have a propensity toward that type of movie. In the beginning, agents are given neutral propensities and develop biased propensities over time based on their personal experience of several movies of the same type. Thus, from the beginning, movies with ad campaigns will be more likely to be seen. However, they will not be any more likely to be liked (as that depends on chance and the quality of the movie). It is possible that a given movie may, however, become very popular even when agents tend not to like it because the ad campaign increases the numbers of viewers at the beginning and that then feeds into the FAD factor. So it is very possible that poor movies (even movies that most people do not enjoy) can enjoy very high popularity (especially at the beginning of their run).</P>
+<P ALIGN="JUSTIFY">&nbsp;</P>
+<P ALIGN="JUSTIFY">&nbsp;</P>
+<P ALIGN="JUSTIFY">&nbsp;</P>
+<P ALIGN="JUSTIFY">&nbsp;</P>
+<P ALIGN="JUSTIFY">&nbsp;</P>
+<P ALIGN="JUSTIFY">&nbsp;</P>
+<P ALIGN="JUSTIFY">&nbsp;</P>
+<P ALIGN="JUSTIFY">&nbsp;</P>
+<P ALIGN="JUSTIFY">&nbsp;</P>
+<P ALIGN="JUSTIFY"><IMG SRC="Image9.gif" WIDTH=12 HEIGHT=22></P></BODY>
+</HTML>

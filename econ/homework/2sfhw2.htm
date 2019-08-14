@@ -1,0 +1,154 @@
+<html><head><!-- This document was created from RTF source by rtftohtml version
+2.7.5 --><title>Todd Allen, Konstantina Kiousis, Mariana Mazzucato, and Martin
+Posch</title></head><body><b>A MODEL OF ACTIVE AND PASSIVE BEHAVIOR:  DO
+INFORMATION IMPEDIMENTS MATTER?</b><p>
+<b></b><i>by Todd Allen, Konstantina Kiousis, Mariana Mazzucato, and Martin
+Posch</i><p>
+<i></i><b><u></u></b><p>
+<b><u>INTRODUCTION</u></b><p>
+<b><u></u></b><p>
+The following model considers the role of information impediments in
+influencing outcomes.  Agents are endowed with a prior position regarding an
+issue, a proclivity towards activity or passivity (a risk-aversion parameter),
+and limited information regarding the activity of other agents.  We assume that
+agents' vision is obstructed by active agents and that signals from <i>recent
+</i>activity are weighted heavier by agents than past activity.   We also
+assume a hierarchical structure of the population in which those who are more
+infantile (those seated in front in the standing ovation application) are more
+visible to the population as a whole. This causes the influential group to be
+unaffected by the less influential agents.<p>
+<b><u></u></b><p>
+<b><u>THE MODEL</u></b><p>
+<b><u></u></b><p>
+Agents are positioned on an <i>n</i> x <i>m</i> lattice, where each agent is
+situated at integer coordinates.  The position of the kth agent is denoted by
+{ik, jk}.  At the initial state of the world each agent is endowed with a level
+of agreement towards an exogenous event, Sk (0,1) and a degree of risk
+aversion, k (0,1), where 1 k  n x m.<p>
+<p>
+We assume that an agent's decision rules are governed by her initial position
+and her tendency to conform. A higher degree of risk aversion implies a higher
+degree of conformity.  We assume discrete time steps and that each agent begins
+in a passive state.<p>
+<p>
+Consider an agent k at time t. Let zk be the agent's state; it is equal to 1 if
+she is active, and 0 if she is passive.  She receives a signal from every other
+agent l  with probability lk, where l  k.  lk is a measure of agent k's
+visibility of agent l. This visibility depends on the number of obstructions
+between l and k, where the obstructions are the other agents located between
+them. The visibility behind each agent is 0.  We experiment with the assumption
+that the active agents pose a greater obstruction than the passive agents. <p>
+<p>
+Besides the signals sent between agents there is also an external initial
+signal sent to the agent from the environment at t=0 (in the model below it is
+represented by the  initial satisfaction with the lecture). <p>
+<p>
+ If agent k receives a signal, then with probability s she reacts to the
+signal.  If the signal is positive she increases zk  by 1 while if it is
+negative she decreases it by 1. This process is applied to all signals sent by
+agents.  If zk &gt; 0 then the agent becomes/ remains active, otherwise she
+becomes/remains passive. We experiment with the assumption that the strength of
+the signal sent by an agent who has just become active/passive is stronger than
+that sent by an agent who was already active/passive.  These differential
+strengths are represented by weights (see below).<p>
+ <p>
+The probabilities of updating z are given in the following table:<p>
+
+
+<pre>
+                            Probability                 Signal direction            
+Initial Signal              <IMG SRC="2sfhw21.gif">                           +1                          
+Signal from k to l                                                                  
+Recent Active Signal        <IMG SRC="2sfhw22.gif">                           +1                          
+Past Active Signal          <IMG SRC="2sfhw23.gif">                           +1                          
+Recent Passive Signal       <IMG SRC="2sfhw24.gif">                           -1                          
+Past Passive Signal         <IMG SRC="2sfhw25.gif">                           -1                          
+
+</pre>
+where
+<A href="2sfhw26.gif">Click here for Picture </A>,
+  <p>
+and a (p) is the obstruction an active (passive) agent represents. <p>
+ `Recent Active' means that the agent who sends the signal just became active
+as opposed to being already being active which instead we denote by `Past
+Active'. The weights wP, wR, and wI are the strengths of the signals .<p>
+<p>
+We note that the updating process is not synchronous but stochastic. It is not
+however   completely random: if much activity occurs on the lattice an agent is
+more likely to update.  This is a type of  incentive-based updating.  The model
+may also be seen as a neural net with a stochastic firing mechanism.   In this
+context, every agent represents a neuron which is interconnected with all
+others and the probabilities replace the weights one finds in a neural net. <p>
+<p>
+<b><u>Results</u></b><p>
+We programmed the model in  Visual Basic, and ran the simulations with a
+lattice size of 10 x 10 and an average simulation time of 50 time periods.  We
+obtained the following results:<p>
+<p>
+Assuming a high initial satisfaction of agents, both with and without
+obstruction, most agents become active. However, when the level of obstruction
+is high, agents take a <i>longer </i>time to become active. Once they are
+active they remain active since they do not receive the signals of the passive
+agents which would be visible if there were no obstructions. <p>
+<p>
+On the other hand, when obstructions are not included in the model, agents tend
+to shift from an active to a passive position. <p>
+<p>
+When initial satisfaction is low, no agent action occurs whether or not
+obstructions exist.<p>
+<p>
+When recent actions are weighted more than past actions, a `domino' effect
+emerges where one action of one agent induces the `action' of many agents.   <p>
+<p>
+We note that the hierarchical structure of the population causes activity to
+not be propagated in a forward direction.<p>
+<p>
+<b><u>EXAMPLE  1:  STANDING OVATION</u></b><p>
+<b><u></u></b><p>
+<b><u></u></b>Consider the case of a standing ovation.  The "active" behavior
+described in the above model represents `standing' for an ovation at the end of
+a performance, and `passive' behavior represents `sitting' at the end of a
+performance.  An obstruction is interpreted as a person standing between the
+agent and the sent signal.  The agent weights the signal from an agent who has
+just stood up/sat down more than a signal from an agent who has already been
+standing/sitting.  The motivation behind this assumption is the idea that
+humans tend to value immediate actions more than old ones due to decay in the
+memory. <b><u></u></b><p>
+<b><u></u></b><p>
+<b><u>EXAMPLE  2:  POLITICAL ACTIVITIES</u></b><p>
+<b><u></u></b><p>
+<b><u></u></b>Consider the case of public activism concerning political issues.
+A common criticism of the American political system has been the apathy of its
+citizens in voicing their stance on a variety of political topics.  This
+vexation has raised questions with regards to what barriers might hinder
+participation in agenda setting.  The large size of the US population, the
+small commitment of individuals to the political process, the risk-aversion of
+individuals in voicing their opinions, and the alienation of some voters due to
+lack of information regarding issues have all been cited as possible barriers
+to political activity.  These issues have to some extent been explored in the
+model presented above.  We depict a process of coalition formation, where
+public activism is stimulated or hindered.  Of particular concern, and a novel
+feature of this study, was the role of information obstruction in stimulating
+or discouraging activism. Information impediments are created by the more
+active agents impeding the flow of information to the less active agents.
+Consider the case of the fundamentalist Christian right whose activism
+overshadows the flow of information from the less active majority.   <p>
+<b><u></u></b><p>
+<b><u>Extensions</u></b><p>
+<b><u></u></b>Parameters which could be varied in the model to study the
+different qualitative results include:<p>
+a) changing the shape and size of the auditorium. <p>
+b) including clusters of agents , where some clusters have a stronger strength
+in attracting standing behavior than others. For example we might assume that
+students value a standing professor more than a standing student in their value
+for alpha. <p>
+c) changing  the mean and variance of the initial distribution of satisfaction
+with the lecture.<p>
+d) including an aisle could significantly effect results due to the altered
+line of visibility.   We may also include `exit' and assume that those agents'
+seated closest to the aisle are most likely to leave.<p>
+ <p>
+<p>
+<b><u> </u></b><p>
+<p>
+</body></html>

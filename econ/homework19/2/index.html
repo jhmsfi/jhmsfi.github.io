@@ -1,0 +1,133 @@
+<html>
+    <head>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="shortcut icon" type="image/x-icon" href="favicon2.ico" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Lato:300i|Montserrat|Rubik" rel="stylesheet">
+	<style>
+	 p.nameplate {
+	     font-family: 'Rubik', sans-serif;
+	     font-size: 45px;
+	     margin-bottom: 0px;
+	     margin-top: 0px;
+	 }
+
+	 p.subnameplate {
+	     font-family: 'Lato', sans-serif;
+	     font-size: 25px;
+	     margin-top: 0px;
+	     margin-bottom: 0px;
+	 }
+
+	 p.descriptionbody {
+	     font-family: 'Montserrat', sans-serif;
+	     font-size: 16px;
+	     text-indent: 60px;
+	 }
+
+	 p.sectionheader {
+	     font-family: 'Montserrat', sans-serif;
+	     font-size: 22px;
+	 }
+	 
+	</style>
+	<title>War of the (Social) Worlds</title>
+    </head>
+    
+    <body>
+	<div id="main_div" class='w3-animate-opacity' style="position:relative; width:40%; margin-top: 5%;">
+	    <center>
+		<p class="nameplate">War of the (Social) Worlds</p>
+		<p class="subnameplate" style="font-size: 22px;"> Aviva Blonder, Trang Escobar, Vincent Wong</p>
+	    </center>
+	    <p class="sectionheader">INTRODUCTION</p>
+	    <p class="descriptionbody">Schisms are a destructive and dramatic way for communities to break up. On the ground, the reasons might be personal or ideological. From a bird&#39;s eye view, people may choose sides based on the information available to them, the news they get, as well as their personal biases.</p>
+	    <p class="descriptionbody">Consider the example of two major players in a community breaking up the community over a fight.  Each person involved thinks they are right and cuts ties with the other. Ensuing accounts of what happened spreads through the community by word of mouth. The members of the community shift their views in response to the news.  Each individual evaluates the news they receive and compares it to their own bias.</p>
+	    <p class="descriptionbody">One strong example of such a schism is Zachary&#39;s karate club<sup>1</sup>, which is a popular social network that was recorded around the time (before and after) a schism. Social ties were recorded between members of a karate club. However, due to an event, there was a major fight between two leaders of the karate club, resulting in a split as members chose sides and cut ties with opposing members. Visualizations of this network imply interesting relationships that either persisted or were removed after the inciting event. This social network is often used as a benchmark for community detection algorithms, due to the clear and qualitatively supported data on the network&#39;s construction. For us, the network is an example of the dynamics that we hope to capture in a model.</p>
+	    <p class="descriptionbody">In this project, we construct a model of a schism in a community that focuses on how beliefs and information transmission shape how a community polarizes. To do this, we construct social networks and propagate information through the networks starting from two feuding nodes and spreading to the rest of the population. Individuals integrate news about the feud with their pre-existing opinions and pass their biased perspective on to others.</p>
+	    <p class="descriptionbody">The preliminary findings of this project show that the networks converge on a variety of equilibrium configurations. The community either ends up polarized in favor of one of the feuding nodes, or lands on a mixed equilibrium, where partial splits and intermediate opinions survive. We believe this demonstrates interesting social behaviors that could be explored further. Future work on this project will need to quantify and statistically validate the behaviors we observe in the system. It would also be important to explore the space of parameters, and the effects of network topology on the results.</p>
+	    
+	    <p class="sectionheader">MODEL</p>
+	    <p class="descriptionbody">Primarily, we were concerned with the dynamics of information as it propagated on the network. In this section, we will describe the details of the model and the algorithm we created. First, we chose an example network topology using common network generating algorithms. Next, we initialized the people who would start the feud, as well as the initial views of all the other individuals. Then, we iteratively passed news about the feud through the network, where it interacted with individuals pre-existing views.</p>
+	    <p class="descriptionbody">First, we constructed social networks of 100 individuals. To generate the network structure, we used one of two algorithms: Barabasi-Albert (<i>m</i> = 2) and random geometric network (<i>r</i> = 0.175). The former is used to generate a network with strong preferential attachment, whereas the latter generates a network with clusters in long, looping chains. Preferential attachment has some grounding in real social networks, whereas geometric networks do not, though in this case they produce interesting results.</p>
+	    <p class="descriptionbody">Two central individuals are chosen as the seed nodes, who start the feud, with one assigned the &quot;view&quot; value of 0 and the other a &quot;view&quot; value of 1. The seeds&#39; views never change over the course of the simulation. All other agents are given a random starting value uniformly distributed from (0,1), i.e. between 0 and 1 non-inclusive. Then, to ensure that the agents&#39; initial positions are less erratic, we assign each non-seed node the mean of their neighbors&#39; random assignments. However, in simulations it was not clear that this was a necessary step.</p>
+	    <p class="descriptionbody">Each iteration, news about the feud travels through the network. First the seed nodes transmit their views to their neighbors, who use the news to adjust their own views, which they pass on to their own neighbors. In each iteration, each individual has one chance to share their views about the feud, starting with the seeds, followed by individuals that are directly connected to the seeds, and then the individuals that have one node between them and a seed, and so on. Individuals share their views with all of their neighbors, except for the seeds, regardless of whether that neighbor has already received the news from someone else, or was the individual who shared the news with them in the first place.</p>
+	    <p class="descriptionbody">When an individual receives news, it compares the news &mdash; i.e. the senders views about the event &mdash; to their own pre-existing views. If they&#39;re too far apart &mdash; we used a cut-off of 0.5 &mdash; the receiver rejects the news and cuts ties with the sender, destroying the edge between them. If the news is similar enough to the individual&#39;s pre-existing views, the receiver uses the news to update their own views, in proportion with the distance between their views and the news, and how close the individual&#39;s pre-existing views are to 0.5, or neutral (Eqn. 1). The larger the distance between their views and the news, the smaller a proportion of that distance they&#39;ll add to their own view. Also, we assumed that individuals that are neutral with respect to the feud are less invested in it and therefore less likely to change.  Likewise, the closer to 0.5 an individual&#39;s views are, the smaller a proportion of the distance they&#39;ll cover. This creates a high threshold for polarization, because individuals should be inclined to remain in the center. And sure enough, unless an individual is already highly polarized, the resulting landscape favors the center (Figure 1).</p>
+	    <p class="descriptionbody"><i>New views = current views + (1-|distance|)*distance*(|0.5-current views|+.01)</i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1)</p>
+	    <center>
+		<p class="descriptionbody" style="text-indent:0px;"><img src="heatmap_fig.png"></p>
+		<p class="descriptionbody"  style="font-size:14px; width: 60%; text-indent:0px;"><b>Figure 1:</b> Heatmap of new views given news and current views.</p>
+	    </center>
+
+	    <p class="sectionheader">RESULTS</p>
+	    <p class="descriptionbody">We were unable to do any quantitative analyses of the results, but qualitatively based on visualizations of how individual&#39;s views change over time, we found that most runs initially converged on a moderate opinion (distributed around 0.5) and then diverged from there within 200 iterations. Connections were typically pruned during the first one or two iterations, after which the network structure remained stable. Figure 2 shows an example of one trial. (Figures 2-5 can be found in the Figures section of the paper).</p>
+	    <p class="descriptionbody">The majority of networks eventually polarized, with most nodes favoring one of the two seeds, with the other cut off from the network &mdash; possibly along with some adjacent nodes. Interestingly, not all networks polarized to one side or another. Some networks appear to equilibrate with different factions of opinions, where some individuals favor one side, some favor the other, and some show multimodal distributions. An example of a network in multimodal equilibrium is shown in Figure 3. It is likely that this is due to the network topology, since we used random geometric networks for all of these trials. An example of an alternate network topology is shown in Figure 4, demonstrating a gradient of views.</p>
+	    <p class="descriptionbody">To get a sense of the distribution of views in a network, we plotted histograms of individuals’ views. We ran 100 trials on different random networks and, for each network, we plotted a histogram of views every 5 iterations for a total of 1000 iterations. To visualise how views changed over time, we animated these series of histograms by putting them into a gif maker. Figure 5 shows a few hand-picked examples that demonstrate some of the behaviors we found. We found that some interesting behaviors can occur, such as the system splitting into two factions, mixed views persisting despite a one-sided majority, and multi-modal distributions with groups clustering around intermediate values. </p>
+	    <p class="descriptionbody">We manually categorized the trials into one of three groups based on the 1000th iteration of each trial: total polarization to a view of 0 - in favor of one seed - mixed cases, and total polarization to a view of 1 - in favor of the other seed - (Figure 6). We find that most networks polarized almost entirely in favor of one seed or the other, but some interesting mixed cases occurred. We did not test whether these were equilibrium states. However, in some mixed cases, no changes appear to occur for hundreds of iterations (examples in Figure 5). </p>
+	    <center>
+		<p class="descriptionbody" style="font-size:14px; text-indent:0px;">
+		    <img src="bargraph_fig.png" style="width:65%;">
+		</p>
+		<p class="descriptionbody"  style="font-size:14px; width: 60%; text-indent:0px;"><b>Figure 6:</b> Figure 6: 100 trials sorted based on the distribution of views after 1000 iterations. Most networks polarized in favor of one seed or the other (zero or one respectively), but a few settled on a mixed equilibrium, where views in favor of both seeds and neutral views were present.</p>
+	    </center>
+
+	    <p class="sectionheader">FUTURE WORK</p>
+	    <p class="descriptionbody">This work is all very preliminary. We only tested a very small set of parameter values and network structures. Future work should be done to sweep a wide range of parameters and evaluate how they impact the results. Initialization may have an especially large impact on the outcome. There may be characteristic patterns that occur when networks are constructed in particular ways, such as using homophily, triadic closure, or preferential attachment.</p>
+	    <p class="descriptionbody">We also made several assumptions in constructing the equation for how individuals update their views based on the news they receive. Perhaps most notably, we assumed that more neutral individuals care less about the schism and are therefore less likely to change their opinion, but it may be that instead more polarized individuals are less likely to change their views because they are more entrenched. It would be valuable to see how such different assumptions change the resulting equilibria.</p>
+
+	    <p class="sectionheader">REFERENCES</p>
+	    <p class="descriptionbody" style="text-indent: 0px;">1. Zachary, Wayne W. &quot;An Information Flow Model for Conflict and Fission in Small Groups.&quot; <i>Journal of Anthropological Research</i> 33.4 (1977): 452-473.</p>
+	    <hr style="border-top: 2px solid grey;">
+	    <p class="sectionheader">FIGURES OF NETWORKS</p>
+	    <div style="margin-left: -50%; margin-right: -50%;">
+		<center>
+		    <p class="descriptionbody" style="text-indent:0px;">A. <img src="example_fig1.png" style="width:30%;"> B. <img src="example_fig2.png" style="width:30%;"> C. <img src="example_fig3.png" style="width:30%;">
+		    </p>
+		    <p class="descriptionbody"  style="font-size:14px; width: 60%; text-indent:0px;">
+			<b>Figure 2:</b> Simulation run on an example network. Nodes are colored by their view value. A. The initial state of the network. B. The network after a few iterations, showing that some people have drifted toward moderate viewpoints relative to their local neighbors. C. The network after over 1000 iterations. The views have polarized entirely toward Seed 1. 
+		    </p>
+		</center>
+		<center>
+		    <p class="descriptionbody" style="text-indent:0px;"><img src="example_fig_weird.png" style="width:30%;"></p>
+		    <p class="descriptionbody"  style="font-size:14px; width: 60%; text-indent:0px;">
+			<b>Figure 3:</b> Example equilibrium state of a network with split groups. Network of agents colored by their view value after many iterations and showing no changes with more iterations (equilibrium). Darker colors correspond with views closer to 0, and lighter colors correspond with views closer to 1. Interestingly, unlike the final graph in Figure 2, multiple groups have formed, with some favoring Seed 0, others favoring Seed 1, and a third group of people with views in-between. 
+		    </p>
+		</center>
+		<center>
+		    <p class="descriptionbody" style="text-indent:0px;"><img src="barabasi_fig.png" style="width:30%;"></p>
+		    <p class="descriptionbody"  style="font-size:14px; width: 60%; text-indent:0px;">
+			<b>Figure 4:</b> Example equilibrium state of the model run on a network generated with the Barabasi-Albert algorithm. Agents are colored by their view scores. The nodes on the left appear to have views closer to Seed 1, whereas the nodes on the right have views closer to center. A few nodes are black, indicating that their views are very near that of Seed 0. 
+		    </p>
+		</center>
+		<hr style="border-top: 2px solid grey;">
+
+		<center>
+		    <p class="descriptionbody" style="text-indent:0px;">
+			A. <img src="polarization.gif" style="width:30%;">
+			B. <img src="15.gif" style="width:30%;">
+			C. <img src="50.gif" style="width:30%;"><br>
+			D. <img src="58.gif" style="width:30%;">
+			E. <img src="73.gif" style="width:30%;">
+			F. <img src="86.gif" style="width:30%;">
+		    </p>
+		    <p class="descriptionbody"  style="font-size:14px; width: 60%; text-indent:0px;" align="left">
+			<b>Figure 5:</b><br>
+			<b>A</b>. Example where opinions first converge around 0.5, but eventually everyone polarizes toward 0. This is interesting because polarization does not occur smoothly. This is the most common kind of polarization we observed, either to 0 or 1.<br>
+			<b>B</b>. This histogram shows the progression of the community&#39;s views over 1000 iterations. Nodes start from a random state. In this instance, most nodes are distributed around 0.5 and then start to migrate towards 1.  The network ends up in a polarized state favoring seed 1.<br>
+			<b>C</b>. This histogram shows the progression of the community&#39;s views over 1000 iterations. The nodes start from a random state.  In this instance, the nodes split to favor either 0 or 1, though they stop near those extremes (0.1 and 0.9, respectively).<br>
+			<b>D</b>. This histogram shows the progression of the community&#39;s views over 1000 iterations. The nodes start from a random state. In this instance, their views are split, where some nodes favor 0 or 1 and some nodes remain neutral, around 0.5.<br>
+			<b>E</b>. This histogram shows the progression of the community&#39;s views over 1000 iterations. This shows a seemingly multi-modal distribution where one group is around 0.2, another group around 0.6, and a final group nearer 0.9. <br>
+			<b>F</b>. This histogram shows the progression of the community&#39;s views over 1000 iterations. This shows how the nodes favor seed 1, but do not end up completely polarized. Instead, most of the nodes end up in the range of 0.6 to 1.0. 
+		</p>
+	    </center>
+	</div>
+	</div>
+    </body>
+
+    <script>
+     var main_div = document.getElementById("main_div");
+     main_div.style.left = '50%';
+     main_div.style.marginLeft = -1*main_div.offsetWidth/2;
+    </script>
+
+</html>

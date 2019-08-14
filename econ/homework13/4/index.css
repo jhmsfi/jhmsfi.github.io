@@ -1,0 +1,38 @@
+html,body
+{
+  margin:0;
+  padding:0;
+}
+
+#main
+{
+  background-color:white;
+  width:800px;
+  margin:auto;
+}
+
+#title
+{
+	background-color:#11CED1; 
+	color:white; 
+	font-size:30px; 
+	font-family:"courier",monospace; 
+	letter-spacing:7px; 
+	text-align:center;
+}	
+
+#subtitle
+{
+	background-color:#811BE0; 
+	color:white; 
+	font-size:20px; 
+	font-family:"courier",monospace; 
+	letter-spacing:5px; 
+	text-align:center;
+}	
+
+h3
+{
+	font-family:"courier",monospace;
+
+}

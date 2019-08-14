@@ -1,0 +1,149 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<!META NAME="Generator" CONTENT="Microsoft Word 97">
+<TITLE>jai4</TITLE>
+<META NAME="Template" CONTENT="C:\PROGRAM FILES\MICROSOFT OFFICE\OFFICE\html.dot">
+</HEAD>
+<BODY LINK="#0000ff" VLINK="#800080">
+
+<B><FONT SIZE=4><P>Theoretical approach to the sitting problem</P>
+
+
+
+</B></FONT><FONT SIZE=2><P>&nbsp;</P>
+</FONT><P><IMG SRC="Image1.gif" WIDTH=265 HEIGHT=306></P>
+<P></P>
+<B><P>Framework</P>
+</B></U><FONT SIZE=2><P>&nbsp;</P>
+</FONT><P>We define an abstract object to represent a lecture hall: </P>
+<B><P>L:= &lt; N,K,W &gt; </P>
+</B><P>Where: </P>
+
+<UL>
+<B><LI>N </B>is the number of seats in a row </LI>	<B><LI>K</B> is the number of rows in the hall </LI>
+<B><LI>W</B> is the effective width of the screen (or lecturer) </LI></UL>
+
+<P>Assumptions:</P>
+
+<UL>
+<LI>Each unit square both contains a desk and is an avenue of travel </LI>
+<LI>Search is global, each agent sees the whole matrix </LI>
+<LI>Agents enter sequentially</LI></UL>
+
+</br>
+</br>
+</br>
+<B><U><P></P>
+<P>Model 1</P>
+</B></U><P>Assumptions:</P>
+
+<UL>
+<LI>Agents are singletons </LI>
+<LI>Agents have identical preferences</LI></UL>
+
+<P>The agents choose the best seat, attempting to maximize their utility function that is given by:</P>
+<B><P>U<SUB>i</SUB> = -( <FONT FACE="Symbol">a</FONT> <FONT FACE="Symbol">t</FONT> + (1-<FONT FACE="Symbol">a</FONT> )<FONT FACE="Symbol">b</FONT> )</P>
+</B>Where: </br><DIR><dir>
+
+
+<B><FONT FACE="Symbol">t</FONT> = x+y</DIR></dir>
+
+<DIR><DIR>
+<FONT FACE="Symbol"><P>b</FONT> = K-y</P></DIR></DIR>
+</B>
+
+</br>
+</br>
+<P>When agents are more concerned with minimizing their distance from the screen (or lecturer), <FONT FACE="Symbol">a</FONT> would be relatively small. </P>
+
+<UL>
+<B><FONT FACE="Symbol"><LI>a</FONT> = 0 </LI></UL>
+
+
+
+</FONT><P><IMG SRC="new-1.jpg" WIDTH=265 HEIGHT=306></P>
+
+
+
+
+</br>
+</br>
+</br>
+<ul><B><FONT FACE="Symbol"><LI>a</FONT> &lt; ½</LI></ul>
+</FONT><P><IMG SRC="new-2.jpg" WIDTH=265 HEIGHT=306></P>
+
+
+
+
+
+</B><P>&nbsp;</P>
+<P>We can see that in this regime the agents bunch near the front, which is not surprising.</P>
+
+</br>
+</br>
+</br>
+<UL>
+<B><FONT FACE="Symbol"><LI>a</FONT> = ½</LI></UL>
+</FONT><P><IMG SRC="new-3.jpg" WIDTH=265 HEIGHT=306></P>
+
+
+</br>
+</br>
+</br>
+<UL>
+<b><FONT FACE="Symbol"><LI>a</FONT> =1</LI></b></UL>
+</FONT><P><IMG SRC="new-4.jpg" WIDTH=265 HEIGHT=306></P>
+
+
+</B><P>&nbsp;</P>
+
+<P>Starting with a simple model, which we could solve analytically, we are thus able to derive solutions for some extreme cases. We can extend this particular model by introducing heterogeneous agent population. </P>
+
+</br></br></br>
+
+<B><P>Extension:</P>
+</B><P>If we imagine that the agents differ according to <FONT FACE="Symbol">a</FONT> values (e.g. <FONT FACE="Symbol">a</FONT> = <FONT FACE="Symbol">&THORN;</FONT> "Psyched" <FONT FACE="Symbol">a</FONT> = 1<FONT FACE="Symbol">&THORN;</FONT> "slackers")</P>
+<P>We find:</P>
+</FONT><P><IMG SRC="new-5.jpg" WIDTH=265 HEIGHT=306></P>
+
+
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>Results robust to different functional forms (?), Realistic (?)</P>
+
+
+<FONT SIZE=2><P>&nbsp;</P>
+<P>&nbsp;</P>
+</FONT><B><U><P>Model 2</P>
+</B></U><P>Say people enter in a sequence of small groups, which want to sit in certain arrangements: </P>
+
+</FONT><P><IMG SRC="new-6.jpg" ></P>
+
+
+<P>Assumptions:</P>
+
+<UL>
+<LI>Say <FONT FACE="Symbol">a</FONT> is small </LI>
+<LI>Agents can not pass through occupied squares </LI>
+<LI>Agents can move one square per time step, or wait or sit down</LI></UL>
+
+<P>Results:</P>
+
+<UL>
+<LI>If agents groups are identical, seating allocation is straightforward. </LI>
+<LI>If agent group differ, 3 effects:</LI></UL>
+
+<OL>
+
+<LI>The piece below a group may be indifferent between locations over which the piece above has strong preferences. This implies that the piece above has incentive to wait.</LI>
+<LI>The piece above may "overtake", limiting incentive to wait.</LI>
+<LI>Faster entry rate of groups increases potential for strategic interaction.</LI></OL>
+
+<B><I><P>Conjecture: Strategic interaction may result in efficiency.</P>
+</B></I><P>
+Iris Ginzburg </br>
+Asim Khwaja</br>
+Justin Smith</br>
+<FONT SIZE=2><P>16 June 1998</P></FONT></BODY>
+</HTML>

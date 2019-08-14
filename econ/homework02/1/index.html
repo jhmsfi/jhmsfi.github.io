@@ -1,0 +1,109 @@
+<html><body>
+<center>
+<h2>What Makes a Good Story?</h2>
+<h3>A Model of Reporter Learning</h3>
+Nicolas Garrido, Economics, U. de Alcala de Henares
+(NicolasGarrido@email.com)<br>
+A. Joseph Guse, Economics, U. of Wisconsin (ajguse@students.wisc.edu)
+</center>
+<P>
+<table bgcolor = "aaaaaa" width = 90%>
+  <tr><td><b>&nbsp&nbsp&nbsp&nbsp Introduction.</b></td></tr>
+</table>
+<P>
+<table><tr><td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td><td>
+There are many questions one could ask about how the media develops a scandal or series of scandals.  How quickly will new information reach the public?  How accurate will it be?  How efficiently will investigators coordinate their efforts?  In this model we decided to focus on how reporters might learn to satisfy demand for the scandal.  Consider a reporter who has discovered the following two stories related to a particular scandal.
+<P>
+(i) Politician <i>x</i> slept with celebrity <i>y</i>.<br>
+(ii) Politician <i>a</i> took money from lobbyist <i>b</i>.
+<P>
+Which story is better to publish?  To which media outlets should she send it?  A inexperienced reporter may have only vague ideas about how a particular story will be received among the various publishers she knows of.  However the more stories she sends out, the more feedback she gets, perhaps in the forms of critical reviews, a share of the profits, of simply a price offered.  It is easy to imagine that the reporter could eventually learn how to select news stories and decide where to send them for publication.
+</td><td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td></tr></table>
+<P>
+<table bgcolor = "aaaaaa" width = 90%>
+  <tr><td><b>&nbsp&nbsp&nbsp&nbsp Model</b></td></tr>
+</table>
+<P>
+<table><tr><td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td><td>
+In this model we assume that reporters and media outlets are synonymous.  That is each reporter has access to a particular audience where she may publish her own stories or the stories of other reporters.  Let <b><i>N</i></b> be the cardinality of the set of these reporter / media outlet nodes.  Each node in this system is doubly linked to everyother node and associated with each link at each time step is a value.  Let <sub><img src = "xtab.gif"></sub> be value of the connection from <b><i>a</i></b> to <b><i>b</i></b> at time <b><i>t</i></b>.  We interpret this value as the price <b><i>b</i></b> would pay for one of <b><i>a</i></b>'s stories, or more generically, the "confidence" <b><i>b</i></b> has in <b><i>a</i></b> to send out a good story.  This value will depend on the past success <b><i>b</i></b> has had publishing <b><i>a</i></b>'s work in terms of increased advertising revenue, for example.  Let the "confidence network", <b><i>X<sub>t</sub></i></b>, be the <b><i>N</i></b> x <b><i>N</i></b> matrix of these values at time <b><i>t</i></b>.  Notice there is no reason to expect this matrix to be symmetric; <b><i>a</i></b>'s offer to <b><i>b</i></b> need not be same as <b><i>b</i></b>'s for <b><i>a</i></b>.
+<P>
+In addition to the network, there is a set <b><i>Z</i></b> of possible news stories.  In their capacity as media outlet, each node <b><i>n</i></b> has associated with it a function <sub><img src= "fnZ01.gif"></sub> which reveals to that outlet the "true" value of a story sent to it.  Reporters sending stories to node <b><i>n</i></b> initially know nothing about <sub><img src= "fn.gif"></sub> but will have the opportunity to learn about it.  They learn through the feedback sent back over the connection.  
+<P>
+Sending a story through the network is not free.  We assume that a reporter pays fixed cost <b><i>c</i></b> for each other reporter to which they send a story.  Roughly speaking, in the long run, it will not be worth sending stories to nodes whose offer price is above this cost.
+<P>
+We assume that a reporter can only send out one story in each time step.  Thus each reporter's problem in every time step is to select a story and list of recipients.  However, since the value to the reporter of a particular selection depends on how the reporter distributes it, the value of the first decision depends on the second.
+<P>Before play begins, each reporter,<b><i>n</i></b> is endowed with an initial stock of guesses <b><i>G<sub>n,0</sub></i></b>.  Elements of <b><i>G<sub>n</sub></i></b> consist of a story, <img src = "zinz.gif">,  and a recipient list, <img src = "lin0120.gif">
+</td><td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td></tr></table>
+<table bgcolor = "aaaaaa" width = 90%>
+  <tr><td><b>&nbsp&nbsp&nbsp&nbsp Timing</b></td></tr>
+</table>
+<P>
+<table><tr><td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td><td>
+Reporters in our model learn optimal story selection and distribution decision by refining their intial stock of guesses based on feedback from the network.  Computationally we model the refinement process with a genetic algorithm.
+<P>
+Before play begins, the connections in the confidence network are set to some initial values, <b><i>X<sub>0</sub></i></b>.  In each time step <b><i>t</i></b>, 
+<li> each reporter,<b><i>n</i></b>, selects an element from their stock of guesses, <b><i>G<sub>n,t</sub></i></b>.  
+<li> For each reporter on the recipient list of their guess, they receive a direct payoff based on the current value of the connection they sent it along.  This payoff is equal to <sub>
+<sub><sub><img src = "directPayoff.gif"></sub></sub></sub> where <sub><img src = "omega.gif"></sub> is the recipient list.<P>
+<li>For all <b><i>i</i></b>, each reporter <b><i>j</i></b> updates the value of <b><i>x(i,j)</i></b> as the average value of information received from <b><i>i</i></b> before.  So that <sub><sub><sub><img src = "updatedxij.gif"></sub></sub></sub>.
+<P> 
+<li>Every certain number of periods,  (We used 50.) the set of guesses for each reporter is updated using a genetic algorithm.
+</td><td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td></tr></table>
+<table bgcolor = "aaaaaa" width = 90%>
+  <tr><td><b>&nbsp&nbsp&nbsp&nbsp Results</b></td></tr>
+</table>
+<P>
+<table><tr><td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td><td>
+For the results shown below, we have assumed that every reporter has the same evaluation function, <img src = "fn.gif">.  (News stories have objective value.)  Given this assumption, we are testing how well the genetic algorithm does at learning this objective value.  We ran 25 simulations with 5000 periods each.   (This means 100 generations of guess sets for each reporter, since the GA runs every 50 periods.)  The 25 runs tested 5 seeting for the fixed transmission cost parameter , <b><i>c</i></b> and 5 values used to fill the initial confidence network before play, <b><i>X<sub>0</sub></i></b>.
+<P>
+In each table below the row labels were the value of the cost parameter while the column labels were the value of each element in the initial confidence network.
+
+<table cellpadding =12><tr>
+
+<td>
+
+<table bgcolor = "cccccc">
+  <tr><td><b>Average Tranmission Rate</b> </td></tr>
+</table>
+<table border =1>  <tr><td></td><td>0.1</td><td>0.2</td><td>0.3</td><td>0.4</td><td>0.5</td></tr>
+<tr><td>0</td><td>16.15</td><td>16.85</td><td>16.02</td><td>16.07</td><td>15.4</td></tr>
+<tr><td>.02</td><td>14.54</td><td>15.08</td><td>14.54</td><td>14.67</td><td>15.12</td></tr>
+<tr><td>.04</td><td>8.07</td><td>7.64</td><td>7.31</td><td>9.85</td><td>7.40</td></tr>
+<tr><td>.06</td><td>3.02</td><td>2.71</td><td>3.14</td><td>2.77</td><td>2.81</td></tr>
+<tr><td>.08</td><td>2.19</td><td>2.16</td><td>2.01</td><td>2.30</td><td>1.83</td></tr>
+</table>
+
+</td><td>
+
+<table bgcolor = "cccccc">
+  <tr><td><b>Average Story Value</b></td></tr>
+</table>
+<table border =1 >
+<tr><td></td><td>0.1</td><td>0.2</td><td>0.3</td><td>0.4</td><td>0.5</td></tr>
+<tr><td>0</td><td>.660</td><td>.683</td><td>.793</td><td>.734</td><td>.828</td></tr>
+<tr><td>.02</td><td>.811</td><td>.832</td><td>.801</td><td>.781</td><td>.766</td></tr>
+<tr><td>.04</td><td>.829</td><td>.810</td><td>.792</td><td>.877</td><td>.793</td></tr>
+<tr><td>.06</td><td>.741</td><td>.678</td><td>.795</td><td>.732</td><td>.750</td></tr>
+<tr><td>.08</td><td>.640</td><td>.667</td><td>.684</td><td>.668</td><td>.613</td></tr>
+</table>
+
+</td></tr></table> 
+
+<b>Some Conclusions</b><br>
+Reading accross the rows, it difficult to state with any confidence that there is a clear relation between initial confidence network values and either transmission rate (the average number of other reporters, each reporter was sending their stories) or story value.  However, there is a clear pattern with cost.  The higher the cost the lower the transmission rate.  This makes sense when one considers that with cost set to zero there is never incentive <i>not</i> to send your story to every other reporter on the network.  The most interesting story is the relationship between average story value and cost.  Story values appear to do best for intermediate cost settings.  One might say that agents' learning benefits from having to pay some costs for sending out a story, but that too high costs will inhibit experimentation.  Notice, however, that all story values in the second table are well above one half.  Since the initial stock of guesses granted to each player contained stories with expected value of 0.5, this show that learning occrued to a significant degree in all environments testeed here.
+
+ </td><td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td></tr></table>
+<table bgcolor = "aaaaaa" width = 90%>
+  <tr><td><b>&nbsp&nbsp&nbsp&nbsp Extensions</b></td></tr>
+</table>
+<P>
+<table><tr><td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td><td>
+<b>Learning Subject Values</b><br>
+For the runs generated above each node (as media outlet) uses the same function for evaluating stories.  A more realistic network might capture the notion that a particular sent to NPR will evoke a difference response than one sent Fox News or the Washington Post and so on.  In the model this is simply matter of endowing each node with their own <sub><img src = "fn.gif"></sub>.
+<P>
+<b>Sharing</b> <br>
+There is no room for cooperation or group formation between agents in this model for uncovering what makes a good story.  If we allowed agents to trade their feedback in some way, learning may improve.  This could be as simple as allowing agents to see some of the other confidence numbers.  Or it may be necessary to not only show the feedback but some portion of what generated it as well.
+</td><td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td></tr></table>
+
+</body>
+</html>

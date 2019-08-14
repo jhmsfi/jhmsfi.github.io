@@ -1,0 +1,296 @@
+
+<h2>
+Determinants of a Standing Ovation:  A Bandwagon Phenomena
+</h2>
+
+<p>
+
+<h3>
+Susan Bennet Department of Economics Simon Fraser University Burnaby,
+B.C., Canada V5A 1S6
+</h3>
+<p>
+<h3>
+Elizabeth Newlon GSIA, Carnegie-Mellon University, Pittsburgh, PA
+</h3>
+
+
+
+
+<p>
+<h2>
+I.  Introduction 
+</h2>
+
+At the macro level, how can a standing ovation be
+described?  Roughly, a 'successful' standing ovation has the following
+characteristics:  Initially, a fraction of the audience stands
+simultaneously to reward a fine performance.  Over the next few
+minutes, more and more audience members join the ovation. What a great
+show you think, sitting comfortably in your seat.  Suddenly, you
+realize that you are surrounded by a bunch of standing, cheering
+people.  You bound to your feet, adding one to the growing standing
+ovation.   After a relatively short period of time, the room is taken
+over by the standing ovation.  Then, after a few minutes of
+enthusiastic clapping, the first wave of people sit down.  Gradually,
+others tire as well, or find themselves surrounded by (tired) sitting
+audience members, and so sit themselves.  After of few more periods,
+the entire audience is again sitting.
+<p>
+At first glance, this sounds like a nice little story, but hardly
+something that one would ponder for any length of time.   Consider it a
+little longer, however, and the story begins to look like something
+akin to a bandwagon phenomena, which have fascinated economists for
+some time.  But more on this later.
+
+<p>
+<h2>
+II.  Building the Model.
+</h2>
+
+What are the variables the influence one's decision to stand?  We can
+divide these into roughly two groups:  Fundamental forces, and the
+desire to coordinate.  Further, we want to capture in some way the
+mechanism by which decisions of one agent influence those of others.
+That is, how does this desire to coordinate manifest itself?  To answer
+these question, we need to define the concept of neighborhoods.
+Finally, so that we can get an ovation started we introduce inertia at
+the individual level.
+
+<p>
+A.  Fundamentals:  Initially, we think of our decision to applaud, or
+in the extreme to stand in appreciation, as being a function of the
+quality of the performance.  We are all, however, differently
+predisposed toward showing our appreciation - some clap, others
+whistle, still others stand and cheer wildly.  Two people who would
+agree on the quality of performance may show their approval in
+different ways, or to different degrees.  Thus, our agents are in part
+characterized by a fundamental parameter, FUND, which initially
+determines when an agent will stand.  For instance, if agent i's
+fundamental parameter is 0.75, this tells us that (s)he will not ovate
+any performance which (s)he rates at less than or equal to 75/100 on
+some personal quality scale (we'll argue that most people can generally
+agree on the level of performance, and thus it is only the propensity
+to ovate that differs across agents, not perception...)  FUND was drawn
+for each agent from a normal distribution on [0,1]1.
+<p>
+
+A second fundamental force is the decision to sit down again.
+Independent of the number of people standing around you, this variable,
+a measure of fatigue or boredom, dictates the number of periods you
+will stand.  This is called MAXSTAND, and is uniformly distributed on
+[0,T] where T is the duration of the simulation.
+<p>
+
+B.  Coordination In many instances, people like to be the same as
+others; for various reasons, they like to look (or dress) the same, go
+to the same places (pubs),  drive the same cars (keeping up with the
+Jones').  I'm no longer familiar with Sunday mass, and so whenever I
+attend church, I constantly follow the lead of others - largely because
+I don't want to be the only one either sitting or standing.  For these
+reasons, we model our agents has being characterized by a second
+parameter, a coordination strength, called COORD.  Coordination
+strength works as a benchmark.  As an example, consider the case where
+COORD = 0.8.  This means that, unless 80% of the people around me are
+standing, I will remain sitting.  This is a random number drawn from
+the normal distribution on [0,1].
+<p>
+
+D.  Defining Neighborhoods:  The Propagation Mechanism This brings us
+to our next point:  How do we define the appropriate neighborhood, so
+that we can give precise meaning to the word "around"?  There are a
+couple of ways to approach this.  One is to think about some aggregate
+statistic, like the average number of people standing in the audience.
+Under this scenario, all agents are directly connected, although the
+strength of each of these connections is quite small.
+<p>
+
+Under some circumstances, however, this may not be particularly
+satisfying way to model coordination.  A more plausible story would
+capture the notion that location matters.  People care more about what
+those nearby (geographically or metaphorically) than those at a greater
+distance.  In this case, agents are directly connected to fewer people,
+although the strength, or importance, of each connection is relatively
+large.  Through overlapping neighborhoods, however, all agents are
+indirectly connected.
+
+<p>
+We try a number of different neighborhood sizes to capture the
+qualitative effects they have on the intensity and duration of a
+standing ovation.  Of particular note, to be discussed further below,
+are neighborhood sizes of N = 2, N = 8, and N = all.
+
+<p>
+E.  Inertia Our reason for introducing inertia is intuitively
+appealing.  First, in order to see a standing ovation start, anything
+short of the whole audience standing at t = 1 requires some stickiness
+in agents' decisions to stand, at the very least in the first group to
+stand..   Generally this was set equal to 3; that is, those who
+initiate the ovation are required to stand for at least three periods,
+independent of the actions of anyone else in the audience.  It is not
+difficult to justify such an assumption.  We might argue, for instance,
+that those who are inclined to stand initially in response to a
+particularly good performance will also be willing to stand,
+independent of the reactions of others, for some minimum amount of
+time.  These people are motivated by fundamental delight rather than
+the desire to fit in with a crowd of cheering fans.  Admittedly,
+inertia is introduced to the system in an ad hoc fashion.  Ideally,
+this inertia would arise endogenously.  At this point, however, it
+remains entirely exogen
+
+<p>
+F.  The Algorithm:  Describing the Agents and their World Each agent in
+the audience, located on the N x M lattice,  is a record, or cellular
+automaton, containing a unique set of parameters which are the agent's
+behavioral rules: FUND, COORD, MAXSTAND.  These are not updated in any
+way over time.  A fourth parameter was added to the record, called z,
+which records whether or not the agent has ever been in the standing
+state.  In order to ensure that cycling is not realized (ie agents
+stand up, sit down, then stand again, etc), we specify that agents
+stand only once.  Finally, as we shall discuss further, each agent
+carries with them a parameter, IND, which indicates the time at which
+they first stood.
+<p>
+Agents have perfect information, in a world whose dimensions are
+defined by the preferences of the agents - ie their specification of
+'neighborhood'.  Decision makers here update their binary decision (sit
+or stand) on a period by period basis by looking at the current state
+of their world - there is no expectations formation going on here.
+Finally, since agents are entirely rule based, they are by definition
+Rule of Thumb actors.
+
+<p>
+An outline of the algorithm is appended, along with the code written in
+Turbo Pascal.  See Figure 1. [All figures are available from the first author.]
+
+<h2>
+III. Discussion:
+</h2>
+
+A.  Preliminary Simulation Results.
+
+<p>
+i.  Neighborhood Size and Performance Quality.  In order to see the
+effect that neighborhood size has on the realization time of a standing
+ovation, a number of simulations were run using different parameter
+values.  Of particular interest is neighborhood size.  For notational
+convenience, refer to the neighborhood size as N.  If N = 2 then only
+those agents directly to the right and left of agent pij will influence
+his decision.  The neighborhood is then depicted as a line with one
+neighbor on each side of pij.  If  N = 8, all agents directly adjoining
+location [i,j] are members of pij's neighborhood.   Finally N = all
+means that all agents in the audience are directly connected.  An
+aggregate statistic, that is average number standing in the theater, is
+the measure used to describe the state of the neighborhood.  One last
+notational note: q is the quality of the performance, which falls in
+[0,1].
+
+<p>
+The results are best illustrated graphically.  See figures 2a,b,c which
+shows the results from simulation run using the following parameter
+values:
+
+<p>
+Fig 2a:  q = 0.8, N = 2, N = 8, N = all.  Fig 2b: q = 0.5,     same Fig
+2c: q = 0.3,     same
+
+<p>
+Clearly the way in which neighborhoods are defined is key. The smaller
+the neighborhood, the longer one must wait before the ovation dies out
+entirely.  Further, when we compare N = 2 to N = 8, it is clear that,
+given an initial configuration of enthusiasts, the number of members
+who stand, at any point in time, is greater under the N = 2 scenario.
+This, however, does not hold for the N = all case.
+
+<p>
+B.  Directions for Further Work
+
+<p>
+i.  Some Problems with the Existing Model Our definition of
+neighborhood size is not entirely satisfactory, however.  We would like
+to be able to consider intermediate cases, where agents care more about
+those close by than those further away.  Moreover, we would like the
+rate at which 'caring' declines to be continuous.  As it currently
+stands, agents either weight the state of some agent [i,j] by a factor
+of 1 or 0.  A more realistic way to model neighborhoods would be to
+discount the state of audience member [i,j] sitting r rows away by the
+factor {SYMBOL 98 \f "Symbol" \s 12}r-1, where {SYMBOL 98 \f "Symbol"
+\s 12} is an individual specific discount rate.  The difficulty in this
+approach is in defining a coordination parameter.  Ideally, we want a
+number which can be used across all neighborhood specifications.  It is
+not clear at this point how to accomplish this.
+
+<p>
+ii. Ideas and Applications While this standing ovation model is quite
+simple, it represents a useful way to think about modeling certain
+economic phenomena, specifically bandwagons.  The links between this
+model and one which captures the essence of foreign exchange markets,
+stock markets, or international capital flows to highly indebted
+counties, are reasonably straight-forward.  These include the concepts
+of fundamentals, coordination (which influence behavior), and
+neighborhoods.
+
+<p>
+Fundamentals.  In the ovation model, fundamentals determined the number
+to stand in the first period.  The quality of performance, along with
+the natural predisposition of the audience members, were alone
+responsible for the number standing in period one.  The analogy to a
+foreign exchange market, for instance, is clear.  Traders look, at
+least to some degree, at country fundamentals in forming expectations
+and making trades.  However, while everyone can agree that double digit
+inflation does not bode well for a currency, traders have different
+inclinations to react to marginal changes in fundamentals.
+
+<p>
+Coordination.  The desire to coordinate with others in the audience at
+a theatrical performance is a pure coordination phenomena; we like to
+do the same thing as others because we dislike standing out in a
+crowd.  The motivation behind coordination in a model of foreign
+exchange trading, on the other hand, is motivated by appealing to
+imperfect information.  We may not have access to all (perfect)
+information, so we look at what others are doing to inform our decision
+making.
+
+<p>
+Neighborhoods.  In the context of a well-defined theater or concert
+hall, the concept of neighborhood is entirely geographic. It is also
+exogenously determined and fixed.  The same notion, however, can be
+applied to interactions which are not strictly geographic.
+Neighborhoods can be defined by communications networks, trading
+coalitions, etc.  Further, these networks, or neighborhoods, are both
+endogenous and dynamic.  Not only to agents in these settings define
+their set of interactions, they can also change this set over time.
+
+<p>
+While there are clear links between the simple ovation model and one
+which would capture the richness of behavior in these speculative
+markets, there are also distinct differences.  The concept of updating
+expectations, for instance, stands out as a key example.  In the
+ovation model, for instance, it is hard to think of  what success or
+failure might mean for an agent.  Thus, behavioral rules are not
+updated over time.  In a foreign exchange market, however, the concept
+of success is more clearly defined.  In such a market, we must think of
+the set of behavioral rules as evolving over time.
+
+<p>
+Nonetheless, the basic ingredients of the ovation model provide us with
+insight into the modeling of more complex problems.  In particular, the
+focus of future work will be on the interplay between fundamentals and
+coordination, the concept of neighborhoods, and the suspicion that
+inertia must play an role in explaining bandwagon phenomena.
+
+
+<p>
+<hr>
+
+
+
+1 A normal distribution was used to capture the idea that, while agents
+are all different, there is often a lot of similarity in our
+preferences; while we all care to different degrees about coordinating
+our actions, most people can broadly be characterized as 'moderate'.
+Simulations run using a uniform distribution did not yield
+qualitatively different results.  Ideally we'd like to truncate this
+distribution so that it is drawn on [xL,1], where xL >> 0, for instance
+on [0.5,1]
+

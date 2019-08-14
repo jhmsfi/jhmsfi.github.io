@@ -1,0 +1,131 @@
+<html>
+<head>
+<title>Why doesn't Clowns eat Cannibals?</title>
+</head>
+<body>
+<div style="width:600px;"> 
+<h1>Why won't cannibals eat clowns?</h1>
+<h2>Initial idea: Under which conditions do jokes survive?</h2>
+After we had thrown a lot of ideas on the table we decided that we wanted
+to look at the dynamics of how jokes may survive over time.
+
+We initially intended to study this using an agent-based model where the
+agents would have an initial repertoire of jokes, and as an agent heard
+yet another joke, that joke would be appended to the repertoire.
+
+Two of our central ideas going in to the modelling stage were that (i) agents
+would not interact at random, but would they tell their joke given
+some kind of similarities, and (ii) jokes are more or less funny to different
+people given their cultural backdrop. And more...
+<h2>The model</h2>
+
+<h3>Introduction</h3>
+<img src="jokerepertoire.jpg" alt="repertoire"><br>
+Above is a sketch overview diagram of how part of the model look like.
+At the left there is a column of agents, that is, persons that might either
+tell or get to hear a joke. As previously stated, each agent has a repertoire
+of jokes, here represented by a link to a joke. Their is thus a many-to-many
+have relation between an agents and a jokes. Each link between a agent and joke will 
+have an age assigned to it, that keeps track of how long a joke has been in
+the repertoire, which is then used to make the jokes expire and fall out of
+a certain agent's repertoire.
+<h3>Setup and algorithm</h3>
+Our setup has 30 agents with 5 binary attributes, 150 jokes in total
+uniformly distributed over the agents.
+
+At each round 10 agents are randomly selected to tell a joke. Next three steps follow.
+<ul>
+<li>Step 1: Select alter
+<li>Step 2: Choose a suitable joke from repertoire (given an alter)
+<li>Step 3: Update joke repertoire of alter, kill jokes (if they've gotten old)
+</ul>
+<h4>Select alter</h4>
+As previously mentioned we intended not to let the joke tellers necessarily tell their
+jokes to a random person, as we thought that the dynamics would be very different
+given selective behaviour.
+
+Each agent has a vector of binary attributes as seen below and then the similarity
+is then given by the equation below. However we also embedded this similarity
+function inside a McFadden (1974) function that let us have a variable to pick
+with what amount of randomness we want to pick our alter.
+<img src="selectioalter.jpg" alt=""><br>
+With the McFadden beta set to zero we have a network; with equal weights we
+get the graphs below.<br>
+<img src="jokehopfieldnetwork_beta0.jpg" alt=""><br>
+With the McFadden beta set to five, we have a network of the type below.<br>
+<img src="jokehopfieldnetwork_beta5.jpg" alt=""><br>
+<h4>Select joke</h4>
+As the alter has been chosen the joke teller needs to select a joke. A joke
+is selected on its suitability for the alter. There are jokes that are generic
+on certain attributes, which is represented with a -1 in the corresponding row.
+And hence we only control for suitability between non-"-1" rows.
+
+Again we embedded the function in a McFadden-function, as in the equation below.
+Here the beta thereby controls the amount of randomness vs. the use of the
+suitability-function in the choice of which joke to tell.
+<img src="selectionjoke.jpg" alt=""><br>
+
+<h2>Results</h2>
+The most important parameters of the dynamics in our model were how many
+jokes were told in each time period and how long a joke would stay
+in an agent's repertoire (lifespan of joke).
+
+In the graphs, lifespans of 80, 160 and 240 are plotted, with
+jokes where about 50% of the attributes are generic and no attributes
+are generic respectively. On the Y-axis we've got the number of surviving
+jokes, and on the X-axis time.<br>
+<img src="jokesresultsimple05genericjokes.jpg" alt=""><br>
+<img src="jokesresultsimplenogenericjokes.jpg" alt=""><br>
+
+The most interesting result we got while studying the sound parameter space
+of our model is depicted in the graph below. Here again, the Y-axis is the
+number of jokes and the X-axis time. The lower curve is with the McFadden-beta
+associated to the selection of alter set to 0, that is with totally random
+selection of alter. The upper curve is with a relatively high McFadden-beta,
+that is with fairly high level of selectivness.
+
+To explain this variation of behaviour, we hypothesise a circling of a joke
+with in a group of similarly minded people. That is people sharing many
+attributes, which keeps even the less generic jokes alive for longer.<br>
+<img src="resultsselectionofalters.jpg" alt=""><br>
+
+A variation of the McFadden-beta associated with the choice of joke did not
+matter in our tests, depicted below. Again, as beta is zero we have full
+randomness, and as beta is set to 20 we are fairly selective.
+We are however convinced that given large enough repertoires that this
+parameter will start to influence the survival of jokes.<br>
+<img src="jokesresultselectionofjokes.jpg" alt=""><br>
+
+<h2>Extensions</h2>
+<ul>
+<li>Examine the distribution of jokes amongst agents (probably in some groups some mundane jokes get very popular)
+<li>Examine the survival of specific jokes and not only the survival of specific forms of jokes.
+<li>Determine suitability of jokes with threshold function (we use a linear function).
+<li>Jokes should not be told at all when unsuitable (right now the best of all unsuitable jokes is told)
+<li>Bring in "objective" funniness of jokes Investigate the role of the number of attributes (features)
+<li>Ageing (as an updated attribute) as well as death/birth of agents and jokes
+</ul>
+</div>
+<h2>Summing up conclusions</h2>
+<ul>
+<li>The lifespan of jokes matters a lot. Long lifespan gives jokes the
+chance to be retold by others and live on.
+<li>
+Randomness in alter selection (based on agents' attributes) matters.
+No randomness allows jokes to circle through groups of similar agents.
+<li>
+Randomness in joke selection does not matter given the other model
+parameters used (at some point it will have to matter!, e.g. large
+joke repertoires and preference for alters)
+</ul>
+<h2>The model running as an applet</h2>
+You are supposed to see a NetLogo implementation of the model run below, if not, something is quite likely messed up with your Java setup.
+<p>
+<applet code="org.nlogo.lite.Applet"
+archive="NetLogoLite.jar,array\array.jar"
+width="989" height="593">
+<param name="DefaultModel"
+value="jokes.nlogo">
+</applet>
+Download the netlogo-source: <a href="jokes.nlogo">jokes.nlogo</a>.
+</body>

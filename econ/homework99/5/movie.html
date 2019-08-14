@@ -1,0 +1,109 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<META NAME="Generator" CONTENT="Microsoft Word 97">
+<TITLE>A dating/social model of movie demand</TITLE>
+</HEAD>
+<BODY>
+
+<B><P ALIGN="CENTER">Friends and movies: a social model of movie demand</P>
+<P ALIGN="CENTER">(What are you doing on Saturday night?)</P>
+<P ALIGN="CENTER">Jim &amp; Serena</P>
+</B><P ALIGN="JUSTIFY">&nbsp;</P>
+<P ALIGN="JUSTIFY">&nbsp;</P>
+<P ALIGN="JUSTIFY">A great temptation for economists might be to model movie demand by (implicitly) assuming that each agent solves his decision making problem (of whether going to a movie or not) alone. But when thinking introspectively of the reasons why we go to see a movie (and not only), we tend to think of ourselves as in a social network, that determines our flow of information and influences our everyday decisions. That is, we ask our friends’ opinion about movies and we go to see them with friends.</P>
+<P ALIGN="JUSTIFY"> </P>
+<P ALIGN="JUSTIFY">The phenomenon we are trying to explain is why a bad movie can do well at the box office. We find that this can be explained by making one of the main features of the movie only indirectly observable (through the opinion of friends who already saw the movie) and by allowing heterogeneity of tastes among friends.</P>
+<P ALIGN="JUSTIFY">&nbsp;</P>
+<B><P ALIGN="JUSTIFY">The model</P>
+</B><P ALIGN="JUSTIFY">In our model, demand for a movie depends on:</P>
+<P ALIGN="JUSTIFY">&nbsp;</P>
+<OL>
+
+<P ALIGN="JUSTIFY"><LI>Movie characteristics: genre (observable) and quality (observable only when you see the movie). So each movie m<SUB>i</SUB> (i=1,<FONT FACE="Symbol">&#188;</FONT>
+, n) can be identified with the pair (g<SUB>i</SUB>,q<SUB>i</SUB>), where g<SUB>i<FONT FACE="Symbol">&#206;</FONT>
+<FONT FACE="Symbol">&#91;</FONT>
+</SUB>0,1<FONT FACE="Symbol">&#93;</FONT>
+ (i.e., you might think of this interval as ranging from action film = 0, to romantic movie = 1) and q<SUB>i<FONT FACE="Symbol">&#206;</FONT>
+<FONT FACE="Symbol">&#91;</FONT>
+</SUB>0,1<FONT FACE="Symbol">&#93;</FONT>
+ (where 0 means good quality and 1 bad).</LI></P>
+<P ALIGN="JUSTIFY">Notice that the model can be extended to include more than these two dimensions (such as cast, critical review, ads, popularity), as what turns out to matter is just the distinction between observable and non-observable features.</P>
+<P ALIGN="JUSTIFY">&nbsp;</P>
+<P ALIGN="JUSTIFY"><LI>Agents’ characteristics: each agent is characterized first of all by his position in the society, which we model as a grid. His position is thus a pair of coordinates (x,y) and is used to determine who his friends are. Other characteristics are: his (private) type t<FONT FACE="Symbol">&#206;</FONT>
+<FONT FACE="Symbol">&#91;</FONT>
+0,1<FONT FACE="Symbol">&#93;</FONT>
+, to be thought as tastes about the movie genre; his tolerance p<FONT FACE="Symbol">&#206;</FONT>
+<FONT FACE="Symbol">&#91;</FONT>
+0,1<FONT FACE="Symbol">&#93;</FONT>
+ about the movie quality; and his reservation value v<FONT FACE="Symbol">&#206;</FONT>
+<FONT FACE="Symbol">&#91;</FONT>
+-1,0<FONT FACE="Symbol">&#93;</FONT>
+, representing the value of the outside option (that is, of the best alternative to go to see a movie).</LI></P>
+<P ALIGN="JUSTIFY">&nbsp;</P>
+<P ALIGN="JUSTIFY"><LI>Information: it flows through friends who already saw a movie and thus report their opinion about it. We model it as a discrete variable, {G, B, <FONT FACE="Symbol">&#198;</FONT>
+}={good, bad, not seen}, which is a function of type and tolerance. Notice thus that information flow is not &quot;perfect&quot; in the sense that each agent’s type is not observable. So we expect this part of the modeling to be responsible for the possibility of information cascades, leading to successful bad movies.</LI></P>
+<P ALIGN="JUSTIFY">&nbsp;</P>
+<P ALIGN="JUSTIFY"><LI>Friendship: not only do friends affect the decision about the movie by providing the information about it (if they have already seen it) but also as a possible company (if they have not seen it yet). Our assumption is that you do not go to a movie alone. Specifically we assume that the proposer of the movie needs to find a friend to go with, so that we are restricting our attention to groups of size two deciding according to a unanimity rule. Notice that it is straightforward to generalize this to any group size and any voting rule (we might need to assume sincere voting, though).</LI></P></OL>
+
+<P ALIGN="JUSTIFY">&nbsp;</P>
+<B><P ALIGN="JUSTIFY">Timing</P>
+</B><P ALIGN="JUSTIFY">Stage 1:  randomly pick a proposer P from the population.</P>
+<P ALIGN="JUSTIFY">&nbsp;</P><DIR>
+<DIR>
+<DIR>
+
+<P ALIGN="JUSTIFY">Stage 2: &#9;P decides whether to go to a movie or not and, if so, which movie. So for each movie he first polls his friends for an opinion and then computes his utility:</P></DIR>
+</DIR>
+</DIR>
+
+<P ALIGN="CENTER">u(g<SUB>i</SUB>,t,op<SUB>i</SUB>) = - | t-g<SUB>i</SUB> | (1 – hype<SUB>i</SUB>)</P><DIR>
+<DIR>
+<DIR>
+
+<P ALIGN="JUSTIFY">where the hype is defined as the difference between the percentage of friends who liked the movie and those who disliked it:</P></DIR>
+</DIR>
+</DIR>
+
+<P ALIGN="CENTER">hype = (#G - #B)/(#G + #B).</P><DIR>
+<DIR>
+<DIR>
+
+<P ALIGN="JUSTIFY">Let m* denote the movie maximizing u. The proposer then compares his utility from m* to his reservation value v and:</P>
+<P ALIGN="JUSTIFY">a) if v &gt; u(m*), then he stays at home. Back to stage 1.</P>
+<P ALIGN="JUSTIFY">b) if v <FONT FACE="Symbol">&#163;</FONT>
+ u(m*), then he decides to go to see m* and starts looking for a date.</P>
+<P ALIGN="JUSTIFY">&nbsp;</P>
+<P ALIGN="JUSTIFY">Stage 3: &#9;P randomly picks one of his &quot;dates&quot;, that is, friends who have not seen m* yet, and invites her out. Similarly, the date polls her friends and computes her expected utility from viewing m*:</P></DIR>
+</DIR>
+</DIR>
+
+<P ALIGN="CENTER">u(g*,t,op*) = - | t-g* | (1 – hype<SUB>+</SUB>*)</P><DIR>
+<DIR>
+<DIR>
+
+<P ALIGN="JUSTIFY">where the definition of hype for the date is adjusted to take into account P’s invitation:</P></DIR>
+</DIR>
+</DIR>
+
+<P ALIGN="CENTER">hype<SUB>+</SUB> = (#G - #B + 1)/(#G + #B + 1).</P><DIR>
+<DIR>
+<DIR>
+
+<P ALIGN="JUSTIFY">This tries to capture the fact that, when invited out for a movie, you tend to be accomodating about your friend’s proposal and may end up not seeing your first choice. The date then compares her u(m*) and v and:</P>
+<P ALIGN="JUSTIFY">a) if v &gt; u(m*), then she dumps P. Back to the beginning of stage 3 again (unless there are no more dates available, in which case P stays home: back to stage 1).</P>
+<P ALIGN="JUSTIFY">b) if v <FONT FACE="Symbol">&#163;</FONT>
+ u(m*), then she and P go to see m* and:</P>
+<P ALIGN="JUSTIFY">&nbsp;</P>
+<P ALIGN="JUSTIFY">Stage 4:&#9;P and his date update their opinions about movie m* from <FONT FACE="Symbol">&#198;</FONT>
+ to either G or B. Their opinion is now based on the quality of the movie q, their own type t and their tolerance p to the movie’s (lack of) quality. We introduced tolerance to capture the opinion bias in favor to your own favorite genre. That is, if you really like Schwarzenegger, you might be more likely to say you liked a bad action movie than a better romantic movie. More formally:</P>
+<P ALIGN="JUSTIFY">i) if | t – m* | &gt; | v |, then set opinion = B;</P>
+<P ALIGN="JUSTIFY">ii) else, whenever q <FONT FACE="Symbol">&#163;</FONT>
+  p [1 - | t – m* | / | v | ] set opinion = G;</P>
+<P ALIGN="JUSTIFY">    otherwise set it = B.</P>
+<P ALIGN="JUSTIFY">Back to stage 1 (till there are no possible porposers anymore).</P>
+<P ALIGN="JUSTIFY">&nbsp;</P></DIR>
+</DIR>
+</DIR>
+</BODY>
+</HTML>

@@ -1,0 +1,297 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<link rel="File-List" href="index_files/filelist.xml">
+<title>Going Up? Elevator Assignment For The 2008 Santa Fe Institute CSS 
+Workshop</title>
+<style>
+<!--
+ p.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Helvetica","sans-serif";
+	color:black;
+	margin-left:0in; margin-right:0in; margin-top:0in}
+-->
+</style>
+<!--[if !mso]>
+<style>
+v\:*         { behavior: url(#default#VML) }
+o\:*         { behavior: url(#default#VML) }
+.shape       { behavior: url(#default#VML) }
+</style>
+<![endif]--><!--[if gte mso 9]>
+<xml><o:shapedefaults v:ext="edit" spidmax="1027"/>
+</xml><![endif]-->
+</head>
+
+<body>
+
+<p class="MsoNormal" align="center" style="text-align: center; margin-bottom: 6.0pt">
+<span style="font-size: 26.0pt; font-family: Arial">Going Up?</span></p>
+<p class="MsoNormal" align="center" style="margin-bottom:6.0pt;text-align:center;
+line-height:19.0pt"><span style="font-size: 14.0pt; font-family: Arial">Nadav 
+Aharony &amp; Peter McMahan</span></p>
+<p class="MsoNormal" style="margin-bottom:6.0pt;line-height:19.0pt">
+<span style="font-size: 14.0pt; font-family: Arial">Introduction </span></p>
+<p class="MsoNormal" style="margin-bottom:6.0pt;text-indent:.25in;line-height:
+19.0pt"><span style="font-size: 11.0pt; font-family: Arial">In deciding how to 
+model elevator behavior, we chose to concentrate on the question of queue 
+formation in a generic centralized transport system. Rather than tracking 
+individuals throughout their stay in the building, we chose to focus on the 
+central issues of demand (arrival of passengers) and supply (elevator speed, 
+location, and capacity) in the system. For this reason, we believe our model is 
+easily extensible not only to other centralized transport systems like trains 
+and busses, but also to systems as diverse as fashion and politics.</span></p>
+<p class="MsoNormal" style="margin-bottom:6.0pt;text-indent:.25in;line-height:
+19.0pt"><span style="font-size: 11.0pt; font-family: Arial">Additionally, we 
+used this question as an opportunity to experiment with collaborating using 
+different programming languages. The underlying logic of the model is written in 
+python, while the stochastic, graphical and statistical elements are written in 
+R, in an attempt to utilize the strong features each platform offers.</span></p>
+<p class="MsoNormal" style="margin-bottom:6.0pt;text-indent:.25in;line-height:
+19.0pt">&nbsp;</p>
+<p class="MsoNormal" style="margin-bottom:6.0pt;line-height:19.0pt">
+<span style="font-size: 14.0pt; font-family: Arial">Assumptions </span></p>
+<p class="MsoNormal" style="margin-bottom:6.0pt;text-indent:.25in;line-height:
+19.0pt"><span style="font-size: 11.0pt; font-family: Arial">Following are 
+assumptions related to the current version of the model:</span></p>
+<p class="MsoNormal" style="text-indent: 9.0pt; line-height: 19.0pt; margin-left: 9.0pt; margin-right: 0in; margin-top: 0in; margin-bottom: 2.0pt">
+<span style="font-size: 11.0pt; font-family: Georgia,serif; position: relative; top: 1.0pt">
+<font face="Arial">•</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Arial">&nbsp;&nbsp;
+</span></span><span style="font-size: 11.0pt; font-family: Arial">There is no 
+fee to use the elevator</span></p>
+<p class="MsoNormal" style="text-indent: 9.0pt; line-height: 19.0pt; margin-left: 9.0pt; margin-right: 0in; margin-top: 0in; margin-bottom: 2.0pt">
+<span style="font-size: 11.0pt; font-family: Georgia,serif; position: relative; top: 1.0pt">
+<font face="Arial">•</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Arial">&nbsp;&nbsp;
+</span></span><span style="font-size: 11.0pt; font-family: Arial">Floors are&nbsp; 
+arranged in linear array (although they can go below ground)</span></p>
+<p class="MsoNormal" style="text-indent: 9.0pt; line-height: 19.0pt; margin-left: 9.0pt; margin-right: 0in; margin-top: 0in; margin-bottom: 2.0pt">
+<span style="font-size: 11.0pt; font-family: Georgia,serif; position: relative; top: 1.0pt">
+<font face="Arial">•</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Arial">&nbsp;&nbsp;
+</span></span><span style="font-size: 11.0pt; font-family: Arial">People press 
+elevator call button as soon as they arrive on a floor</span></p>
+<p class="MsoNormal" style="text-indent: 9.0pt; line-height: 19.0pt; margin-left: 9.0pt; margin-right: 0in; margin-top: 0in; margin-bottom: 2.0pt">
+<span style="font-size: 11.0pt; font-family: Georgia,serif; position: relative; top: 1.0pt">
+<font face="Arial">•</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Arial">&nbsp;&nbsp;
+</span></span><span style="font-size: 11.0pt; font-family: Arial">Each floor has 
+up/down buttons that signal the desired direction.</span></p>
+<p class="MsoNormal" style="text-indent: 9.0pt; line-height: 19.0pt; margin-left: 9.0pt; margin-right: 0in; margin-top: 0in; margin-bottom: 2.0pt">
+<span style="font-size: 11.0pt; font-family: Georgia,serif; position: relative; top: 1.0pt">
+<font face="Arial">•</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Arial">&nbsp;&nbsp;
+</span></span><span style="font-size: 11.0pt; font-family: Arial">All floors but 
+a single ‘lobby’ are homogenous </span></p>
+<p class="MsoNormal" style="text-indent: 9.0pt; line-height: 19.0pt; margin-left: 9.0pt; margin-right: 0in; margin-top: 0in; margin-bottom: 2.0pt">
+<span style="font-size: 11.0pt; font-family: Georgia,serif; position: relative; top: 1.0pt">
+<font face="Arial">•</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Arial">&nbsp;&nbsp;
+</span></span><span style="font-size: 11.0pt; font-family: Arial">There is only 
+one elevator (or multiple non-communicating elevators)</span></p>
+<p class="MsoNormal" style="text-indent: 9.0pt; line-height: 19.0pt; margin-left: 9.0pt; margin-right: 0in; margin-top: 0in; margin-bottom: 2.0pt">
+<span style="font-size: 11.0pt; font-family: Georgia,serif; position: relative; top: 1.0pt">
+<font face="Arial">•</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Arial">&nbsp;&nbsp;
+</span></span><span style="font-size: 11.0pt; font-family: Arial">Elevators go 
+to all floors</span></p>
+<p class="MsoNormal" style="text-indent: 9.0pt; line-height: 19.0pt; margin-left: 9.0pt; margin-right: 0in; margin-top: 0in; margin-bottom: 2.0pt">
+<span style="font-size: 11.0pt; font-family: Georgia,serif; position: relative; top: 1.0pt">
+<font face="Arial">•</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Arial">&nbsp;&nbsp;
+</span></span><span style="font-size: 11.0pt; font-family: Arial">Elevators do 
+not fail</span></p>
+<p class="MsoNormal" style="text-indent: 9.0pt; line-height: 19.0pt; margin-left: 9.0pt; margin-right: 0in; margin-top: 0in; margin-bottom: 2.0pt">
+<span style="font-size: 11.0pt; font-family: Georgia,serif; position: relative; top: 1.0pt">
+<font face="Arial">•</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Arial">&nbsp;&nbsp;
+</span></span><span style="font-size: 11.0pt; font-family: Arial">People are 
+points — capacity limits are enforced by count only</span></p>
+<p class="MsoNormal" style="text-indent: -9.0pt; line-height: 19.0pt; margin-left: 27.0pt; margin-right: 0in; margin-top: 0in; margin-bottom: 2.0pt">
+<span style="font-size: 11.0pt; font-family: Georgia,serif; position: relative; top: 1.0pt">
+<font face="Arial">•</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Arial">&nbsp;&nbsp;
+</span></span><span style="font-size: 11.0pt; font-family: Arial">People 
+board/exit in an orderly manner (FIFO) &nbsp;In addition, people on the elevator get 
+a chance to exit first, before newcomers enter.<br>
+(Note: this assumption would not hold in New York city)</span></p>
+<p class="MsoNormal" style="text-indent: 9.0pt; line-height: 19.0pt; margin-left: 9.0pt; margin-right: 0in; margin-top: 0in; margin-bottom: 2.0pt">
+<span style="font-size: 11.0pt; font-family: Georgia,serif; position: relative; top: 1.0pt">
+<font face="Arial">•</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Arial">&nbsp;&nbsp;
+</span></span><span style="font-size: 11.0pt; font-family: Arial">
+Entering/exiting the elevator takes time (1 tick)</span></p>
+<p class="MsoNormal" style="text-indent: 9.0pt; line-height: 19.0pt; margin-left: 9.0pt; margin-right: 0in; margin-top: 0in; margin-bottom: 2.0pt">
+<span style="font-size: 11.0pt; font-family: Georgia,serif; position: relative; top: 1.0pt">
+<font face="Arial">•</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Arial">&nbsp;&nbsp;
+</span></span><span style="font-size: 11.0pt; font-family: Arial">Elevator has 
+speed (currently 1 tick/floor)</span></p>
+<p class="MsoNormal" style="text-indent: 9.0pt; line-height: 19.0pt; margin-left: 9.0pt; margin-right: 0in; margin-top: 0in; margin-bottom: 2.0pt">
+<span style="font-size: 11.0pt; font-family: Georgia,serif; position: relative; top: 1.0pt">
+<font face="Arial">•</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Arial">&nbsp;&nbsp;
+</span></span><span style="font-size: 11.0pt; font-family: Arial">Passengers can 
+arrive as parties of size greater than one, all travelling to the same floor.</span></p>
+<p class="MsoNormal" style="text-indent: 9.0pt; line-height: 19.0pt; margin-left: 9.0pt; margin-right: 0in; margin-top: 0in; margin-bottom: 2.0pt">&nbsp;</p>
+<p class="MsoNormal" style="margin-bottom:6.0pt;line-height:19.0pt;page-break-after:
+avoid"><span style="font-size: 14.0pt; font-family: Arial">Model </span></p>
+<p class="MsoNormal" style="margin-bottom:6.0pt;text-indent:.25in;line-height:
+19.0pt"><span style="font-size: 11.0pt; font-family: Arial">Our program is 
+completely object-oriented, with elevator requests (passengers), the elevator, 
+the floors and the building itself each implemented as an independent model 
+agent. We treat the number of arriving passengers as a floor-by-floor random 
+draw from a Poisson distribution, and choose destination floors by weighted 
+sampling using floor-specific probabilities. This implementation allows us to 
+dynamically model different traffic patterns (morning rush, quiet period, 
+evacuation etc) without needing to keep track of individual passengers as they 
+spend time in the building. In most of our simulations so far we model the lobby 
+floor with significantly higher probability to generate new passengers as well 
+as to be the destination of passengers from the other floors. The elevator agent 
+is built in a way that allows different types of behavior to be implemented and 
+tested. Each behavior algorithm could be exposed to different parameters from 
+the system’s state. </span></p>
+<p class="MsoNormal" style="margin-bottom:6.0pt;text-indent:.25in;line-height:
+19.0pt"><span style="font-size: 11.0pt; font-family: Arial">The following 
+illustration depicts the parts of our model:</span></p>
+<p class="MsoNormal" style="margin-bottom:6.0pt;text-indent:.25in;line-height:
+19.0pt"><span style="font-size: 11.0pt; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="Object_x0020_3" o:spid="_x0000_s1025" type="#_x0000_t75"
+ style='width:432.75pt;height:271.5pt;visibility:visible' o:gfxdata="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&#13;&#10;AAA=&#13;&#10;">
+ <v:imagedata src="index_files/image001.png" o:title="" cropbottom="-182f"/>
+ <o:lock v:ext="edit" aspectratio="f"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=577 height=362
+src="index_files/image002.gif" v:shapes="Object_x0020_3"><![endif]></span></p>
+<p class="MsoNormal" style="margin-bottom:6.0pt;text-indent:.25in;line-height:
+19.0pt"><span style="font-size: 11.0pt; font-family: Arial">&nbsp;</span></p>
+<p class="MsoNormal" style="margin-bottom:6.0pt;text-indent:.25in;line-height:
+19.0pt"><span style="font-size: 11.0pt; font-family: Arial">&nbsp;The initial 
+algorithm is quite simple, mimicking the behavior of a typical elevator. The 
+state of the elevator is described by:</span></p>
+<p class="MsoNormal" style="text-indent: 9.0pt; line-height: 19.0pt; margin-left: 9.0pt; margin-right: 0in; margin-top: 0in; margin-bottom: 2.0pt">
+<span style="font-size: 11.0pt; font-family: Georgia,serif; position: relative; top: 1.0pt">
+<font face="Arial">•</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Arial">&nbsp;&nbsp;
+</span></span><span style="font-size: 11.0pt; font-family: Arial">Trajectory 
+(up/down/idle)</span></p>
+<p class="MsoNormal" style="text-indent: 9.0pt; line-height: 19.0pt; margin-left: 9.0pt; margin-right: 0in; margin-top: 0in; margin-bottom: 2.0pt">
+<span style="font-size: 11.0pt; font-family: Georgia,serif; position: relative; top: 1.0pt">
+<font face="Arial">•</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Arial">&nbsp;&nbsp;
+</span></span><span style="font-size: 11.0pt; font-family: Arial">People inside 
+(reqs)</span></p>
+<p class="MsoNormal" style="text-indent: 9.0pt; line-height: 19.0pt; margin-left: 9.0pt; margin-right: 0in; margin-top: 0in; margin-bottom: 2.0pt">
+<span style="font-size: 11.0pt; font-family: Georgia,serif; position: relative; top: 1.0pt">
+<font face="Arial">•</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Arial">&nbsp;&nbsp;
+</span></span><span style="font-size: 11.0pt; font-family: Arial">Floor calls 
+(up/down), boolean</span></p>
+<p class="MsoNormal" style="text-indent: 9.0pt; line-height: 19.0pt; margin-left: 9.0pt; margin-right: 0in; margin-top: 0in; margin-bottom: 2.0pt">
+<span style="font-size: 11.0pt; font-family: Georgia,serif; position: relative; top: 1.0pt">
+<font face="Arial">•</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Arial">&nbsp;&nbsp;
+</span></span><span style="font-size: 11.0pt; font-family: Arial">Door 
+open/closed</span></p>
+<p class="MsoNormal" style="text-indent: 9.0pt; line-height: 19.0pt; margin-left: 9.0pt; margin-right: 0in; margin-top: 0in; margin-bottom: 2.0pt">
+<span style="font-size: 11.0pt; font-family: Georgia,serif; position: relative; top: 1.0pt">
+<font face="Arial">•</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Arial">&nbsp;&nbsp;
+</span></span><span style="font-size: 11.0pt; font-family: Arial">In transition? 
+, boolean</span></p>
+<p class="MsoNormal" style="margin-bottom:6.0pt;text-indent:.25in;line-height:
+19.0pt"><span style="font-size: 11.0pt; font-family: Arial">If the elevator is 
+idle, a trajectory is picked in the direction of the majority of calls. If the 
+elevator has a trajectory (not idle), then it will stop to drop off passengers 
+or to pick up passengers that match the current trajectory. If there are no 
+requests, it will enter an idle state and remain at the floor on which it 
+dropped off its last passenger. In this model, the elevator is aware of button 
+presses on each floor and the button directions (up/down). For passengers that 
+boarded, it knows their destination floor.</span></p>
+<p class="MsoNormal" style="margin-bottom:6.0pt;text-indent:.25in;line-height:
+19.0pt"><span style="font-size: 11.0pt; font-family: Arial">The following 
+animation shows an example of the simulation in progress:</span></p>
+<p class="MsoNormal" style="margin-bottom:6.0pt;text-indent:.25in;line-height:
+19.0pt"><span style="font-size: 11.0pt; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><img border="0" src="index_files/elevator.gif" width="480" height="480"></p>
+<p class="MsoNormal" style="margin-bottom:6.0pt;text-indent:.25in;line-height:
+19.0pt"><span style="font-size: 11.0pt; font-family: Arial">&nbsp;</span></p>
+<p class="MsoNormal" style="margin-bottom:6.0pt;line-height:19.0pt;page-break-after:
+avoid"><span style="font-size: 14.0pt; font-family: Arial">Future Extensions
+</span></p>
+<p class="MsoNormal" style="margin-bottom:6.0pt;text-indent:.25in;line-height:
+19.0pt"><span style="font-size: 11.0pt; font-family: Arial">There are a number 
+of interesting extensions to this model that could be implemented in the future. 
+Most of these enhancements should be relatively easy to realize in our 
+object-oriented architecture. First, the elevator algorithm described above 
+could be modified or replaced. Elevators that skip floors when crowded, 
+prioritize certain passengers, or even learn and anticipate agent behavior could 
+be added. Similarly, the passengers could be given some adaptability through the 
+addition of a ‘take the stairs’ option with dynamic moods and strategies based 
+on current queue. More involved extensions could be undertaken as well, 
+including multiple lobbies (simulating other floors that have high passenger 
+traffic), multiple coordinated elevators, or even moving the elevator itself off 
+of it's linear track and onto a grid or network: Since each floor is an 
+independent object, we could modify the linear linkage of the floors to a more 
+elaborate network, allowing testing new and interesting transportation 
+scenarios.</span></p>
+<p class="MsoNormal" style="margin-bottom:6.0pt;text-indent:.25in;line-height:
+19.0pt"><span style="font-size: 11.0pt; font-family: Arial">&nbsp;</span></p>
+<p class="MsoNormal" style="margin-bottom:6.0pt;line-height:19.0pt;page-break-after:
+avoid"><span style="font-size: 14.0pt; font-family: Arial">Discussion </span>
+</p>
+<p class="MsoNormal" style="margin-bottom:6.0pt;text-indent:.25in;line-height:
+19.0pt"><span style="font-size: 11.0pt; font-family: Arial">Overall, we found 
+that the elevator metaphor contains some interesting features that make it 
+potentially more broadly applicable. In particular, partially revealed 
+information plays a key role — passengers communicate only part of their request 
+(direction) to the elevator while waiting in the queue. An elevator with access 
+to additional information, such as sensors that count the number of waiting 
+passengers on each floor, could cause &nbsp;a much different behavior to emerge. 
+Furthermore, the initial state and full information of those passengers is very 
+easily extensible to more complex and dynamic scenarios. These features, 
+combined with the customizable algorithm of the elevator itself, lend themselves 
+to some intriguing applications. </span></p>
+<p class="MsoNormal" style="margin-bottom:6.0pt;text-indent:.25in;line-height:
+19.0pt"><span style="font-size: 11.0pt; font-family: Arial">The natural 
+extension is to more elaborate simulations of transportation scenarios, from 
+regular busses and trains to new types of public transportation like on-demand 
+busses and distributedly managed, agent-based traffic systems.</span></p>
+<p class="MsoNormal" style="margin-bottom:6.0pt;text-indent:.25in;line-height:
+19.0pt"><span style="font-size: 11.0pt; font-family: Arial">However there are 
+much more interesting social scenarios that could be cast upon this model.For 
+instance, recasting the elevator as a political office and passengers as 
+candidates could utilize the metaphors of location and partially-revealed 
+request in an electoral setting.&nbsp; Participants &nbsp;or candidates who are outside of 
+the political system have a limited effect, as well as expose limited 
+information about themselves. Once entering office, they gain abilities to 
+control the trajectory of the system, but their opinions and actions are much 
+more exposed to the public. In the political world, the elevator and its 
+trajectory could be used to model the shift between the left and the right wing, 
+and we could model the effect of newcomers and their placement on the political 
+scale in comparison to the current trajectory of the system.</span></p>
+<p class="MsoNormal" style="margin-bottom:6.0pt;text-indent:.25in;line-height:
+19.0pt"><span style="font-size: 11.0pt; font-family: Arial">Another example 
+might be modeling of directors in corporate firms, who are in a similar 
+position. Passengers on board the elevator also have the power to decide whether 
+to exit it or stay inside, thus preventing newcomers to enter.</span></p>
+<p class="MsoNormal" style="margin-bottom:6.0pt;text-indent:.25in;line-height:
+19.0pt"><span style="font-size: 11.0pt; font-family: Arial">Alternately, fashion 
+and trends could be approached thought the trajectory attribute of the elevator, 
+with individuals acting differently if they are ‘riding’ the trend or not. This 
+sort of scenario could be used to model products and business trajectories.
+</span></p>
+<p class="MsoNormal" style="margin-bottom:6.0pt;text-indent:.25in;line-height:
+19.0pt"><span style="font-size: 11.0pt; font-family: Arial">As can be seen, the 
+elevator model, despite its seeming simplicity and mundaneness, may be well 
+suited to capture novel aspects of various social and political dynamics.</span></p>
+
+</body>
+
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teams with heterogeneous skills and preferences</title>
+<link rel="stylesheet" href="https://stackedit.io/res-min/themes/base.css" />
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body><div class="container"><h1 id="teams-with-heterogeneous-skills-and-preferences">Teams with heterogeneous skills and preferences</h1>
+
+
+
+<h4 id="maxim-kuklin-and-toban-wiebe">Maxim Kuklin and Toban Wiebe</h4>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>People work in teams because it increases their productivity. Presumably, they are more productive not only because of sheer scale, but because of complementarities in their skills which allow them to specialize and divide up their work. On the other hand, teams are often beset by conflicts which hamper their productivity. We present a simple agent-based model to study how people sort themselves into teams based on both complementarity and compatibility under incomplete information.</p>
+
+<p>We consider the case in which agents have differing risk preferences, reflecting different risk-reward tradeoffs. Agents are randomly assigned to teams in each period, but they may blacklist other agents with whom they do not wish to work, either due to incompatibility of risk preferences or to non-complementarity of skills. Agents have a reputation score which can rise or fall depending on the quality of the team output.</p>
+
+
+
+<h2 id="model">Model</h2>
+
+<p>A population of <script id="MathJax-Element-7046" type="math/tex">N</script> agents are randomly assigned to teams for joint production. You can think of this as a model of academics coauthoring papers or a large firm assigning workers to small teams. There are <script id="MathJax-Element-7047" type="math/tex">K</script> relevant skills, and each agent’s skills are represented by a binary vector <script id="MathJax-Element-7048" type="math/tex">s^i \in \{ 0,1 \}^K</script>. There are two risk types risk represented by the binary variable <script id="MathJax-Element-7049" type="math/tex">\rho_i \in \{0,1\}</script>. The probability of being the risk averse type is <script id="MathJax-Element-7050" type="math/tex">q</script>. Reputation evolves according to quality of outputs and is denoted by <script id="MathJax-Element-7051" type="math/tex">r_i</script>.</p>
+
+<p>This game is played repeatedly, with agents being randomly assigned to teams of various sizes and then blacklisting teammates based on project risk <script id="MathJax-Element-7052" type="math/tex">R</script>  and output quality <script id="MathJax-Element-7053" type="math/tex">Q</script>. Agents are born at age <script id="MathJax-Element-7054" type="math/tex">a_i = 0</script> and age increases by <script id="MathJax-Element-7055" type="math/tex">1</script> each period. Reputation starts at <script id="MathJax-Element-7056" type="math/tex">r_i=0</script> and skills are drawn independently with probability <script id="MathJax-Element-7057" type="math/tex">p</script>. Death occurs with age dependent probability <script id="MathJax-Element-7058" type="math/tex">(a_i / M)^\theta</script>, where <script id="MathJax-Element-7059" type="math/tex">M</script> is some maximum lifespan imposed by the model and <script id="MathJax-Element-7060" type="math/tex">\theta \gt 1</script>. The dead are immediately replaced by a new agent, so that <script id="MathJax-Element-7061" type="math/tex">N</script> remains constant.</p>
+
+<p>Reputation evolves as the average of an agent’s lifetime share of output. Output (quality) is random and depends on the team’s skill set and the joint level of risk, which is aggregated over each skill domain as follows: if an agent possesses a skill, they have a say in the risk level in that domain, and their relative reputation is the weight that gets placed on their preferred risk in that skill domain. Then the risk levels in each skill domain are averaged to arrive at an overall risk for the team project.  For a team <script id="MathJax-Element-7062" type="math/tex">X</script>, if <script id="MathJax-Element-7063" type="math/tex">\rho^j_X</script> is the team risk in skill domain <script id="MathJax-Element-7064" type="math/tex">j</script>, then the overall team risk level is <br>
+<script id="MathJax-Element-7065" type="math/tex; mode=display"> R(X) = \frac{1}{K} \sum_{j=1}^K \rho^j_X .</script> <br>
+Note that if the team lacks the skill, then that domain is excluded from the risk averaging.</p>
+
+<p>A team’s skill set is simply the proportion of skills that at least one of its members possesses. <br>
+<script id="MathJax-Element-7066" type="math/tex; mode=display">S(X) = \frac{1}{K} \sum_{j=1}^K \mathbb I\{ \exists i\in X : s^i_k = 1 \} .</script> <br>
+Team productivity is defined as <script id="MathJax-Element-7067" type="math/tex">S(X)^\gamma</script> for some <script id="MathJax-Element-7068" type="math/tex">\gamma \ge 1</script>. Convexity in the production function makes team formation more valuable (greater skill coverage) relative to team size. As the team payoff will be divided among members evenly, this makes productivity increase in team size for small team sizes. However, once teams reach full skill coverage, each additional member is just diluting the payoff, and so productivity declines beyond some optimal average team size.</p>
+
+<p>Finally, for some parameters <script id="MathJax-Element-7069" type="math/tex">\alpha</script> and <script id="MathJax-Element-7070" type="math/tex">\beta</script>, project quality is drawn randomly and reflects the risk-reward tradeoff: <br>
+<script id="MathJax-Element-7071" type="math/tex; mode=display"> Q(X) \sim \mathcal N \left(\alpha S(X)^\gamma + \beta R(X), \; R(X)\right).</script> <br>
+Agents then divide up the product and average their share into their reputation score, the same way that a student would average in a new course grade into their grade point average (we use the prime notation in the usual way, to refer to a next-period variable): <br>
+<script id="MathJax-Element-7072" type="math/tex; mode=display"> r_i' = r_i \frac{a_i}{a_i'} + \frac{Q(X)}{|X|}\frac{1}{a_i'} .</script></p>
+
+
+
+<h3 id="example">Example</h3>
+
+<p>Suppose there are <script id="MathJax-Element-7073" type="math/tex">K=4</script> skills and agents <script id="MathJax-Element-7074" type="math/tex">x,y,z</script> form a team. This table shows how the productivity and risk level are computed from individual skills, risk types, and reputations.</p>
+
+<table>
+<thead>
+<tr>
+  <th align="left"><script id="MathJax-Element-7075" type="math/tex">\\</script></th>
+  <th align="center"><script id="MathJax-Element-7076" type="math/tex">x</script></th>
+  <th align="center"><script id="MathJax-Element-7077" type="math/tex">y</script></th>
+  <th align="center"><script id="MathJax-Element-7078" type="math/tex">z</script></th>
+  <th align="center"><script id="MathJax-Element-7079" type="math/tex">S</script></th>
+  <th align="center"><script id="MathJax-Element-7080" type="math/tex">R</script></th>
+</tr>
+</thead>
+<tbody><tr>
+  <td align="left"><script id="MathJax-Element-7081" type="math/tex">s_1</script></td>
+  <td align="center">1</td>
+  <td align="center">0</td>
+  <td align="center">1</td>
+  <td align="center">1</td>
+  <td align="center">0</td>
+</tr>
+<tr>
+  <td align="left"><script id="MathJax-Element-7082" type="math/tex">s_2</script></td>
+  <td align="center">0</td>
+  <td align="center">1</td>
+  <td align="center">1</td>
+  <td align="center">1</td>
+  <td align="center">1/2</td>
+</tr>
+<tr>
+  <td align="left"><script id="MathJax-Element-7083" type="math/tex">s_3</script></td>
+  <td align="center">0</td>
+  <td align="center">0</td>
+  <td align="center">0</td>
+  <td align="center">0</td>
+  <td align="center">0</td>
+</tr>
+<tr>
+  <td align="left"><script id="MathJax-Element-7084" type="math/tex">s_4</script></td>
+  <td align="center">1</td>
+  <td align="center">1</td>
+  <td align="center">0</td>
+  <td align="center">1</td>
+  <td align="center">1/3</td>
+</tr>
+<tr>
+  <td align="left"><script id="MathJax-Element-7085" type="math/tex">\rho</script></td>
+  <td align="center">0</td>
+  <td align="center">1</td>
+  <td align="center">0</td>
+  <td align="center">3/4</td>
+  <td align="center">5/18</td>
+</tr>
+<tr>
+  <td align="left"><script id="MathJax-Element-7086" type="math/tex">r</script></td>
+  <td align="center">1/2</td>
+  <td align="center">1/4</td>
+  <td align="center">1/4</td>
+  <td align="center"><script id="MathJax-Element-7087" type="math/tex">\\</script></td>
+  <td align="center"><script id="MathJax-Element-7088" type="math/tex">\\</script></td>
+</tr>
+</tbody></table>
+
+
+<p>Here, the team risk aggregates to <script id="MathJax-Element-7089" type="math/tex">R(X) = 5/18</script> and productivity is <script id="MathJax-Element-7090" type="math/tex">S(X) = 3/4</script>.</p>
+
+
+
+<h3 id="agent-behavior">Agent behavior</h3>
+
+<p>We conceive of agents as not observing the attributes of others. They only observe their team’s project risk <script id="MathJax-Element-7091" type="math/tex">R(X)</script> and resultant (random) quality <script id="MathJax-Element-7092" type="math/tex">Q(X)</script>. Agents will blacklist teammates based on two behavioral rules:</p>
+
+<ol>
+<li>Risk preference compatibility: blacklist teammates if <script id="MathJax-Element-7093" type="math/tex; mode=display"> | \rho_i - R(X) | > c_1</script></li>
+<li>Quality per member: blacklist teammates if <script id="MathJax-Element-7094" type="math/tex; mode=display"> Q(X)/|X| < c_2 \cdot r_i, \quad c_2 \le 1</script></li>
+</ol>
+
+<p>Each agent uses both rules and blacklists if either one is satisfied. The first rule says that an agent will blacklist teammates if the team risk is too far away from his own preferred risk. In the example above, agent <script id="MathJax-Element-7095" type="math/tex">y</script> will blacklist if <script id="MathJax-Element-7096" type="math/tex">c_1 < 13/18</script>, because <script id="MathJax-Element-7097" type="math/tex">|\rho_y - R(X)| = |1-5/18| = 13/18</script> (the team is too conservative). The second rule says to blacklist if the marginal reputation from the team project is less than some proportion <script id="MathJax-Element-7098" type="math/tex">c_2</script> of your current reputation. This could happen because of team skill gaps or because of risk.</p>
+
+<p>This means that the most stable teams are the ones that have complementary skills but take very low risk: they are then very unlikely to get a bad draw of project quality. On the other hand, a team with good skill coverage that takes high risks is bound to eventually draw a low project quality that will result in blacklisting. Depending on death rates, this effect may or may not come into play.</p>
+
+
+
+<h2 id="simulation">Simulation</h2>
+
+<p>We simulated the agent-based model in NetLogo. Due to the large number of model parameters, we have so far only completed an exploratory analysis of the model.</p>
+
+<p>The baseline simulation uses</p>
+
+<ul>
+<li>Number of agents: <script id="MathJax-Element-7822" type="math/tex">N = 100</script></li>
+<li>Probability of each skill: <script id="MathJax-Element-7823" type="math/tex">p = 0.3</script></li>
+<li>Number of skills: <script id="MathJax-Element-7824" type="math/tex">K = 10</script></li>
+<li>Probability of risk-aversion: <script id="MathJax-Element-7825" type="math/tex">q = 0.5</script></li>
+<li>Convexity of production function: <script id="MathJax-Element-7826" type="math/tex">\gamma = 2</script></li>
+<li>Retirement age: <script id="MathJax-Element-7827" type="math/tex">M = 50</script></li>
+<li>Convexity of death rate: <script id="MathJax-Element-7828" type="math/tex">\theta = 2</script></li>
+<li>Blacklisting thresholds: <script id="MathJax-Element-7829" type="math/tex">c_1 = 0.5,\; c_2 = 1</script></li>
+</ul>
+
+<p>Random matching works as follows: a team size between 1 and 4 is drawn randomly (uniform) and then agents are selected at random to fill in the team, respecting each agent’s blacklist. If the team can not be fully filled due to there being no acceptable agents in the population, the team is left at its current size and the algorithm repeats, drawing the next team, until the pool of agents is exhausted.</p>
+
+<h3 id="who-does-best">Who does best?</h3>
+
+<p>One interesting result of the model is that, while reputation is higher on average for those with more skills, due to the randomness of the model, the agents with the highest reputation have an intermediate amount of skills. This result holds across all of the parametrizations we explored.</p>
+
+<p>This is mainly due to the fact that the number of skills possessed is distributed binomially in the population, so that there are far more agents with intermediate amounts of skill. Another factor whose importance is yet to be explored, is that agents with many skills will have more influence on team risk (because they get a say in the risk level of each skill domain.) This creates a “my way or the highway” effect — agents with the opposite risk preference will find that being on a team with a high-skilled individual results in unfavorable project risk. So high-skilled individuals will tend to be blacklisted by those of the opposite risk preference.</p>
+
+<h4>Baseline</h4>
+<p><img src="baseline.png" alt="Fig 1. Baseline model" title="Baseline model"> <br>
+The scatterplot above (baseline model) shows how reputation is distributed among various skill levels.</p>
+
+<h4>Short careers</h4>
+<p><img src="short-lives.png" alt="Fig 2. Short careers: M = 25" title="Short careers"> <br>
+With shorter careers (<script id="MathJax-Element-7458" type="math/tex">M=25</script>), agents have less time to sort themselves into compatible and complementary teams, and so reputations are lower across the board.</p>
+
+<h4>Penalizing skill gaps</h4>
+<p><img src="skill-penalty.png" alt="Fig 3. Large penalty on skill gaps: $\gamma = 4$" title="Large skill gap penalty"> <br>
+With a larger skill gap penalty (<script id="MathJax-Element-7459" type="math/tex">\gamma = 4</script>), reputations are lower across the board, but the relative distribution of reputation does not change much.</p>
+
+<h4>More risk aversion</h4>
+<p><img src="risk-averse.png" alt="Fig 4. More risk aversion" title="More risk aversion"> <br>
+With a greater proportion of risk averse agents (<script id="MathJax-Element-7460" type="math/tex">q = 0.7</script>), reputations are lower across the board. This is counter-intuitive, as more like-minded agents should find it easier to cooperate.</p>
+
+<h4>Higher skill levels</h4>
+<p><img src="high-skill.png" alt="Fig 5. High-skill agents" title="High-skill agents"> <br>
+With a greater chance of having any given skill (<script id="MathJax-Element-7461" type="math/tex">p = 0.5</script>), reputations improve across the board.</p>
+
+<h3>Conclusion</h3>
+
+<p>More exploration of the parameter space is necessary to understand the model. Then further work can focus on adding richness to the model, as it is deliberately quite simple here.</p>
+
+<blockquote>
+  <p>Written with <a href="https://stackedit.io/">StackEdit</a>.</p>
+</blockquote></div></body>
+</html>

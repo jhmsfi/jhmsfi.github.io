@@ -1,0 +1,58 @@
+
+Is This Seat Taken?
+by
+Nienke Oomes, Dawn Parker, Bill Walsh, and Jim Warnick
+
+Introduction
+The doors have just been opened to an auditorium, and students, anticipating yet another brilliant economics lecture, begin to file in and take seats. In this paper we consider whether it is possible for global seating patterns to emerge from locally optimizing behavior.
+ 
+The Model 
+We consider a square sized auditorium with 11x11 = 121 seats. The class consists of fifty economics students, who are coming in one at a time. Each student decides which seat s to take on the basis of the following optimization problem:
+ maxs Ui(s) = -? 1 [Ri* - R(s)]2 - ? 2 [Ci* - C(s)]2 - ? 3 [P(s)]2  
+<alpha>where
+Ri* = agent i's preferred row number
+Ci* = agent i's preferred column number
+R(s) = row of seat s
+C(s) = column of seat s
+P(s) = number of people sitting in unit box neighborhood of s 
+ 
+Thus, we assume that students care about only two things: (i) distance from the podium (as expressed in row and column numbers); (ii) distance from other students. Students do not move once they sit down. They are locally optimizing in the sense that they choose the best seat among all available ones, but only consider the distribution of students in their neighborhood. (For simplicity, we assume that they do not care about the identity of their neighbors). In case that multiple seats have equal levels of utility for a student, we assume that this student chooses randomly between the seats.
+Although they are choosing the best seat available at the time of entrance, students are boundedly rational in that they do not consider future student arrivals. Since we only consider a one-time event (e.g. a lecture by a famous economist), we also do not allow for the possibility of learning effects, which could occur in classes that meet at regular times.
+ 
+ Computational Details
+The computational model was implemented in the common lisp object system. (CLOS). The object-oriented design gave us flexibility in designing and expanding models. We started out by implementing a relatively large number of variable parameters, including, e.g., the size of the lecture hall, different choices for the ideal seat, preferences for sitting near (or away from) friends, preferences for sitting near (or away from) strangers, and preferences for not sitting to the left or right of a stranger. 
+We took advantage of the flexibility of our program by exploring a number of parameter variations in an attempt to discover some interesting results. For instance, we initially worked with a "Geeks and Greeks" model. In this model, the geeks prefer to sit in the front center of the room, but also prefer to sit with Greeks (because they think they want to be cool) but not with each other. Greeks, on the other hand, want to sit in the back of the room, and only want to sit with other Greeks. By playing around with this model we discovered some interesting patterns in the formation of the geeks. We formed a conjecture about the behavior of the geeks in isolation, which we verified with the experiment we report below. 
+We feel that this approach may provide some general guidance for approaching computational modeling. It is useful to initially explore a very general model to get some initial insight on the most important features, and provide some initial working hypotheses. Once this insight is obtained, the insight can be sharpened and the hypotheses verified by making the model somewhat less general, and focusing on a few key parameters.
+ 
+Numerical Experiment
+As a simple case, we considered a (popular) economics class where, ceteris paribus, all students consider the front middle as the best seat. In terms of our model, this implies Ri* = 1 and Ci* = 6. In addition, we assumed that students do not like to sit next to each other. Assuming that both considerations (distance from the podium and from neighbors) are equally important for each student, we set ? 1 = ? 2 = ? 3 = 1.
+Predictably, the first student that enters the room chooses the best seat: the front middle. The subsequent student, however, is faced with 3 equally optimal choices: the seat to the immediate right, to the immediate left, or immediately behind the front middle seat. Even though students do not like to sit next to each other, the value of sitting close to the front is high enough in this case to compensate for the disutility of having neighbors. 
+The second incoming student chooses randomly between her three preferred seats. If she chooses to sit either to the right or the left of the first student, the following pattern emerges (where n is the number of students who have entered the room):
+ 
+n=2 n=10 n=16
+ 
+n=25 n=50
+ 
+Thus, the students self-organize into rows, until a critical number of rows have been filled up (in this example, after n=25). After this critical point has been reached, the students entering a fairly crowded room would rather have more neighbors than sitting further away from their preferred seat in the front middle. From that point on, the columns start filling up as well.
+However, in case the second student randomly happens to choose the seat behind the first student, a very different pattern emerges:
+ 
+ n=2 n=10 n=16
+n=25 n=50
+ 
+From the mere fact that the second student chose to sit behind the first, the students self-organize into columns rather than rows. However, as more and more students enter the auditorium, we have the same effect as before, and the rows will start filling in as well. Although we did not run the experiment, it is to be expected that, as more and more students enter the classroom, the final seat distributions of the two cases become indistinguishable.
+ 
+Conclusion 
+In this simple exercise, we have shown how global seating patterns can emerge from entirely local decisions. Moreover, the shape of the global pattern is sensitive to early choices. We observed a situation in which the choice of a single critical agent in a homogenous population determined the global pattern.
+We would like to examine how general the effect is. Can we obtain similar results for different room sizes and shapes, as well as various (potentially heterogeneous) agent preferences? We would also like to examine if it is possible to predict the effects of individual agents' decisions sufficiently well that we can engineer the final seating arrangements via local influences.
+In future work we would like to examine how a small number of agents that differ from the bulk of the population might affect the global structure. In particular, is it possible that one key agent with different preferences might significantly change the global structure, or will it only cause a local disruption in the pattern?
+ 
+Further Applications
+A presenter may wish to encourage seating arrangements that he or she considers more desirable. This work shows that it is possible to determine the seating arrangement by the choice of only a single person. This suggests that there may be general ways to encourage desirable seating arrangements by influencing only a small number of people.
+This model leads itself immediately to the analysis of city formation. A high preference for neighbors could represent positive externalities or increasing returns, while an aversion to neighbors, especially neighbors of a particular type, could represent negative externalities or distancing incentives created by monopolistic competition. A general preference for central seats is mathematically equivalent to increasing transportation costs. It may be expected that high levels of positive externalities and transportation costs will lead to compact cities, while low transportation costs and high levels of spatial externalities may lead to fragmented and dispersed "leapfrog" patterns of development and land conversion.
+An extension of the "Geeks and Greeks" model might examine the potential for segregation in the absence of explicit discrimination. In this case, relative location and surroundings can be interpreted as an agent's position in a social network. Distance from a neighbor would represent the strength of a social connection, while the number of neighbors of a given type would represent the degree of assimilation into a social group. Imagine a case where geeks prefer to be near Greeks, Greeks prefer to be near one and other, and Greek have no particular aversion to geeks. Our preliminary experiments with geeks and Greeks indicate that Greeks will form clusters with geeks surrounding them on the fringe. Would these same patterns emerge in the absence of explicit aversion? If so, how large would the proportion of geeks need to be to break up groups and lead to an integrated landscape? This proportion could be thought of as a critical mass required for group infiltration in the absence of explicit discrimination. 
+ 
+ 
+http://www.ssc.wisc.edu/~noomes
+http://www.ucdavis.edu/homepage/D.Parker/D.Parker
+http://www-personal.engin.umich.edu/~wew/
+

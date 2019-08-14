@@ -1,0 +1,231 @@
+<html>
+<head>
+<title>Go Lance!</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<p><br>
+</p>
+<table width="65%" border="0" cellpadding="5">
+  <tr> 
+    <td rowspan="2" width="22%"><font size="7"><img src="images/larmstrong.jpg" width="200" height="303"></font></td>
+    <td width="78%" height="151"> 
+      <p><font size="7">Go Lance!</font></p>
+      <p><font size="6">Dan Li and Matt Grossmann</font></p>
+    </td>
+  </tr>
+  <tr> 
+    <td width="78%">This summarizes a simple model of bike race strategy created 
+      at the summer workshop on computational social science modeling in Santa 
+      Fe, NM in July, 2004. It is only a prototype model and we invite you to 
+      explore. If you would like to look through our powerpoint presentation, 
+      <a href="presentation.html">please click here</a>.</td>
+  </tr>
+</table>
+<p><font size="5">The Simple Version: Our Basic Bike Race Model</font><br>
+  In our first model, the raceway is a 100 space vector. At each step, agents 
+  move forward one space or do not move forward on the vector. Agents have a strategy 
+  for moving in four possible states: with someone in front or no one in front 
+  and with someone in back or no one in back. This makes for 16 possible strategies. 
+  Agents have a total amount of energy (150) and pay a cost each time they move. 
+  The largest cost is paid by agents with no one in adjoining spaces (3), the 
+  second largest cost is paid by a leader with no one in front of them (2), and 
+  the smallest cost is paid by a follower (1).<br>
+</p>
+<p><font size="5">Key Assumptions</font><br>
+  Since agents have to make a decision about their movement at every stage of 
+  the game, the state space would be massive if we assume that agents can change 
+  strategies over the course of the game. These agents would have to keep track 
+  of all movements in the game and adjust behavior accordingly. Thus, we have 
+  modeled their behavior as time-invariant. Agents use the same state-dependent 
+  strategy at every step in the race and do not adapt to other agents&#146; strategies. 
+  They therefore often continue to use unsuccessful strategies. A second important 
+  assumption to our model is that there is no limit to the number of agents on 
+  each space. The model does not include any dynamics associated with passing 
+  or sharing a space.<br>
+</p>
+<p><font size="5">Initial Results</font><br>
+  The simple model did not produce very interesting results but we can report 
+  a few important findings. When all strategies are played by at least one agent, 
+  the most successful strategy is &#147;move unless someone is behind you and 
+  no one is in front of you.&#148; The four most successful strategies all include 
+  moving when someone is in front of you, no matter who is behind you. When only 
+  successful strategies are used by all the agents, however, there is a universal 
+  tie with all agents moving in each round.<br>
+</p>
+<p><font size="5">Limitations</font><br>
+  The model is not very realistic. If strategies are determined randomly, as they 
+  are in this model, many agents do not move at all. A second limitation is that 
+  many agents can win each race, especially those with similar strategies. Because 
+  agents can only move one space at a time, there is no way to jump ahead of another 
+  rider. This limitation reduces the dynamics of the race.<br>
+</p>
+<p><font size="5">Increasing the Complexity of the Model: The Three Speed Case</font><br>
+  In the simple model, the strategy space for each agent in each state is only 
+  move or not move {0,1}. In this model, we add one potential move in each space, 
+  aggressive acceleration. The space is now {0,1,2} corresponding to {slow down, 
+  keep pace, accelerate} and there are now 81 possible strategies. The cost function 
+  is zero if they slow down and {-2.1,-2,-1,-1} if they keep pace. If they accelerate, 
+  they can move two spaces and pay twice the cost plus an additional cost of -0.5 
+  for acceleration. We also implement a tie breaking rule where the winning agent 
+  with the most remaining energy is declared the winner.</p>
+<p><font size="5">Initial Results: State Dependent Aggressiveness (Results of 
+  a 500-run Simulation)</font></p>
+<table width="62%" border="0" cellpadding="5">
+  <tr> 
+    <td width="23%"><img src="index_files/slide0004_image007.jpg" width="200" height="114"></td>
+    <td width="77%">The graph shows the distribution of strategies for each state 
+      for winning bikers. We find that separate leaders tend to slow down. Group 
+      leaders, in contrast, are slightly aggressive (cost low). Follower strategies 
+      are more volatile and less clear. Some followers use dubious strategies.<br>
+    </td>
+  </tr>
+  <tr> 
+    <td width="23%"><img src="index_files/slide0004_image009.gif" width="196" height="134"></td>
+    <td width="77%">This graph shows the level of aggressiveness across all positions. 
+      The keep pace strategy is more frequently used for all positions. Leaders 
+      are less aggressive than followers. Separate leaders are more likely to 
+      slow down than other leaders. Finally, winning bikers are more aggressive 
+      when they trail.<br>
+    </td>
+  </tr>
+</table>
+<p><font size="5">Energy Limited Case (E=120)</font><br>
+</p>
+<table width="62%" border="0" cellpadding="5">
+  <tr> 
+    <td width="23%"><img src="index_files/slide0006_image011.jpg" width="169" height="127"></td>
+    <td width="77%">Next, we lower the total energy that each agent can expend 
+      over the race. When preserving energy is important, there is clear change 
+      of pattern. The graph on the left shows that aggressiveness is now monotonic 
+      with respect to position. Again, winning players are more aggressive followers. 
+      In this case, however, leaders have more incentive to preserve energy.</td>
+  </tr>
+</table>
+<p><font size="5">No Clear Dominant Strategy</font><br>
+</p>
+<p>In the high energy (E=150) case 76 out of the 81 possible strategies end up 
+  in the winning pool over the 500 runs. In the low energy (E=120) case, 68 out 
+  of 81 strategies end up in the winning pool. In a non-dynamic game, there is 
+  no clearly dominant or dominated strategy due to the large number of players. 
+  At later time-steps, however, agents that are clearly behind have no reason 
+  to slow down. In the second case, when resources are limited, it is advantageous 
+  to be slightly aggressive while following and less aggressive while leading.</p>
+<p><font size="5">Winner Characteristics</font></p>
+<p><img src="index_files/slide0007_image015.gif" width="325" height="188"></p>
+<p>Most winners use up nearly all their energy by the end of the match. Even more 
+  winners use their energy optimally than the graph shows because we are selecting 
+  the agent with more energy left to be the winner in the case of a tie. Some 
+  of the potential winners died at the last stage (due to bad budgeting). We can 
+  conceptualize these as sacrifice bikers; they made it possible for the winner 
+  to win by reducing their energy cost right up until the final move.<br>
+</p>
+<p><br>
+  <font size="5">Tie problem</font><br>
+</p>
+<p>Allowing ties reduces strategic interplay. The negative externalities of the 
+  players&#146; strategies are low because my strategic choice does not change 
+  your payoff. We would imagine it to be different if we lined them up and allowed 
+  only one person to occupy each position.<br>
+</p>
+<p><font size="5">Budgeting problem</font><br>
+</p>
+<table width="62%" border="0" cellpadding="5">
+  <tr> 
+    <td width="23%"><img src="index_files/slide0010_image017.gif" width="236" height="176"></td>
+    <td width="77%">Without forward looking agents with respect to their budget 
+      constraint, most of the agents are over aggressive. They die before the 
+      end of the race, having used up their energy. Ideally, we should include 
+      more rational adaptation by agents. Agents should avoid leading if they 
+      do not have enough energy left to win the race while in front of the pack.</td>
+  </tr>
+</table>
+<p><font size="5">Mutating Strategies: Adding Higher Aggressiveness</font></p>
+<p>We extended the model by adding the assumption that if agents are at least 
+  2 positions behind the game leader, they have an incentive to change strategies. 
+  In our model, they mutate their strategy be selecting another strategy at random. 
+  The expected result of the new strategy adoption, however, is that the agents 
+  will be more aggressive. For each of the four states, their possibility of choosing 
+  to &quot;slow down&quot; is only .1, their possibility of retaining constant 
+  speed is .45, and their possibility of becoming more aggressive is .45. Overall 
+  strategies are therefore more aggressive after agents fall behind. The model 
+  now assumes that agents do care about where they are currently placed but their 
+  new strategies are not necessarily advantageous. They just adopt the irrational 
+  heuristic of speeding up.</p>
+<table width="62%" border="0" cellpadding="5">
+  <tr> 
+    <td width="23%"><img src="images/image006.jpg" width="216" height="162"></td>
+    <td width="77%">
+      <p>The result is quite striking. By design, most players except the first 
+        two became active and aggressive. It actually became statistically advantageous 
+        to slow down when you are at the tail of the pack. This is because the 
+        player right front of you has a higher chance of accelerating, which will 
+        separate you from the crowd if you either keep pace or slow down. By slowing 
+        down, you enhanced your chance of joining the crowd behind you and will 
+        be able to take advantage of group benefit. </p>
+      <p>This also says that in a highly irrational (uncertain) competition environment, 
+        fitness of a strategy totally depends on the behavior of competitors. 
+      </p>
+</td>
+  </tr>
+</table>
+<p><font size="5">Planned Extensions</font><br>
+  We have another idea for making losing agents more adaptive. If an agent is 
+  more than 2 spaces behind, they could adopt the strategy of the current leader. 
+  We also though about modeling the end-game with backward induction. In our model, 
+  there is a point at which agents should know that they can act strategically 
+  and use their remaining energy. We could also pursue an alternative formulation 
+  where the benefits of wind resistance are treated as capacities to move more 
+  than one step forward. In this case, we could model the amount moved each round 
+  stochastically. Finally, we could include spatial dynamics on a grid and have 
+  agents pay costs for passing.<br>
+</p>
+<p><font size="5">Next Step Genetic Algorithm</font><br>
+  Agents who die in one round could receive a mutated strategy in the next round. 
+  We could simultaneously run many rounds and calculate overall fitness for different 
+  strategies. The winning strategies could then propagate with some modification. 
+  In this case, we could include more than 81 strategies so the agents strategies 
+  could be round-variant. They would have a vector of strategies corresponding 
+  to each move in the game. If we evolved the system and had the best strategies 
+  play against each other, however, we would face problems. Some normally bad 
+  strategies might be good if everyone is playing an optimal strategy against 
+  other optimal strategies.<br>
+</p>
+<p><font size="5">Potential Applications</font><br>
+  We thought of two potential applications of the model, though neither is a close 
+  analogy. First, we could use a version of the model to track <i>technological 
+  development</i>. Both leaders and second-movers have advantages in technological 
+  development and may gain a monopoly at some point but innovations cannot be 
+  too far ahead or behind the pack. </p>
+<p>Second, we could model delegate competition for <i>political party nominations</i>. 
+  Candidates gather delegate endorsements in early states but may become the target 
+  of all other candidates if they are identified as the early front-runner. There 
+  are several key dynamics of the model that would have to be relevant to a social 
+  phenomenon for the model to apply. There should be movement in packs, winner-take-all 
+  outcomes, and competitive disadvantages from being the leader by a small margin.<br>
+</p>
+<p><font size="5">How the Model Works</font></p>
+<p>In case you are interested in how the model is actually implemented in computer 
+  code, we provide some &quot;pseudo code&quot; below so that you can understand 
+  the dynamics. The game evolves like this:</p>
+  <hr>
+Loop: Round t , until max position=100 (total distance of the race).<br>
+Every player moves according to their state since the last update. 
+<table width="64%" border="0" cellpadding="5">
+  <tr> 
+    <td width="20%">Energy Update</td>
+    <td width="80%"><img src="images/equation1.gif" width="345" height="16"> i=1,&#133;20</td>
+  </tr>
+  <tr> 
+    <td width="20%">Position Update </td>
+    <td width="80%"><img src="images/equation2.gif" width="133" height="16"> i=1,&#133;20</td>
+  </tr>
+</table>
+<p> Check If energy of any player dropped below zero. If so, give these players 
+  a negative position.<br>
+  State update: check if the position ahead or behind is empty.End loop<br>
+  Winner characteristics observed.<br>
+  <hr>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

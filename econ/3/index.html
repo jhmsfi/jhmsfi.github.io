@@ -1,0 +1,124 @@
+<html> 
+
+<head> 
+<title> How Academics Choose Research Projects </title>
+</head>
+
+<body bgcolor="white" text="black">
+
+<h1> How Academics Choose Research Projects </h1>
+<h2> Johannes Castner and Jack Reilly </h2>
+
+<h4> <i> Columbia University and University of California, Davis </i> </h4>
+
+<h3> 1. Modeling Motivation </h3>
+
+In modeling the way that academics choose their research projects, we started by thinking about the ways in which academics become interested in different topics.  Primarily, we think, academics become interested in different research projects for two reasons:
+
+<ul>
+<li> Academics are naturally interested in certain topics more than others.
+<li> Academics interact with other academics, and the academic's discussants have a certain influence over what the academic is interested in. 
+</ul>
+
+For example, a Philosophy professor may be interested in metaphysics and the philosophy of language.  Such an interest is likely to guide the professor's initial choice of research topic (namely, the professor will probably choose to research something in the field of metaphysics.) However, the more interactions this professor has with other academics who study epistemology, the more likely this professor will be to investigate epistemology.  We think of this as a social-influence model for choosing research topics.
+
+<h3> 2. A Model of Academic Research Topic Choice </h3>
+
+In our model, we assume:
+
+<ul>
+<li> There are a number of academics in the world.
+
+<li>  Academics walk around and get engaged in conversation with other academics.
+
+<li>  When they get involved in conversation, academics are influenced by the research interests of their discussants.  The level of influence depends upon the charisma and prestige of the discussant.
+
+<li>  In order for an academic to start working on a project, his or her interest in that area must exceed some threshold. 
+
+<li>  Agents work a set period of time on a given project. When the project is finished, agents stop working on the project, reset their preferences and
+start looking for a new project. 
+
+</ul> 
+
+Furthermore, in addition to our core assumptions, we implemented the assumptions in the following way:
+
+<ul>
+<li> Charisma and prestige, the property that allows certain academics to be more influential than others, is randomly distributed through academics in the population, and is universal. By universal, we mean that Academic 1 has the same level of influence on Academic 2 as on Academic 3, Academic 2 has the same level of influence on 1 as s/he has on 3, and 3 has the same level of influence on 1 as s/he has on 2.  The level of influence any individual academic has on his or her peers lies between 0 and 1.  Thus, academics with an influence level of .5 will transfer .5 of their interests to the people talking to them.
+
+<li> There are four general research areas that academics can get interested in: A (blue projects), B (green projects), C(yellow projects), and D (red projects).
+
+<li>  If an academic exceeds the threshold of interest to start on two projects at once, we assume that A projects are more prestigious (and therefore more desirable) than B projects, which are more prestigious than C projects, which are more prestigious than D projects.  Thus, agents chose lexicographically among possible projects.  For example, if their interest in a project of type A  and a project of type B exceeds the set threshold simultaneously, they start working on an A project rather than working on a B project. 
+
+<li> Academics start off with a series of interests in these four areas, randomly generated from a uniform distribution between 0 and 100.  When an academic interacts (runs in to) another academic, the first academic copies the interests the second academic has times the influence of the second academic.  
+
+<li> Once a researcher finishes a project, his or her interests reset to a level determined by the model, with parameters manipulable by the modeler.  The "experienced" parameter indicates the level of interest that the researcher resets to for the type of project he or she has just finished working on.  The "inexperienced" parameter indicates the level of interest that the researcher resets to for the types of project that he or she did not just work on.  Using these levels, the modeler can control the extent to which research is path-dependent: if it is thought that working on a particular type of project makes one much more likely to work on that project again than another type of project, then the "experienced" slider should be set to a much higher level than the "inexperienced" slider.  If, in contrast, one thinks that working on a particular kind of project burns out a researcher, and makes him or her more likely to seek out different sorts of projects in the future, one should set the "inexperienced" slider higher than the "experienced" slider.
+	
+<li> Any project, which undertaken, takes a random amount of time from zero ticks until X ticks, where X is a level set by the modeler.  (The default is 50.)	When working on a project, a researcher is able to influence other researchers, but is unable to have his or her own preferences influenced.
+	
+<li> Lastly, we introduce a decay parameter, which simply states that, if a researcher's interest in a topic is not stimulated by conversations with other academics, the researcher's interest will wane.  
+
+</ul>
+
+<h3> 3. An Example </h3>
+
+
+Let's run through an example.  Let us say that we set all the parameters in the model at the following levels:
+
+<ul>
+	
+<li> "Threshold" is set to 100.
+<li> "Experienced" is set to 50.
+<li> "Inexperienced" is set to 25.
+<li> "Initial-Academics" is set to 250.
+<li> "Decay" is set to 1.1.
+<li> "Worktime" is set to 50.
+	
+</ul>
+
+<p> At setup, 250 agents spawn on the model space.  Let's follow one hypothesized agent.  This agent, 42, begins with the following interest levels: 20 for A, 73 for B, 31 for C, and 58 for D.  At the first tick, agent 42 runs into agent 178.  Agent 178's interests, from A to D, are 24, 13, 92, and 67, with an influence level of .1.  Thus, we multiply .1 by all Agent 178's interests and add them to agent 42's interests.  
+
+<p> Agent 42's interests, from A to D, are now 22.4 (20+24*.1), 74.3 (73+13*.1), 40.2 (31+92*.1), and 64.7 (58+67*.1).  At the next tick, 42 runs into nobody, so each of his interests decay by 1.1, leaving him with interest levels of 21.3, 73.2, 39.1, and 63.6.  At the next tick, 42 runs into agent 238.  Agent 238's interests are 56.3, 80.4, 5.9, and 90.5, and agent 238 has an influence level of 1.  Thus, all of Agent 238's interests are added directly to agent 42's.
+
+<p> Agent 42's interests are now 77.6, 153.6, 45.0, and 154.1.  Agent 42 is now sufficiently interested in both projects of type B and D to work on them.  However, Agent 42 can only work on one project at once, and so chooses project B, the more prestigious of the two.  Agent 42 ceases to be searching for a project (and so, ceases to be "unemployed") and begins working on project B, a green project, for 34 ticks (a project length randomly chosen by the model, in the interval 0 to 50).  His interests are set, from A to D, to 25, 50, 25, and 25.  Once Agent 42 has worked on his project for 34 ticks, he begins searching for another project and allowing himself to be influenced by other academics again.
+
+<p> Please see the full model below.
+
+<p>
+<applet code="org.nlogo.lite.Applet"
+        archive="NetLogoLite.jar"
+        width="867" height="563">
+  <param name="DefaultModel"
+         value="Research%20Topics%203.nlogo">
+</applet>
+</p>
+
+<p>powered by
+<a target="_blank" href="http://ccl.northwestern.edu/netlogo/">NetLogo</a></p>
+
+<p>view/download model file:
+<a href="Research%20Topics%203.nlogo">Research Topics 3.nlogo</a>
+</p>
+
+<h3> 4. Key Results </h3>
+
+To examine the results of our findings, we set all parameters at base levels and systematically varied parameters to see what sort of effects arose. In our runs of the model, we started off with a threshold level of 100, the initial number of academics at 250, the maximum time that it takes to complete a project at 50 ticks, the decay at 1.1, the "experienced" reset at 50, and the inexperienced reset at 25. In general, we found:
+
+<ul>
+<li> At any given time, more people would be working on more prestigious projects, as would be expected despite the inherent randomness of the interaction process.
+	
+<li>Longer work times, as well as a greater decay levels, would lead to more time spent in between projects.
+	
+<li>The higher the threshold that is needed for a person to start working on a project, the more time this person can be expected to spend without working on a project.
+	
+<li> The higher the inexperienced parameter is set, relative to the experienced parameter, the more variance is observed in chosen topics.  As the experienced parameter is set higher, more agents are path-dependent, and choose the same project as before.  As a result, more agents end up choosing prestigious research projects and staying with them.
+</ul>
+
+<h3> 5. Conclusion </h3>
+
+Our model examines researcher's choices among a range of research areas as a function of their initial interest in the area as well as their interactions with other academics.  In future, it would be interesting to extend the program to allow academics to work on more than one project at a time, allow for more research projects, and allow for genetic mutations among research projects to give academics the chance to combine research fields based upon their interests.  Additionally, changing the influence process to be more dyadic would be potentially fruitful as well.  For example, instead of Agent A always having equal influence among all his peers, it would make sense if s/he was able to have greater influence over his or her students and departmental colleagues than s/he had over other academics.
+
+<p>In addition to academics choosing research topics, this model could be extended to any situation where individuals are choosing between categories of things based upon their interests and social interaction.  Examples of this could include college students choosing majors, construction workers choosing sites to work on, actors working on films, consumers choosing among brands of products, or many other areas related to choices and social interaction.  
+
+</body>
+
+</html>

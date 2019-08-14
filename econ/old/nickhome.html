@@ -1,0 +1,93 @@
+<Title>A Model of Standing Ovations</Title>
+
+<center><H1>A Model of Standing Ovations</H1>
+<P>
+<br><A HREF="../~niklas/niklas.html"><H3>Nick Feltovich</H3></A> 
+and <H3>Jordan Rappaport</H3></center>
+<hr size=5>
+The mathematical specification of our model is beyond the scope of
+the <em>HTML</em> language, so we have given only a heuristic
+description of it here.  We have a PostScript file with the entire
+model, <A 
+HREF="file://www.pitt.edu/~niklas/homework.ps">homework.ps</A>.
+<hr size=5>
+With our model, we try to explain the three outcomes that are
+possible:  no attempted standing ovation (no one stands), an
+unsuccessful standing ovation (a few people stand, but soon sit
+down), and a successful standing ovation (everyone or almost
+everyone stands).  Thus, we model both standing and sitting by our
+agents (audience members).  In our model, we refer to the object of
+the (possible) ovation as the "lecturer," although the model could
+also describe behavior at other types of performances. 
+<P>
+Our agents have preferences based on two primitives:
+<P>
+Altruism/Reciprocity -- A standing ovation confers utility on the
+lecturer.  The more agents enjoy the lecture, the more willing they
+are to stand.
+<P>
+Expected Embarassment -- Our agents are shy.  Standing alone, or
+with very few others standing, opens up the possibility that our
+agents will be embarassed.
+<P>
+Thus the utility function of our agents looks like this: 
+<center><em>
+U(Altruism/Reciprocity,Expected \ Embarassment)
+</em></center>
+<HR>
+Rather than being explicitly derived from this primitive
+specification, our reduced form is based on four qualities that
+affect the primitives.  These qualities are <em>enjoyment</em>,
+<em>status of the auditorium</em>, <em>visibility</em>, and
+<em>time</em>.  Enjoyment affects the level of
+altruism/reciprocity, while status of the auditorium, visibility,
+and time affect expected embarassment.  
+<P>
+We assume that <em>enjoyment</em> is distributed among the agents
+in the auditorium according to some distribution function.  The
+characteristics of this distribution depend on attributes of the
+lecture, venue, <em>etc.</em>, which we take to be exogenously
+determined.  We assume that enjoyment does not change with time for
+a given agent and that enjoyment is independently and identically
+distributed among all agents.  This second assumption is a
+simplification, and is probably not realistic; we might expect
+agents closer to the front of the auditorium to be more likely to
+have a high enjoyment.  Our model can be extended to allow for
+heterogeneous (or endogenous) seating in a straightforward way. 
+The effect of enjoyment is simple -- the higher the enjoyment, the
+more likely the agent is to stand.
+<P>
+We assume for expository purposes that seats in the auditorium are
+arranged in a rectangular array and that all seats are filled,
+although the model does not require this.  Given our assumptions,
+the <em>status of the auditorium</em> at a given time can be
+characterized by a <em>m</em>x<em>n</em> matrix of 0's and 1's,
+where the <em>ij</em>-th element of the matrix corresponds to the
+agent occupying the seat in the <em>i</em>-th row and <em>j</em>-th
+column.  Rows are numbered from front to back (that is, row 1 is
+the front row) and columns are numbered from left to right.  A
+value of 1 indicates that at this time, the agent is standing,
+while a value of 0 indicates that she is sitting.  The status of
+the auditorium affects expected embarassment in two ways.  First,
+when others are standing, the standing ovation is more likely to be
+successful, thus reducing the likelihood of embarassment.  Second,
+the amount of embarassment is reduced if others are standing,
+particularly if they are nearby.  We thus assume that agents are
+more likely to stand when others are standing, and especially when
+others nearby are standing. 
+<P>
+<em>Visibility</em> is assumed to be proxied by an agent's location
+in the auditorium, and to the most part by her row.  Visibility
+affects expected embarassment in two ways.  On one hand, the more
+visible an agent is, the more embarassed she will be if she stands
+and the attempted ovation is unsuccessful.  On the other hand, the
+more visible she is, the higher the likelihood that the ovation is
+successful.  These effects work in opposite directions, but we
+assume that the overall effect of visibility is negative; the more
+visible an agent is, the less likely she is to stand, all else
+being equal.
+<P>
+<em>Time</em> enters into expected embarassment in a nonlinear way. 
+Our casual empiricism leads us to believe that there is a "best
+time" to stand, and that standing too soon or too late is somewhat
+of a faux pas.

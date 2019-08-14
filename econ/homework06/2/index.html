@@ -1,0 +1,886 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=File-List href="AirlineLoungeQueuingProblem_files/filelist.xml">
+<link rel=Edit-Time-Data href="AirlineLoungeQueuingProblem_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Airline Lounge Queuing Problem</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author> </o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor> </o:LastAuthor>
+  <o:Revision>38</o:Revision>
+  <o:TotalTime>299</o:TotalTime>
+  <o:Created>2006-07-11T05:01:00Z</o:Created>
+  <o:LastSaved>2006-07-13T18:04:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>904</o:Words>
+  <o:Characters>5153</o:Characters>
+  <o:Company>University of Illinois - Business</o:Company>
+  <o:Lines>42</o:Lines>
+  <o:Paragraphs>12</o:Paragraphs>
+  <o:CharactersWithSpaces>6045</o:CharactersWithSpaces>
+  <o:Version>11.6568</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:Zoom>120</w:Zoom>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:16.0pt;
+	font-family:Arial;
+	mso-font-kerning:16.0pt;}
+h2
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:14.0pt;
+	font-family:Arial;
+	font-style:italic;}
+h3
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:13.0pt;
+	font-family:Arial;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:203255889;
+	mso-list-template-ids:1116253040;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level2
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level3
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1
+	{mso-list-id:387195039;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1454370842 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l1:level2
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level3
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2
+	{mso-list-id:491064016;
+	mso-list-template-ids:-490466668;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l2:level2
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level3
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3
+	{mso-list-id:670639305;
+	mso-list-template-ids:-660304500;}
+@list l3:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l3:level2
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level3
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4
+	{mso-list-id:973289201;
+	mso-list-type:hybrid;
+	mso-list-template-ids:340050084 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l4:level2
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4:level3
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l5
+	{mso-list-id:1034621734;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1650096794 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l5:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l5:level2
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l5:level3
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l5:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l5:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l5:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l5:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l5:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l5:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l6
+	{mso-list-id:1035429479;
+	mso-list-template-ids:-1934489254;}
+@list l6:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l6:level2
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l6:level3
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l6:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l6:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l6:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l6:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l6:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l6:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l7
+	{mso-list-id:1322199173;
+	mso-list-template-ids:1316539978;}
+@list l7:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l7:level2
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l7:level3
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l7:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l7:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l7:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l7:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l7:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l7:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l8
+	{mso-list-id:1618490788;
+	mso-list-template-ids:1130146722;}
+@list l8:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l8:level2
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l8:level3
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l8:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l8:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l8:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l8:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l8:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l8:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+table.MsoTableGrid
+	{mso-style-name:"Table Grid";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="6146"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<h1 align=center style='text-align:center'>Airport Lounge Queuing Problem</h1>
+
+<h2 align=center style='text-align:center'>Martin <span class=SpellE>Ganco</span>,
+<span class=SpellE>HyeJin</span> <span class=SpellE>Youn</span></h2>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<h2>1. Description</h2>
+
+<p class=MsoNormal>One hundred travelers are waiting in the passenger lounge of
+the airport. When the airline agent at the gate announces that passengers may
+begin to board the aircraft, people start forming the line at the gate. Our
+model focuses on the <b style='mso-bidi-font-weight:normal'>line formation
+mechanism</b>, its impact on the <b style='mso-bidi-font-weight:normal'>distribution
+of individual waiting times</b> and <b style='mso-bidi-font-weight:normal'>evolution
+of line preferences</b>.<br>
+<br>
+The key question that we ask is <b style='mso-bidi-font-weight:normal'>why,
+when we assume that the objective of all passengers is to get inside the plane
+as soon as possible, we observe that not all people rush to the line
+immediately?</b></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>When we look at the dynamics in the waiting area more
+carefully, there are usually some people who keep their seats until the queue
+gets shorter. Some passengers stay seated while others tend to join the line
+soon. Our model assigns a “line tolerance” parameter to every passenger at the
+beginning of each boarding. Hence, a passenger's action - whether in the queue
+or not - is determined by <span class=GramE><b><i style='mso-bidi-font-style:
+normal'>f(</i></b></span><b><i style='mso-bidi-font-style:normal'>line
+tolerance, number of people on the queue)</i></b><i style='mso-bidi-font-style:
+normal'>.<o:p></o:p></i></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>However, the overall waiting time is determined by the
+ordering of agents as they enter the plane. The progression of line is slowed
+down whenever passengers enter the plane in a “wrong” order – when a passenger
+blocks seating of a passenger immediately behind. There is no explicit
+coordination built into the model. The model was implemented in <a
+href="AirlineLoungeQueuingProblem_files/airline_queue.m"><span class=SpellE>Matlab</span></a>
+and <a href="AirlineLoungeQueuingProblem_files/airline_queue.py">Python</a>.<br>
+<!--[if gte vml 1]><v:shapetype id="_x0000_t75" coordsize="21600,21600" o:spt="75"
+ o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_i1025" type="#_x0000_t75" style='width:404.15pt;
+ height:190.3pt'>
+ <v:imagedata src="AirlineLoungeQueuingProblem_files/image009.jpg" o:title="figure"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=539 height=254
+src="AirlineLoungeQueuingProblem_files/image002.jpg" v:shapes="_x0000_i1025"><![endif]></p>
+
+<h2>2. Assumptions</h2>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Agents:</p>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo1;tab-stops:list .5in'><span
+     class=SpellE><b>Tol</b></span><b> </b>(line tolerance): uniformly
+     distributed between [0:1], controls tendency to stay seated vs. join the
+     line (we tested the robustness of this assumption using Normal
+     distribution with no substantial impact on the shape of the curves and no
+     impact on our conclusions).</li>
+</ul>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal style='mso-list:l0 level1 lfo2;tab-stops:list .5in'><b>ID </b>(assigned
+     seat number): [1:100] represents a location of a seat from head to tail of
+     the cabin</li>
+ <li class=MsoNormal style='mso-list:l0 level1 lfo2;tab-stops:list .5in'><b>Action
+     </b>(decision to join the line): <span class=SpellE>bool</span>, <span
+     class=GramE>On</span> - if agent decides to join the line, Off otherwise. </li>
+</ul>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Environment:</p>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal style='mso-list:l3 level1 lfo3;tab-stops:list .5in'><span
+     class=SpellE><b>Nq</b></span>: number of passengers in the queue</li>
+ <li class=MsoNormal style='mso-list:l3 level1 lfo3;tab-stops:list .5in'>The
+     cabin is assumed to be a long row of seats with numbers assigned in
+     ascending order</li>
+ <li class=MsoNormal style='mso-list:l3 level1 lfo3;tab-stops:list .5in'>The
+     seat number has no effect on the tendency of passengers to join the line</li>
+</ul>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Procedure:</p>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal style='mso-list:l7 level1 lfo4;tab-stops:list .5in'><span
+     class=SpellE><b>T_delay</b></span>: if agent ‘j’ has a lower ID than agent
+     '<span class=SpellE>i</span>' who is next in line, the agent '<span
+     class=SpellE>i</span>' has to wait for '<span class=SpellE>T_delay</span>'.</li>
+ <li class=MsoNormal style='mso-list:l7 level1 lfo4;tab-stops:list .5in'><span
+     class=SpellE><b>Fq</b></span>: frequency of updating the queue by allowing
+     the first person to enter the plane</li>
+</ul>
+
+<h2>3. The Model</h2>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Initialization:</p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l6 level1 lfo5;tab-stops:list .5in'><span class=SpellE>Tol</span>
+     is randomly given to every agent drawn from uniform distribution</li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l6 level1 lfo5;tab-stops:list .5in'>ID is given to every agent
+     from the interval [1:100]</li>
+</ul>
+
+<p class=MsoNormal>Process:</p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l2 level1 lfo6;tab-stops:list .5in'>Agent <span class=SpellE>i</span>
+     is drawn randomly to determine whether it will join the queue or not
+     according to <span class=GramE>f(</span><span class=SpellE>Tol</span>, <span
+     class=SpellE>Nq</span>). (The fundamental results are robust to different
+     matching methods, e.g. when the entire waiting area is searched for
+     passengers satisfying the rule in one time period, etc.)</li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l2 level1 lfo6;tab-stops:list .5in'><span class=SpellE>bool</span>
+     <b>f(<span class=SpellE>Tol</span>, <span class=SpellE>Nq</span>) = 1(<span
+     class=SpellE>Tol</span>&gt;<span class=SpellE>Nq</span>), 0 (otherwise)</b></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l2 level1 lfo6;tab-stops:list .5in'><span class=GramE>if</span> <b>f</b>
+     is on, join the queue.</li>
+</ul>
+
+<p class=MsoNormal>Note: the decision rule has the simple form: if <span
+class=GramE><i style='mso-bidi-font-style:normal'>g(</i></span><i
+style='mso-bidi-font-style:normal'>line length) &lt; line tolerance</i> of
+agent <span class=SpellE>i</span> =&gt; join the line, otherwise stay seated,
+where in our case g(x)=x but g(.) can be any increasing function.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<h2>4. Results</h2>
+
+<h3>4-1. No penalty for wrong order</h3>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal style='mso-list:l5 level1 lfo7;tab-stops:list .5in'>Hump
+     shaped line length over time</li>
+ <li class=MsoNormal style='mso-list:l5 level1 lfo7;tab-stops:list .5in'>Higher
+     mean line tolerance increases mean line length </li>
+ <li class=MsoNormal style='mso-list:l5 level1 lfo7;tab-stops:list .5in'>Uniformly
+     distributed individual waiting times (reflecting uniform preferences)</li>
+ <li class=MsoNormal style='mso-list:l5 level1 lfo7;tab-stops:list .5in'>Distribution
+     of line tolerance has no effect on the average waiting time (the mean
+     waiting time is the same due to exogenous line update frequency and no
+     penalty for wrong order)</li>
+ <li class=MsoNormal style='mso-list:l5 level1 lfo7;tab-stops:list .5in'><o:p>&nbsp;</o:p></li>
+</ul>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<table class=MsoTableGrid border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;mso-yfti-tbllook:480;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td width=517 valign=top style='width:221.4pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><!--[if gte vml 1]><v:shape id="_x0000_i1026" type="#_x0000_t75"
+   style='width:262.7pt;height:197.15pt'>
+   <v:imagedata src="AirlineLoungeQueuingProblem_files/image001.jpg" o:title="line_nodelay"/>
+  </v:shape><![endif]--><![if !vml]><img border=0 width=350 height=263
+  src="AirlineLoungeQueuingProblem_files/image006.jpg" v:shapes="_x0000_i1026"><![endif]></p>
+  </td>
+  <td width=517 valign=top style='width:221.4pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><!--[if gte vml 1]><v:shape id="_x0000_i1027" type="#_x0000_t75"
+   style='width:262.7pt;height:197.15pt'>
+   <v:imagedata src="AirlineLoungeQueuingProblem_files/image003.jpg" o:title="hist_nodelay"/>
+  </v:shape><![endif]--><![if !vml]><img border=0 width=350 height=263
+  src="AirlineLoungeQueuingProblem_files/image008.jpg" v:shapes="_x0000_i1027"><![endif]></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal align=center style='text-align:center'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Mean waiting time = 150</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<h3>4-2. Penalty for wrong order</h3>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal style='mso-list:l4 level1 lfo8;tab-stops:list .5in'>Mean
+     waiting time increases with penalty</li>
+ <li class=MsoNormal style='mso-list:l4 level1 lfo8;tab-stops:list .5in'>The
+     line length decreases slowly with time</li>
+ <li class=MsoNormal style='mso-list:l4 level1 lfo8;tab-stops:list .5in'>Distribution
+     is no longer uniform - people with low line tolerance penalized disproportionately
+     more</li>
+ <li class=MsoNormal style='mso-list:l4 level1 lfo8;tab-stops:list .5in'>The
+     distribution seems bimodal (although, we did not perform significance
+     tests)</li>
+</ul>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<table class=MsoTableGrid border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;mso-yfti-tbllook:480;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td width=517 valign=top style='width:221.4pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><!--[if gte vml 1]><v:shape id="_x0000_i1028" type="#_x0000_t75"
+   style='width:255.85pt;height:191.55pt'>
+   <v:imagedata src="AirlineLoungeQueuingProblem_files/image005.jpg" o:title="line_delay"/>
+  </v:shape><![endif]--><![if !vml]><img border=0 width=341 height=255
+  src="AirlineLoungeQueuingProblem_files/image010.jpg" v:shapes="_x0000_i1028"><![endif]></p>
+  </td>
+  <td width=517 valign=top style='width:221.4pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><!--[if gte vml 1]><v:shape id="_x0000_i1029" type="#_x0000_t75"
+   style='width:263.55pt;height:198pt'>
+   <v:imagedata src="AirlineLoungeQueuingProblem_files/image007.jpg" o:title="hist_delay"/>
+  </v:shape><![endif]--><![if !vml]><img border=0 width=351 height=264
+  src="AirlineLoungeQueuingProblem_files/image011.jpg" v:shapes="_x0000_i1029"><![endif]></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal align=center style='text-align:center'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Mean waiting time = 450</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<h2>5. Adding Evolution</h2>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>As a simple extension, we ask the question whether the
+passengers can evolve a line tolerance that would match their seating (if we assume
+this is constant across runs). We add a simple hill climbing rule - each period
+(airline boarding), each agent draws a new tolerance value. If it leads to
+shorter time, it keeps it otherwise returns to the old tolerance value.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>So, could the group evolve socially optimal line tolerance
+that would &quot;match&quot; their seat assignment and optimize overall waiting
+time?</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>The result shows that they cannot. After 100 runs the mean
+waiting time and distribution did not change. The cause of the slowdown related
+to the “wrong” order is a pure <b style='mso-bidi-font-weight:normal'>negative
+externality</b>. This result justifies an outside intervention.</p>
+
+<h2>6. Applications and Extensions</h2>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l8 level1 lfo9;tab-stops:list .5in'>In a general sense, the model
+     applies to situations where the objective is possible to achieve only when
+     an action is taken that yields temporary disutility (standing in line) and
+     status quo yields temporary benefits (keep sitting). The queue formation
+     model could be thus modified to model participation in negotiations,
+     perhaps social unrest, etc. The particular form of the model applies to
+     all similar line formation problems.</li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l8 level1 lfo9;tab-stops:list .5in'>As possible extensions, one
+     might consider agents traveling in groups like families or possible impact
+     of outside coordination by seat number groups or even individual line up
+     by IDs. However, in the current simple version of our model, the result of
+     such extensions seems obvious – decrease of mean waiting time and
+     convergence of distribution toward the uniform distribution.</li>
+</ul>
+
+<h2>7. Conclusion</h2>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'>The
+purpose of our model was to investigate the mechanism of line formation and its
+impact of the distribution of individual waiting times. Our results suggest
+that delays cause a bimodal distribution of waiting times. The model also shows
+that due to negative externality the decentralized agents do not have the
+capability to optimize the overall boarding time by matching their line
+tolerance with seat assignment. This indicates that outside intervention is
+justified and necessary.</p>
+
+</div>
+
+</body>
+
+</html>

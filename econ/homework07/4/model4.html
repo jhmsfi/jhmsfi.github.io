@@ -1,0 +1,42 @@
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<title>A model of parking at the mall</title>
+<style><!--
+.Section1
+	{page:Section1;}
+-->
+</style>
+</head>
+<body bgcolor=#FFFFFF link=blue vlink=purple class="Normal" lang=EN-US>
+<div class=Section1> 
+  <p><b><i><u><span style='font-size:14.0pt'>Model IV:</span></u></i></b></p>
+  <p><b>Description:</b> This model implements a 2 dimensional space for the parking 
+    lot. In this model drivers face a choice at the head of each row. They can 
+    choose to continue up the aisle to the next row, or they can choose to move 
+    down the current row. If a car reaches the end of the row it will automatically 
+    move to the head of the next row, or return to the entrance of the parking 
+    lot if they were at the nearest parking space. </p>
+  <p><b>Space:</b> 2 dimensional</p>
+  <p><b>Time:</b>&nbsp; Synchronous/Asynchronous: same as Models I and II</p>
+  <p><b>Agents:</b> Homogenous.</p>
+  <p><b>Decision Structure:</b> &nbsp;See Figure 1.</p>
+  <p><b>Parameters tested for robustness: </b></p>
+  <p><b>Criteria for judging outcomes:</b></p>
+  <ul type=disc>
+    <li>Average distance to Mall</li>
+    <li>Average time to park</li>
+    <li>Trip Cost </li>
+  </ul>
+  <p><b>Model</b></p>
+ <applet code="org.nlogo.window.Applet"
+        archive="NetLogoLite.jar"
+        width="767" height="572">
+  <param name="DefaultModel"
+         value="parking-lot-alpha.nlogo">
+</applet>
+
+  <p><b>Outcomes:</b></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html> <head>
+<title></title>
+</head>
+<body>
+<center> <IMG SRC="images/choice.jpg" BORDER="0" HEIGHT="400" ALT="Missing"> </center>
+<center> <h1> Going Down </h1> </center> 
+
+<hr>
+<center><h2> Brad LeVeck and Julian RoMero </h2> </center>  
+<hr>
+<h2>1. Introduction </h2> 
+
+We examine the decision of potential elevator riders to either board the elevator or take an outside option, the stairs.  The people in our building don't like other people.  Therefore, they do not like to be close to other people when they are in the elevator.  In addition, once people are on the elevator, they do not give consideration to other passengers by stepping back.  Rather, they stand their ground, and block other passengers from getting behind them. In the model, we examine where individuals stand once they board the elevator.
+
+<hr>
+
+<h2>2. Model </h2>
+<h3> Elevator </h3>
+
+We focus on the downward process of the elevator.  The elevator has a fixed rule.  The process is started with a button press at a random floor.  After the elevator has started moving, a period in our model is represented by the elevator moving down one floor. In each period a resident of the building may press the button with probability p. If the resident is below the elevator's current floor, that floor is added to the elevator's current queue of floors to visit. If the resident is above current position of the elevator, then that floor is added to the queue for the next run of the elevator. When the elevator reaches the bottom floor, all agents exit, and the process starts over with the elevator going to the highest floor in the new queue.  If the new queue is empty, then the elevator stays at the first floor until a button is pressed.   The elevator is represented by an m-by-n grid in our model. 
+
+
+<h3> Agents </h3>
+
+The agent's goal is to get to the bottom floor of the building.  To do this, the agent first presses the button to call the elevator, or if someone is already waiting at that floor, then the agent gets in line behind them.  When the elevator arrives, the agent looks inside and makes a decision based on the current status of the elevator, either take the elevator or take the stairs.  If the agent decides to take the elevator, their position is based on a distribution over the available floor space in the elevator. For example, when the elevator is empty, then the agent uses a distribution like this,
+<center> <IMG SRC="images/distribution.jpg" BORDER="0" HEIGHT="320" ALT="Missing"> </center> 
+
+In this heat map hot colors (red) denote a higher probability of standing in that space.  If there are people already on the elevator, the agents already on board will not move when a new agent tries to enter.  Therefore they will block the new agent from standing behind the current agents. In our elevator, the door is on the bottom left.  Therefore, when an agent picks his place in the elevator, he blocks all space above and to the right of him.  When there is not enough space in the elevator, the agent is forced to take the stairs.  For example, if there are some agents already in the elevator, the marginal distribution for the new agent could be, 
+<center> <IMG SRC="images/marginal.jpg" BORDER="0" HEIGHT="320" ALT="Missing"> </center> 
+In this heat map, the dark blue represents the area that has been blocked by the agents that are already on the elevator.
+
+When making their decision, the agent will compare the utility of taking the elevator and taking the stairs.  The utility for taking the elevator is,
+<p> 
+<center> U (Elevator) = 1 - c (E[s])-e(E[d]) </center> 
+where,
+<ul>
+<li><b>c</b> is disutility of stopping at floor</li> 
+<li><b>E[s]</b> is expected number of stops</li> 
+<li><b>e</b> is disutility from being close to others</li>
+<li><b>E[s]</b> is expected distance from other passengers, according to marginal distribution over the remaining space. </li> 
+
+</ul>
+
+The utility for taking the stairs is given by,
+<p>
+<center> U (Stairs)=.5 - d*f </center>
+where, 
+<ul>
+<li><b>d</b> is disutility from walking down one floor</li> 
+<li><b>f</b> is number of floors to reach the bottom</li>
+</ul>
+
+<h4> Size </h4>
+The size of the agents is varied randomly in two dimensions (3-7 in our simulations).  This size can be though of as differently sized humans, humans carrying large objects, or some undesirable characteristic of the rider. 
+
+<h4> Example </h4> 
+To clarify this process, we have the following video of the elevator boarding process.  In this video, the groups of solid red dots denote passengers, and the hollow green dots denote space that is blocked off. In this example four people board the elevator before it becomes full. 
+
+<center> <IMG SRC="images/image.gif" BORDER="0" HEIGHT="320" ALT="Missing"> </center> 
+<hr>
+
+
+<h2>3. Results </h2>
+For these results our elevator traveled down 150 times. The first thing we can look at is the distribution of agent placement in the elevator.  In this heat map, the hot colors (red) represent the frequency with which that square was occupied over the course of the simulation.
+<center> <IMG SRC="images/heatmap.jpg" BORDER="0" HEIGHT="320" ALT="Missing"> </center> 
+
+Even though agents have a propensity to stand in the top right corner, we see that the most common spot is the bottom left.  The reason for this is that the effect of space being crowded out trumps the effect of the individual agent's propensity toward the top right.  Next we look at the frequency of elevator stops on any trip.  
+<center> <IMG SRC="images/stopfrequency.jpg" BORDER="0" HEIGHT="320" ALT="Missing"> </center> 
+We see that with our parameters, 15 was the most common number of stops on a trip down. We also see that there is a steep drop off after 15, but currently have no explanation for this. Next we look at the probability of taking the elevator at any given floor. 
+<center> <IMG SRC="images/probperfloor.jpg" BORDER="0" HEIGHT="320" ALT="Missing"> </center> 
+As we expected, the probability of riding the elevator is higher on higher floors.  The reason for this is that on the higher floors, there is typically nobody blocking entry into the elevator.  But as more people get on, it become more difficult and less desirable (due to expected distance from agents) to enter the elevator.  Noise in the data are due to variations in agent size and placement.  Next, we can examine the effect of agent size on probability of riding.
+<p> 
+<center> 
+<TABLE border="1" cellspacing="0" cellpadding="10">
+  <tr> <th align="center"> Agent Area </th> <th align="center"> Probability or Riding </th> <th align="center"> Frequency </th> </tr> 
+<tr> <td align="center">    2 </td><td align="center">     0.4245 </td><td align="center">  106.0000 </td> </tr> 
+<tr> <td align="center">      3  </td><td align="center">  0.3274 </td><td align="center"> 113</td> </tr> 
+<tr> <td align="center">      4  </td><td align="center">  0.2740 </td><td align="center"> 208</td> </tr> 
+<tr> <td align="center">      5  </td><td align="center">  0.3375 </td><td align="center">  80</td> </tr> 
+<tr> <td align="center">      6  </td><td align="center">  0.2938 </td><td align="center"> 211</td> </tr> 
+<tr> <td align="center">      8  </td><td align="center">  0.2850 </td><td align="center"> 200</td> </tr> 
+<tr> <td align="center">      9  </td><td align="center">  0.2626 </td><td align="center">  99</td> </tr> 
+<tr> <td align="center">     10  </td><td align="center">  0.2475 </td><td align="center"> 198</td> </tr> 
+<tr> <td align="center">     12  </td><td align="center">  0.2368 </td><td align="center"> 228</td> </tr> 
+<tr> <td align="center">     15  </td><td align="center">  0.1822 </td><td align="center"> 214</td> </tr> 
+<tr> <td align="center">     16  </td><td align="center">  0.2054 </td><td align="center"> 112</td> </tr> 
+ <tr> <td align="center">    20  </td><td align="center">  0.1910 </td><td align="center"> 199</td> </tr> 
+<tr> <td align="center">     25  </td><td align="center">  0.2404 </td><td align="center"> 104 </td></tr> 
+</table> </center> 
+<p> 
+We see that the probability of riding the elevator is mostly decreasing as the size of the agent increases.  The reason for this is that larger will be forced to be closer to other agents making riding the elevator less desirable. An interesting extension would be to have agent disutility for walking down stairs proportional to agent size.  Finally, we look at the empirical distribution function of the probability of riding the elevator.  
+
+<center> <IMG SRC="images/ecdf.jpg" BORDER="0" HEIGHT="320" ALT="Missing"> </center> 
+
+The way to read the ECDF is to find .5 on the y axis, which corresponds to about .25 on the x axis. This means that in 50% of the iterations, less that 25% of the potential passengers got to ride the elevator. 
+<hr>
+
+<h2>4. Code </h2>
+
+<ul>
+<li><a href="code/agentdown.m">agentdown.m</a> - Determines agent's choice, stairs or elevator.</li> 
+<li><a href="code/distance.m">distance.m</a> - Determines expected distance to closest agent.</li> 
+<li><a href="code/distribution.m">distribution.m</a> - Determines initial distribution over elevator space.</li> 
+<li><a href="code/expectedvalue.m">expectedvalue.m</a> -Determines expected value of entering elevator.  </li> 
+<li><a href="code/feasible.m">feasible.m</a> - Gives matrix of feasible spaces for new agent.</li> 
+<li><a href="code/main.m">main.m</a> - Runs the iterations of the elevator</li> 
+<li><a href="code/marginal.m">marginal.m</a> - Determines marginal distribution of floor space when agents are already on the elevator.</li> 
+<li><a href="code/updatestate.m">updatestate.m</a> - Updates the state of the elevator after an agent enters. </li> 
+</ul>
+
+</body> </html>
+

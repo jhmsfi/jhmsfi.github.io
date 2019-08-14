@@ -1,0 +1,161 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+ 
+<title></title>
+</head><body>
+
+<center> <h1> Squashing the Ponzi Bubble </h1> </center> 
+
+<hr>
+<center><h2> Miriam Reed and Matt Zimmerman</h2> </center>  
+<hr>
+
+
+<h2>1. Motivation</h2>
+
+<p>Our primary motivation was the regulation strategy imposed in the
+United States following the Savings &amp; Loans crash of the 1980s.
+Regulators like William Black restricted growth of investment funds to
+100%, and reportedly managed to pop the bubbles of several Ponzi
+schemes before they grew to substantial dimensions (mostly within their
+first one or two years). </p><p>A secondary motivation was to see if a Ponzi scheme operator
+imposing an internal limit on growth rate could prolong the life of the
+Ponzi scheme. This is based on the observation that Bernie Madoff
+apparently restricted entry into his particularly long-lived fund. In
+this project we model the growth and death of a stylized Ponzi scheme,
+defined for our purposes as a fraudulent investment system in which no
+generation of wealth takes place, so that principal and interest
+payments are financed out of the fund's total capital and hence depend
+on the growth rate of new investment in the fund. We then limit the
+growth of the Ponzi schemes to different rates to see how this
+regulation influences the scheme's persistence. We found that growth
+limits that weren't set low enough to collapse a scheme would prolong
+its existence. </p><p>We were also interested in how different learning rules and
+information networks on potential investors changed the regulatory
+strategy. We found that they had negligible effect. However, different
+investment strategies had an effect on the level of optimal growth
+limits.
+</p><h2>2. Model</h2>
+
+<p>We create a multi-agent model where investors can take on binary
+states (0 = not invested in the Ponzi scheme, 1 = invested in Ponzi).
+We assume that all agents invest in the Ponzi scheme when they learn
+about it from another agent. This assumption is based on standard
+finance theory, which claims that investors that are homogeneous with
+respect to risk aversion should generate equivalence of high risk /
+high return assets and low risk / low return assets due to arbitrage.
+With myopic investors, assets in fraudulent schemes should break out of
+this equivalence by seemingly yielding high returns at low risk
+(volatility). For example, Madoff reportedly paid out 10% interest with
+hardly any variance or correlation with the market. We ignore different
+classes of investors, such as secondary funds that channeled money to
+the Ponzi scheme
+</p><h3>Key parameters</h3>
+
+<ul>
+<li>population size</li>
+<li>network structure</li>
+<li>investment per investor</li>
+<li>disinvestment rate</li>
+<li>promised interest rate</li>
+<li>regulated growth cap</li>
+</ul>
+
+
+<h2>3. Outcomes</h2>
+
+<p>We create four iterations of the model with different parameters.
+Population size is fixed at 1000 potential investors, 10 of whom were
+initial investors. Each investor had $1 to invest and the Ponzi scheme
+promised a 10% return on investment every time step. Each iteration is
+run with no limits to growth and growth caps of 50%, 15% and 10%. </p><p>In the first three iterations, the fund is set up as
+distributing the promised 10% interest (which is treated as being
+consumed by investors). The disinvestment rate is set to zero in the
+first three iterations. These iterations differe in agents' learning
+rules regarding the Ponzi scheme. In the first iteration, individuals
+are randomly paired each time step; if one member of the pair is not an
+investor and the other member is, the former invests in the Ponzi
+scheme. In the second iteration, individuals are randomly paired six
+times each time step and if any agent's partner is an investor, that
+agent becomes an investor. In the third iteration, agents are connected
+by a random network with average connectivity (k) of four. If any of
+the agents' neighbors are investors, that agent becomes an investor. </p><p>The results of all three iterations are qualitatively similar
+and represented in Figures 1-3. Investment in the Ponzi scheme follows
+a traditional s-shaped diffusion curve, and eventually goes to
+fixation. As expected, higher connectivity leads to faster growth.
+Limiting the growth rate flattens the rate at which the Ponzi scheme
+spreads, and significantly prolongs the survival time of the Ponzi
+scheme but with little effect on the total capital bound up in the fund
+over its lifetime. However, when the cap on the growth rate equals the
+promised investment rate (here, 10%), then the scheme collapses early
+without a large number of investors or funds. This result is robust for
+different frequencies of pairings, different promised interest rates
+(not reproduced here) and different values of average network
+connectivity.
+</p><center> <img src="PonziDemo1.jpg" alt="Missing" border="0" height="400"> </center>Figure
+1. Individuals are randomly paired once each time step and learn about
+the Ponzi scheme from their partners. Higher caps extend the length of
+the scheme. However, a 10% cap, matching the promised investment rate
+(the cyan line) prevents massive investment in the scheme before its
+collapse.
+<center> <img src="PonziDemo2.jpg" alt="Missing" border="0" height="400"> </center>Figure
+2. Individuals are randomly paired six times each time step and learn
+about the Ponzi scheme from any of their partners. Although investment
+in the scheme spreads faster in the population, these results are
+qualitatively similar to those in iteration 1.
+<center> <img src="PonziDemo3.jpg" alt="Missing" border="0" height="400"> </center>Figure
+3. Individuals associate over a network (mean k = 4) and learn about
+the Ponzi scheme from their neighbors. Again, the results are
+qualitatively similar to those in the first two iterations. <p>In the final iteration of our model, we explored the robustness of
+our results to a reinvesting fund scheme, in which promised interest is
+plowed back. In this case, the learning rules is identical to the
+network association in the third iteration. With a fixed probability of
+10% every time step an agent chooses to disinvest in the scheme,
+withdrawing its principal and compound (imputed) interest. Agents may
+decide to reinvest, but only their initial $1 principal. Due to the
+effects of compound interest which increases the effective promised
+per-time-step return, we expect that the regulatory cap needs to be set
+at a somewhat higher level in order to collapse the scheme if the fund
+runs a reinvesting strategy, compared to a disbursing fund. The model
+confirms this expectations, as can be seen in the results in Figure 4.
+</p><center> <img src="PonziDemo4.jpg" alt="Missing" border="0" height="400"> </center>Figure
+4. Individuals associate over a network (mean k = 4) and learn about
+the Ponzi scheme from their neighbors. The fund is reinvesting earned
+interest, but investors randomly disinvest at a constant rate of 10%.
+Caps at both 15% and 10% effectively regulate the Ponzi scheme's
+growth.
+<h2>4. Extensions</h2>
+
+<p>Investment frauds are based on trust: Madoff was one of the most
+respected actors on financial markets. Including trust in the model
+might make the disinvestment schedule u-shaped, as distrust is high in
+the initial phase, falls as reputation spreads, and then rises as the
+fragility of the scheme becomes evident. Furthermore, in this case
+payouts will not only reduce the fund's total capital, but also
+increase confidence as neighbors observe the apparent stability and
+trustworthiness of the fund.
+</p><p>Heterogeneous agents with respect to risk aversion would allow
+to depart from standard finance theory, with a distribution in
+risk-return combinations between assets.
+</p><h2>5. Other applications</h2>
+
+<p>The salient feature of our model is the growth restriction, combined
+with the death of the system due to the disinvestment rate.
+One possible other application would be nuclear weapon agreements, in
+which countries voluntarily restrict the growth of their armament (and
+research), and in which the world could potentially become nuclear
+weapons-free if countries decided to pull out of nuclear armament.
+Another application would be vermin control, where only a limited
+amount of rodenticide is brought out for animal rights reasons, and
+birth control is applied instead.
+</p><h2>6. Code </h2>
+
+<ul>
+<li><a href="file:///C:/Documents%20and%20Settings/Matt/Desktop/code/ponzi_demo_1.m">ponzi_demo_1.m</a> - A demonstration of results generated from the first iteration.</li> 
+<li><a href="file:///C:/Documents%20and%20Settings/Matt/Desktop/code/ponzi_demo_2.m">ponzi_demo_2.m</a> - A demonstration of results generated from the second iteration.</li> 
+<li><a href="file:///C:/Documents%20and%20Settings/Matt/Desktop/code/ponzi_demo_3.m">ponzi_demo_3.m</a> - A demonstration of results generated from the third iteration.</li> 
+<li><a href="file:///C:/Documents%20and%20Settings/Matt/Desktop/code/ponzi_demo_4.m">ponzi_demo_4.m</a> - A demonstration of results generated from the fourth iteration.</li> 
+<li><a href="file:///C:/Documents%20and%20Settings/Matt/Desktop/code/random_pair.m">random_pair.m</a> - A useful algorithm that generates unique random pairings of elemets of a vector.</li> 
+</ul>
+
+</body></html>

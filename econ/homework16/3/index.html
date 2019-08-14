@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>homework problem</title>
+        <meta name="description" content="GWCSS 2016 HW">
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        
+        <h1>New McDonald: An Agent Based Probabilistic Choice Model of Patented Method Usage for Farming</h1>
+        <h2>Robert G. Moulder</h2>
+        <h4>University of Virginia, Charlottesville, VA</h4>
+        <h2>Luis Sanchez </h2>
+        <h4>Instituto Politecnico Nacional, Mexico</h4>
+        <hr>
+        <!--
+            MADE WITH <3 AND JAVASCRIPT
+        -->
+        
+        <p>
+            Our homework and associated Shiny app is below.  
+        </p>
+        <ul>
+            <li><a href="FarmAgentApp/ui.R">Ui.R</a></li>
+            <li><a href="FarmAgentApp/server.R">Server.R</a></li>
+            <li><a href="FarmAgentApp/Agent.R">Agent.R</a></li>
+        </ul>
+
+        <div id="NewMcDonald"></div>
+        <script src="PDFView/pdfobject.js"></script>
+        <script>PDFObject.embed("PDFView/mcdonald-agent-based.pdf", "#NewMcDonald");</script>
+        <style>
+.pdfobject-container { height: 800px;}
+.pdfobject { border: 1px solid #666; }
+</style>
+        <hr>
+                <iframe src="https://robertgm111.shinyapps.io/FarmAgentApp/" style="border: 2px black solid; width: 800px; height: 900px"></iframe>
+
+ 
+    </body>
+</html>

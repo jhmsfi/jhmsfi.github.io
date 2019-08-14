@@ -1,0 +1,447 @@
+<html>
+<head>
+<title>NetLogoModel</title>
+<style type="text/css">
+<!--
+/*
+    This style sheet is borrowed from the NetLogo User Manual.  However, some of the units were
+    changed from em to px because Java's StyleSheet support is limited for relative units such as
+    em and % (this will supposively improve with newer versions of the VM) - jrn 7/21/05
+    BE VERY VERY CAREFUL when you alter this style sheet -- it's possible to put in
+    innocent-looking things that work on some VM's but cause Java exceptions on other for example
+    we were using "font-size: 125%" but it caused Java exceptions on Java 1.5 on Windows - ST
+    8/25/05
+*/
+:link { color: rgb(110,0,110); }
+:visited { color: rgb(110,0,110); }
+body {
+    margin-left: 5px;
+    font-family: arial, sans-serif;
+    background: white;
+    font-size: 12pt
+}
+h1 {
+    color: white;
+    background: rgb(45,0,45);
+    font-size: 18pt;
+    margin-bottom: 4px;
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+h2 {
+    margin-top: 15px;
+    margin-left: 6px;
+    margin-bottom: 4px;
+    background: rgb(166,172,255);
+    font-size: 15pt;
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+h3 {
+    margin-top: 15px;
+    margin-left: 13px;
+    margin-bottom: 4px;
+    background: rgb(175,175,175);
+    font-size: 12pt;
+    padding: 0.2em;
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+h4 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    margin-left: 15px;
+    font-size: 12pt;
+}
+h5 {
+    margin-top: 15px;
+    margin-left: 15px;
+    font-size: 12pt;
+}
+h6 {
+    margin-top: 15px;
+    margin-left: 15px;
+    font-size: 12pt;
+}
+p {
+    margin-left: 15px;
+    margin-bottom: 3px;
+}
+pre {
+    margin-left: 13px;
+    background: rgb(225,225,225);
+    font-family: monospace;
+    font-size: 12pt;
+    padding-left: 10px;
+    padding-right: 3px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    margin-top:9px;
+    margin-bottom:0px;
+}
+code {
+    font-family: monospace;
+    font-size: 12pt;
+}
+blockquote {
+    border: solid;
+    border-style: solid;
+    border-width: thin;
+    border-color: black;
+    background: rgb(250,250,220);
+    padding-top: 0px;
+    padding-bottom: 7px;
+    margin-top: 7px;
+    margin-bottom:1px;
+}
+ol {
+   margin-bottom:1px;
+}
+ul {
+   margin-bottom:1px;
+}
+
+-->
+</style>
+</head>
+<body>
+
+
+
+<p>
+<applet code="org.nlogo.lite.Applet"
+        archive="NetLogoLite.jar"
+        width="863" height="461">
+  <param name="DefaultModel"
+         value="NetLogoModel.nlogo">
+  <param name="java_arguments"
+         value="-Djnlp.packEnabled=true">
+</applet>
+</p>
+
+
+<p>If the Java does not work on your machine, you can download the model file and run in on your computer. You need to have <a target="_blank" href="http://ccl.northwestern.edu/netlogo/">NetLogo</a> installed on your computer.</p>
+<p>Download model file:
+<a href="NetLogoModel.nlogo">NetLogoModel.nlogo</a></p>
+
+
+<h1>CODE</h1>
+<pre><font color="#007f69">turtles-own</font><font color="#000000"> [belief </font><font color="#5a5a5a">;; belief on the likelihood the rumor being true</font><font color="#000000">
+  converted?  </font><font color="#5a5a5a">;; whether the turtle just receive the message and believe</font><font color="#000000">
+  distance-from-other-turtles </font><font color="#5a5a5a">;; list of distances of this node from other turtles</font><font color="#000000">
+  node-clustering-coefficient
+]
+
+</font><font color="#007f69">globals</font><font color="#000000">
+[
+  clustering-coefficient               </font><font color="#5a5a5a">;; the clustering coefficient of the network; this is the</font><font color="#000000">
+                                       </font><font color="#5a5a5a">;; average of clustering coefficients of all turtles</font><font color="#000000">
+  average-path-length                  </font><font color="#5a5a5a">;; average path length of the network</font><font color="#000000">
+  infinity                             </font><font color="#5a5a5a">;; a very large number.</font><font color="#000000">
+                                         </font><font color="#5a5a5a">;; used to denote distance between two turtles which</font><font color="#000000">
+                                         </font><font color="#5a5a5a">;; don't have a connected or unconnected path between them</font><font color="#000000">
+]
+
+</font><font color="#007f69">to</font><font color="#000000"> setup
+  </font><font color="#0000aa">clear-all</font><font color="#000000">
+  </font><font color="#0000aa">set</font><font color="#000000"> infinity </font><font color="#963700">9999999</font><font color="#000000">  </font><font color="#5a5a5a">;; just an arbitrary choice for a large number</font><font color="#000000">
+  </font><font color="#0000aa">set-default-shape</font><font color="#000000"> </font><font color="#660096">turtles</font><font color="#000000"> </font><font color="#963700">&quot;circle&quot;</font><font color="#000000">
+  </font><font color="#0000aa">ask</font><font color="#000000"> </font><font color="#660096">patches</font><font color="#000000"> [</font><font color="#0000aa">set</font><font color="#000000"> </font><font color="#660096">pcolor</font><font color="#000000"> </font><font color="#963700">white</font><font color="#000000">]  
+ 
+  </font><font color="#0000aa">if</font><font color="#000000"> network-type </font><font color="#660096">=</font><font color="#000000"> </font><font color="#963700">&quot;small-world&quot;</font><font color="#000000"> [ </font><font color="#5a5a5a">;; generate a small-world network</font><font color="#000000">
+    </font><font color="#0000aa">create-turtles</font><font color="#000000"> node-count
+    </font><font color="#0000aa">layout-circle</font><font color="#000000"> </font><font color="#660096">sort</font><font color="#000000"> </font><font color="#660096">turtles</font><font color="#000000"> (</font><font color="#660096">world-width</font><font color="#000000"> </font><font color="#660096">/</font><font color="#000000"> </font><font color="#963700">2</font><font color="#000000"> </font><font color="#660096">-</font><font color="#000000"> </font><font color="#963700">2</font><font color="#000000">)
+    </font><font color="#0000aa">let</font><font color="#000000"> d </font><font color="#963700">1.001</font><font color="#000000"> </font><font color="#660096">*</font><font color="#000000"> [distance-to-nearest-neighbor] </font><font color="#660096">of</font><font color="#000000"> </font><font color="#660096">one-of</font><font color="#000000"> </font><font color="#660096">turtles</font><font color="#000000">
+    </font><font color="#0000aa">ask</font><font color="#000000"> </font><font color="#660096">turtles</font><font color="#000000">
+      [</font><font color="#0000aa">create-links-with</font><font color="#000000"> </font><font color="#660096">other</font><font color="#000000"> </font><font color="#660096">turtles</font><font color="#000000"> </font><font color="#660096">in-radius</font><font color="#000000"> (d </font><font color="#660096">*</font><font color="#000000"> neighbor-count </font><font color="#660096">/</font><font color="#000000"> </font><font color="#963700">2</font><font color="#000000">)]
+    rewire
+  ] 
+
+  </font><font color="#0000aa">if</font><font color="#000000"> network-type </font><font color="#660096">=</font><font color="#000000"> </font><font color="#963700">&quot;scale-free&quot;</font><font color="#000000"> [ </font><font color="#5a5a5a">;; generate a scale-free network</font><font color="#000000">
+    make-node </font><font color="#963700">nobody</font><font color="#000000">        </font><font color="#5a5a5a">;; first node, unattached</font><font color="#000000">
+    make-node </font><font color="#660096">turtle</font><font color="#000000"> </font><font color="#963700">0</font><font color="#000000">      </font><font color="#5a5a5a">;; second node, attached to first node</font><font color="#000000">
+    </font><font color="#0000aa">repeat</font><font color="#000000"> node-count </font><font color="#660096">-</font><font color="#000000"> </font><font color="#963700">2</font><font color="#000000"> [
+      make-node find-partner
+      layout
+    ]
+    layout
+  ]
+
+  </font><font color="#0000aa">ask</font><font color="#000000"> </font><font color="#660096">turtles</font><font color="#000000"> [ 
+    </font><font color="#0000aa">ifelse</font><font color="#000000"> binary-belief? 
+      [</font><font color="#0000aa">set</font><font color="#000000"> belief </font><font color="#660096">random</font><font color="#000000"> </font><font color="#963700">2</font><font color="#000000">]
+      [</font><font color="#0000aa">set</font><font color="#000000"> belief </font><font color="#660096">random-float</font><font color="#000000"> </font><font color="#963700">1</font><font color="#000000"> ]
+      </font><font color="#5a5a5a">;[set belief (random 2) * 2 - 1  ]</font><font color="#000000">
+      </font><font color="#5a5a5a">;[set belief random-float 2 - 1 ]</font><font color="#000000">
+    </font><font color="#0000aa">if</font><font color="#000000"> show-belief? [
+      </font><font color="#0000aa">set</font><font color="#000000"> </font><font color="#660096">label</font><font color="#000000"> </font><font color="#660096">precision</font><font color="#000000"> belief </font><font color="#963700">2</font><font color="#000000">
+      </font><font color="#0000aa">set</font><font color="#000000"> </font><font color="#660096">label-color</font><font color="#000000"> </font><font color="#963700">black</font><font color="#000000">
+      </font><font color="#0000aa">set</font><font color="#000000"> </font><font color="#660096">color</font><font color="#000000"> </font><font color="#963700">9</font><font color="#000000">
+    ]
+  ]
+
+  
+  </font><font color="#0000aa">ask</font><font color="#000000"> </font><font color="#660096">one-of</font><font color="#000000"> </font><font color="#660096">turtles</font><font color="#000000"> </font><font color="#660096">with</font><font color="#000000"> [belief </font><font color="#660096">&gt;</font><font color="#000000"> </font><font color="#963700">0.5</font><font color="#000000">] [
+    </font><font color="#0000aa">set</font><font color="#000000"> </font><font color="#660096">color</font><font color="#000000"> </font><font color="#963700">red</font><font color="#000000">
+    </font><font color="#0000aa">set</font><font color="#000000"> converted? </font><font color="#963700">true</font><font color="#000000">   
+    </font><font color="#5a5a5a">;if devout-spreader?  [ set belief 1]</font><font color="#000000">
+    </font><font color="#0000aa">set</font><font color="#000000"> belief </font><font color="#963700">1</font><font color="#000000">
+    </font><font color="#0000aa">if</font><font color="#000000"> show-belief? [</font><font color="#0000aa">set</font><font color="#000000"> </font><font color="#660096">label</font><font color="#000000"> </font><font color="#660096">precision</font><font color="#000000"> belief </font><font color="#963700">2</font><font color="#000000">]
+  ]
+  
+  do-calculations
+  </font><font color="#0000aa">reset-ticks</font><font color="#000000">
+</font><font color="#007f69">end</font><font color="#000000">
+
+
+</font><font color="#007f69">to</font><font color="#000000"> go
+  </font><font color="#0000aa">if</font><font color="#000000"> </font><font color="#660096">not</font><font color="#000000"> </font><font color="#660096">any?</font><font color="#000000"> </font><font color="#660096">turtles</font><font color="#000000"> </font><font color="#660096">with</font><font color="#000000"> [converted? </font><font color="#660096">=</font><font color="#000000"> </font><font color="#963700">true</font><font color="#000000">] [</font><font color="#0000aa">stop</font><font color="#000000">]
+  </font><font color="#0000aa">ask</font><font color="#000000"> </font><font color="#660096">turtles</font><font color="#000000"> </font><font color="#660096">with</font><font color="#000000"> [converted? </font><font color="#660096">=</font><font color="#000000"> </font><font color="#963700">true</font><font color="#000000">] [  </font><font color="#5a5a5a">;; update the beliefs of neighbors of newly converted node</font><font color="#000000">
+    </font><font color="#0000aa">set</font><font color="#000000"> converted? </font><font color="#963700">false</font><font color="#000000">
+    </font><font color="#0000aa">ask</font><font color="#000000"> </font><font color="#660096">link-neighbors</font><font color="#000000"> </font><font color="#660096">with</font><font color="#000000"> [ </font><font color="#660096">color</font><font color="#000000"> </font><font color="#660096">=</font><font color="#000000"> </font><font color="#963700">9</font><font color="#000000">] [
+      </font><font color="#0000aa">set</font><font color="#000000"> belief (belief </font><font color="#660096">+</font><font color="#000000"> [belief] </font><font color="#660096">of</font><font color="#000000"> </font><font color="#660096">myself</font><font color="#000000">) </font><font color="#660096">/</font><font color="#000000"> </font><font color="#963700">2</font><font color="#000000">
+      </font><font color="#5a5a5a">; set belief (belief + 1) / 2</font><font color="#000000">
+      </font><font color="#0000aa">if</font><font color="#000000"> show-belief? [</font><font color="#0000aa">set</font><font color="#000000"> </font><font color="#660096">label</font><font color="#000000"> </font><font color="#660096">precision</font><font color="#000000"> belief </font><font color="#963700">2</font><font color="#000000">]
+      </font><font color="#0000aa">if</font><font color="#000000"> belief </font><font color="#660096">&gt;</font><font color="#000000"> </font><font color="#963700">0.5</font><font color="#000000"> [
+        </font><font color="#0000aa">set</font><font color="#000000"> </font><font color="#660096">color</font><font color="#000000"> </font><font color="#963700">red</font><font color="#000000">
+        </font><font color="#0000aa">set</font><font color="#000000"> converted? </font><font color="#963700">true</font><font color="#000000">        
+        ]
+      ]  
+  ]
+  </font><font color="#0000aa">tick</font><font color="#000000"> 
+</font><font color="#007f69">end</font><font color="#000000">
+
+</font><font color="#5a5a5a">;;</font><font color="#000000">
+</font><font color="#5a5a5a">;; Procedures for small-world network</font><font color="#000000">
+</font><font color="#007f69">to-report</font><font color="#000000"> distance-to-nearest-neighbor </font><font color="#5a5a5a">;; turtle method. spatial, NOT graph distance!</font><font color="#000000">
+  </font><font color="#0000aa">report</font><font color="#000000"> </font><font color="#660096">distance</font><font color="#000000"> </font><font color="#660096">min-one-of</font><font color="#000000"> </font><font color="#660096">other</font><font color="#000000"> </font><font color="#660096">turtles</font><font color="#000000"> [</font><font color="#660096">distance</font><font color="#000000"> </font><font color="#660096">myself</font><font color="#000000">]
+</font><font color="#007f69">end</font><font color="#000000">
+
+</font><font color="#007f69">to</font><font color="#000000"> rewire </font><font color="#5a5a5a">;; the Watts - Strogatz algorithm to rewire a small world network</font><font color="#000000">
+  </font><font color="#0000aa">ask</font><font color="#000000"> </font><font color="#660096">turtles</font><font color="#000000">
+    [</font><font color="#0000aa">foreach</font><font color="#000000"> </font><font color="#660096">sort</font><font color="#000000"> </font><font color="#660096">my-links</font><font color="#000000"> </font><font color="#5a5a5a">;; 'sort' just to get a list</font><font color="#000000">
+      [</font><font color="#0000aa">if</font><font color="#000000"> </font><font color="#660096">random-float</font><font color="#000000"> </font><font color="#963700">1</font><font color="#000000"> </font><font color="#660096">&lt;</font><font color="#000000"> p
+        [</font><font color="#0000aa">ask</font><font color="#000000"> ? [</font><font color="#0000aa">die</font><font color="#000000">]
+         </font><font color="#0000aa">create-link-with</font><font color="#000000"> </font><font color="#660096">one-of</font><font color="#000000"> </font><font color="#660096">other</font><font color="#000000"> </font><font color="#660096">turtles</font><font color="#000000">
+              </font><font color="#660096">with</font><font color="#000000"> [</font><font color="#660096">not</font><font color="#000000"> </font><font color="#660096">link-neighbor?</font><font color="#000000"> </font><font color="#660096">myself</font><font color="#000000">]]]]
+  </font><font color="#5a5a5a">;ask turtles [ ;; make sure all turtles are connected</font><font color="#000000">
+  </font><font color="#5a5a5a">;  if count link-neighbors = 0 [ create-link-with one-of other turtles ]    </font><font color="#000000">
+  </font><font color="#5a5a5a">;]</font><font color="#000000">
+</font><font color="#007f69">end</font><font color="#000000">
+
+
+</font><font color="#5a5a5a">;;</font><font color="#000000">
+</font><font color="#5a5a5a">;; Procedures for scale-free network</font><font color="#000000">
+
+</font><font color="#5a5a5a">;; used for creating a new node</font><font color="#000000">
+</font><font color="#007f69">to</font><font color="#000000"> make-node [old-node]
+  </font><font color="#0000aa">crt</font><font color="#000000"> </font><font color="#963700">1</font><font color="#000000">
+  [
+    </font><font color="#0000aa">set</font><font color="#000000"> </font><font color="#660096">color</font><font color="#000000"> </font><font color="#963700">gray</font><font color="#000000">
+    </font><font color="#0000aa">if</font><font color="#000000"> old-node </font><font color="#660096">!=</font><font color="#000000"> </font><font color="#963700">nobody</font><font color="#000000">
+      [ </font><font color="#0000aa">create-link-with</font><font color="#000000"> old-node
+        </font><font color="#5a5a5a">;; position the new node near its partner</font><font color="#000000">
+        </font><font color="#0000aa">move-to</font><font color="#000000"> old-node
+        </font><font color="#0000aa">fd</font><font color="#000000"> </font><font color="#963700">8</font><font color="#000000">
+      ]
+  ]
+</font><font color="#007f69">end</font><font color="#000000">
+
+</font><font color="#5a5a5a">;; This code is the heart of the &quot;preferential attachment&quot; mechanism, and acts like</font><font color="#000000">
+</font><font color="#5a5a5a">;; a lottery where each node gets a ticket for every connection it already has.</font><font color="#000000">
+</font><font color="#5a5a5a">;; While the basic idea is the same as in the Lottery Example (in the Code Examples</font><font color="#000000">
+</font><font color="#5a5a5a">;; section of the Models Library), things are made simpler here by the fact that we</font><font color="#000000">
+</font><font color="#5a5a5a">;; can just use the links as if they were the &quot;tickets&quot;: we first pick a random link,</font><font color="#000000">
+</font><font color="#5a5a5a">;; and than we pick one of the two ends of that link.</font><font color="#000000">
+</font><font color="#007f69">to-report</font><font color="#000000"> find-partner
+  </font><font color="#0000aa">report</font><font color="#000000"> [</font><font color="#660096">one-of</font><font color="#000000"> </font><font color="#660096">both-ends</font><font color="#000000">] </font><font color="#660096">of</font><font color="#000000"> </font><font color="#660096">one-of</font><font color="#000000"> </font><font color="#660096">links</font><font color="#000000">
+</font><font color="#007f69">end</font><font color="#000000">
+
+</font><font color="#007f69">to</font><font color="#000000"> layout
+  </font><font color="#5a5a5a">;; the number here is arbitrary; more repetitions slows down the</font><font color="#000000">
+  </font><font color="#5a5a5a">;; model, but too few gives poor layouts</font><font color="#000000">
+  </font><font color="#0000aa">repeat</font><font color="#000000"> </font><font color="#963700">10</font><font color="#000000"> [
+    </font><font color="#5a5a5a">;; the more turtles we have to fit into the same amount of space,</font><font color="#000000">
+    </font><font color="#5a5a5a">;; the smaller the inputs to layout-spring we'll need to use</font><font color="#000000">
+    </font><font color="#0000aa">let</font><font color="#000000"> factor </font><font color="#660096">sqrt</font><font color="#000000"> </font><font color="#660096">count</font><font color="#000000"> </font><font color="#660096">turtles</font><font color="#000000">
+    </font><font color="#5a5a5a">;; numbers here are arbitrarily chosen for pleasing appearance</font><font color="#000000">
+    </font><font color="#0000aa">layout-spring</font><font color="#000000"> </font><font color="#660096">turtles</font><font color="#000000"> </font><font color="#660096">links</font><font color="#000000"> (</font><font color="#963700">1</font><font color="#000000"> </font><font color="#660096">/</font><font color="#000000"> factor) (</font><font color="#963700">15</font><font color="#000000"> </font><font color="#660096">/</font><font color="#000000"> factor) (</font><font color="#963700">1</font><font color="#000000"> </font><font color="#660096">/</font><font color="#000000"> factor)
+    </font><font color="#0000aa">display</font><font color="#000000">  </font><font color="#5a5a5a">;; for smooth animation</font><font color="#000000">
+  ]
+  </font><font color="#5a5a5a">;; don't bump the edges of the world</font><font color="#000000">
+  </font><font color="#0000aa">let</font><font color="#000000"> x-offset </font><font color="#660096">max</font><font color="#000000"> [</font><font color="#660096">xcor</font><font color="#000000">] </font><font color="#660096">of</font><font color="#000000"> </font><font color="#660096">turtles</font><font color="#000000"> </font><font color="#660096">+</font><font color="#000000"> </font><font color="#660096">min</font><font color="#000000"> [</font><font color="#660096">xcor</font><font color="#000000">] </font><font color="#660096">of</font><font color="#000000"> </font><font color="#660096">turtles</font><font color="#000000">
+  </font><font color="#0000aa">let</font><font color="#000000"> y-offset </font><font color="#660096">max</font><font color="#000000"> [</font><font color="#660096">ycor</font><font color="#000000">] </font><font color="#660096">of</font><font color="#000000"> </font><font color="#660096">turtles</font><font color="#000000"> </font><font color="#660096">+</font><font color="#000000"> </font><font color="#660096">min</font><font color="#000000"> [</font><font color="#660096">ycor</font><font color="#000000">] </font><font color="#660096">of</font><font color="#000000"> </font><font color="#660096">turtles</font><font color="#000000">
+  </font><font color="#5a5a5a">;; big jumps look funny, so only adjust a little each time</font><font color="#000000">
+  </font><font color="#0000aa">set</font><font color="#000000"> x-offset limit-magnitude x-offset </font><font color="#963700">0.1</font><font color="#000000">
+  </font><font color="#0000aa">set</font><font color="#000000"> y-offset limit-magnitude y-offset </font><font color="#963700">0.1</font><font color="#000000">
+  </font><font color="#0000aa">ask</font><font color="#000000"> </font><font color="#660096">turtles</font><font color="#000000"> [ </font><font color="#0000aa">setxy</font><font color="#000000"> (</font><font color="#660096">xcor</font><font color="#000000"> </font><font color="#660096">-</font><font color="#000000"> x-offset </font><font color="#660096">/</font><font color="#000000"> </font><font color="#963700">2</font><font color="#000000">) (</font><font color="#660096">ycor</font><font color="#000000"> </font><font color="#660096">-</font><font color="#000000"> y-offset </font><font color="#660096">/</font><font color="#000000"> </font><font color="#963700">2</font><font color="#000000">) ]
+</font><font color="#007f69">end</font><font color="#000000">
+
+</font><font color="#007f69">to-report</font><font color="#000000"> limit-magnitude [number limit]
+  </font><font color="#0000aa">if</font><font color="#000000"> number </font><font color="#660096">&gt;</font><font color="#000000"> limit [ </font><font color="#0000aa">report</font><font color="#000000"> limit ]
+  </font><font color="#0000aa">if</font><font color="#000000"> number </font><font color="#660096">&lt;</font><font color="#000000"> (</font><font color="#660096">-</font><font color="#000000"> limit) [ </font><font color="#0000aa">report</font><font color="#000000"> (</font><font color="#660096">-</font><font color="#000000"> limit) ]
+  </font><font color="#0000aa">report</font><font color="#000000"> number
+</font><font color="#007f69">end</font><font color="#000000">
+
+</font><font color="#5a5a5a">;;</font><font color="#000000">
+</font><font color="#5a5a5a">;; Calculate the statistics of the graph</font><font color="#000000">
+
+</font><font color="#5a5a5a">;; do-calculations reports true if the network is connected,</font><font color="#000000">
+</font><font color="#5a5a5a">;;   and reports false if the network is disconnected.</font><font color="#000000">
+</font><font color="#5a5a5a">;; (In the disconnected case, the average path length does not make sense,</font><font color="#000000">
+</font><font color="#5a5a5a">;;   or perhaps may be considered infinite)</font><font color="#000000">
+</font><font color="#007f69">to</font><font color="#000000"> do-calculations
+  </font><font color="#5a5a5a">;; set up a variable so we can report if the network is disconnected</font><font color="#000000">
+  </font><font color="#0000aa">let</font><font color="#000000"> connected? </font><font color="#963700">true</font><font color="#000000">
+
+  </font><font color="#5a5a5a">;; find the path lengths in the network</font><font color="#000000">
+  find-path-lengths
+
+  </font><font color="#0000aa">let</font><font color="#000000"> num-connected-pairs </font><font color="#660096">sum</font><font color="#000000"> [</font><font color="#660096">length</font><font color="#000000"> </font><font color="#660096">remove</font><font color="#000000"> infinity (</font><font color="#660096">remove</font><font color="#000000"> </font><font color="#963700">0</font><font color="#000000"> distance-from-other-turtles)] </font><font color="#660096">of</font><font color="#000000"> </font><font color="#660096">turtles</font><font color="#000000">
+
+  </font><font color="#0000aa">set</font><font color="#000000"> average-path-length (</font><font color="#660096">sum</font><font color="#000000"> [</font><font color="#660096">sum</font><font color="#000000"> distance-from-other-turtles] </font><font color="#660096">of</font><font color="#000000"> </font><font color="#660096">turtles</font><font color="#000000">) </font><font color="#660096">/</font><font color="#000000"> (num-connected-pairs)
+  </font><font color="#0000aa">if</font><font color="#000000"> average-path-length </font><font color="#660096">&gt;</font><font color="#000000"> infinity </font><font color="#660096">/</font><font color="#000000"> num-connected-pairs 
+    [</font><font color="#0000aa">set</font><font color="#000000"> average-path-length </font><font color="#963700">-1</font><font color="#000000">] </font><font color="#5a5a5a">;; when the graph is not connected, set average path length to -1</font><font color="#000000">
+
+  find-clustering-coefficient
+
+  </font><font color="#5a5a5a">;; report whether the network is connected or not</font><font color="#000000">
+  </font><font color="#5a5a5a">;; report connected?</font><font color="#000000">
+</font><font color="#007f69">end</font><font color="#000000">
+
+</font><font color="#5a5a5a">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</font><font color="#000000">
+</font><font color="#5a5a5a">;;; Clustering computations ;;;</font><font color="#000000">
+</font><font color="#5a5a5a">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</font><font color="#000000">
+
+</font><font color="#007f69">to-report</font><font color="#000000"> in-neighborhood? [ hood ]
+  </font><font color="#0000aa">report</font><font color="#000000"> ( </font><font color="#660096">member?</font><font color="#000000"> </font><font color="#660096">end1</font><font color="#000000"> hood </font><font color="#660096">and</font><font color="#000000"> </font><font color="#660096">member?</font><font color="#000000"> </font><font color="#660096">end2</font><font color="#000000"> hood )
+</font><font color="#007f69">end</font><font color="#000000">
+
+
+</font><font color="#007f69">to</font><font color="#000000"> find-clustering-coefficient
+  </font><font color="#0000aa">ifelse</font><font color="#000000"> </font><font color="#660096">all?</font><font color="#000000"> </font><font color="#660096">turtles</font><font color="#000000"> [</font><font color="#660096">count</font><font color="#000000"> </font><font color="#660096">link-neighbors</font><font color="#000000"> </font><font color="#660096">&lt;=</font><font color="#000000"> </font><font color="#963700">1</font><font color="#000000">]
+  [
+    </font><font color="#5a5a5a">;; it is undefined</font><font color="#000000">
+    </font><font color="#5a5a5a">;; what should this be?</font><font color="#000000">
+    </font><font color="#0000aa">set</font><font color="#000000"> clustering-coefficient </font><font color="#963700">0</font><font color="#000000">
+  ]
+  [
+    </font><font color="#0000aa">let</font><font color="#000000"> total </font><font color="#963700">0</font><font color="#000000">
+    </font><font color="#0000aa">ask</font><font color="#000000"> </font><font color="#660096">turtles</font><font color="#000000"> </font><font color="#660096">with</font><font color="#000000"> [ </font><font color="#660096">count</font><font color="#000000"> </font><font color="#660096">link-neighbors</font><font color="#000000"> </font><font color="#660096">&lt;=</font><font color="#000000"> </font><font color="#963700">1</font><font color="#000000">]
+      [ </font><font color="#0000aa">set</font><font color="#000000"> node-clustering-coefficient </font><font color="#963700">&quot;undefined&quot;</font><font color="#000000"> ]
+    </font><font color="#0000aa">ask</font><font color="#000000"> </font><font color="#660096">turtles</font><font color="#000000"> </font><font color="#660096">with</font><font color="#000000"> [ </font><font color="#660096">count</font><font color="#000000"> </font><font color="#660096">link-neighbors</font><font color="#000000"> </font><font color="#660096">&gt;</font><font color="#000000"> </font><font color="#963700">1</font><font color="#000000">]
+    [
+      </font><font color="#0000aa">let</font><font color="#000000"> hood </font><font color="#660096">link-neighbors</font><font color="#000000">
+      </font><font color="#0000aa">set</font><font color="#000000"> node-clustering-coefficient (</font><font color="#963700">2</font><font color="#000000"> </font><font color="#660096">*</font><font color="#000000"> </font><font color="#660096">count</font><font color="#000000"> </font><font color="#660096">links</font><font color="#000000"> </font><font color="#660096">with</font><font color="#000000"> [ in-neighborhood? hood ] </font><font color="#660096">/</font><font color="#000000">
+                                         ((</font><font color="#660096">count</font><font color="#000000"> hood) </font><font color="#660096">*</font><font color="#000000"> (</font><font color="#660096">count</font><font color="#000000"> hood </font><font color="#660096">-</font><font color="#000000"> </font><font color="#963700">1</font><font color="#000000">)) )
+      </font><font color="#5a5a5a">;; find the sum for the value at turtles</font><font color="#000000">
+      </font><font color="#0000aa">set</font><font color="#000000"> total total </font><font color="#660096">+</font><font color="#000000"> node-clustering-coefficient
+    ]
+    </font><font color="#5a5a5a">;; take the average</font><font color="#000000">
+    </font><font color="#0000aa">set</font><font color="#000000"> clustering-coefficient total </font><font color="#660096">/</font><font color="#000000"> </font><font color="#660096">count</font><font color="#000000"> </font><font color="#660096">turtles</font><font color="#000000"> </font><font color="#660096">with</font><font color="#000000"> [</font><font color="#660096">count</font><font color="#000000"> </font><font color="#660096">link-neighbors</font><font color="#000000"> </font><font color="#660096">&gt;</font><font color="#000000"> </font><font color="#963700">1</font><font color="#000000">]
+  ]
+</font><font color="#007f69">end</font><font color="#000000">
+
+</font><font color="#5a5a5a">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</font><font color="#000000">
+</font><font color="#5a5a5a">;;; Path length computations ;;;</font><font color="#000000">
+</font><font color="#5a5a5a">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</font><font color="#000000">
+
+</font><font color="#5a5a5a">;; Implements the Floyd Warshall algorithm for All Pairs Shortest Paths</font><font color="#000000">
+</font><font color="#5a5a5a">;; It is a dynamic programming algorithm which builds bigger solutions</font><font color="#000000">
+</font><font color="#5a5a5a">;; from the solutions of smaller subproblems using memoization that</font><font color="#000000">
+</font><font color="#5a5a5a">;; is storing the results.</font><font color="#000000">
+</font><font color="#5a5a5a">;; It keeps finding incrementally if there is shorter path through</font><font color="#000000">
+</font><font color="#5a5a5a">;; the kth node.</font><font color="#000000">
+</font><font color="#5a5a5a">;; Since it iterates over all turtles through k,</font><font color="#000000">
+</font><font color="#5a5a5a">;; so at the end we get the shortest possible path for each i and j.</font><font color="#000000">
+
+</font><font color="#007f69">to</font><font color="#000000"> find-path-lengths
+  </font><font color="#5a5a5a">;; reset the distance list</font><font color="#000000">
+  </font><font color="#0000aa">ask</font><font color="#000000"> </font><font color="#660096">turtles</font><font color="#000000">
+  [
+    </font><font color="#0000aa">set</font><font color="#000000"> distance-from-other-turtles []
+  ]
+
+  </font><font color="#0000aa">let</font><font color="#000000"> i </font><font color="#963700">0</font><font color="#000000">
+  </font><font color="#0000aa">let</font><font color="#000000"> j </font><font color="#963700">0</font><font color="#000000">
+  </font><font color="#0000aa">let</font><font color="#000000"> k </font><font color="#963700">0</font><font color="#000000">
+  </font><font color="#0000aa">let</font><font color="#000000"> node1 </font><font color="#660096">one-of</font><font color="#000000"> </font><font color="#660096">turtles</font><font color="#000000">
+  </font><font color="#0000aa">let</font><font color="#000000"> node2 </font><font color="#660096">one-of</font><font color="#000000"> </font><font color="#660096">turtles</font><font color="#000000">
+  </font><font color="#5a5a5a">;; initialize the distance lists</font><font color="#000000">
+  </font><font color="#0000aa">while</font><font color="#000000"> [i </font><font color="#660096">&lt;</font><font color="#000000"> node-count]
+  [
+    </font><font color="#0000aa">set</font><font color="#000000"> j </font><font color="#963700">0</font><font color="#000000">
+    </font><font color="#0000aa">while</font><font color="#000000"> [j </font><font color="#660096">&lt;</font><font color="#000000"> node-count]
+    [
+      </font><font color="#0000aa">set</font><font color="#000000"> node1 </font><font color="#660096">turtle</font><font color="#000000"> i
+      </font><font color="#0000aa">set</font><font color="#000000"> node2 </font><font color="#660096">turtle</font><font color="#000000"> j
+      </font><font color="#5a5a5a">;; zero from a node to itself</font><font color="#000000">
+      </font><font color="#0000aa">ifelse</font><font color="#000000"> i </font><font color="#660096">=</font><font color="#000000"> j
+      [
+        </font><font color="#0000aa">ask</font><font color="#000000"> node1 [
+          </font><font color="#0000aa">set</font><font color="#000000"> distance-from-other-turtles </font><font color="#660096">lput</font><font color="#000000"> </font><font color="#963700">0</font><font color="#000000"> distance-from-other-turtles
+          </font><font color="#5a5a5a">;show distance-from-other-turtles</font><font color="#000000">
+        ]
+      ]
+      [
+        </font><font color="#5a5a5a">;; 1 from a node to it's neighbor</font><font color="#000000">
+        </font><font color="#0000aa">ifelse</font><font color="#000000"> [ </font><font color="#660096">link-neighbor?</font><font color="#000000"> node1 ] </font><font color="#660096">of</font><font color="#000000"> node2
+        [
+          </font><font color="#0000aa">ask</font><font color="#000000"> node1 [
+            </font><font color="#0000aa">set</font><font color="#000000"> distance-from-other-turtles </font><font color="#660096">lput</font><font color="#000000"> </font><font color="#963700">1</font><font color="#000000"> distance-from-other-turtles
+            </font><font color="#5a5a5a">;show distance-from-other-turtles</font><font color="#000000">
+          ]
+        ]
+        </font><font color="#5a5a5a">;; infinite to everyone else</font><font color="#000000">
+        [
+          </font><font color="#0000aa">ask</font><font color="#000000"> node1 [
+            </font><font color="#0000aa">set</font><font color="#000000"> distance-from-other-turtles </font><font color="#660096">lput</font><font color="#000000"> infinity distance-from-other-turtles
+            </font><font color="#5a5a5a">;show distance-from-other-turtles</font><font color="#000000">
+          ]
+        ]
+      ]
+      </font><font color="#0000aa">set</font><font color="#000000"> j j </font><font color="#660096">+</font><font color="#000000"> </font><font color="#963700">1</font><font color="#000000">
+    ]
+    </font><font color="#0000aa">set</font><font color="#000000"> i i </font><font color="#660096">+</font><font color="#000000"> </font><font color="#963700">1</font><font color="#000000">
+  ]
+  </font><font color="#0000aa">set</font><font color="#000000"> i </font><font color="#963700">0</font><font color="#000000">
+  </font><font color="#0000aa">set</font><font color="#000000"> j </font><font color="#963700">0</font><font color="#000000">
+  </font><font color="#0000aa">let</font><font color="#000000"> dummy </font><font color="#963700">0</font><font color="#000000">
+  </font><font color="#0000aa">while</font><font color="#000000"> [k </font><font color="#660096">&lt;</font><font color="#000000"> node-count]
+  [
+    </font><font color="#0000aa">set</font><font color="#000000"> i </font><font color="#963700">0</font><font color="#000000">
+    </font><font color="#0000aa">while</font><font color="#000000"> [i </font><font color="#660096">&lt;</font><font color="#000000"> node-count]
+    [
+      </font><font color="#0000aa">set</font><font color="#000000"> j </font><font color="#963700">0</font><font color="#000000">
+      </font><font color="#0000aa">while</font><font color="#000000"> [j </font><font color="#660096">&lt;</font><font color="#000000"> node-count]
+      [
+        </font><font color="#5a5a5a">;; alternate path length through kth node</font><font color="#000000">
+        </font><font color="#0000aa">set</font><font color="#000000"> dummy ( (</font><font color="#660096">item</font><font color="#000000"> k [distance-from-other-turtles] </font><font color="#660096">of</font><font color="#000000"> </font><font color="#660096">turtle</font><font color="#000000"> i) </font><font color="#660096">+</font><font color="#000000">
+                    (</font><font color="#660096">item</font><font color="#000000"> j [distance-from-other-turtles] </font><font color="#660096">of</font><font color="#000000"> </font><font color="#660096">turtle</font><font color="#000000"> k))
+        </font><font color="#5a5a5a">;; is the alternate path shorter?</font><font color="#000000">
+        </font><font color="#0000aa">if</font><font color="#000000"> dummy </font><font color="#660096">&lt;</font><font color="#000000"> (</font><font color="#660096">item</font><font color="#000000"> j [distance-from-other-turtles] </font><font color="#660096">of</font><font color="#000000"> </font><font color="#660096">turtle</font><font color="#000000"> i)
+        [
+          </font><font color="#0000aa">ask</font><font color="#000000"> </font><font color="#660096">turtle</font><font color="#000000"> i [
+            </font><font color="#0000aa">set</font><font color="#000000"> distance-from-other-turtles </font><font color="#660096">replace-item</font><font color="#000000"> j distance-from-other-turtles dummy
+            </font><font color="#5a5a5a">;show distance-from-other-turtles</font><font color="#000000">
+          ]
+        ]
+        </font><font color="#0000aa">set</font><font color="#000000"> j j </font><font color="#660096">+</font><font color="#000000"> </font><font color="#963700">1</font><font color="#000000">
+      ]
+      </font><font color="#0000aa">set</font><font color="#000000"> i i </font><font color="#660096">+</font><font color="#000000"> </font><font color="#963700">1</font><font color="#000000">
+    ]
+    </font><font color="#0000aa">set</font><font color="#000000"> k k </font><font color="#660096">+</font><font color="#000000"> </font><font color="#963700">1</font><font color="#000000">
+  ]
+</font><font color="#007f69">end</font><font color="#000000">
+
+</font><font color="#5a5a5a">;; Huanren Zhang June 2014 @GWCSS</font>
+</pre>
+
+</body>
+</html>

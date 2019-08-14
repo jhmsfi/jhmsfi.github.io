@@ -1,0 +1,56 @@
+//lance.java
+//computational simulation camp homework assignment
+//Rob Letzler and Leanne Ussher
+//July 12, 2004
+
+//this begins the simulation and controls play; all of the operational parts of the simulation 
+// are defined in ListElements.java
+
+
+
+import java.io.*;
+
+public class lance{
+	static final int num_agents = 20;
+	
+	
+    public static void main(String[] args)  //core commands
+    	{
+	    ListMembers agent_list = new front_node(num_agents);  //create linked list of agents
+	    //print initial conditions
+
+
+		 System.out.print("comfort speeds: ");
+		 agent_list.print_comfort_speed();
+
+		 System.out.print("cyclist number: ");
+		 agent_list.print_ID();
+
+		 System.out.print("energy level: ");
+		 agent_list.print_energy();
+
+	    
+	    for (int j = 1; j < 100; j++)  //play game and print results repeatedly
+	     {
+		 //execute a turn and update the results
+		 agent_list.play();
+		 agent_list.update_state();
+
+		 //now print the results of that turn
+
+		 System.out.print("comfort speeds: ");
+		 agent_list.print_comfort_speed();
+
+		 System.out.print("actual speed: ");
+		 agent_list.print_speed();
+
+		 System.out.print("cyclist number: ");
+		 agent_list.print_ID();
+
+		 System.out.print("energy level: ");
+		 agent_list.print_energy();
+		 
+	     }
+	    System.exit(0);
+	}
+}

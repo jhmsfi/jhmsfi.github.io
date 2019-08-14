@@ -1,0 +1,276 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Elevator Action</title></head>
+<body><div style="text-align: center;"><big><big><strong>Elevator
+Action</strong></big></big><br>
+<br><div style="text-align: center;">Christos A
+Ioannou And
+Paul Smaldino<br>
+Graduate Workshop In Computational Social Science<br>
+June 17, 2008<br>
+<br><img style="width: 372px; height: 237px;" alt="" src="icon.jpg"></div><div style="text-align: justify;"><br><br><br><strong>The
+Homework <a href="http://zia.hss.cmu.edu/econ/homework08.html">Problem</a>:</strong><br>People
+enter and leave an elevator as it travels up and
+down.&nbsp;<br>&nbsp;&nbsp;&nbsp; Model, using
+whatever techniques you wish, the above
+scenario.&nbsp;<br>&nbsp;&nbsp;&nbsp; Explicitly
+state your model and key assumptions.&nbsp;<br>&nbsp;&nbsp;&nbsp;
+Summarize key results.&nbsp;<br>&nbsp;&nbsp;&nbsp;
+Suggest some potentially interesting future directions and
+questions
+for the model.<br>Suggest some standard social science scenarios
+that could be
+usefully modeled using such a process.<br>
+<br><br><span style="font-weight: bold;"><big><big>Our
+Model:</big></big><br></span>N agents are
+randomly assigned to a floor
+in our building. They are randomly assigned a timeto be spent on that
+floor, after which they head to the elevator. The elevator goes up and
+down, agents never leave or enter the building, but merely go from
+floor to floor. The elevator has a direction - e.g. when going up, it
+keeps going up if anyone on the elevator is heading to a higher floor
+or there is someone at a higher floor who has called the elevator.
+&nbsp;The elevator travels one floor per time step, and must pause
+on a floor for a time step when there is entering and/or exiting.
+Agents faced with a full elevator (or a majority of "weirdos" in some
+cases) can opt to take the stairs if their destination is not too many
+floors away. &nbsp;Taking the stairs takes 2 time steps per floor.<br>
+<br><img style="width: 964px; height: 964px;" alt="" src="SetupI.jpg"><br><img style="width: 1022px; height: 1022px;" alt="" src="SetupII.jpg"><br><br><span style="font-weight: bold;">Here is a screen grab of the Java
+application. &nbsp;<br></span>There are rows,
+representing floors. There are four columns. <br>The
+left most is the elevator (the black square). The second is waiting for
+the elevator. The third is hanging out (not waiting) on a floor. The
+fourth is the stairwell.<br>The agents are the red circles.<br><img style="width: 654px; height: 669px;" alt="screen grab of Mason" src="elevator_actionA.bmp"><br><br><span style="font-weight: bold;">And in motion:</span><br>&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; <img style="width: 100px; height: 600px;" alt="animated gif" src="elevatorAnim.gif"><br><span style="font-weight: bold;"><big><big><br><br><br>Some
+Results (ala Comparative
+Statics):</big></big><br></span>&nbsp;
+<table class="MsoNormalTable" style="width: 597.2pt; margin-left: 5.4pt; border-collapse: collapse;" border="0" cellpadding="0" cellspacing="0" width="796"> <tbody><tr style="height: 12.75pt;"><td rowspan="4" style="border-style: solid solid none; border-color: windowtext windowtext -moz-use-text-color; border-width: 2.25pt 1pt medium 2.25pt; padding: 0in 5.4pt; width: 65.8pt; height: 12.75pt;" nowrap="nowrap" valign="bottom" width="88"> <p class="MsoNormal"><b><span style="font-size: 10pt; font-family: Arial;">Primitives<o:p></o:p></span></b></p>
+</td> <td style="border-style: solid none; border-color: windowtext -moz-use-text-color; border-width: 2.25pt medium 1pt; padding: 0in 5.4pt; width: 128.8pt; height: 12.75pt;" nowrap="nowrap" valign="bottom" width="172"> <p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">Case#<o:p></o:p></span></p>
+</td> <td style="border-style: solid none; border-color: windowtext -moz-use-text-color; border-width: 2.25pt medium 1pt; padding: 0in 5.4pt; width: 48.8pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: center;" align="center"><b><span style="font-size: 10pt; font-family: Arial;">1<o:p></o:p></span></b></p>
+</td> <td style="border-style: solid none; border-color: windowtext -moz-use-text-color; border-width: 2.25pt medium 1pt; padding: 0in 5.4pt; width: 48.8pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: center;" align="center"><b><span style="font-size: 10pt; font-family: Arial;">2<o:p></o:p></span></b></p>
+</td> <td style="border-style: solid none; border-color: windowtext -moz-use-text-color; border-width: 2.25pt medium 1pt; padding: 0in 5.4pt; width: 48.8pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: center;" align="center"><b><span style="font-size: 10pt; font-family: Arial;">3<o:p></o:p></span></b></p>
+</td> <td style="border-style: solid none; border-color: windowtext -moz-use-text-color; border-width: 2.25pt medium 1pt; padding: 0in 5.4pt; width: 48.8pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: center;" align="center"><b><span style="font-size: 10pt; font-family: Arial;">4<o:p></o:p></span></b></p>
+</td> <td style="border-style: solid none; border-color: windowtext -moz-use-text-color; border-width: 2.25pt medium 1pt; padding: 0in 5.4pt; width: 52.55pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="70"> <p class="MsoNormal" style="text-align: center;" align="center"><b><span style="font-size: 10pt; font-family: Arial;">5<o:p></o:p></span></b></p>
+</td> <td style="border-style: solid none; border-color: windowtext -moz-use-text-color; border-width: 2.25pt medium 1pt; padding: 0in 5.4pt; width: 52.55pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="70"> <p class="MsoNormal" style="text-align: center;" align="center"><b><span style="font-size: 10pt; font-family: Arial;">6<o:p></o:p></span></b></p>
+</td> <td style="border-style: solid none; border-color: windowtext -moz-use-text-color; border-width: 2.25pt medium 1pt; padding: 0in 5.4pt; width: 52.55pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="70"> <p class="MsoNormal" style="text-align: center;" align="center"><b><span style="font-size: 10pt; font-family: Arial;">7<o:p></o:p></span></b></p>
+</td> <td style="border-style: solid solid solid none; border-color: windowtext windowtext windowtext -moz-use-text-color; border-width: 2.25pt 2.25pt 1pt medium; padding: 0in 5.4pt; width: 49.75pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="66"> <p class="MsoNormal" style="text-align: center;" align="center"><b><span style="font-size: 10pt; font-family: Arial;">8<o:p></o:p></span></b></p>
+</td> </tr> <tr style="height: 12.75pt;"> <td style="border: medium none ; padding: 0in 5.4pt; width: 128.8pt; height: 12.75pt;" nowrap="nowrap" valign="bottom" width="172"> <p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">Time In The
+Building<o:p></o:p></span></p> </td> <td style="padding: 0in 5.4pt; width: 48.8pt; height: 12.75pt;" x:num="10000" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">10,000<o:p></o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 48.8pt; height: 12.75pt;" x:num="10000" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">10,000<o:p></o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 48.8pt; height: 12.75pt;" x:num="10000" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">10,000<o:p></o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 48.8pt; height: 12.75pt;" x:num="10000" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">10,000<o:p></o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 52.55pt; height: 12.75pt;" x:num="10000" nowrap="nowrap" valign="bottom" width="70"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">10,000<o:p></o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 52.55pt; height: 12.75pt;" x:num="10000" nowrap="nowrap" valign="bottom" width="70"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">10,000<o:p></o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 52.55pt; height: 12.75pt;" x:num="10000" nowrap="nowrap" valign="bottom" width="70"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">10,000<o:p></o:p></span></p>
+</td> <td style="border-style: none solid none none; border-color: -moz-use-text-color windowtext -moz-use-text-color -moz-use-text-color; border-width: medium 2.25pt medium medium; padding: 0in 5.4pt; width: 49.75pt; height: 12.75pt;" x:num="10000" nowrap="nowrap" valign="bottom" width="66"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">10,000<o:p></o:p></span></p>
+</td> </tr> <tr style="height: 12.75pt;"> <td style="border: medium none ; padding: 0in 5.4pt; width: 128.8pt; height: 12.75pt;" nowrap="nowrap" valign="bottom" width="172"> <p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">Agents<o:p></o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 48.8pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">5<o:p></o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 48.8pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">20<o:p></o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 48.8pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">20<o:p></o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 48.8pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">20<o:p></o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 52.55pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="70"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">200<o:p></o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 52.55pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="70"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">200<o:p></o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 52.55pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="70"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">200<o:p></o:p></span></p>
+</td> <td style="border-style: none solid none none; border-color: -moz-use-text-color windowtext -moz-use-text-color -moz-use-text-color; border-width: medium 2.25pt medium medium; padding: 0in 5.4pt; width: 49.75pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="66"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">200<o:p></o:p></span></p>
+</td> </tr> <tr style="height: 12.75pt;"> <td style="border: medium none ; padding: 0in 5.4pt; width: 128.8pt; height: 12.75pt;" nowrap="nowrap" valign="bottom" width="172"> <p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">Maximum Capacity<o:p></o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 48.8pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">2<o:p></o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 48.8pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">2<o:p></o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 48.8pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">5<o:p></o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 48.8pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">5<o:p></o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 52.55pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="70"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">5<o:p></o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 52.55pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="70"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">5<o:p></o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 52.55pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="70"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">5<o:p></o:p></span></p>
+</td> <td style="border-style: none solid none none; border-color: -moz-use-text-color windowtext -moz-use-text-color -moz-use-text-color; border-width: medium 2.25pt medium medium; padding: 0in 5.4pt; width: 49.75pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="66"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">5<o:p></o:p></span></p>
+</td> </tr> <tr style="height: 12.75pt;"> <td rowspan="4" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt 2.25pt; padding: 0in 5.4pt; width: 65.8pt; height: 12.75pt;" nowrap="nowrap" valign="bottom" width="88"> <p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">&nbsp;<o:p></o:p></span></p>
+</td> <td style="border: medium none ; padding: 0in 5.4pt; width: 128.8pt; height: 12.75pt;" nowrap="nowrap" valign="bottom" width="172"> <p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">Floors<o:p></o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 48.8pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">10<o:p></o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 48.8pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">10<o:p></o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 48.8pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">10<o:p></o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 48.8pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">10<o:p></o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 52.55pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="70"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">10<o:p></o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 52.55pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="70"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">20<o:p></o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 52.55pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="70"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">20<o:p></o:p></span></p>
+</td> <td style="border-style: none solid none none; border-color: -moz-use-text-color windowtext -moz-use-text-color -moz-use-text-color; border-width: medium 2.25pt medium medium; padding: 0in 5.4pt; width: 49.75pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="66"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">20<o:p></o:p></span></p>
+</td> </tr> <tr style="height: 12.75pt;"> <td style="border: medium none ; padding: 0in 5.4pt; width: 128.8pt; height: 12.75pt;" nowrap="nowrap" valign="bottom" width="172"> <p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">Maximum Floor
+Time<o:p></o:p></span></p> </td> <td style="padding: 0in 5.4pt; width: 48.8pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">10<o:p></o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 48.8pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">10<o:p></o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 48.8pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">10<o:p></o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 48.8pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">100<o:p></o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 52.55pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="70"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">100<o:p></o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 52.55pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="70"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">100<o:p></o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 52.55pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="70"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">100<o:p></o:p></span></p>
+</td> <td style="border-style: none solid none none; border-color: -moz-use-text-color windowtext -moz-use-text-color -moz-use-text-color; border-width: medium 2.25pt medium medium; padding: 0in 5.4pt; width: 49.75pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="66"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">100<o:p></o:p></span></p>
+</td> </tr> <tr style="height: 12.75pt;"> <td style="border: medium none ; padding: 0in 5.4pt; width: 128.8pt; height: 12.75pt;" nowrap="nowrap" valign="bottom" width="172"> <p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">Maximum Stairs
+Climbed<o:p></o:p></span></p> </td> <td style="padding: 0in 5.4pt; width: 48.8pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">2<o:p></o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 48.8pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">2<o:p></o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 48.8pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">2<o:p></o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 48.8pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">2<o:p></o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 52.55pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="70"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">2<o:p></o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 52.55pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="70"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">2<o:p></o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 52.55pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="70"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">2<o:p></o:p></span></p>
+</td> <td style="border-style: none solid none none; border-color: -moz-use-text-color windowtext -moz-use-text-color -moz-use-text-color; border-width: medium 2.25pt medium medium; padding: 0in 5.4pt; width: 49.75pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="66"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">5<o:p></o:p></span></p>
+</td> </tr> <tr style="height: 13.5pt;"> <td style="border-style: none none solid; border-color: -moz-use-text-color -moz-use-text-color windowtext; border-width: medium medium 1pt; padding: 0in 5.4pt; width: 128.8pt; height: 13.5pt;" nowrap="nowrap" valign="bottom" width="172"> <p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">Types<o:p></o:p></span></p>
+</td> <td style="border-style: none none solid; border-color: -moz-use-text-color -moz-use-text-color windowtext; border-width: medium medium 1pt; padding: 0in 5.4pt; width: 48.8pt; height: 13.5pt;" x:num="" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">1<o:p></o:p></span></p>
+</td> <td style="border-style: none none solid; border-color: -moz-use-text-color -moz-use-text-color windowtext; border-width: medium medium 1pt; padding: 0in 5.4pt; width: 48.8pt; height: 13.5pt;" x:num="" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">1<o:p></o:p></span></p>
+</td> <td style="border-style: none none solid; border-color: -moz-use-text-color -moz-use-text-color windowtext; border-width: medium medium 1pt; padding: 0in 5.4pt; width: 48.8pt; height: 13.5pt;" x:num="" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">1<o:p></o:p></span></p>
+</td> <td style="border-style: none none solid; border-color: -moz-use-text-color -moz-use-text-color windowtext; border-width: medium medium 1pt; padding: 0in 5.4pt; width: 48.8pt; height: 13.5pt;" x:num="" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">1<o:p></o:p></span></p>
+</td> <td style="border-style: none none solid; border-color: -moz-use-text-color -moz-use-text-color windowtext; border-width: medium medium 1pt; padding: 0in 5.4pt; width: 52.55pt; height: 13.5pt;" x:num="" nowrap="nowrap" valign="bottom" width="70"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">1<o:p></o:p></span></p>
+</td> <td style="border-style: none none solid; border-color: -moz-use-text-color -moz-use-text-color windowtext; border-width: medium medium 1pt; padding: 0in 5.4pt; width: 52.55pt; height: 13.5pt;" x:num="" nowrap="nowrap" valign="bottom" width="70"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">1<o:p></o:p></span></p>
+</td> <td style="border-style: none none solid; border-color: -moz-use-text-color -moz-use-text-color windowtext; border-width: medium medium 1pt; padding: 0in 5.4pt; width: 52.55pt; height: 13.5pt;" x:num="" nowrap="nowrap" valign="bottom" width="70"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">2<o:p></o:p></span></p>
+</td> <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 2.25pt 1pt medium; padding: 0in 5.4pt; width: 49.75pt; height: 13.5pt;" x:num="" nowrap="nowrap" valign="bottom" width="66"> <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;">1<o:p></o:p></span></p>
+</td> </tr> <tr style="height: 12.75pt;"> <td style="border-style: none none none solid; border-color: -moz-use-text-color -moz-use-text-color -moz-use-text-color windowtext; border-width: medium medium medium 2.25pt; padding: 0in 5.4pt; width: 65.8pt; height: 12.75pt;" nowrap="nowrap" valign="bottom" width="88"> <p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+</td> <td style="border: medium none ; padding: 0in 5.4pt; width: 128.8pt; height: 12.75pt;" nowrap="nowrap" valign="bottom" width="172"> <p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+</td> <td style="border: medium none ; padding: 0in 5.4pt; width: 48.8pt; height: 12.75pt;" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: right;" align="right"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+</td> <td style="border: medium none ; padding: 0in 5.4pt; width: 48.8pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: right;" align="right"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+</td> <td style="border: medium none ; padding: 0in 5.4pt; width: 48.8pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: right;" align="right"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+</td> <td style="border: medium none ; padding: 0in 5.4pt; width: 48.8pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: right;" align="right"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+</td> <td style="border: medium none ; padding: 0in 5.4pt; width: 52.55pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="70"> <p class="MsoNormal" style="text-align: right;" align="right"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+</td> <td style="border: medium none ; padding: 0in 5.4pt; width: 52.55pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="70"> <p class="MsoNormal" style="text-align: right;" align="right"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+</td> <td style="border: medium none ; padding: 0in 5.4pt; width: 52.55pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="70"> <p class="MsoNormal" style="text-align: right;" align="right"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+</td> <td style="border-style: none solid none none; border-color: -moz-use-text-color windowtext -moz-use-text-color -moz-use-text-color; border-width: medium 2.25pt medium medium; padding: 0in 5.4pt; width: 49.75pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="66"> <p class="MsoNormal" style="text-align: right;" align="right"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+</td> </tr> <tr style="height: 12.75pt;"> <td colspan="2" style="border-style: none none none solid; border-color: -moz-use-text-color -moz-use-text-color -moz-use-text-color windowtext; border-width: medium medium medium 2.25pt; padding: 0in 5.4pt; width: 194.6pt; height: 12.75pt;" nowrap="nowrap" valign="bottom" width="259"> <p class="MsoNormal"><b><span style="font-size: 10pt; font-family: Arial;">Elevator
+Riders/Time<o:p></o:p></span></b></p> </td>
+<td style="padding: 0in 5.4pt; width: 48.8pt; height: 12.75pt;" x:num="1.593" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: right;" align="right"><span style="font-size: 10pt; font-family: Arial;">1.593<o:p></o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 48.8pt; height: 12.75pt;" x:num="1.895" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: right;" align="right"><span style="font-size: 10pt; font-family: Arial;">1.895<o:p></o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 48.8pt; height: 12.75pt;" x:num="3.823" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: right;" align="right"><span style="font-size: 10pt; font-family: Arial;">3.823<o:p></o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 48.8pt; height: 12.75pt;" x:num="2.657" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: right;" align="right"><span style="font-size: 10pt; font-family: Arial;">2.657<o:p></o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 52.55pt; height: 12.75pt;" x:num="4.2869999999999999" nowrap="nowrap" valign="bottom" width="70"> <p class="MsoNormal" style="text-align: right;" align="right"><span style="font-size: 10pt; font-family: Arial;">4.287<o:p></o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 52.55pt; height: 12.75pt;" x:num="2.6080000000000001" nowrap="nowrap" valign="bottom" width="70"> <p class="MsoNormal" style="text-align: right;" align="right"><span style="font-size: 10pt; font-family: Arial;">2.608<o:p></o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 52.55pt; height: 12.75pt;" x:num="2.5720000000000001" nowrap="nowrap" valign="bottom" width="70"> <p class="MsoNormal" style="text-align: right;" align="right"><span style="font-size: 10pt; font-family: Arial;">2.572<o:p></o:p></span></p>
+</td> <td style="border-style: none solid none none; border-color: -moz-use-text-color windowtext -moz-use-text-color -moz-use-text-color; border-width: medium 2.25pt medium medium; padding: 0in 5.4pt; width: 49.75pt; height: 12.75pt;" x:num="2.339" nowrap="nowrap" valign="bottom" width="66"> <p class="MsoNormal" style="text-align: right;" align="right"><span style="font-size: 10pt; font-family: Arial;">2.339<o:p></o:p></span></p>
+</td> </tr> <tr style="height: 12.75pt;"> <td style="border-style: none none none solid; border-color: -moz-use-text-color -moz-use-text-color -moz-use-text-color windowtext; border-width: medium medium medium 2.25pt; padding: 0in 5.4pt; width: 65.8pt; height: 12.75pt;" nowrap="nowrap" valign="bottom" width="88"> <p class="MsoNormal"><b><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></b></p>
+</td> <td style="padding: 0in 5.4pt; width: 128.8pt; height: 12.75pt;" nowrap="nowrap" valign="bottom" width="172"> <p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 48.8pt; height: 12.75pt;" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: right;" align="right"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 48.8pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: right;" align="right"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 48.8pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: right;" align="right"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 48.8pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: right;" align="right"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 52.55pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="70"> <p class="MsoNormal" style="text-align: right;" align="right"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 52.55pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="70"> <p class="MsoNormal" style="text-align: right;" align="right"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 52.55pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="70"> <p class="MsoNormal" style="text-align: right;" align="right"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+</td> <td style="border-style: none solid none none; border-color: -moz-use-text-color windowtext -moz-use-text-color -moz-use-text-color; border-width: medium 2.25pt medium medium; padding: 0in 5.4pt; width: 49.75pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="66"> <p class="MsoNormal" style="text-align: right;" align="right"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+</td> </tr> <tr style="height: 12.75pt;"> <td colspan="2" style="border-style: none none none solid; border-color: -moz-use-text-color -moz-use-text-color -moz-use-text-color windowtext; border-width: medium medium medium 2.25pt; padding: 0in 5.4pt; width: 194.6pt; height: 12.75pt;" nowrap="nowrap" valign="bottom" width="259"> <p class="MsoNormal"><b><span style="font-size: 10pt; font-family: Arial;">Total Waiting
+Time/Agents<o:p></o:p></span></b></p> </td>
+<td style="padding: 0in 5.4pt; width: 48.8pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: right;" align="right"><span style="font-size: 10pt; font-family: Arial;">4894.2<o:p></o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 48.8pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: right;" align="right"><span style="font-size: 10pt; font-family: Arial;">7978.25<o:p></o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 48.8pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: right;" align="right"><span style="font-size: 10pt; font-family: Arial;">5989.65<o:p></o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 48.8pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: right;" align="right"><span style="font-size: 10pt; font-family: Arial;">1469.8<o:p></o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 52.55pt; height: 12.75pt;" x:num="7867.8649999999998" nowrap="nowrap" valign="bottom" width="70"> <p class="MsoNormal" style="text-align: right;" align="right"><span style="font-size: 10pt; font-family: Arial;">7867.865<o:p></o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 52.55pt; height: 12.75pt;" x:num="8862.8449999999993" nowrap="nowrap" valign="bottom" width="70"> <p class="MsoNormal" style="text-align: right;" align="right"><span style="font-size: 10pt; font-family: Arial;">8862.845<o:p></o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 52.55pt; height: 12.75pt;" x:num="8881.7649999999994" nowrap="nowrap" valign="bottom" width="70"> <p class="MsoNormal" style="text-align: right;" align="right"><span style="font-size: 10pt; font-family: Arial;">8881.765<o:p></o:p></span></p>
+</td> <td style="border-style: none solid none none; border-color: -moz-use-text-color windowtext -moz-use-text-color -moz-use-text-color; border-width: medium 2.25pt medium medium; padding: 0in 5.4pt; width: 49.75pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="66"> <p class="MsoNormal" style="text-align: right;" align="right"><span style="font-size: 10pt; font-family: Arial;">8587.8<o:p></o:p></span></p>
+</td> </tr> <tr style="height: 12.75pt;"> <td style="border-style: none none none solid; border-color: -moz-use-text-color -moz-use-text-color -moz-use-text-color windowtext; border-width: medium medium medium 2.25pt; padding: 0in 5.4pt; width: 65.8pt; height: 12.75pt;" nowrap="nowrap" valign="bottom" width="88"> <p class="MsoNormal"><b><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></b></p>
+</td> <td style="padding: 0in 5.4pt; width: 128.8pt; height: 12.75pt;" nowrap="nowrap" valign="bottom" width="172"> <p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 48.8pt; height: 12.75pt;" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: right;" align="right"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 48.8pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: right;" align="right"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 48.8pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: right;" align="right"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 48.8pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: right;" align="right"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 52.55pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="70"> <p class="MsoNormal" style="text-align: right;" align="right"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 52.55pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="70"> <p class="MsoNormal" style="text-align: right;" align="right"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+</td> <td style="padding: 0in 5.4pt; width: 52.55pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="70"> <p class="MsoNormal" style="text-align: right;" align="right"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+</td> <td style="border-style: none solid none none; border-color: -moz-use-text-color windowtext -moz-use-text-color -moz-use-text-color; border-width: medium 2.25pt medium medium; padding: 0in 5.4pt; width: 49.75pt; height: 12.75pt;" x:num="" nowrap="nowrap" valign="bottom" width="66"> <p class="MsoNormal" style="text-align: right;" align="right"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+</td> </tr> <tr style="height: 13.5pt;"> <td colspan="2" style="border-style: none none solid solid; border-color: -moz-use-text-color -moz-use-text-color windowtext windowtext; border-width: medium medium 2.25pt 2.25pt; padding: 0in 5.4pt; width: 194.6pt; height: 13.5pt;" nowrap="nowrap" valign="bottom" width="259"> <p class="MsoNormal"><b><span style="font-size: 10pt; font-family: Arial;">Time Elevator
+at Max Capacity<o:p></o:p></span></b></p>
+</td> <td style="border-style: none none solid; border-color: -moz-use-text-color -moz-use-text-color windowtext; border-width: medium medium 2.25pt; padding: 0in 5.4pt; width: 48.8pt; height: 13.5pt;" x:num="" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: right;" align="right"><span style="font-size: 10pt; font-family: Arial;">4196<o:p></o:p></span></p>
+</td> <td style="border-style: none none solid; border-color: -moz-use-text-color -moz-use-text-color windowtext; border-width: medium medium 2.25pt; padding: 0in 5.4pt; width: 48.8pt; height: 13.5pt;" x:num="" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: right;" align="right"><span style="font-size: 10pt; font-family: Arial;">8525<o:p></o:p></span></p>
+</td> <td style="border-style: none none solid; border-color: -moz-use-text-color -moz-use-text-color windowtext; border-width: medium medium 2.25pt; padding: 0in 5.4pt; width: 48.8pt; height: 13.5pt;" x:num="" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: right;" align="right"><span style="font-size: 10pt; font-family: Arial;">6165<o:p></o:p></span></p>
+</td> <td style="border-style: none none solid; border-color: -moz-use-text-color -moz-use-text-color windowtext; border-width: medium medium 2.25pt; padding: 0in 5.4pt; width: 48.8pt; height: 13.5pt;" x:num="" nowrap="nowrap" valign="bottom" width="65"> <p class="MsoNormal" style="text-align: right;" align="right"><span style="font-size: 10pt; font-family: Arial;">1162<o:p></o:p></span></p>
+</td> <td style="border-style: none none solid; border-color: -moz-use-text-color -moz-use-text-color windowtext; border-width: medium medium 2.25pt; padding: 0in 5.4pt; width: 52.55pt; height: 13.5pt;" x:num="" nowrap="nowrap" valign="bottom" width="70"> <p class="MsoNormal" style="text-align: right;" align="right"><span style="font-size: 10pt; font-family: Arial;">9727<o:p></o:p></span></p>
+</td> <td style="border-style: none none solid; border-color: -moz-use-text-color -moz-use-text-color windowtext; border-width: medium medium 2.25pt; padding: 0in 5.4pt; width: 52.55pt; height: 13.5pt;" x:num="" nowrap="nowrap" valign="bottom" width="70"> <p class="MsoNormal" style="text-align: right;" align="right"><span style="font-size: 10pt; font-family: Arial;">9652<o:p></o:p></span></p>
+</td> <td style="border-style: none none solid; border-color: -moz-use-text-color -moz-use-text-color windowtext; border-width: medium medium 2.25pt; padding: 0in 5.4pt; width: 52.55pt; height: 13.5pt;" x:num="" nowrap="nowrap" valign="bottom" width="70"> <p class="MsoNormal" style="text-align: right;" align="right"><span style="font-size: 10pt; font-family: Arial;">9655<o:p></o:p></span></p>
+</td> <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 2.25pt 2.25pt medium; padding: 0in 5.4pt; width: 49.75pt; height: 13.5pt;" x:num="" nowrap="nowrap" valign="bottom" width="66"> <p class="MsoNormal" style="text-align: right;" align="right"><span style="font-size: 10pt; font-family: Arial;">9652<o:p></o:p></span></p>
+</td> </tr></tbody></table><br>We ran
+the simulation and varied
+a number of parameters, each in turn. <br>These values represent
+the data from a single run for each of the set of parameter values,
+however, we ran a number of configurations 3 or 4 times, and the
+results were very similar. Therefore, we assume these data to be
+representative of the model's output.<br><br><span style="font-weight: bold;">Average Number of Elevator Riders
+per Time Step:<br><span style="font-weight: bold;"></span></span>Predictably,
+this tended to be lower when there were fewer agents. There is an
+obvious increase when the capacity of the elevator is increased, and
+again when the number of agents is increased. Increasing the amount of
+time spent of the floors also predictable lowered this statistic.
+Increasing the number of floors lowered the average number of riders,
+likely because agents were now traveling farther, and the elevator was
+at capacity for more stops. <span style="font-weight: bold;"><span style="font-weight: bold;"></span><br></span><p class="MsoNormal"><img style="height: 358px; width: 698px;" alt="total ride time" src="graph1.JPG"></p>
+<o:p>&nbsp;<span style="font-weight: bold;"><br>Average
+Wait Time:<br></span>This is the sum of the number of time
+steps each agent was waiting for the elevator, divided by the number of
+agents. We think this is an interesting statistic by which to measure
+elevator performance.<br>We see an increase when the number of
+agents jumps from 5 to 20, indicating that the role of the
+full-to-capacity elevator is coming into play. An increase in capacity
+helps to alleviate the average wait time, as does the amount of time
+spent on the floor (and therefore not on or waiting for the elevator). <br>Once
+the number of agents is increased to 200, the wait time goes up again.
+Further changes, such as increasing the number of floors,&nbsp;have
+a very small effect. It is likely that this is a ceiling effect - the
+elevator is so often full that most agents spend most of their time
+waiting. </o:p><p class="MsoNormal"><img style="width: 665px; height: 342px;" alt="Graph of WaitTime/N" src="graph2.JPG"></p>
+<span style="font-weight: bold;"><br>Time at Maximum
+Capacity:<br></span>This is the number of time steps in
+which the elevator is completely full. It is clearly very related to
+the average wait time, as the charts look very similar. Notice that
+once the population of the building is increased to 200 agents, the
+elevator is almost always full - over 96% of the time. Again, this is
+likely a ceiling effect. In order to reduce these last two statistics,
+we would recommend increasing the capacity of the elevator and/or
+increasing the average time spent on the floor. &nbsp;From the
+combination of the three charts, it appears that the elevator runs the
+most smoothly in Case 4, when there is ample time spent on the floor
+and a large capacity compared to the number of agents.. <p class="MsoNormal"><o:p></o:p><img style="width: 684px; height: 351px;" alt="Time at Capacity" src="graph3.JPG"></p>
+<o:p>&nbsp;<span style="font-weight: bold;">"Weirdos":</span></o:p><br>Allowing
+for two types to discriminate against one another did not seem to have
+any effect on the operation of the elevator. To insure this wasn't a
+result of a ceiling effect, we ran the simulation with two types with
+all the other parameters of Case 4, our most efficient case. It had no
+noticable effect on the data.<br><br><span style="font-weight: bold;">Stairs:<br></span>Increasing
+the maximum number of stairs an agent will walk from 2 to 5 during Case
+4 did yield a small but likely significant decrease in both Wait Time
+and Time at Maximum Capacity.
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+<big><big><span style="font-weight: bold;">Future
+Directions</span></big></big><br>
+<ul><li>Instead of an agent simply calling the elevator,
+pressing the specific floor could aid optimization.</li><li>Multiple
+elevators, perhaps with an assignment of floors such as those found in
+large buildings. </li><li>Futher investigation of
+types&nbsp;&amp; preferences. For example, imagine types who <span style="font-style: italic;">prefer</span> crowded
+elevators.</li><li>Allowing people to enter and leave the
+building, perhaps even on a daily cycle where everyone enters in the
+morning and leaves in the evening.</li><li>Investigation of
+groups of agents who want to travel together.</li><li>A
+more dynamic function for taking the stairs. Perhaps the longer an
+agent waits, the more stairs she is willing to climb.</li><ul><li>Reacting
+to crowds waiting for the elevator.</li></ul><li>Adaptive
+agents: learning what strategies or stairs and waiting works best.</li><li>More
+probable patterns of travel. Most people will get on and off at ground
+floor. Further, in certain buildings, other floors are hotspots, and
+people from one floor might be more likely to go to another. E.g. in a
+department store, people getting on at Women's Shoes will be more
+likely to go to Cosmetics than people getting on at Men's Athletic
+Wear. </li></ul>
+<big style="font-weight: bold;"><big>Some Social
+Science Scenarios To Which This Model Could Apply:</big></big><br><ul><li>Transportation:
+bus &amp; train line traffic.</li><li>With multiple
+elevators, interesting type preferences, &amp; adaptive agents: the
+formation of social cliques.&nbsp;</li><li>Emergence of
+selective migration - if a population adapted to an equilibrium by
+always or never taking the stairs.</li></ul><br><span style="font-weight: bold;">Notes:</span><br><ul><li>The
+code was written in Java, using MASON's modeling libraries.&nbsp; </li><li>Though
+the data appears to be stable, we recognize that in general forty
+simulations are required to apply the central limit theorem.</li><li>This
+project was worked on at the <a href="http://zia.hss.cmu.edu/econ/cw08.html">2008 SFI
+Graduate Workshop in Computational Social Science Modeling</a>,
+housed at <a href="http://www.sjca.edu/">St. John's
+College</a> in lovely <a href="http://www.youtube.com/watch?v=lj5Mcz3yfhU">Santa Fe</a>,
+NM.</li></ul></div>
+<br></div></body></html>

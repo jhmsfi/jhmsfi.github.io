@@ -1,0 +1,803 @@
+From nobody@hermes.java.sun.com Tue Nov  7 20:17:27 2000
+Received: from hermes.java.sun.com (hermes.java.sun.com [204.160.241.85])
+	by zia.hss.cmu.edu (8.9.3/8.9.3) with ESMTP id UAA17821
+	for <miller@zia.hss.cmu.edu>; Tue, 7 Nov 2000 20:17:25 -0500 (EST)
+Received: (from nobody@localhost)
+	by hermes.java.sun.com (8.9.3+Sun/8.9.1) id BAA03545;
+	Wed, 8 Nov 2000 01:20:17 GMT
+Date: Wed, 8 Nov 2000 01:20:17 GMT
+Message-Id: <200011080120.BAA03545@hermes.java.sun.com>
+X-Mailing: 295
+From: JDCTechTips@sun.com
+Subject: JDC Tech Tips  November 7, 2000
+To: JDCMember@sun.com
+Reply-To: JDCTechTips@sun.com
+Errors-To: bounced_mail@hermes.java.sun.com
+Precedence: junk
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Mailer: Beyond Email 2.2
+Status: RO
+
+
+ J  D  C    T  E  C  H    T  I  P  S
+
+                      TIPS, TECHNIQUES, AND SAMPLE CODE
+
+
+WELCOME to the Java Developer Connection(sm) (JDC) Tech Tips, 
+November 7, 2000. This issue covers:
+
+         * Using Random Numbers for Testing and Simulation
+         * Collection Utilities
+                  
+These tips were developed using Java(tm) 2 SDK, Standard Edition, 
+v 1.3.
+
+You can view this issue of the Tech Tips on the Web at
+http://developer.java.sun.com/developer/TechTips/2000/tt1107.html
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+USING RANDOM NUMBERS FOR TESTING AND SIMULATION
+
+The Java(tm) standard library provides a random number class,
+java.util.Random. This tip examines some aspects of using random 
+numbers in Java programming. The tip starts with some fundamentals 
+of using random numbers, and then presents a longer example at the 
+end.
+
+Random numbers, as found in programming languages, are really 
+"pseudo" random numbers. They're not random in the same sense as
+physical phenomena such as thermal noise or background radiation.
+However it's interesting to note that truly random number 
+generators, ones that are hardware-based, are starting to appear 
+on the market. Though software-generated random numbers are not 
+really random, it's possible to generate random numbers in such 
+a way that important statistical tests like chi square and serial 
+correlation are satisfied.
+
+The Random class uses a random number generator of the form:
+
+    nextrand = nextrand * a + b;
+
+where a and b are carefully chosen constants. As defined by 
+D. H. Lehmer and described by Donald E. Knuth in "The Art of 
+Computer Programming, Volume 2: Seminumerical Algorithms,"
+section 3.2.1, this is a "linear congruential" random number 
+generator. The low-order bits of random numbers generated this 
+way tend not to be random, so internal calculation is done using 
+48 bits. But a Random method such as Random.nextInt uses only 
+the upper 32 bits of the current 48-bit random value.
+
+A sequence of random values that is generated is deterministic.
+This means that from a given starting point (a "seed"), the 
+sequence of values returned is predictable. When you set up
+a random number generator, you can say:
+
+    Random rn = new Random(1234);
+
+if you want to specify the seed (here, it's 1234), or:
+
+    Random rn = new Random();
+
+if you want the generator to be seeded from the current time of 
+day (using System.currentTimeMillis). The first approach produces 
+a predictable sequence, and so this tip uses "Random(0)" in the 
+demo programs below.
+
+The first random number program is a simple one that prints out 
+10 "heads" or "tails" values:
+
+    import java.util.Random;
+
+    public class RandDemo1 {
+        public static void main(String args[]) {
+            Random rn = new Random(0);
+            for (int i = 1; i <= 10; i++) {
+                System.out.println(rn.nextBoolean() ?
+                    "heads" : "tails");
+            }
+        }
+    }
+
+The nextBoolean method in RandDemo1 is implemented internally by 
+generating a 48-bit random value, and then checking whether the 
+high bit is 1 or 0.
+
+The next example is slightly more complex:
+
+    import java.util.Random;
+
+    class RandUtils {
+        private static Random rn = new Random(0);
+    
+        private RandUtils() {}
+    
+        // get random number in range, lo <= x <= hi
+    
+        public static int getRange(int lo, int hi) {
+    
+            // error checking
+    
+            if (lo > hi) {
+                throw new IllegalArgumentException("lo > hi");
+            }
+    
+            // handle special case
+    
+            if (lo == Integer.MIN_VALUE &&
+              hi == Integer.MAX_VALUE) {
+                return rn.nextInt();
+            }
+            else {
+                return rn.nextInt(hi - lo + 1) + lo;
+            }
+        }
+    
+        // return true perc % of the time
+    
+        public static boolean getPerc(int perc) {
+    
+            // error checking
+    
+            if (perc < 0 || perc > 100) {
+                throw new IllegalArgumentException("bad perc");
+            }
+    
+            return perc >= getRange(1, 100);
+        }
+    }
+    
+    public class RandDemo2 {
+        public static void main(String args[]) {
+            int accum[] = new int[10];
+    
+            // generate random numbers in a range and tally them
+    
+            for (int i = 1; i <= 10000; i++) {
+                accum[RandUtils.getRange(0, accum.length - 1)]++;
+            }
+    
+            // display results
+    
+            for (int i = 0; i < accum.length; i++) {
+                System.out.println(i + " " + accum[i]);
+            }
+        }
+    }
+
+In this example, RandUtils is a utility class that implements 
+a couple of methods: getRange and getPerc. The getRange method
+returns a random number in a specified range. The method is based 
+on Random.nextInt, which returns a random number between 0 
+(inclusive) and the specified argument (exclusive). What inclusive
+and exclusive mean here is that if you call Random.nextInt as 
+follows:
+
+    Random rn = new Random();
+    int n = rn.nextInt(10);
+
+n will have a value, 0 <= n < 10. In other words, 0 can be one of 
+the returned values, but not 10.
+
+The other method is getPerc; it returns true the specified 
+percentage of the time. For example, you can say:
+
+    if (RandUtils.getPerc(75)) {
+        // block of code
+    }
+
+and the block of code will be executed 75% of the time, on average. 
+You'll see a use for this method in the next example.
+
+When you run the RandDemo2 program, you should get the following
+result:
+
+    0 990
+    1 1011
+    2 952
+    3 1045
+    4 998
+    5 1005
+    6 1021
+    7 1009
+    8 1005
+    9 964
+
+Note that the tally for each number in the range should be about 
+1000. The results in this example vary slightly from the expected 
+value. This is normal. If you want to check whether the variation 
+is statistically significant, use a chi square test. If you do, 
+you should find that the results observed here are well within 
+those expected from random fluctuations.
+
+The final example is more complicated. Suppose that you're testing
+some software, and one of the inputs to the software is calendar
+dates, like this:
+
+    September 25, 1956
+
+You'd like to generate random dates in this form, with some of the
+dates being legal, and some illegal (such as "January 32, 1989"). 
+How can you do this? One way is to use random numbers. Here's an
+example:
+
+    import java.util.Random;
+    
+    class RandUtils {
+        private static Random rn = new Random(0);
+    
+        private RandUtils() {}
+    
+        // get random number in range, lo <= x <= hi
+    
+        public static int getRange(int lo, int hi) {
+    
+            // error checking
+    
+            if (lo > hi) {
+                throw new IllegalArgumentException("lo > hi");
+            }
+    
+            // handle special case
+    
+            if (lo == Integer.MIN_VALUE &&
+              hi == Integer.MAX_VALUE) {
+                return rn.nextInt();
+            }
+            else {
+                return rn.nextInt(hi - lo + 1) + lo;
+            }
+        }
+    
+        // return true perc % of the time
+    
+        public static boolean getPerc(int perc) {
+    
+            // error checking
+    
+            if (perc < 0 || perc > 100) {
+                throw new IllegalArgumentException("bad perc");
+            }
+    
+            return perc >= getRange(1, 100);
+        }
+    }
+    
+    class GenDate {
+    
+        // names of months
+    
+        private static final String months[] = {
+            "January", "February", "March", "April",
+            "May", "June", "July", "August",
+            "September", "October", "November", "December"
+        };
+    
+        // days in month
+    
+        private static final int days_in_month[] = {
+            31, 28, 31, 30,
+            31, 30, 31, 31,
+            30, 31, 30, 31
+        };
+    
+        // return true if leap year
+    
+        private static boolean isLeapYear(int year) {
+            if (year % 4 != 0) {
+                return false;
+            }
+            if (year % 400 == 0) {
+                return true;
+            }
+            return (year % 100 != 0);
+        }
+    
+        // get the number of days in a given month
+    
+        private static int getDaysInMonth(int month, int year) {
+            int m = days_in_month[month - 1];
+            if (month == 2 && isLeapYear(year)) {
+                m++;
+            }
+            return m;
+        }
+    
+        // generate a random string
+    
+        private static String getRandString() {
+            switch (RandUtils.getRange(1, 4)) {
+    
+                // empty string
+    
+                case 1: {
+                    return "";
+                }
+    
+                // random integer
+    
+                case 2: {
+                    return Integer.toString(
+                        RandUtils.getRange(-100000, 100000));
+                }
+    
+                // random characters
+    
+                case 3: {
+                    StringBuffer sb = new StringBuffer();
+                    int n = RandUtils.getRange(1, 10);
+                    for (int i = 1; i <= n; i++) {
+                        char c = (char)RandUtils.getRange(32, 127);
+                        sb.append(c);
+                    }
+                    return sb.toString();
+                }
+    
+                // random number of spaces
+    
+                case 4: {
+                    StringBuffer sb = new StringBuffer();
+                    int n = RandUtils.getRange(1, 10);
+                    for (int i = 1; i <= n; i++) {
+                        sb.append(' ');
+                    }
+                    return sb.toString();
+                }
+            }
+    
+            // shouldn't get here
+    
+            throw new Error();
+        }
+    
+        // this class has only static methods, so
+        // can't create instances of the class
+    
+        private GenDate() {}
+    
+        public static String getRandDate() {
+            StringBuffer sb = new StringBuffer();
+    
+            // generate year, month, day
+    
+            int year = RandUtils.getRange(1500, 2100);
+            int month = RandUtils.getRange(1, 12);
+            int day = RandUtils.getRange(1,
+                getDaysInMonth(month, year));
+    
+            // 50% of the time, return a valid date
+    
+            if (RandUtils.getPerc(50)) {
+                sb.append(months[month - 1]);
+                sb.append(" ");
+                sb.append(day);
+                sb.append(", ");
+                sb.append(year);
+            }
+            else {
+    
+                // generate a month or random string
+    
+                if (RandUtils.getPerc(75)) {
+                    sb.append(months[month - 1]);
+                }
+                else {
+                    sb.append(getRandString());
+                }
+    
+                // generate single space or random string
+    
+                if (RandUtils.getPerc(75)) {
+                    sb.append(" ");
+                }
+                else {
+                    sb.append(getRandString());
+                }
+    
+                // generate day of month or random number
+    
+                if (RandUtils.getPerc(75)) {
+                    sb.append(day);
+                }
+                else {
+                    sb.append(RandUtils.getRange(-100, 100));
+                }
+    
+                // generate , or random string
+    
+                if (RandUtils.getPerc(75)) {
+                    sb.append(", ");
+                }
+                else {
+                    sb.append(getRandString());
+                }
+    
+                // generate year or random string
+    
+                if (RandUtils.getPerc(75)) {
+                    sb.append(year);
+                }
+                else {
+                    sb.append(getRandString());
+                }
+            }
+    
+            return sb.toString();
+        }
+    }
+    
+    public class RandDemo3 {
+        public static void main(String args[]) {
+            for (int i = 1; i <= 15; i++) {
+                System.out.println(GenDate.getRandDate());
+            }
+        }
+    }
+
+The output of the program is:
+
+    May 21, 1778
+    June -83, 2006
+    September 51575
+     14, M%r
+    September     26, 1614
+    October 17, 1910
+    May 16, 1818
+    August 27, 1646
+    November 19, 2055
+    June 12, 1797
+    June 13, 1585
+    August 2, 1998
+    October 17, 
+    September 14, 1545
+    June339628,         
+
+This technique is quite powerful and useful. Typically you start
+with a description of what constitutes legal input, and then
+systematically go through and generate "nearly correct" input, but
+with some illegal variations thrown in, driven by random numbers. 
+A similar technique can be used for doing simulation.
+
+To learn more about using random numbers, see Section 17.3 Random
+in "The Java Programming Language, Third Edition," by Arnold, 
+Gosling, and Holmes 
+(http://java.sun.com/docs/books/javaprog/thirdedition/);
+and Chapter 3 in Volume 2 of "The Art of Computer Programming" 
+by Knuth.
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+COLLECTION UTILITIES
+
+Collection classes like ArrayList and HashMap are used heavily in
+Java programming. Associated with these classes are what might be
+called utility methods. These methods add functionality to the 
+collection classes. This tip looks at some of these utilities.
+
+The first utility method is one that provides a synchronization
+wrapper on top of an existing collection. A wrapper is an 
+alternate view of a collection. You can still access and modify 
+the original collection, but the wrapped collection provides some 
+other desirable property.
+
+Here's a demonstration of using synchronization wrappers:
+
+    import java.util.*;
+    
+    public class UtilDemo1 {
+        public static void main(String args[]) {
+            Object obj = new Object();
+    
+            // create a list
+    
+            List list = new ArrayList();
+    
+            // put a wrapper on top of it
+    
+            List synclist = Collections.synchronizedList(list);
+    
+            // add some objects to the list
+    
+            long start = System.currentTimeMillis();
+            for (int i = 1; i <= 1000000; i++) {
+                synclist.add(obj);
+            }
+            long elapsed = System.currentTimeMillis() - start;
+            System.out.println(elapsed);
+        }
+    }
+
+By default, collection classes such as ArrayList are not 
+thread-safe (unlike the older Vector class). A thread-safe 
+implementation does more for you, but costs more in return. If 
+you have multiple threads sharing a single collection, then you 
+need to worry about synchronization, that is, you need to be 
+aware of potential problems and deal with them.
+
+In the example above, the collection is wrapped, and so, method 
+calls such as add will be synchronized. The synchronization is done
+by first obtaining a lock on the wrapper (synclist). If you really 
+want to thwart synchronization, you can still access the list 
+directly using "list" instead of "synclist". However, this is 
+probably not a good idea.
+
+Another way of tackling the same problem of adding objects to 
+a list looks like this:
+
+    import java.util.*;
+    
+    public class UtilDemo2 {
+        public static void main(String args[]) {
+            Object obj = new Object();
+    
+            // create a list
+    
+            List list = new ArrayList();
+    
+            // add some objects to it
+    
+            long start = System.currentTimeMillis();
+            synchronized (list) {
+                for (int i = 1; i <= 1000000; i++) {
+                    list.add(obj);
+                }
+            }
+            long elapsed = System.currentTimeMillis() - start;
+            System.out.println(elapsed);
+        }
+    }
+
+In this example, no synchronization wrapper is used, but the list 
+is locked while objects are added to it. This demo runs about 25%
+faster than the previous one, but at the expense of keeping the 
+list locked throughout the update operation.
+
+The Collection class also has methods that return unmodifiable 
+(as opposed to synchronized) wrappers. One of these methods is
+Collections.unmodifiableList; you can use it to create a read-only
+view of a list. The list can still be modified, but not through 
+the wrapper interface. This is especially useful if you want to
+pass a list to some other function, but you want to prevent the 
+other function from modifying the list. To do this, you simply 
+use a lightweight wrapper to make the list read only.
+
+Here's an example that uses Collections.unmodifiableList:
+
+    import java.util.*;
+    
+    public class UtilDemo3 {
+        public static void main(String args[]) {
+    
+            // create a list and add some items to it
+    
+                List stringlist = new ArrayList();
+                stringlist.add("alpha");
+            stringlist.add("beta");
+            stringlist.add("gamma");
+    
+            // create an unmodifiable view of the list
+    
+            List rolist = Collections.unmodifiableList(stringlist);
+    
+            // add to the original list (works OK)
+    
+            stringlist.add("delta");
+    
+            // add through the read-only view (gives an exception)
+    
+            rolist.add("delta");
+        }
+    }
+
+This example program creates a list and adds some items to it. It 
+then creates an unmodifiable view of the list. When you run the 
+program, you'll see that an additional item can be added to the 
+original list. However the program throws an exception when it 
+attempts to add an item to the read-only view.
+
+Another kind of operation provided by the utility methods is
+min/max. Here's an example using min:
+
+    import java.util.*;
+    
+    public class UtilDemo4 {
+        public static void main(String args[]) {
+    
+            // create a list and add some objects to it
+    
+            List list = new ArrayList();
+            list.add("alpha");
+            list.add("Beta");
+            list.add("gamma");
+            list.add("Delta");
+    
+            // compute the minimum element, case sensitive
+    
+            String str = (String)Collections.min(list);
+            System.out.println(str);
+    
+            // compute the minimum element, case insensitive
+    
+            str = (String)Collections.min(list,
+                String.CASE_INSENSITIVE_ORDER);
+            System.out.println(str);
+        }
+    }
+
+This program computes the minimum value of a set of strings, using
+the natural ordering of strings (see java.lang.Comparable). Then
+it computes the minimum value using an implementation of the
+java.util.Comparator interface. In this example, a special
+comparator String.CASE_INSENSITIVE_ORDER is used. A comparator
+allows you to specify a particular ordering of elements. The output
+of the program is:
+
+    Beta
+    alpha
+
+You can use the shuffle utility method to randomly shuffle the
+elements of a list. For example, this program reads a text file and
+then displays its lines in random order:
+
+    import java.io.*;
+    import java.util.*;
+    
+    public class UtilDemo5 {
+        public static void main(String args[]) throws IOException {
+    
+            // check command line argument
+    
+            if (args.length != 1) {
+                System.err.println("missing input file");
+                System.exit(1);
+            }
+    
+            // open file
+    
+            FileReader fr = new FileReader(args[0]);
+            BufferedReader br = new BufferedReader(fr);
+    
+            // read lines from file
+    
+            List list = new ArrayList();
+            String ln;
+            while ((ln = br.readLine()) != null) {
+                list.add(ln);
+            }
+            br.close();
+    
+            // shuffle the lines
+    
+            Collections.shuffle(list);
+    
+            // print the result
+    
+            Iterator it = list.iterator();
+            while (it.hasNext()) {
+                System.out.println((String)it.next());
+            }
+        }
+    }
+
+For input like:
+
+    1
+    2
+    3
+    4
+    5
+
+output might be:
+
+    3
+    2
+    1
+    5
+    4
+
+A program like this one is useful in generating test data.
+
+A final example shows how to do binary searching in a list:
+
+    import java.util.*;
+    
+    public class UtilDemo6 {
+        public static void main(String args[]) {
+    
+            // create list and add elements to it
+    
+            List list = new ArrayList();
+            list.add("alpha");
+            list.add("Beta");
+            list.add("Delta");
+            list.add("gamma");
+    
+            // do the search
+    
+            int i = Collections.binarySearch(list, "chi",
+                String.CASE_INSENSITIVE_ORDER);
+            i = -(i + 1);
+    
+            // display the result
+    
+            System.out.println("insertion point = " + i);
+        }
+    }
+
+The list is searched (case insensitive) for an occurrence of the
+string "chi", which is not found. When a key is not found, the
+return value from binarySearch is -(i + 1), where i is the
+appropriate insertion point to maintain the list in proper order. 
+When run, the UtilDemo6 program prints:
+
+    insertion point = 2
+
+In other words, "chi" should be inserted at location 2, just 
+before "Delta".
+
+The collection utilities also contain methods for sorting lists,
+reversing the order of lists, filling, and copying.
+
+To learn more about collection utilities, see section 16.8 
+Wrapped Collections and the Collections Class in "The Java
+Programming Language, Third Edition" by Arnold, Gosling, and 
+Holmes (http://java.sun.com/docs/books/javaprog/thirdedition/).
+
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .
+
+- NOTE
+
+Sun respects your online time and privacy. The Java Developer 
+Connection mailing lists are used for internal Sun Microsystems(tm) 
+purposes only. You have received this email because you elected 
+to subscribe. To unsubscribe, go to the Subscriptions page 
+(http://developer.java.sun.com/subscription/), uncheck the 
+appropriate checkbox, and click the Update button.
+
+
+- SUBSCRIBE
+
+To subscribe to a JDC newsletter mailing list, go to the 
+Subscriptions page (http://developer.java.sun.com/subscription/), 
+choose the newsletters you want to subscribe to, and click Update.
+
+
+- FEEDBACK
+Comments? Send your feedback on the JDC Tech Tips to:
+
+jdc-webmaster@sun.com
+
+
+- ARCHIVES
+You'll find the JDC Tech Tips archives at:
+
+http://java.sun.com/jdc/TechTips/index.html
+
+
+- COPYRIGHT
+Copyright 2000 Sun Microsystems, Inc. All rights reserved.
+901 San Antonio Road, Palo Alto, California 94303 USA.
+
+This document is protected by copyright. For more information, see:
+
+http://java.sun.com/jdc/copyright.html
+
+
+This issue of the JDC Tech Tips is written by Glen McCluskey.
+
+JDC Tech Tips 
+November 7, 2000
+
+
+
+
+
+
+
+
+
+
+
+
+

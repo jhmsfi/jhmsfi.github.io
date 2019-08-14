@@ -1,0 +1,84 @@
+<title>Bok, et al.</title>
+
+<SCRIPT LANGUAGE="JavaScript">
+
+
+<!-- Beginning of JavaScript Applet -------------------
+
+/* Copyright (C)1996 Web Integration Systems, Inc. DBA Websys, Inc.
+   All Rights Reserved.
+
+   This applet can be re-used or modified, if credit is given in 
+   the source code.
+
+   We will not be held responsible for any unwanted effects due to the 
+   usage of this applet or any derivative.  No warrantees for usability 
+   for any specific application are given or implied.
+
+   Chris Skinner, January 30th, 1996.
+   
+   Hacked for CNNfn by RD, Jan. 31, 1996
+bgcolor="#FFFFFF"
+*/
+
+function scrollit_r2l(seed)
+{
+        var m1  = "   Clap....";
+        var m2  = "   Stand...";
+        var m3  = "   Clap...";
+        var m4  = "   Leave...";
+        
+        var msg=m1+m2+m3+m4;
+        var out = " ";
+        var c   = 1;
+
+        if (seed > 100) {
+                seed--;
+                var cmd="scrollit_r2l(" + seed + ")";
+                timerTwo=window.setTimeout(cmd,100);
+        }
+        else if (seed <= 100 && seed > 0) {
+                for (c=0 ; c < seed ; c++) {
+                        out+=" ";
+                }
+                out+=msg;
+                seed--;
+                var cmd="scrollit_r2l(" + seed + ")";
+                    window.status=out;
+                timerTwo=window.setTimeout(cmd,100);
+        }
+        else if (seed <= 0) {
+                if (-seed < msg.length) {
+                        out+=msg.substring(-seed,msg.length);
+                        seed--;
+                        var cmd="scrollit_r2l(" + seed + ")";
+                        window.status=out;
+                        timerTwo=window.setTimeout(cmd,100);
+                }
+                else {
+                        window.status=" ";
+                        timerTwo=window.setTimeout("scrollit_r2l(100)",75);
+                }
+        }
+}
+// -- End of JavaScript code -------------- -->
+
+
+</SCRIPT>
+<body onLoad="timerONE=window.setTimeout('scrollit_r2l(100)',500);">
+<hr>
+<center><h1>Standing Ovation</h1><p>
+</center>
+<HR>
+<center><I>
+T. Bok, S. de Marchi, G. Dworman, J. S. Irons, and B. Steffansson.
+</I></center>
+<HR><P>
+
+<menu>
+<LI><a href=burrito.ps>Solution</a> in postscript.
+<LI><a href=burrito.gpg>Source code</a> written in Gauss.
+</menu>
+<p>
+<HR>
+<i>June 28, 1996</i>

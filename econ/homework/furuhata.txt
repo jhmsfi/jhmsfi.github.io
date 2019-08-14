@@ -1,0 +1,366 @@
+A Study of a Standing Ovation
+
+	by	Masabumi Furuhata 
+			of Marubun  Corp. , Japan
+		Daichi Yamamoto 
+			of NTT Tokyo Technology Development Center , Japan
+			E-Mail: yamamoto@tdc.tbn.ntt.jp
+
+
+1.	Introduction
+
+        We assume that there are some types of situations of standing
+ agents in this standing ovation process study. 
+
+
+1)	[Initial Situation] At the end of the lecture some agents were
+ really moved by the lecture and couldn't help standing.
+
+2)	[Comparison Situation] It is natural to think that the agents
+ compare  its impression of the lecture and the behavior of the others.
+
+
+
+2.	Purpose of This Study
+
+	Purpose of this study is to know how a standing ovation occurs.
+
+
+3.	Building the Model
+ 
+	In this model we set some situations.
+
+1)	[Initial Situation] 
+
+2)	[Comparison Situation] It is difficult to know how the agents
+ compare with the others. So we set others as these two ways.
+		[Optimize in Local] The agents compare with the behaviors 
+of the surrounding agents. If all the surroundings were stood , the agent
+want to stand.
+		[Optimize in Global]The agents compare with the behaviors
+of all the agents in the meeting place. If many agents were standing , the
+agents want to stand.
+
+3.	Closer to This Model
+
+[Initial Situation]
+A)	At the end of the lecture each agents have the different 
+impression about the lecture. We represent these impressions as 
+ImpressionValue which follows Normal Distribution , N[0,1] .
+B)	If the impreesion of the agent is greater than certain 
+parameter , this agent stands. We set this parameter as 
+StartStandingValue . This parameter should be subject to the quality 
+of the lecture.
+
+[Optimize in Local]
+C)	One agent is surrounded by 8 agents.
+
++++++++++  
++++###+++	###
++++#*#+++	#*#
++++###+++	###
++++++++++ --> 		one;* , 8 agents;#
+
+ And one agent can see 5 front agents . We consider these 5 agents as neighbors.
+
+ ###
+ #*#
+ +++
+	one;* , #;neighbors
+
+	
+ And the rate of standing agents within one's neighbors influences on the
+ agents' desicion whether to sit or stand.
+
+	z  = Numbers of Stand Rate of the neighbors
+	   = Numbers of Standing Agents / Numbers of Neighbors
+( at the edge of the meeting place , Numbers of Neighbors is not 5. 
+0 to 4)
+
+	standrate = - Inv(Normal Distribution(z))
+( if z = 1/5 , standrate = 0.84 )
+
+If the ImpressionValue is greater than standrate , the agent 
+stands. And if not , the agent sits.
+
+[Optimize in Global]
+D)	A moment later , some agents feel the atmosphere of 
+the meeting place . If the atmosphere is good , the agents might want to 
+stand . And if not , the agents might want to sit .
+
+	z  = the Rate of Standing Agents in the Meeting Place
+	   = Numbers of Standing Agents / Numbers of the Seets in 
+the meeting place
+
+	standardrate  = - Inv(Normal Distribution(z)) 
+( if z = 25/50 , standardrate = 0)
+
+E)	Continue C) and D) for a while
+
+
+4.	Summary of the Data
+
+
+
+
+
+
+
+
+Stem & Leaf
+
+Percentage of the Standing Agents (10 x 5 sheats)
+--------------------------
+0|000000000000022266
+1|
+2|
+3|
+4|24
+5|0004
+6|8
+7|4
+8|
+9|2
+0|
+
+Percentage of the Standing Agents (5 x 10 seats)
+--------------------------
+0|000000000002444
+1|
+2|
+3|
+4|0226
+5|8
+6|00
+7|024
+8|
+9|24
+0|
+
+
+5.	Conclusion
+
+	In the 54 experiments , a standing ovation was observed 3 
+times. The standing ovation never occured when no agents 
+stood right after the lecture. Even though a few agents stood right after the lecture and the neighbors didn't follow the standing agents , a standing 
+ovation didn't occured. 
+
+6.	More Studies
+
+	We should study more about changing :
+1) the structure and the capacity of the meeting place
+2) no seats
+3) spread of the impression of the lecture
+4) some parameters
+
+7.	Programing
+
+	We wrote the program on Microsoft Excel with Visual Basic and
+ Analysis Tool. We represent the Standing agent as green and the Sitting 
+Agents as red. Here is the programming.
+
+Const StartStandingValue = 2
+Const ncol = 5
+Const nrow = 10
+Const spaceia = 3
+Const felave = 0
+Const felsd = 1
+
+
+
+Sub ResetPeopFelValue()
+    Cells.Select
+    Selection.Clear
+    RandNorm
+End Sub
+
+Sub RandNorm()
+    Application.ExecuteExcel4Macro String:="RANDOM(!R2C" & spaceia + 1 & ",  " 
+& ncol & ",  " & nrow & ",  2,  ,  " & felave & ",  " & felsd & ")"
+    
+'    Cells(2, 5).Value = Null   (if you want to make the blank sheet you can)
+
+    
+    InsertSatisIndex2
+End Sub
+
+
+Sub InsertSatisIndex2()
+
+Dim abc1
+Dim arow, acol As Integer
+
+    For arow = 2 To 2 + nrow - 1
+        For acol = spaceia + 1 To spaceia + ncol
+            abc1 = Cells(arow, acol).Value
+            SValue = StartStandingValue
+            Cells(arow, acol).Activate
+            If abc1 <> 0 Then
+                If abc1 > SValue Then
+                        Cells(arow, acol).Select
+                        TurnGreen
+                Else
+                        Cells(arow, acol).Select
+                        TurnRed
+                End If
+            End If
+        Next acol
+    Next arow
+    
+    Infectionatex2
+
+End Sub
+
+
+
+Function ArithStandRate()
+
+    redNum = 0
+    greenNum = 0
+    
+    For arow = 2 To 2 + nrow - 1
+        For acol = spaceia + 1 To spaceia + ncol
+            If Cells(arow, acol).Interior.ColorIndex <> -4196 Then
+                Select Case Cells(arow, acol).Interior.ColorIndex
+                    Case 3
+                        redNum = redNum + 1
+                    Case 4
+                        greenNum = greenNum + 1
+                End Select
+            End If
+        Next acol
+    Next arow
+        
+    Cells(2, 1).Value = greenNum
+    
+    Select Case greenNum / (nrow * ncol)
+        Case 0
+            ArithStandRate = 0.01
+        Case 1
+            ArithStandRate = 0.99
+        Case Else
+            ArithStandRate = greenNum / (redNum + greenNum)
+    End Select
+    
+Cells(3, 1).Value = ArithStandRate
+End Function
+
+Sub Infectionatex2()
+
+Dim redNum, greenNum
+
+
+    For runtime = 1 To 10
+    
+    copyColor
+    standvalue = -Application.NormSInv(ArithStandRate)
+Cells(runtime + 4, 1).Value = standvalue
+        For arow = 2 To 2 + nrow - 1
+            For acol = spaceia + 1 To spaceia + ncol
+                If Cells(arow, acol).Value <> 0 Then
+                     
+                    If runtime > 2 Then
+                        If Cells(arow, acol).Value > standvalue Then
+                            Cells(arow, acol).Select
+                            TurnGreen
+                        Else
+                            Cells(arow, acol).Select
+                            TurnRed
+                        End If
+                    End If
+                                
+                    redNum = 0
+                    greenNum = 0
+                    Cells(arow, acol).Activate
+                    colorCount arow + nrow + 1 - 1, acol - 1, redNum, greenNum
+                    colorCount arow + nrow + 1 - 1, acol, redNum, greenNum
+                    colorCount arow + nrow + 1 - 1, acol + 1, redNum, greenNum
+                    colorCount arow + nrow + 1, acol - 1, redNum, greenNum
+                    colorCount arow + nrow + 1, acol + 1, redNum, greenNum
+                    
+                    If greenNum + redNum = 0 Then
+                        z = 0
+                    Else
+                        z = greenNum / (greenNum + redNum)
+                    End If
+                    
+                    Select Case z
+                        Case 0
+                            StandardRate = standvalue
+                        Case 1
+                            StandardRate = -2
+                        Case Else
+                            StandardRate = -Application.NormSInv(z)
+                    End Select
+                        
+                        
+                    If (z <> 0) Then
+                        If (Cells(arow, acol).Value > StandardRate) Then
+
+                            Cells(arow, acol).Interior.ColorIndex = 4
+                        Else
+                            Cells(arow, acol).Interior.ColorIndex = 3
+                        End If
+                    End If
+                    
+
+                End If
+            Next acol
+        Next arow
+
+    Next runtime
+
+End Sub
+
+Sub copyColor()
+        For arow = 2 To 2 + nrow - 1
+            For acol = spaceia + 1 To spaceia + ncol
+                Cells(arow + nrow + 1, acol).Interior.ColorIndex = Cells(arow, 
+acol).Interior.ColorIndex
+            Next acol
+        Next arow
+End Sub
+
+Sub colorCount(brow, bcol, rn, gn)
+
+    Select Case Cells(brow, bcol).Interior.ColorIndex
+        Case 3
+            rn = rn + 1
+        Case 4
+            gn = gn + 1
+    End Select
+    
+End Sub
+
+
+Sub TurnWhite()
+    With Selection.Interior
+         .ColorIndex = 2
+         .Pattern = xlSolid
+    End With
+End Sub
+
+Sub TurnRed()
+    With Selection.Interior
+         .ColorIndex = 3
+         .Pattern = xlSolid
+    End With
+End Sub
+
+Sub TurnGreen()
+    With Selection.Interior
+         .ColorIndex = 4
+         .Pattern = xlSolid
+    End With
+End Sub
+
+
+
+
+
+
+--------------------------------------
+Masabumi Furuhata
+Daichi Yamamoto
+E-mail; yamamoto@tdc.tbn.ntt.jp
+

@@ -1,0 +1,251 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Joke Propagation</TITLE>
+<META NAME="description" CONTENT="Joke Propagation">
+<META NAME="keywords" CONTENT="hw">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="hw.css">
+
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<IMG WIDTH="81" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next_inactive"
+ SRC="/usr/share/latex2html/icons/nx_grp_g.png"> 
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up_g.png"> 
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev_g.png">   
+<BR>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+<H1 ALIGN=CENTER>Joke Propagation</H1>
+<P ALIGN=CENTER><STRONG>Ethan Fast, Elais Jackson, Abbie Jacobs, Eric Scott</STRONG>
+</P>
+<BR><P ALIGN=CENTER><B>Date:</B> 21 June, 2009</P>
+
+<HR>
+
+<P>
+
+<H1><A NAME="SECTION00010000000000000000">
+Model</A>
+</H1>
+
+<P>
+We use an artificial neural network model to simulate joke propagation in a heterogeneous social network.  Nodes <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$ n_i$"></SPAN> represent persons.  Each node is assigned a "personality" value, <!-- MATH
+ $\mu_i \in U(-2,2)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="116" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.png"
+ ALT="$ \mu_i \in U(-2,2)$"></SPAN>, which is the mean of a Gaussian distribution, all of which have the same variance <SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="22" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$ \sigma^2$"></SPAN>.  Jokes are represented by integers <!-- MATH
+ $J_k \in U(-2,2)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="118" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.png"
+ ALT="$ J_k \in U(-2,2)$"></SPAN>.  The probability that a person <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$ n_i$"></SPAN> likes a joke <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.png"
+ ALT="$ J_k$"></SPAN> and tells it to his or her friends depends on where in the distribution <!-- MATH
+ $N(\mu_i,\sigma^2)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="80" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.png"
+ ALT="$ N(\mu_i,\sigma^2)$"></SPAN> the joke falls.  Specifically, we define <!-- MATH
+ $P_{like}(J_k, \mu_i) = G(-|J_k-\mu_i|)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="236" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.png"
+ ALT="$ P_{like}(J_k, \mu_i) = G(-\vert J_k-\mu_i\vert)$"></SPAN>, where <!-- MATH
+ $G(x)=\frac{1}{\sqrt{2{\pi}{\sigma^2}}}\int_{-\infty}^{x}{e^{-\frac{y^2}{2\sigma^2}}dy}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="218" HEIGHT="58" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$ G(x)=\frac{1}{\sqrt{2{\pi}{\sigma^2}}}\int_{-\infty}^{x}{e^{-\frac{y^2}{2\sigma^2}}dy}$"></SPAN> is the cumulative distribution of <!-- MATH
+ $N(0,\sigma^2)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="73" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$ N(0,\sigma^2)$"></SPAN>, so that jokes falling closest to the mean of the distribution highest probability of being retold.
+
+<P>
+The network is initialized to be fully connected with random weights.<A NAME="tex2html1"
+  HREF="#foot18"><SUP><SPAN CLASS="arabic">1</SPAN></SUP></A>  Each node has an edge direct to itself, simulating memory.  The random weights are initially adjusted depending on the similarity between the two nodes personalities, i.e.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+w_{ij} = w_{0ij}(1-\frac{1}{4}|\mu_i - \mu_j|),
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="221" HEIGHT="59" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.png"
+ ALT="$\displaystyle w_{ij} = w_{0ij}(1-\frac{1}{4}\vert\mu_i - \mu_j\vert),$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="36" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img11.png"
+ ALT="$ w_{0ij}$"></SPAN> is drawn from <SPAN CLASS="MATH"><IMG
+ WIDTH="61" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img12.png"
+ ALT="$ U(0,1)$"></SPAN>, and the division by four is to prevent negative values.  This adjustment represents and decreased probability of a node telling a joke to other nodes who have very different senses of humor.
+
+<P>
+Instaces of the the jokes are randomly assigned as inputs to nodes ("told" to them) at time <SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.png"
+ ALT="$ t_0$"></SPAN>, and the propogation loop begins.  For each joke <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.png"
+ ALT="$ J_k$"></SPAN>, every node has a probability <!-- MATH
+ $P_{activation}(J_k, n_i)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="137" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.png"
+ ALT="$ P_{activation}(J_k, n_i)$"></SPAN> of sending an activation signal for <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.png"
+ ALT="$ J_k$"></SPAN>, which depends on the incoming signals <SPAN CLASS="MATH"><IMG
+ WIDTH="55" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img15.png"
+ ALT="$ S(n_{ji})$"></SPAN> for that joke weighted by the probability <!-- MATH
+ $P_{like}(J_k, \mu_i)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="98" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img16.png"
+ ALT="$ P_{like}(J_k, \mu_i)$"></SPAN> of liking the joke, divided by crowding effects for all jokes: taking inspiration from Malthusian population capacity, we model a limit to the number of jokes a person can remember and tell by dividing the probability by the total input signal of all jokes raised to an explonent <SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.png"
+ ALT="$ \alpha$"></SPAN>.  Note that we made a mistake in the equation by putting a normalizing factor in the denomonator (since <!-- MATH
+ $P_{activation}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="79" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img18.png"
+ ALT="$ P_{activation}$"></SPAN> must be less than or equal to one) which actually cancels out the dependence on incoming signals for <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.png"
+ ALT="$ J_k$"></SPAN>.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+P_{activation}(J_k, n_i) = \frac{\sum_j{S_{k}(n_{ji})P_{like}(J_k,\mu_{i})}}{\sum_j{S_{k}(n_{ji})}}\frac{1}{(\sum_{j,k}{S_k(n_{ji})})^\alpha}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="472" HEIGHT="70" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.png"
+ ALT="$\displaystyle P_{activation}(J_k, n_i) = \frac{\sum_j{S_{k}(n_{ji})P_{like}(J_k,\mu_{i})}}{\sum_j{S_{k}(n_{ji})}}\frac{1}{(\sum_{j,k}{S_k(n_{ji})})^\alpha}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+The signal is binary, and is outputted to child nodes with strength <!-- MATH
+ $S(n_{ij}) = w_{ij}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="105" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img20.png"
+ ALT="$ S(n_{ij}) = w_{ij}$"></SPAN>.
+
+<P>
+
+<H1><A NAME="SECTION00020000000000000000">
+Results</A>
+</H1>
+We developed two visualizations of the simulation.  The <A HREF="../jokes/jokes.html">first</A> displays a circle for each node which shrinks over time, but grows when it tells a joke.  When a joke is told, the node flashes a color for a moment.  Each color corresponds to a unique joke.  The movement of the circles is meaningless.
+
+<P>
+The second visualization is a bar graph of the cumulative number of jokes told:
+
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="550" HEIGHT="571" ALIGN="BOTTOM" BORDER="0"
+ SRC="./graph.png"
+ ALT="Image graph">
+
+</DIV>
+
+<P>
+
+<H1><A NAME="SECTION00030000000000000000">
+About this document ...</A>
+</H1>
+ <STRONG>Joke Propagation</STRONG><P>
+This document was generated using the
+<A HREF="http://www.latex2html.org/"><STRONG>LaTeX</STRONG>2<tt>HTML</tt></A> translator Version 2002-2-1 (1.71)
+<P>
+Copyright &#169; 1993, 1994, 1995, 1996,
+Nikos Drakos, 
+Computer Based Learning Unit, University of Leeds.
+<BR>
+Copyright &#169; 1997, 1998, 1999,
+<A HREF="http://www.maths.mq.edu.au/~ross/">Ross Moore</A>, 
+Mathematics Department, Macquarie University, Sydney.
+<P>
+The command line arguments were: <BR>
+ <STRONG>latex2html</STRONG> <TT>hw.tex -split=0</TT>
+<P>
+The translation was initiated by Eric "SigmaX" Scott on 2010-06-24
+<BR><HR><H4>Footnotes</H4>
+<DL>
+<DT><A NAME="foot18">... weights.</A><A
+ HREF="hw.html#tex2html1"><SUP><SPAN CLASS="arabic">1</SPAN></SUP></A></DT>
+<DD>Preferably this would be replaced with a small-world/scale-free initialization, to more accurately represent realy social networks.
+
+</DD>
+</DL>
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<IMG WIDTH="81" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next_inactive"
+ SRC="/usr/share/latex2html/icons/nx_grp_g.png"> 
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up_g.png"> 
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev_g.png">   
+<BR></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Eric "SigmaX" Scott
+2010-06-24
+</ADDRESS>
+</BODY>
+</HTML>

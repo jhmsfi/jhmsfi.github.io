@@ -1,0 +1,230 @@
+<html>
+<title>
+Student Projects, 1996
+</title>
+<h3>
+1996 Graduate Workshop in Computational Economics
+</h3>
+<h2>
+Student Projects
+</h2>
+
+<hr>
+<hr>
+<p>
+Each student began a research project during the two-week workshop.
+Below are brief descriptions and links to these various projects.
+The expectation is that these projects will form the basis for dissertation
+chapters and/or journal articles.
+<p>
+Given the ambitious nature of the projects, this page is likely to change
+over the next few months as projects reach completion.
+<p>
+
+<hr>
+<hr>
+<p>
+<h4> 
+Todd Allen, Johns Hopkins University
+</h4>
+<p>
+Todd is investigating the effectiveness of monitoring for resolving
+social dilemmas.  Agents, for example, employees in a
+worker-managed firm, are allowed to monitor the effort level
+of other agents, and payoffs to all agents are based on these observations.
+Agents adaptively modify their monitoring strategies, and questions
+concerning the emergence of cooperation in such situations are analyzed.
+
+<hr>
+<p>
+<h4> 
+Tomas Bok, Harvard
+</h4>
+<p>
+Tom has created a general "artificial worlds" engine to explore issues
+of cooperation and altruism.  Using this engine he is currently exploring 
+issues of selective interaction among cooperative agents.  In this model, agents
+alter their desired level of global interaction as well as direct connections
+with other agents through a process of learning and mutation.
+
+<hr>
+<p>
+<h4> 
+Kim-Sau Chung, U. of Wisconsin--Madison 
+</h4>
+<p>
+Kim-Sau is exploring how systems react to ambiguous news about the state
+of a system.  For example, the impact of a coup on a country's economy or, say,
+the release of unanticipated earnings news are likely to signal a large change
+in the environment, yet the actual magnitude of this change may be ambiguous.
+Using a dynamic mathematical model, Kim-Sau models both the waiting and learning
+processes inherent in such events.
+
+<hr>
+<p>
+<h4> 
+<a href="http://opim.wharton.upenn.edu/~dworman">
+Garett Dworman</a>, U. of Penna--Wharton 
+</h4>
+<p>
+Garett has developed a simple platform for investigating credit
+allocation mechanisms.  This project is motivated by a larger on-going
+research program investigating artificial adaptive negotiation agents
+which are driven by sets of possibly incomplete and inconsistent
+rules-of-thumb in a classifier system design.  Unfortunately,
+classifier systems are notoriously poor performers due in part to
+difficulties with the bucket brigade credit allocation mechanism.
+This project's goal is to investigate and compare the isolated effects
+of various credit allocation mechanisms on a very simple (but
+scalable) problem.
+
+<hr>
+<p>
+<h4> 
+Jorge Galindo-Flores, Harvard
+</h4>
+<p>
+Jorge is analyzing different models of foreign exchange rate bands through
+Monte Carlo methods.  This analysis will allow him to clarify the links
+between the theoretical models and the empirical findings. By constructing
+a FX model laboratory, he can begin to explore some normative issues
+across the models, for example, adaptive models of bank intervention
+policies can be analyzed.
+
+<hr>
+<p>
+<h4> 
+Carl Hirschman, UC--Irvine
+<a href="http://www.mit.edu:8001/people/irons/irons.html">
+</h4>
+<p>
+Carl has begun to explore issues of learning in overlapping generation models
+using simple ecologies of agents.   This work complements the existing work
+of learning in these models, and provides a means by which to generate a number
+of new and test a variety of existing hypotheses.  His current focus is on
+competition among forecasting rules of various degrees of sophistication.
+
+<hr>
+<p>
+<h4> 
+John Irons</a>, MIT
+</h4>
+<p>
+John is focusing on models of party competition where citizens abstain
+from voting when either party platforms are too far away from the
+voter's ideal point or when parties have closely matched (in terms of
+voter's utility) platforms.  He finds that such abstention dramatically
+alters the form of the electorial landscape, and may lead to multiple
+equilibria and unusual adaptive dynamics. 
+
+<hr>
+<p>
+<h4> 
+P. Konstantina Kiousis and
+Benedikt Stefansson, UC--Los Angeles
+</h4>
+<p>
+Konstantina and Benedikt have created a model of industry competition using
+the Swarm platform.  Their model incorporates ideas about learning-by-doing, 
+entry and exit dynamics, and product differentiation in attribute space.
+
+<hr>
+<p>
+<h4> 
+Scott de Marchi, U. of North Carolina
+</h4>
+<p>
+Scott is studying models of adaptive party competition.  His initial
+work has focused on allowing voters to pay attention to various aspects
+of each party's platform.  Voters are allowed to adaptively choose which
+issues to focus on, while simultaneously parties alter their platforms
+to capture votes.  Current extensions include allowing parties to focus
+voter attention on particular issues through political "advertising."
+ 
+<hr>
+<p>
+<h4> 
+Mariana Mazzucato, The New School
+</h4>
+<p>
+Mariana is exploring some fundamental issues in industrial organization.
+Using a reduced form model of market share dynamics based on a replicator
+equation, she is analyzing the dynamics implied by various cost conditions.
+Along with the computational exploration of the model, she is also developing
+two complementary mathematical approaches.
+
+<hr>
+<p>
+<h4> 
+Martin Posch, U. of Vienna
+</h4>
+<p>
+Martin is analyzing learning in repeated games, through the use of an adaptive
+aspiration model.  Agents maintain their past action in the game as long as 
+their aspirations are met, however, when payoffs fall below aspiration levels
+they alter their play.  Initial work on the repeated Prisoner's dilemma
+indicates that the above model results in some interesting dynamics.
+
+<hr>
+<p>
+<h4> 
+Thor Sigvaldason, London School of Economics 
+<a href="http://www.nd.edu/~mweagle/index.html">
+</h4>
+<p>
+Thor is investigating trade (based on a model by Diamond) under adaptive
+agents relying on finite automata rules.  Such a model has many interesting
+implications vis-a-vis traditional methods.  The model also offers a variety
+of new analytic possibilities, for example, the analysis of strategic complexity.
+
+<hr>
+<p>
+<h4> 
+Matt Weagle</a>, University of Notre Dame
+</h4>
+<p>
+Matt is probing the dynamics of market stucture and formation.  
+In his model, agents search and establish relationships with different
+vendors, and in the process create a network of marker interactions.
+
+<hr>
+<p>
+<h4> 
+Yury Yegorov, European University Institute
+</h4>
+<p>
+Yury is studying the dynamics of spatial infrastructure formation.
+He has developed a model in which the self-organization of spatial
+infrastructure can be analyzed. 
+
+<hr>
+<p>
+<h4> 
+Eduardo Zambrano, Cornell
+</h4>
+<p>
+Eduardo is finding connections between the "El Farol" problem and game
+theoretic results on learning in games.  Using these connections, he
+has begun to provide a variety of new theoretical insights into the basic
+problem.
+
+<hr>
+<p>
+<h4> 
+Jose S. Penalva Zuasti, UC--Los Angeles
+</h4>
+<p>
+Jose has created a general equilibrium model where self-interested market-makers
+drive the formation of new markets.
+ 
+<p>
+<hr>
+<address>
+<a href ="http://zia.hss.cmu.edu/miller">John H. Miller </a>, miller@zia.hss.cmu.edu.
+<IMG SRC="http://zia.hss.cmu.edu/cgi-bin/counter.xbm">
+<p>
+<hr>
+</address>
+ 
+</html>
+

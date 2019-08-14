@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+
+
+  
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+
+  
+  <title>2007</title>
+</head>
+
+
+<body>
+
+<big><span style="font-family: Verdana;"><span style="font-weight: bold;">
+SFI&nbsp; Graduate Workshop&nbsp; - Homework Problem 2007</span> </span><br style="font-family: Verdana;">
+
+<span style="font-family: Verdana; font-weight: bold;">"My space" </span><br style="font-family: Verdana;">
+
+</big>
+
+<span style="font-family: Verdana;"><big><span style="font-weight: bold;">Chris Cameron and Robi Ragan&nbsp;</span>&nbsp;</big> </span><br style="font-family: Verdana;">
+
+
+<br style="font-family: Verdana;">
+
+<span style="font-family: Verdana;"> </span><br style="font-family: Verdana;">
+
+
+<span style="font-family: Verdana;"><span style="font-style: italic;">The Space </span><br>
+
+<br style="font-family: Verdana;">
+
+</span><span style="font-family: Verdana;">
+The model space is a 24 x 16 cell space. Each cell is either a parking
+spot or a lane. There are 100 parking spaces in the lot. The spots are
+organized into 5 aisles two spaces wide which are perpendicular to the
+mall. Between each isle there is a one-way lane. At the top of the
+aisles, running parallel to the mall, there are two lanes (one going
+each way). Likewise at the bottom of the aisles there are two lanes
+running each way (also parallel to the mall).&nbsp; Each parking
+spot is assigned a valued V</span><small style="font-family: Verdana;"><small>s</small></small><span style="font-family: Verdana;"> based on its cartesian distance from the
+front door of the mall. If a space is occupied by a car then V</span><small style="font-family: Verdana;"><small>s</small></small><span style="font-family: Verdana;">=0 The
+cars use this value in their decision rule.&nbsp; </span><br style="font-family: Verdana;">
+
+
+<br style="font-family: Verdana;">
+
+<span style="font-family: Verdana; font-style: italic;">
+The Cars<br>
+
+<br style="font-family: Verdana;">
+
+</span><span style="font-family: Verdana;">
+Cars queue to enter the model according to a Poisson distribution. The
+cars then enter the back lane and proceed until they reach the
+intersection with the closest of the three middle lanes. If there are
+open spots within their search radius then they turn down that
+lane.&nbsp; Each car is generated with two exogenous parameters.
+The first is an impatience parameter &alpha;</span><small style="font-family: Verdana;"><small>i</small></small><span style="font-family: Verdana;"> which is drawn from the uniform [0,1]. The higher an
+agent's&nbsp;&alpha;</span><small style="font-family: Verdana;"><small>i</small></small><span style="font-family: Verdana;"> the more likely the agent is to accept a space as time
+goes by. The second parameter is a taste parameter which represents how
+important it is to an agent that they park close to the entrance of the
+mall. The taste parameter is&nbsp;R</span><small style="font-family: Verdana;"><small>i</small></small><span style="font-family: Verdana;"> is drawn from a normal distribution with mean 10 and standard deviation of 2.5. The higher this parameter
+the more the agent values close parking spots. A third parameter unique
+to each agent is&nbsp;t</span><small style="font-family: Verdana;"><small>i</small></small><span style="font-family: Verdana;">, the time that the agent has been on the model
+space.&nbsp; These parameters combine to form the agents
+reservation value:&nbsp; r</span><small style="font-family: Verdana;"><small>it</small></small><span style="font-family: Verdana;"> = R</span><small style="font-family: Verdana;"><small>i</small></small><span style="font-family: Verdana;">-t</span><small style="font-family: Verdana;"><small>i</small></small><span style="font-family: Verdana;">&alpha;</span><small style="font-family: Verdana;"><small>i</small></small><span style="font-family: Verdana;">. The car searches the two spaces on it's right
+and left as well as the four spaces in front of each of those two (a
+total of 10 spaces). The car compares the&nbsp;V</span><small style="font-family: Verdana;"><small>s</small></small><span style="font-family: Verdana;"> of all of these spaces
+and if one of the spaces adjacent to it is the maximum&nbsp;V</span><small style="font-family: Verdana;"><small>s</small></small><span style="font-family: Verdana;"> in the set
+searched (the&nbsp;V*</span><small style="font-family: Verdana;"><small>s</small></small><span style="font-family: Verdana;">)then the car parks if and only if:&nbsp;
+V*</span><small style="font-family: Verdana;"><small>s</small></small><span style="font-family: Verdana;"> &gt;=&nbsp; r</span><small style="font-family: Verdana;"><small>it</small></small><span style="font-family: Verdana;">.&nbsp;
+Otherwise the car will move forward in the lane one cell (if that cell
+is unoccupied).&nbsp; If a car reaches the end of a lane without
+parking then they choose to go right or left based on a 50/50
+probability.&nbsp; </span><br style="font-family: Verdana;">
+
+
+<br style="font-family: Verdana;">
+
+
+<br style="font-family: Verdana;">
+
+
+<span style="font-family: Verdana;"><span style="font-style: italic;">The Results</span>&nbsp; <br>
+
+<br>
+
+Exploring the full range of outcomes of this model can produce is not
+really feasible for a 3 day project. The&nbsp;graphs relate to the
+question of "the secret".&nbsp; TrafficFlow is the lane structure. Cars
+enter on the lower right and want to be as close to the center left as
+possible. Note that the empty spaces are where cars "park" not
+drive.&nbsp; AisleUsage shows how agents park with no lane bias (a
+random choice at each junction).&nbsp; AvsDist is a scatterplot of the
+desirability of the parking spot obtained by people with different
+alpha values. Here patience helps.&nbsp; AvsTime is a scatterplot of
+the desirability of the parking spot obtained by people with different
+alpha values. Here patience does not make a difference.<br>
+
+<br>
+
+<br>
+
+</span><img style="width: 896px; height: 858px;" alt="Graph 4" src="trafficFlow.jpg"><br>
+
+<span style="font-family: Verdana;"><br>
+
+<img style="width: 1353px; height: 607px;" alt="Graph 1" src="AvsDist.jpg"><br>
+
+<br>
+
+<img style="width: 1353px; height: 607px;" alt="Graph 2" src="AvsTime.jpg"><br style="font-family: Verdana;">
+
+</span>
+<br style="font-family: Verdana;">
+
+
+<br>
+
+<img style="width: 896px; height: 599px;" alt="Graph 3" src="aisleUsage.jpg"><br>
+
+<br>
+
+<br>
+
+<br style="font-family: Verdana;">
+
+
+<br style="font-family: Verdana;">
+
+<span style="font-family: Verdana; font-style: italic;">
+The Future Directions and Questions</span><br style="font-family: Verdana;">
+
+<span style="font-family: Verdana;">
+&nbsp;</span><br style="font-family: Verdana;">
+
+<span style="font-family: Verdana;">
+The model above could be extended in several ways. Many of the
+assumptions made could be changed or endogenized. For example the
+current model assumes that there is only one entrance to the mall. We
+could assume something about the spatial location of the stores in the
+mall and include several entrances. The agents may have preference over
+the stores and may seek to minimize the distance they park from their
+preferred store. The design of the parking lot itself could be changed
+in several ways. First the number of aisles could be chanced as well as
+the number or spaces per aisle. The spaces could be split into two sub
+lots as is seen at many shopping centers. Additionally details such as
+handicap parking could be included.&nbsp; </span><br style="font-family: Verdana;">
+
+<br style="font-family: Verdana;">
+
+<span style="font-family: Verdana; font-style: italic;">The Social
+Science Scenarios</span><br style="font-family: Verdana;">
+
+<br style="font-family: Verdana;">
+
+<span style="font-family: Verdana;">1. Agents
+looking for a place to sit on the beach. The model space is different
+however the agents would face a similar decision. They want to be close
+to the water however the longer they search to worse off they are. Just
+as in the above model the agents could have heterogeneous reservation
+values r</span><small style="font-family: Verdana;"><small>it</small></small><span style="font-family: Verdana;"> = R</span><small style="font-family: Verdana;"><small>i</small></small><span style="font-family: Verdana;">-t</span><small style="font-family: Verdana;"><small>i</small></small><span style="font-family: Verdana;">&alpha;</span><small style="font-family: Verdana;"><small>i.</small></small><br style="font-family: Verdana;">
+
+<br style="font-family: Verdana;">
+
+<span style="font-family: Verdana;">2. Parishioners
+searching for a parking spot at their church. The model differs in that
+that the agents arrive and leave at roughly the same time. </span><br style="font-family: Verdana;">
+
+
+<br style="font-family: Verdana;">
+
+<span style="font-family: Verdana;">3. Applying to graduation.</span>
+</body>
+</html>

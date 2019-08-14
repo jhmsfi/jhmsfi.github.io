@@ -1,0 +1,152 @@
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252" />
+<link rel=Edit-Time-Data href="index_files/editdata.mso" />
+<link rel=OLE-Object-Data href="index_files/oledata.mso" />
+<title>A model of parking at the mall</title>
+<style><!--
+.SpellE
+	{}
+.GramE
+	{}
+.Section1
+	{page:Section1;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" link=blue vlink=purple class="Normal" lang=EN-US>
+<div class=Section1> 
+  <h1>A model of parking at the mall</h1>
+  <p>Kate Anderson,</p>
+  <p>Chris Fowler</p>
+  <p>Ryan Muldoon</p>
+  <p style='line-height:normal'><b><i>Intent:</i></b><i> To examine parking behavior 
+    of shoppers weighing a desire to park near the mall against the costs (in 
+    time) of searching for a spot to park.</i></p>
+  <p style='line-height:normal'><b><i><u><span
+style='font-size:14.0pt'>Basic Model:</span></u></i></b></p>
+  <p style='line-height:normal'><b>Description:</b> This is the most basic implementation 
+    of our model. Agents are homogenous in their parking strategies (threshold 
+    is set by the user) and all of them have complete information on the number 
+    of cars ahead of them and the number of free and full parking spaces. The 
+    points of greatest interest are how changing the strategy (threshold) alters 
+    the total cost of the experience (driving time + walking time + regret over 
+    walking past empty parking spaces)</p>
+  <p style='line-height:normal'><b>Space:</b> Linear, there are 20 parking <span
+class=GramE>spaces,</span> if a shopper gets to the closest spot and it is taken 
+    she must return to the back of the parking lot. There is only a single lane, 
+    so drivers cannot advance when the driving lane ahead of them is blocked. 
+    Cars pulling out of the parking spaces must drive to towards the mall before 
+    exiting and returning to the furthest point in the queue as a new shopper.</p>
+  <p style='line-height:normal'><b>Time:</b>  Synchronous: Each car makes its 
+    decision about parking conditions at exactly the same moment</p>
+  <p style='line-height:normal'> Asynchronous: Actual implementation of the moves 
+    is done asynchronously and in random order to arbitrarily decide outcomes 
+    of potential collisions.</p>
+  <p style='line-height:normal'><b>Agents:</b> Genetically homogenous, heterogeneous 
+    in their experience of the world based on their different states (moving, 
+    parked, leaving), and on their position (positions 1-20 in the driving lane 
+    or parking spaces 1-20)</p>
+  <p style='line-height:normal'><b>Decision Structure:</b>  See below</p>
+  <p style='line-height:normal'> <img width=571 height=409
+src="index_files/image002.gif" v:shapes="_x0000_i1025" /> </p>
+  <p style='line-height:normal'><b>Parameters tested for robustness: </b></p>
+  <ul type=disc>
+    <li style='line-height:normal;'>Number of cars (0-20)  </li>
+    <li style='line-height:normal;'>Threshold (0-1)</li>
+  </ul>
+  <p style='line-height:normal'><b>Criteria for judging outcomes:</b></p>
+  <ul type=disc>
+    <li style='line-height:normal;'>Average distance to Mall</li>
+    <li style='line-height:normal;'>Average time to park</li>
+    <li style='line-height:normal;'>Trip Cost =</li>
+    <ul type=circle>
+      <li style='line-height:normal;'>Time spent driving * dislike of driving 
+      </li>
+    </ul>
+  </ul>
+</div>
+<blockquote> 
+  <blockquote> 
+    <blockquote> 
+      <blockquote> 
+        <blockquote> 
+          <blockquote> 
+            <div class=Section1 style='line-height:normal'> 
+              <h3 style='line-height:normal'> +</h3>
+            </div>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+    </blockquote>
+  </blockquote>
+</blockquote>
+<div class=Section1> 
+  <ul type=disc>
+    <ul type=circle>
+      <li style='line-height:normal;'>Time spent walking * dislike of walking</li>
+    </ul>
+  </ul>
+</div>
+<blockquote> 
+  <blockquote> 
+    <blockquote> 
+      <blockquote> 
+        <blockquote> 
+          <blockquote>
+            <div class=Section1 style='line-height:normal'>
+              <h3 style='line-height:normal'>+</h3>
+            </div>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+    </blockquote>
+  </blockquote>
+</blockquote>
+<div class=Section1>
+  <ul type=disc>
+    <ul type=circle>
+      <li style='line-height:normal;'>Regret (number of empty spaces passed while 
+        walking to the mall * dislike of walking)</li>
+    </ul>
+  </ul>
+  <h2 style='line-height:normal'>Model</h2>
+  <p style='line-height:normal'>The model can be run from the applet below. Begin 
+    by pressing the &quot;setup&quot; button, then press &quot;go&quot;</p>
+  <p style='line-height:normal'>The mall is assumed to be at the right edge of 
+    the screen, the yellow strip is for parking and the white strip is the lane 
+    in which the cars drive. Cars that are looking for a space are colored red, 
+    cars looking to exit the lot are colored blue.</p>
+  <p style='line-height:normal'>Parameters: Modify the threshold, a higher threshold 
+    means that cars will be more likely to try for a spot closer to the front, 
+    a low threshold means they are more likely to settle for the first open spot 
+    they see.</p>
+ <applet code="org.nlogo.window.Applet"
+        archive="NetLogoLite.jar"
+        width="767" height="464">
+  <param name="DefaultModel"
+         value="parking-testable-model.nlogo">
+</applet>
+  <h3 style='line-height:normal'><b>Outcomes:</b></h3>
+  <pre style='line-height:normal'>The model behaves largely as expected. With complete information about the availability of spaces drivers are relatively successful
+at finding parking spaces close to the front.
+
+
+Parameter tests confirm that this behavior is robust across the range of traffic (1-20 cars) and across a range of thresholds.</pre>
+  <pre style='line-height:normal'><b>Figure 2: Model Outcomes with changing values for threshold and number of cars.
+</b></pre>
+<div id="Parking Model Results_22748" align=center x:publishsource="Excel">
+    <p><img
+src="Page_files/Parking%20Model%20Results_22748_image001.gif"
+alt="Model I Parameter Sweep"></p>
+  </div>
+  <pre style='line-height:normal'>Note that the threshold value is relatively unimportant when there are fewer cars in the parking lot. Because there is so little traffic the
+decisions that would require a threshold test are rarely used. It is only when the number of cars in the model rises that the threshold
+becomes an important determinant of disutility
+Also note that cost is minimized (and therefore utility is maximized) for a threshold value of approximately .4. This is a relatively low
+risk threshold.</pre>
+  <p style='line-height:normal'><b><a href="model2.html">Continue to Examine Model 
+    II</a></b></p>
+</div>
+</body>
+</html>

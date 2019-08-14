@@ -1,0 +1,63 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="Author" content="Econ User">
+   <meta name="GENERATOR" content="Mozilla/4.73 [en] (Win98; U) [Netscape]">
+   <title>And you are?  Modeling a Cocktail Party</title>
+</head>
+<body>
+&nbsp;
+<center>
+<br><font size=+3>And you are?</font>
+<br><font size=+1>Modeling a Cocktail Party</font>
+<br><a href="http://www.bol.ucla.edu/~dschreib/">Darren Schreiber</a> and
+Troy Tassier</center>
+
+<p>We set out to create a model where guests at a party desire to mingle
+with other guests.&nbsp; Guests had an inclination to spend varying amounts
+of time with each other guest.&nbsp; Once the party begins they seek out
+the person within their vision who they are most attracted to.&nbsp; As
+guests interact their inclination to spend additional time with each other
+diminishes.&nbsp; Once guests run out of people they are attracted to,
+they leave the party.
+<br>&nbsp;
+<p><font size=+1>Model:</font>
+<p>The party takes place in a 100 x 100 room with 21 guests.
+<p><u>Each guest has:</u>
+<blockquote>Level of attraction (randomly distributed) to each other guest.
+<br>Vision (constant for all guests).
+<br>Contact distance (constant for all guests).
+<br>Attraction decay rate (constant for all guests).
+<br>Position in the room (initial position set randomly).</blockquote>
+
+<p><br><u>Each period every guest:</u>
+<blockquote>1.&nbsp; Looks around to see who is within their vision.
+<br>2.&nbsp; If no one within vision has positive attraction, leave the
+party.
+<br>3.&nbsp; If someone with positive attraction is within sight, move
+toward most attractive guest until within
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; contact distance.
+<br>4.&nbsp; If no one within contact distance is attractive, move the
+opposite direction of the person you were
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; talking to.
+<br>5.&nbsp; Decrease your attraction to all people within contact distance.</blockquote>
+
+<p><br>
+<hr WIDTH="100%">
+<p>In the simulation below, twenty-one guests are randomly distributed
+in the room.&nbsp; They each implement the five steps described above.&nbsp;
+Early in the party, guests cluster into large groups.&nbsp; After some
+time, people tire of talking to the people in their group and spread out.&nbsp;
+New groups form, converse, and decay.&nbsp; When guests are unable to find
+someone interesting in their vision, they leave the party.
+<br>&nbsp;
+<p><br>
+<center>
+<p><img SRC="movie1.gif" height=254 width=256>
+<br>&nbsp;
+<p><a href="Cocktail1.00.1.tar.gz">Download our Cocktail Party code in
+Swarm 2.1.1 (7k)</a></center>
+
+</body>
+</html>

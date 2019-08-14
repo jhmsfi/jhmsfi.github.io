@@ -1,0 +1,155 @@
+<html>
+<head>
+<title> index </title>
+</head>
+<body>
+<h1>
+How to make crime pay? A primer for Ponzi copycats.
+</h1>
+<h2>
+1. Introduction
+</h2>
+<p>
+The Ponzi scheme takes the following form:
+Ponzi starts the scheme by “infecting” his immediate neighbors in the network. They invest a certain amount of money in his fund, for which he promises them a fixed interest rate every period. Ponzi does not invest the money and does not earn any return on them. With a finite number of investors, the fund is doomed to collapse.
+</p>
+<p>
+Ponzi scheme
+<br>
+<img src="PonziScheme.png" alt="Ponzi Scheme"
+width = "400" height = "250"/>
+</p>
+We take the perspective of a Ponzi schemer and model her problem of choosing a type of social network in which to position herself. The underlying idea is that the Ponzi schemer faces a tradeoff between the profitability and the sustainability of the fund. 
+<h2>
+Model and Questions Addressed
+</h2>
+<p>
+We model the effect of social network structure on the duration and maximal volume of a Ponzi fund. We thereby compare four different network structures – a random network, a regular network, a power law network, and a spacial density network. 
+</p>
+<p>
+We ask the following questions:
+How does deterrence change with different model parameters?
+How sensitive are model outputs?
+What is the effect of different returns offered by Ponzi on the maximum fund size reached, the number of agents who have invested, and the duration of the scheme until the fund reaches its maximal size?
+</p>
+<h2>
+2. Key Assumptions
+</h2>
+Our key assumptions are the following:
+<br>
+2.1. There are a fixed number of agents in the network.
+<br>
+2.2. Only direct neighbors are infected (at t = 0, Ponzi is infected).
+<br>
+2.3. Agents invest when the number of neighbors infected is higher than a threshold level.
+<br>
+2.4. The fund pays an interest rate to investors every period.
+<br>
+2.5. Investors withdraw the money invested with a random probability or when the number of neighbors, who have withdrawn is higher than the withdrawal threshold level.
+<br>
+2.6. The scheme ends when the fund goes to 0.
+<br>
+2.7. There is no reinvestment.
+<br>
+2.8. Ponzi's utility is proportional to the max amount of $ in his fund (he cares about getting as much money as possible and then running away with it). On the other hand, he also takes the threat of punishment into account. His expected jail time depends on the net number of defrauded (i.e. those who have invested and have not withdrawn their money). So he faces a tradeoff between profitability and risk of punishment.
+</p>
+<h2>
+3. Key Results with four types of networks
+</h2>
+<h3>
+3.1. Random network
+</h3>
+<p>
+<img src="RandomGraph.jpeg" alt="Random Graph" 
+width = "300" height = "300"/>
+</p>
+<h3>
+3.2. Power law
+</h3>
+<p>
+<img src="PowerLawGraph.jpeg" alt="Power Law Graph" 
+width = "300" height = "300"/>
+</p>
+<h3>
+3.3. Spacial graph
+</h3>
+<p>
+<img src="SpatialGraph.jpeg" alt="Spatial Graph" 
+width = "300" height = "300"/>
+</p>
+<h3>
+3.4. Uniform graph
+</h3>
+<p>
+<img src="UniformGraph.jpeg" alt="Uniform Graph" 
+width = "300" height = "300"/>
+</p>
+<h2>
+4. Comparison of the results
+</h2>
+<p>
+We look at the effect of the network structure on maximal fund size reached, on scheme duration, and on the number of agents remaining (i.e. who have not withdrawn their money) when the fund collapses. The latter can serve as an indicator of expected jail time for Ponzi.
+</p>
+4.1. Effect of network type on maximal fund size
+<br>
+We find that the fund size reached during the lifetime of the fund is maximal under a random network, which is consistent with the intuition that under this type of network structure communication between agents is least restricted. The maximal fund size reached is smallest with a spatial density network structure. An interesting result is that when we run our simulations in a roughly uniform network with a high interest rate the maximal fund size reached is much lower than the maximal fund size reached with the low interest rate in the same network structure.
+<p>
+<img src="MaxFundSize.png" alt="Max Fund Size" 
+width = "400" height = "250"/>
+</p>
+4.2. Effect of network structure on scheme duration
+<br>
+We find that all network structures perform similarly in terms of scheme duration. The one that has the lowest variance is the random network.
+<br>
+<p>
+<img src="MaxFundSize.png" alt="Max Fund Size" 
+width = "400" height = "250"/>
+</p>
+4.3. Effect of network structure on net number of defrauded agents
+<br>
+The number of agents remaining, i.e. those who have not withdrawn their money at the time the fund collapses, is highest under the random network structure and lowest under the spatial density network. Assuming that the number of agents defrauded matters for expected jail time if Ponzi gets arrested, his safer option in case he is more risk averse is to choose a spatial density network. 
+<h2>
+<p>
+<img src="AgentsRemaining.png" alt="Agents Remaining" 
+width = "400" height = "250"/>
+</p>
+<p>
+5. The Applet for the simulations
+<br>
+<applet code="org.nlogo.window.Applet"
+        archive="NetLogoLite.jar"
+        width="992" height="510">
+  <param name="DefaultModel"
+         value="Pyramid%20Scheme.nlogo">
+</applet>
+</p>
+6. Future Directions
+</h2>
+Future work can focus on the following extensions of our model:
+<br>
+1) endogeneize the choice of the interest rate that Ponzi offers, so as to maximize his utility.
+<br>
+2) look at policy implications for fraud deterrence agencies.
+<br>
+3) model learning in the network – i.e. discovery of the fraud on part of the investors and its implications.
+<br>
+4) look at the case of multiple Ponzis in the network – either cooperating or competing.
+<br>
+<h2>
+7. Applications/ Social science scenarios
+</h2>
+Scenarios that can be to some extent be viewed as a Ponzi scheme include pension funds, which are funded through a pay-as-you-go mechanism. The difference is that in these systems there is no Ponzi agent committing fraud and benefitting from them and the sustainability depends on the demographics (age structure) of the population. 
+<br>
+The use of some natural resources can also be compared to a Ponzi scheme. 
+<br>
+Trend/ information diffusions also occur by direct activation in social networks, but they do not end when the fund level is < 0.
+<br> 
+Diseases follow a similar spread mechanisms, but there is no Ponzi beneficiary from the disease spread and they do not end when the fund level is < 0.
+</p>
+<h2>
+8. Conclusion
+</h2>
+We modelled the diffusion of a Ponzi scheme in four different network structures - a random network, a spatial density, a power law, and a roughly uniform network. We found that incentives for the Ponzi schemer are influenced by network structure. Assuming that the Ponzi schemer cares about increasing profitability and avoiding punishment, she will make her decision on where to position herself, depending on the weight she gives to these to factors. 
+</p>
+</body>
+</html>

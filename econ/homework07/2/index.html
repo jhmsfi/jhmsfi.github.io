@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html> <head>
+<title></title>
+</head>
+
+<body>
+<center>
+<h3>Modeling Drivers entering a parking lot at a mall with the intention to shop</h3>
+<h4>Jolie Martin, Michael Aylward, and Vincent Matossian, July 2007</h4>
+</center>
+<hr>
+We propose <b>two models</b>, the first is based on a linear representation of the parking and the <a href="second_model.html">second model</a> considers a grid representation.
+
+<H3>Goal</H3>
+<ul>
+  <li>Capture the tradeoffs between optimizing (passing up an empty spot and not finding any closer) vs. satisficing (taking an empty spot even if there may be a better one closer)
+  <li>Single row of parking spaces with entrance to parking lot on one end and entrance to mall on the other
+</ul>
+
+<H3>Assumptions</H3>
+<img src="park_queue.png">
+<br>
+<ul>
+  <li>Cars enter parking lot at fixed intervals and positions are updated once per time period (move one car length, take a spot, turn, stay parked)
+  <li>All cars want to get as close as possible to the mall entrance and can see one car ahead (will keep going if next spot closer to the mall entrance is available)
+  <li>But, if next spot is full, cars have different thresholds for whether to take an empty spot at current position or look for one further ahead, having to loop around if one not found within threshold
+  <li>Once parked, total time before departure is modeled as random normal variable (with lower cutoff at zero)
+</ul>
+
+<H3>One-Period Performance</H3>
+
+Modeled over a single time period, cars that have a lower threshold for willingness to park far away 
+<ul>
+  <li>Find closer spots
+  <li>Take longer to do so
+</ul>
+Relative performance of cars with a lower threshold seems to improve as lot gets less “crowded” due to…
+<ul>
+  <li>Lower frequency of arrivals
+  <li>Greater number of total spots in lot
+  <li>Decreases length of average stay at mall
+</ul>
+
+
+<H3>Affect of Arrival Time</H3>
+For 100 spots, average stay of 1 hour
+<br><br>
+<a href="graph1.png"><img src="graph1.png"></a>
+
+<h3>Adaptive Performance</h3>
+
+If cars adopt strategies in subsequent time periods (e.g., days) with probability based on relative performance of strategies in the past, moderately low threshold becomes popular
+<br><br>
+For 100 spots, average stay of 1 hour
+<br>
+<a href="graph2.png"><img src="graph2.png"></a>
+
+<H3>Conclusions</H3>
+
+<b>Experimental results</b>
+<ul>
+  <li>In a single time period, optimizing (lower threshold for distance) tends to be better relative to satisficing in a less “crowded” parking lot
+  <li>Cumulative adaptation based on cumulative performance leads to preference for non-extreme strategy
+</ul>
+
+<b>Caveats</b>
+<ul>
+  <li>"Optimal" strategy depends on relative importance of minimizing time and distance 
+  <li>Model may not extend to 2D (or 3D) layouts
+  <li>No consideration of driving congestion
+  <li>Other strategies possible (e.g., complete myopia by taking first open spot or greater intelligence by assessing crowdedness, etc)
+</ul>
+
+<h3>Other Applications</h3>
+
+Any situation where people share the same ordinal preferences, but holding out for a better option may backfire
+<ul>
+  <li>e.g., taking a piece of cake before seeing how big the next ones coming will be
+  <li>e.g., using a one-item % discount before knowing whether future purchases will be greater cost
+</ul>
+
+<hr>
+<div align="right">--> To the <a href="second_model.html">second model</a></div>
+
+<hr>
+<address></address>
+<!-- hhmts start --> Last modified: Thu Jul 12 08:48:26 MDT 2007 <!-- hhmts end -->
+</body> </html>

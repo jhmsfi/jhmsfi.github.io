@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html> <head>
+<title></title>
+</head>
+
+<body>
+<h1>Grid Layout of Parking Population Modeling</h1>
+<ul>
+  <li>A set of Stores arranged in a line
+  <li>Each parking row is parallel to the line of stores
+  <li>Each row has the same number of parking spaces as there are stores
+  <li>The preference of each customer is assigned uniformly randomly
+</ul>
+  
+ The parameters considered in the model are:
+<ul>
+     <li>The arrival rate of cars
+     <li>The departure rate of cars
+     <li>The strategy used by each car to choose the parking space depends on its proximity to the store of preference.
+  </ul>
+
+This graph shows a parking lot as a 10x10 grid where cars arrive with a Poisson probability distribution with mean of 10. There is no departure. The cars arrive and have a favorite column to park in which is linked to the preference of the store that the driver chooses. This is a Depth First Population model
+<p>
+<a href="psim_10x10x10_DFS_no_departure.gif">DFP with no departure</a>
+</p>
+<pre>
+Average Distance Summary:
+  Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   1.00    2.00    5.00    4.95    8.00   10.00
+</pre>
+
+  <p>
+
+The cars now arrive and fill up with a Breadth First approach
+</p>
+  <p>
+<a href="psim_10x10x10_BFS_no_departure.gif">BFP with no departure</a>
+</p>
+  <pre>
+Average Distance Summary:
+ Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   1.00    2.00    5.00    4.95    8.00   10.00
+</pre>
+
+  <p>
+If the rate of departure is similar to the rate of arrival:
+  </p>
+  <p>
+<a href="psim_10x10x10_DFS_same_departure.gif">DFP with Same Departure Rate as Arrival - Poisson Arrival with mean 10</a>
+  </p>
+<pre>
+Average Distance Summary:
+ Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  1.000   3.000   6.000   5.616   8.000  10.000 
+</pre>
+  
+  <p>
+<a href="psim_10x10x10_BFS_same_departure.gif">BFP with Same Departure Rate as Arrival - Poisson Arrival with mean 10</a>
+</p>
+ <pre>
+Average Distance Summary:
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  1.000   3.000   5.000   5.336   8.000  10.000 
+</pre>
+ 
+The models now consider a fixed rate of departure (1/10).
+<p>
+<a href="psim_10x10x10_DFS_0.1_departure.gif">DFP width Fixed Departure rate (1/10) and Poisson Arrival with mean 10</a>
+  </p>
+ <pre>
+Average Distance Summary:
+  Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   1.00    3.00    6.00    5.72    8.00   10.00 
+</pre>
+  
+<a href="psim_10x10x10_BFS_0.1_departure.gif">BFP with Fixed Departure rate (1/10) and Poisson Arrival with mean 10</a>
+<pre>
+Average Distance Summary:
+ Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  1.000   4.000   5.831   5.709   8.000  11.660
+</pre>
+
+<a href="psim_10x10x10_DFS_P100_arrival.gif">DFP with Fixed Departure rate (1/10) and Poisson Arrival with mean 100</a>
+<pre>
+Average Distance Summary:
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  1.000   3.000   6.000   5.521   8.000  10.000 
+</pre>
+
+<h3>Observations</h3>
+
+The results, while considering only a 10x10 grid, show that the average distance to the store of preference is greater when the drivers park using a Breadth First model than a Depth First model. <br>
+Under the assumptions of this model (uniform distribution of store preferences, distribution of arrivals...) the results show that when designing a parking lot, it appears that it would be more beneficial to lay the parking spots in a column style facing the stores rather than in a line.
+
+<h3>Implementation</h3>
+The model is implemented using the R language and is available <a href="ParkSim.R">here</a>.
+
+
+<hr>
+<address></address>
+<!-- hhmts start --> Last modified: Wed Jul 11 18:37:44 MDT 2007 <!-- hhmts end -->
+</body> </html>

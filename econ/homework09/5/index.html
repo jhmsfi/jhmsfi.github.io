@@ -1,0 +1,168 @@
+<html>
+
+<head>
+
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+
+<title>Kalkan and Hendry: Investor Behavior in Bernie's Ponzi Scheme</title>
+
+</head>
+
+<body>
+
+<div style="text-align: center;">
+
+<big><big><strong>Investor Behavior in Bernie's Ponzi Scheme:</strong></big></big>
+<big><big><strong>Speculators and Ordinary Investors in a Fraudulent Market</strong></big></big>
+
+<br><br>
+
+Ozge Dilaver Kalkan<br>
+David Hendry<br><br>
+
+Santa Fe Institute<br>
+Graduate Workshop In Computational Social Science Modeling and Complexity<br>
+June 25, 2009<br>
+
+<div style="text-align: justify;"><br>
+
+<h2>I. Model Summary</h2>
+
+The objective of our modeling approach was to generate predictions about the dynamics of investment 
+and deinvestment in a fraudulent investment strategy with two classes of investors: speculators and
+ordinary investors. The proprietor of the fraudulent investment firm (Bernie), speculators, and 
+ordinary investors are modeled as interacting artificial agents with varying motivations and levels 
+of information.  The interactions between investors are captured by an explicit network structure.  
+Bernie offers a range of returns on investments that are perpetually
+greater than or equal to market value, and potential investors must decide whether and how much to 
+invest, while current investors must decide whether or not to withdraw funds.  Bernie pays the promised 
+interest rate if funds are available, and a lesser amount if funds are not available.  When too many 
+investors decide to exit the investment strategy, the scheme crashes.
+
+<br><br>
+
+<h2>II. Key Assumptions</h2>
+
+<h3>II.a. Agents: Bernie, Speculators, Ordinary Investors</h3>
+
+Speculators and Ordinary Investors have initial cash endowments drawn from a normal distribution with a mean of 10,000.  
+The sum of the endowments of all Speculators and Ordinary Investors make up the total money supply in the population.  
+
+<h4>Bernie</h4>
+<ul>
+<li>Motivation is to maximize salary earned by keeping the investment scheme afloat for as long as possible</li>
+<li>Pays the advertised level of interest if funds are available in the account</li>
+<li>Pays the highest level of interest possible, after salary, if funds are not available in the account</li>
+<li>Interest accrued is payed out at each period.  I.e., the investment scheme does not allow for increasing returns</li>
+</ul>
+<h4>Speculators</h4>
+<ul>
+<li>Attempt to maximize the returns on their investments by encouraging others to join and exiting the investment scheme prior to the crash</li>
+<li>Signal to others with whom they have connections that the investment is providing higher returns than it actually is</li>
+<li>In the first and second periods, invest a random proportion of their personal stock of funds</li>
+<li>In later periods, if Bernie's total stock of investments falls below the level in the previous year, withdraw funds</li>
+<li>Have full information about the total stock invested in the fund</li>
+</ul>
+<h4>Ordinary Investors</h4>
+<ul>
+<li>Form beliefs about the potential returns on investment through connections with others who are invested and their own previous returns, if any</li>
+<li>Use beliefs to determine whether and how much to invest in the fund<br>
+    Belief<sub>i</sub> = f(rate of investor neighbours<sub>i</sub>, Bernie's repayment history<sub>i</sub>)<br>
+    If Bernie's interest rate > market interest rate + threshold of the agent (normally distributed)<br>
+    &nbsp;&nbsp;&nbsp; invest<br>
+    Else<br>
+    &nbsp;&nbsp;&nbsp; withdraw all funds, if any<br>
+    Amount of Investment<sub>i</sub> = f(stock of money<sub>i</sub>, belief<sub>i</sub>, interest rate)</li>
+<li>Have no information about the total stock invested in the fund</li>
+</ul>
+
+<h3>II.b. Network Structure</h3>
+<ul>
+<li>Similar to a small world network, but number of connections is not the same for each agent</li>
+<li>Allows for preferential attachment</li>
+<li>Initial structure remains fixed throughout each simulation</li>
+</ul>
+
+<br>
+
+<h2>III. Results</h2>
+
+The above assumptions were used to simulate aggregate investor market behavior across a range of interest rates.  The following figure 
+presents the results of investment and deinvestment of the pooled population of speculators and regular investors over the first twenty 
+periods, across a discrete set of interest rate values.
+
+<body><div style="text-align: center;">
+
+<img src="Results2.JPG"><br>
+
+<div style="text-align: justify;"><br>
+
+The figure indicates a dynamics in which initial investment reaches its peak very quickly, and is followed by a period of deinvestment
+where the the total stock of money invested in the fund becomes negligible within several periods.  Technically, a "crash" occurs when
+total deposits dip below zero.  This only occurs at very low interest rates across the iterations, and at very high interest rates, but 
+only for the last several iterations.
+
+<br><br>
+
+Disaggregating the population, the following figure depicts the same dynamics as above, but for the speculator class only.   
+
+<body><div style="text-align: center;">
+
+<img src="Speculators.JPG"><br>
+
+<div style="text-align: justify;"><br>
+
+Here we see a very different, cyclic pattern of investment and deinvestment.  After initially getting the ball rolling for the investment
+scheme, and encouraging ordinary investors to join, speculators quickly begin to withdraw their funds, initially taking out more than 
+they themselves put in.  This has the effect of making the ordinary investors the only agents in the population who remain invested.  Then
+as speculators see that the investments made are as large as or larger than the previous year, they again throw their own funds into the
+game.  This pattern then repeats itself in a cyclic fashion, but deinvestment is never as extreme as in the initial drop.
+
+<br><br>
+
+<h2>IV. Possible Extensions</h2>
+
+A realistic feature in this type of investing that we did not include, but which could be added later, is to allow for increasing returns.
+In such a scenario, investors would be allowed to leave accrued interest in the investment account, increasing the total account balance upon
+which future interest is accrued.  Such a feature could potentially lead to larger and/or longer lasting bubbles.  Additional real-world 
+features that could be included in future versions are larger numbers of wealthy and poor potential investors.  In the version presented above,
+the total money supply is normally distributed, but we could use a distribution with fatter tails, or even a bimodal distribution to represent
+more exaggerated levels of wealth inequality.  The distribution of wealth could also be assumed to be correlated with the type of agent.  Finally,
+and we think most importantly, in future extensions we could allow for agent learning.  In the current framework Ordinary Investors and 
+Speculators only have a memory of a single period.  And we do, in
+fact, see investing in periods after the fund has crashed.  Building some feature about the investment fund's reputation into agent decision-making
+would likely lead to more realistic dynamics.       
+
+<br><br>
+
+<h2>V. Other Social Science Applications</h2>
+
+Other potential social science applications include situations in which (i) an agent seeks to convince a population of other agents to pay some cost 
+of support based on the promise of future returns, (ii) one class of agents in the population has some stake in convincing the others to offer that
+support, and (iii) another class of agents is potentially willing to pay the cost of support in the hope of future returns.
+
+<br><br>
+
+One such situation could be the gain and loss of public support for elected officials.  In this situation, the public official would be the agent
+attempting to convince the mass public to pay some cost of support (e.g., voting, foregoing a vote for someone else), and would do so by making
+campaign promises in regard to particular policy areas.  Political activists would represent the class of the public with a stake in convincing
+others in the population to offer that support.  The stake here may be in the form of a job in the official's administration, the potential financial
+gain from a future government contract, etc.  Ordinary citizens would represent the class of the population that is potentially willing to offer
+support, but expects to gain some sort of policy action in return.  When a public official is elected based on particular policy promises, and those
+promises cannot be fulfilled, past supporters will pull their support.  At this point, the political activists may abandon their exaggerated 
+support for this particular official.  The investment in this official's line of goods fails when she is thrown out of office.
+
+<br><br>
+
+Collective actions of a few big players and speculators can also create supernormal returns in the art market, in which winning bids in 
+art auctions influence the value of all works of the artist. Particularly in the contemporary art market, it is argued that auctioneers, dealers 
+and collectors who have large collections of an artist's works, work cooperatively in order to inflate the bids made in auctions. This mechanism can 
+create a bubble that yields supernormal returns until the rise in the prices of artworks cannot be sustained.  In such a scenario, art dealers
+would represent the agent attempting to convince a population to pay a cost of support; serious art collectors would represent those in the population
+who have a stake in convincing others in the population to pay the cost of support; and ordinary art investors would be the potential investor class. 
+
+
+
+</body>
+</html>
