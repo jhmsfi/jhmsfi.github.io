@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.280">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Diverse agents select a leader</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="writeup_files/libs/clipboard/clipboard.min.js"></script>
+<script src="writeup_files/libs/quarto-html/quarto.js"></script>
+<script src="writeup_files/libs/quarto-html/popper.min.js"></script>
+<script src="writeup_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="writeup_files/libs/quarto-html/anchor.min.js"></script>
+<link href="writeup_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="writeup_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="writeup_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="writeup_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="writeup_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Diverse agents select a leader</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Authors</div>
+    <div class="quarto-title-meta-contents">
+             <p>Michael C. McCall </p>
+             <p>Danica Wilbanks </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="description" class="level2">
+<h2 class="anchored" data-anchor-id="description">Description</h2>
+<p>This model was designed to test whether a diverse group of agents can select a leader who best represents their preferences on issues. In order to facilitate the decision-making process, we develop a multiple round election process similar to a French-style presidental election. Agents are able to vote for any other agent than themselves to represent them. Based on the results from the first election, a set of candidates advance to a second round for a run-off to represent the entire group. If there is still a tie in the second round, we hold a third round. This process continues until a single agent is selected, who becomes the representative of the entire population.</p>
+<p>Our model consists of 101 agents (to prevent ties) endowed with two values between 1 and 100 that represent two preferences on issues (e.g.&nbsp;gun control; health care). We drew these values from distributions that were uniform, exponential, and bimodal. Agents then go through the multiple rounds of voting. In the first round, each agent votes for the agent closest to them on the two issues in euclidean distance. The result is typically a widely dispersed distrubtion of votes, with many agents being tied for the most votes.</p>
+<p>In subsequent rounds, agents vote for the agent closest to them on the two issues in euclidean distance among the winners of the previous round. This was the “best-case” simulation in which agents select the agent who best represents their preferences given the constraint of having to vote for previous winners in rounds following the first round. We also ran a “worst-case” simulation in which agents selected the agent furthest from them in issue preference each round, and a simulation in which agents selected a random agent each round.</p>
+</section>
+<section id="demonstration-of-voting-process" class="level2">
+<h2 class="anchored" data-anchor-id="demonstration-of-voting-process">Demonstration of voting process</h2>
+<p>First, we demonstrate the results of a single election. Each agent is represented as a dot in the scatterplot, with its <em>x</em> and <em>y</em> coordinates determined by their placement in the preference spaces. The winner of the election is represented by a red dot, the agent with the lowest euclidean distance from all other agents is represented by an orange dot, and the agent with the highest euclidean distance from all other agents is represented by a green dot. The following three graphs each have preferences drawn from different distributions: the first is drawn from a uniform distribution, the second from an exponential distribution, and the third from a bimodal distribution.</p>
+<div class="cell" data-execution_count="1">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.spatial <span class="im">import</span> distance</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> ttest_ind</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>uniform <span class="op">=</span> np.random.uniform(<span class="dv">1</span>, <span class="dv">100</span>, (<span class="dv">101</span>, <span class="dv">2</span>)) </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>exponential <span class="op">=</span> np.random.exponential(<span class="dv">50</span>, (<span class="dv">100</span>, <span class="dv">2</span>))</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>bimodal <span class="op">=</span> np.concatenate([np.random.normal(<span class="dv">25</span>, <span class="dv">5</span>, (<span class="dv">50</span>, <span class="dv">2</span>)), np.random.normal(<span class="dv">75</span>, <span class="dv">5</span>, (<span class="dv">50</span>, <span class="dv">2</span>))])</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Scale and shift the values to the range [1, 100]</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>bimodal <span class="op">=</span> <span class="dv">1</span> <span class="op">+</span> (bimodal <span class="op">/</span> np.<span class="bu">max</span>(bimodal)) <span class="op">*</span> <span class="dv">99</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> agent_values <span class="kw">in</span> [uniform, exponential, bimodal] :</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    total_distances <span class="op">=</span> np.<span class="bu">sum</span>(distance.cdist(agent_values, agent_values, <span class="st">'euclidean'</span>), axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Find the index of the agent with the smallest total distance</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    smallest_distance_index <span class="op">=</span> np.argmin(total_distances)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    largest_distance_index <span class="op">=</span> np.argmax(total_distances)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    random_distance_index <span class="op">=</span> random.randint(<span class="dv">0</span>, <span class="dv">100</span>)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Initialize an empty list for vote counts </span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    vote_counts <span class="op">=</span> [<span class="dv">0</span>] <span class="op">*</span> <span class="dv">101</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Iterate over all agents </span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i, agent_value <span class="kw">in</span> <span class="bu">enumerate</span>(agent_values): </span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>        distances <span class="op">=</span> distance.cdist(agent_values, [agent_value], <span class="st">'euclidean'</span>).flatten() </span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>        distances[i] <span class="op">=</span> np.inf </span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>        closest_indices <span class="op">=</span> np.where(distances <span class="op">==</span> np.<span class="bu">min</span>(distances))[<span class="dv">0</span>] </span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Randomly select one of the closest (should be rare case)</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>        selected_index <span class="op">=</span> np.random.choice(closest_indices) </span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>        vote_counts[selected_index] <span class="op">+=</span> <span class="dv">1</span> <span class="co"># vote</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    max_votes <span class="op">=</span> <span class="bu">max</span>(vote_counts)</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    most_voted_agents <span class="op">=</span> [i<span class="op">+</span><span class="dv">1</span> <span class="cf">for</span> i, count <span class="kw">in</span> <span class="bu">enumerate</span>(vote_counts) <span class="cf">if</span> count <span class="op">==</span> max_votes]</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>    most_voted_agents <span class="op">=</span> [x <span class="op">-</span> <span class="dv">1</span> <span class="cf">for</span> x <span class="kw">in</span> most_voted_agents]</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>    <span class="co"># If multiple agents have max votes, run another round of voting among them</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="bu">len</span>(most_voted_agents) <span class="op">&gt;</span> <span class="dv">1</span>:</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Reset vote counts</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>        vote_counts <span class="op">=</span> [<span class="dv">0</span>] <span class="op">*</span> <span class="dv">101</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> i, agent_value <span class="kw">in</span> <span class="bu">enumerate</span>(agent_values):</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>            distances <span class="op">=</span> distance.cdist(agent_values[most_voted_agents], [agent_value], <span class="st">'euclidean'</span>).flatten()        </span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>            closest_indices <span class="op">=</span> np.where(distances <span class="op">==</span> np.<span class="bu">min</span>(distances))[<span class="dv">0</span>]</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Randomly select one of the closest</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>            selected_index <span class="op">=</span> np.random.choice(closest_indices)</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>            vote_counts[most_voted_agents[selected_index]] <span class="op">+=</span> <span class="dv">1</span> <span class="co"># vote</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>        max_votes <span class="op">=</span> <span class="bu">max</span>(vote_counts)</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>        most_voted_agents <span class="op">=</span> [i<span class="op">+</span><span class="dv">1</span> <span class="cf">for</span> i, count <span class="kw">in</span> <span class="bu">enumerate</span>(vote_counts) <span class="cf">if</span> count <span class="op">==</span> max_votes]</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>        most_voted_agents <span class="op">=</span> [x <span class="op">-</span> <span class="dv">1</span> <span class="cf">for</span> x <span class="kw">in</span> most_voted_agents]</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Extract the 2-dimensional values for all agents</span></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>    x_values, y_values <span class="op">=</span> agent_values[:, <span class="dv">0</span>], agent_values[:, <span class="dv">1</span>]</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Plot all agents in a 2D scatter plot</span></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>    plt.scatter(x_values, y_values)</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>    plt.scatter(<span class="op">*</span>agent_values[most_voted_agents[<span class="dv">0</span>], :], color<span class="op">=</span><span class="st">'red'</span>)</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>    plt.scatter(<span class="op">*</span>agent_values[smallest_distance_index, :], color<span class="op">=</span><span class="st">'orange'</span>)</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>    plt.scatter(<span class="op">*</span>agent_values[largest_distance_index, :], color<span class="op">=</span><span class="st">'green'</span>)</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="st">'Issue 1'</span>)</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>    plt.ylabel(<span class="st">'Issue 2'</span>)</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>    plt.title(<span class="st">'Winning Agent vs Other Agents'</span>)</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>    plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<p><img src="writeup_files/figure-html/cell-2-output-1.png" class="img-fluid"></p>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="writeup_files/figure-html/cell-2-output-2.png" class="img-fluid"></p>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="writeup_files/figure-html/cell-2-output-3.png" class="img-fluid"></p>
+</div>
+</div>
+<p>In most cases, the winning agent (red) is not the same as the agent with the shortest euclidean distance from all other agents (orange). The difference indicates the influence of the institutional effects of the voting process compared to a “best case” scenario.</p>
+</section>
+<section id="determining-acceptability-of-voting-process" class="level2">
+<h2 class="anchored" data-anchor-id="determining-acceptability-of-voting-process">Determining acceptability of voting process</h2>
+<p>Frequently the winning agent was not the agent with the lowest euclidian distance from all agents. To determine whether this election structure generally results in better than random selection, we examined the difference in euclidean distance from all other agents between the winner of the election and the agent with the actual lowest euclidean distance (the “best case” candidate). This was designed to represent how far the winner of the multiple election process was from all other agents’ preferences compared to the agent who was actually closest in issue preference to all other agents. The “best-case” scenario performed better than the random scenario, with the p-value approaching zero as we increased the number of simulations. The average difference between the election winner and the agent with the lowest euclidean distance in the uniform distribution condition was 861 out of a total possible difference of 14,100. These results suggest that there is a value gained for agents by voting for the agent closest to them in issue preference, and that there is not much value lost in having multiple rounds of voting compared to initially selecting the agent with the lowest euclidean distance, but that the winner will still usually differ from the “ideal” candidate.</p>
+<div class="cell" data-execution_count="2">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.spatial <span class="im">import</span> distance</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> ttest_ind</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>difference_from_best <span class="op">=</span>  []</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>difference_from_worst <span class="op">=</span> []</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>difference_from_random <span class="op">=</span> []</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2000</span>):</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    agent_values <span class="op">=</span> np.random.uniform(<span class="dv">1</span>, <span class="dv">100</span>, (<span class="dv">101</span>, <span class="dv">2</span>)) </span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    total_distances <span class="op">=</span> np.<span class="bu">sum</span>(distance.cdist(agent_values, agent_values, <span class="st">'euclidean'</span>), axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Find the index of the agent with the smallest total distance</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    smallest_distance_index <span class="op">=</span> np.argmin(total_distances)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    largest_distance_index <span class="op">=</span> np.argmax(total_distances)</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    random_distance_index <span class="op">=</span> random.randint(<span class="dv">0</span>, <span class="dv">100</span>)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Initialize an empty list for vote counts </span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    vote_counts <span class="op">=</span> [<span class="dv">0</span>] <span class="op">*</span> <span class="dv">101</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Iterate over all agents </span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i, agent_value <span class="kw">in</span> <span class="bu">enumerate</span>(agent_values): </span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>        distances <span class="op">=</span> distance.cdist(agent_values, [agent_value], <span class="st">'euclidean'</span>).flatten() </span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>        distances[i] <span class="op">=</span> np.inf </span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>        closest_indices <span class="op">=</span> np.where(distances <span class="op">==</span> np.<span class="bu">min</span>(distances))[<span class="dv">0</span>] </span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Randomly select one of the closest (should be rare case)</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>        selected_index <span class="op">=</span> np.random.choice(closest_indices) </span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>        vote_counts[selected_index] <span class="op">+=</span> <span class="dv">1</span> <span class="co"># vote</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    max_votes <span class="op">=</span> <span class="bu">max</span>(vote_counts)</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    most_voted_agents <span class="op">=</span> [i<span class="op">+</span><span class="dv">1</span> <span class="cf">for</span> i, count <span class="kw">in</span> <span class="bu">enumerate</span>(vote_counts) <span class="cf">if</span> count <span class="op">==</span> max_votes]</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    most_voted_agents <span class="op">=</span> [x <span class="op">-</span> <span class="dv">1</span> <span class="cf">for</span> x <span class="kw">in</span> most_voted_agents]</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>    <span class="co"># If multiple agents have max votes, run another round of voting among them</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="bu">len</span>(most_voted_agents) <span class="op">&gt;</span> <span class="dv">1</span>:</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Reset vote counts</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>        vote_counts <span class="op">=</span> [<span class="dv">0</span>] <span class="op">*</span> <span class="dv">101</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> i, agent_value <span class="kw">in</span> <span class="bu">enumerate</span>(agent_values):</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>            distances <span class="op">=</span> distance.cdist(agent_values[most_voted_agents], [agent_value], <span class="st">'euclidean'</span>).flatten()        </span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>            closest_indices <span class="op">=</span> np.where(distances <span class="op">==</span> np.<span class="bu">min</span>(distances))[<span class="dv">0</span>]</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Randomly select one of the closest</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>            selected_index <span class="op">=</span> np.random.choice(closest_indices)</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>            vote_counts[most_voted_agents[selected_index]] <span class="op">+=</span> <span class="dv">1</span> <span class="co"># vote</span></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>        max_votes <span class="op">=</span> <span class="bu">max</span>(vote_counts)</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>        most_voted_agents <span class="op">=</span> [i<span class="op">+</span><span class="dv">1</span> <span class="cf">for</span> i, count <span class="kw">in</span> <span class="bu">enumerate</span>(vote_counts) <span class="cf">if</span> count <span class="op">==</span> max_votes]</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>        most_voted_agents <span class="op">=</span> [x <span class="op">-</span> <span class="dv">1</span> <span class="cf">for</span> x <span class="kw">in</span> most_voted_agents]</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>    winning_agent <span class="op">=</span> np.argmax(vote_counts)</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>    winning_distance <span class="op">=</span> np.<span class="bu">sum</span>(distance.cdist(agent_values, [agent_values[winning_agent]], <span class="st">'euclidean'</span>))</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>    difference_from_best.append(np.<span class="bu">abs</span>(winning_distance <span class="op">-</span> total_distances[smallest_distance_index]))</span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>    difference_from_worst.append(np.<span class="bu">abs</span>(winning_distance <span class="op">-</span> total_distances[largest_distance_index]))</span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>    difference_from_random.append(np.<span class="bu">abs</span>(winning_distance <span class="op">-</span> total_distances[random_distance_index]))</span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">5</span>))</span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>].hist(difference_from_best, bins<span class="op">=</span><span class="dv">20</span>)</span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>].hist(difference_from_random, bins<span class="op">=</span><span class="dv">20</span>)</span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">2</span>].hist(difference_from_worst, bins<span class="op">=</span><span class="dv">20</span>)</span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>].set_title(<span class="st">'vs best case'</span>)</span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>].set_title(<span class="st">'vs random case'</span>)</span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">2</span>].set_title(<span class="st">'vs worst case'</span>)</span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>fig.suptitle(<span class="st">'Histograms'</span>)</span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<p><img src="writeup_files/figure-html/cell-3-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<p>The histograms of the best case and random case differences from the winning agent look very similar. To determine whether or not we actually are preforming better than random selection, we implement a simple hypothesis test of the difference in means between the two distributions. The negative value of the difference indicates that the best case scenario is closer to the winning agent than the random case. The p-value is effectively zero, indicating that the difference is statistically significant.</p>
+<div class="cell" data-execution_count="3">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>mean_diff <span class="op">=</span> np.mean(difference_from_best) <span class="op">-</span> np.mean(difference_from_random)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>t_stat, p_value <span class="op">=</span> ttest_ind(difference_from_best, difference_from_random)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Mean difference: </span><span class="sc">{</span>mean_diff<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"T-statistic: </span><span class="sc">{</span>t_stat<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"P-value: </span><span class="sc">{</span>p_value<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> <span class="bu">len</span>(difference_from_best) <span class="op">+</span> <span class="bu">len</span>(difference_from_worst) <span class="op">-</span> <span class="dv">2</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Degrees of freedom: </span><span class="sc">{</span>df<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Mean difference: -102.31
+T-statistic: -4.71
+P-value: 0.0000
+Degrees of freedom: 3998</code></pre>
+</div>
+</div>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
