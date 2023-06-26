@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lunching Together: A Paradigmatic Social Phenomenon | Max Noichl & Emma Templeton</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f3f1f1ac;
+        }
+
+        .main-text {
+            width: 50%;
+            text-align: justify;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Roboto Condensed', sans-serif;
+            margin-top: 2em;
+        }
+
+        h1 {
+            font-size: 2em;
+        }
+
+        h2 {
+            font-size: 1.5em;
+        
+        }
+
+        h3 {
+            font-size: 1.15em;
+        }
+
+        h4 {
+            font-size: 1.em;
+        }
+
+        h5 {
+            font-size: 1.25em;
+        }
+
+            .container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+            }
+            
+            .image-container {
+                flex: 1;
+                text-align: center;
+            margin-top: 20px; /* space outside the container */
+            margin-bottom: 25px; /* space outside the container */
+
+            box-sizing: border-box; /* to include padding in the element's total width and height */
+            }
+            .image-container img {
+                width: 100%;
+                height: auto;
+            }
+            .caption {
+                font-family: 'Roboto Condensed', sans-serif;
+
+                margin-top: 10px;
+                text-align: left;
+            }
+            .image-container {
+                mix-blend-mode: multiply;
+            }
+
+
+
+            table {
+                border-collapse: collapse;
+                width: 50%; /* Adjust based on your needs */
+                margin: auto; /* center the table */
+            }
+            th, td {
+                border: 3px solid black; /* Increase border thickness */
+                padding: 8px;
+                text-align: center;
+            }
+            /* Remove outer borders */
+            table, th, td {
+                border: none;
+                outline: none;
+            }
+            /* Add inner borders only */
+            td + td, tr + tr {
+                border-top: 3px solid black;
+                border-left: 3px solid black;
+            }
+
+
+            a {
+                color: #a72727;
+            }
+    </style>
+</head>
+<body>
+    <div class="main-text">
+        <h1>Lunching Together: <br> A Paradigmatic Social Phenomenon</h1>
+        <h2>By Max Noichl & Emma Templeton</h2>
+
+        <p><i>“One member of a diverse group must be chosen to represent the group’s interests”</i></p>
+
+        <p>Immediately after receiving this homework assignment, the 10 members of the 2023 Graduate Workshop in Computational Social Science Modeling and Complexity had to make an important decision: where to go to lunch.</p>
+
+        <p>It is commonly acknowledged that one of the most central questions bothering modern society is: “Why can’t you ever get any good food in this town!?” (though we have found this to be less true in Santa Fe, NM). We wondered whether this experience could be attributed to poor group decision-making strategies.</p> 
+
+        <p>Here, we use a plausible model of how leaders spontaneously emerge from a group. By comparing this model to a "null" model where a leader is randomly chosen, we provide  insights into why groups might regularly end up with sub-optimal collective choices – like unsatisfying lunch experiences.</p>
+        
+        <h3>Our general approach</h3>
+        <p>We reasoned that the group member who cares the most about making the restaurant decision should ultimately get to make that decision. As people interact with each other, they have opportunities to care less about being the one who makes the restaurant decision. People care less when (i) their restaurant preferences are similar to others and (ii) they believe their preferences will be taken into consideration. Notably, in our conceptualization of this problem, the leader emerges from the group (as opposed to being chosen from the group).</p>
+        
+
+        <h3> Model and Key Assumptions</h3>
+        <h4>Components</h4>
+
+        The code for the model and the analysis is available <a href="https://github.com/MNoichl/SFI_homework_going_for_lunch">here!</a>
+
+        <p>Our model includes a network of 10 fantastic people (inspired by real life). The people are arranged in a network created by a random geometric graph. Across different runs of the model, we vary the radius of the graph from 0.05 to 1. This creates versions of a network that range from being sparsely connected to fully connected.</p>
+
+        <div class="container">
+            <div class="image-container">
+                <img src="graph_low_connect.png" alt="graph_low_connect">
+                <div class="caption">A slightly connected network (RGG-radius: 0.05)</div>
+            </div>
+            <div class="image-container">
+                <img src="graph_medium_connect.png" alt="graph_medium_connect">
+                <div class="caption">A more connected network (RGG-radius: 0.4)</div>
+            </div>
+            <div class="image-container">
+                <img src="graph_high_connect.png" alt="graph_high_connect">
+                <div class="caption">A nearly fully connected network (RGG-radius: 1.0)</div>
+            </div>
+        </div>
+
+        Each person in the network has three different preferences (<b>spending</b>, <b>distance</b>, <b>veggie</b>). Each preference is represented as a value between 0 and 1, drawn from different distributions.
+       
+        <div class="container">
+            <div class="image-container">
+                <img src="veg_preference.png" alt="veg_preference">
+                <div class="caption">Distribution of preferences for vegetarian food,...</div>
+            </div>
+            <div class="image-container">
+                <img src="spending_preference.png" alt="spending_preferences">
+                <div class="caption">...spending...</div>
+            </div>
+            <div class="image-container">
+                <img src="walking_dist_preference.png" alt="walking_dist_preferences">
+                <div class="caption">...and walking distance.</div>
+            </div>
+        </div>
+
+
+        <p> Each person in the network also has one relevant personality trait: conscientiousness. By this, we simply mean their propensity / willingness to consider the preferences of their other group members. Each person gets assigned a value between 0 and 1, chosen from a random distribution.</p>
+        
+        <p>Finally, each person begins with the same desire to be a leader. This value is set at 0.5. After each round, this value gets updated for every person.</p>
+        
+        <h4>How does the leader emerge?</h4>
+
+        <p>Agents in a network “interact” with each other. For each interaction, they learn (i) one of their neighbor’s preferences and (ii) their neighbor’s level of conscientiousness. Based on this information, they update their desire to be a leader. </p>
+
+        <p>People update their desire to lead by considering (i) the difference between their neighbor’s preferences and their own preferences as well as (ii) their neighbor's level of conscientiousness. When differences in preferences are low, people decrease their desire to lead. Similarly, when a neighbor's conscientiousness is high, people decrease their desire to lead (because they assume their preferences will be taken into consideration). In cases where preference differences are high <i>and</i> conscientiousness is low, people increase their desire to be a leader. These updates are made by changing the alpha and beta values in a beta distribution.</p>
+
+        <div class="image-container" style="width: 60.33%; margin: 0 auto;">
+            <img src="adjustment_table.png" alt="Image" style="display: block; margin: 0 auto;">
+            <div class="caption">How people update their desire to lead.</div>
+        </div>
+        
+
+
+        <p>After 100 rounds of interactions, the person with the highest desire to lead score gets selected as the leader. Below is an example of how this process plays out over time. The leader is highlighted in red.</p>
+
+        <div class="image-container">
+            <img src="leader_emergence_example.png" alt="leader_emergence_example">
+            <div class="caption">The emergence of a leader (red). Desire decreases when people believe that their needs will be taken into account or well-reflected by other members of the group.</div>
+        </div>
+
+        <h4>What does the leader actually choose?</h4>
+        <p>The leader’s choice is a function of (i) their own preferences, (ii) the preferences of the group (the median of all the neighbor’s preferences they have been exposed to over the 100 rounds), and (iii) their own level of conscientiousness. The function we used is detailed below.</p>
+
+        $$final\_decision(p) = C \times medians\_learned(p) + (1 - C) \times preferences(p)$$
+
+
+
+        <h4>How to evaluate the leader’s choice?</h4>
+
+        <p>For each group member, we computed the difference between their own preferences and the leader’s choice. We averaged these differences across group members to define the group's average unhappiness with the decision (note that lower values indicate more successful decisions). The formula we used is detailed below:</p>
+
+        $$
+        indiv\_unhappiness(a) = \frac{1}{n} \sum_{i=1}^{n} \left| final\_decision(i) - preferences(a, i) \right|
+        $$
+
+        <h4>Interpreting how the model worked</h4> 
+        <p>For each of 100,000 runs, we plotted the group's average unhappiness with the decision by averaging the difference between the leader’s preferences and each group member's preferences.</p>
+
+        <div class="image-container">
+            <img src="diff_vs_unhappiness.png" alt="diff_vs_unhappiness">
+            <div class="caption">Differences between the leader's choice and the group's average preferences vs. unhappiness.</div>
+        </div>
+
+
+        <p>This figure suggests that, in general, leaders make more successful decisions when their own preferences are similar to the group’s preferences.</p>
+
+        <p>Next, we investigated how average unhappiness related to the leader’s amount of conscientiousness. </p>  
+            
+        <div class="image-container">
+            <img src="conscientiousness_vs_unhappiness_percentile.png" alt="conscientiousness_vs_unhappiness_percentile">
+            <div class="caption">Chosen leader's conscientousness vs. unhappiness.</div>
+        </div>
+
+        
+        <p>This figure suggests that, in general, more conscientious leaders make more successful decisions. However, we noticed high variance in decision success when conscientiousness was extremely high. This suggests that more consistently successful decisions may come from leaders with mid-level amounts of conscientiousness.</p> 
+        
+        <p>We next explored the impact of network radius. We did this by plotting the same figure as above, but colored the observations by the network radius.</p>
+        
+
+        <div class="image-container">
+            <img src="conscientiousness_vs_unhappiness_colored_by_radius.png" alt="conscientiousness_vs_unhappiness_colored_by_radius">
+            <div class="caption">Chosen leader's conscientousness vs. unhappiness, datapoints colored by network radius. </div>
+        </div>
+    
+      
+        <p>It seems to be the case that the most successful decisions come from leaders who are highly conscientious and in highly-connected networks. Apparantly, a low radius/low network density can lead to unhappy results even if the leader is highly conscientious.</p>
+
+
+        <h3>Comparing our model to a randomly selected leader</h3>
+        
+        <p>Finally, we wanted to see how well our model performed compared to a version where we randomly selected a leader. Note that the randomly selected leader and the leader that emerges from our model could be the same person on any given run. We were specifically interested in how the group's average level of unhappiness varied between these two approaches.</p>
+        
+        <div class="image-container">
+            <img src="median_diff_in_happiness.png" alt="median_diff_in_happiness">
+            <div class="caption">Distribution of group unhappiness according to whether the leader was chosen randomly, or by our model of decreasing leadership desire. </div>
+        </div>
+            
+        <p>Interestingly, we found that the randomly selected leaders outperforms our model (remember that lower unhappiness scores are better). Why might this be? Based on how we set up our model, people with extremely different preferences are more likely to ultimately become the leader. However, a leader with preferences that better represent the group’s average preferences will be more successful. This means that our method of selecting a leader might result in more people being unhappy than if a leader was selected at random!</p>
+        
+        <h3>Future directions</h3> 
+        <p>One aspect of the homework prompt that we would like to explore more in future work is varying the amount of preference diversity in the group. Groups with high preference diversity may have a more difficult time selecting a restaurant that makes people happy.</p>
+        
+        <p>We would also like to add in more restaurant preferences and vary the distributions of those preferences. It would be interesting to examine how these changes impact decision success.</p>
+        
+        <p>Inspired by the number of students in our program, we stuck with a small network of 10 people for our model. However, it would be interesting to examine how varying the network size as well as other aspects of the network connections might impact how leaders emerge. </p>
+                
+        <p>Finally, we would like to better interrogate why the randomly selected leader outperforms our model and examine under which conditions these different strategies are more or less advantageous.</p>
+                
+        <p>Although we talked a lot about restaurant preferences, we want to underscore that we have put forward a general model for the spontaneous emergence of leadership that can be applied to a whole host of situations. That being said, we wholeheartedly believe that where a group decides to go to lunch is an important decision!</p>
+
+        <div class="image-container">
+            <img src="emma_max_bbq.jpg" alt="Max eats BBQ">
+            <div class="caption">Max benefits from a good group decison!</div>
+        </div>
+                
+        
+        
+        
+        
+
+
+
+
+
+
+
+    </div>
+</body>
+</html>
