@@ -3,61 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Slider</title>
+    <title>Image Dissolve Slider</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
             margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        .container {
-            position: relative;
-            width: 50%;
-            margin: 50px auto;
+            background-color: #f0f0f0;
         }
         .image-container {
             position: relative;
-            width: 100%;
-            height: 600px;
-            overflow: hidden;
+            width: 600px;
+            height: 400px;
         }
         .image-container img {
             position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: opacity 0.3s ease;
         }
-        .top-image {
-            opacity: 1;
-            transition: opacity 0.3s;
+        #photo1 {
+            z-index: 2;
         }
-        input[type="range"] {
-            width: 100%;
+        .slider-container {
             margin-top: 20px;
+            width: 600px;
+        }
+        input[type=range] {
+            width: 100%;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="image-container">
-            <img src="SDS10.jpg" alt="SDS 2010">
-            <img src="SDS24.jpg" alt="SDS 2024" class="top-image">
-        </div>
-        <input type="range" min="0" max="100" value="100" id="slider">
+    <h1>Image Dissolve Slider</h1>
+
+    <div class="image-container">
+        <img id="photo1" src="SDS10.jpg" alt="Photo 1">
+        <img id="photo2" src="SDS24.jpg" alt="Photo 2">
+    </div>
+
+    <div class="slider-container">
+        <input type="range" id="slider" min="0" max="100" value="0">
     </div>
 
     <script>
         const slider = document.getElementById('slider');
-        const topImage = document.querySelector('.top-image');
+        const photo1 = document.getElementById('photo1');
 
-        slider.addEventListener('input', (e) => {
-            const value = e.target.value;
-            topImage.style.opacity = value / 100;
+        // Update opacity of photo1 based on slider value
+        slider.addEventListener('input', function() {
+            const opacityValue = 1 - slider.value / 100;
+            // Set opacity of photo1 to match slider value
+            photo1.style.opacity = opacityValue;
         });
     </script>
 
