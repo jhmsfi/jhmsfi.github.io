@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arrival 2.0: Dark Forest</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 2em 6vw; background: #fcfcfc; color: #252525; }
+        h1, h2, h3 { color: #194066; }
+        h1 { font-size: 2.3em; margin-bottom: 0.5em;}
+        h2 { font-size: 1.4em; margin-top: 1.7em; }
+        .math-block { background: #f0f5ff; border-radius: 6px; padding: 1em; margin: 1em 0; }
+        code, pre { background: #f5f5f5; border-radius: 4px; }
+        .scenario, .intuition { margin-bottom: 1.3em; }
+        .param-table { border-collapse: collapse; margin: 1em 0; }
+        .param-table th, .param-table td { border: 1px solid #cce; padding: 0.4em 0.9em; }
+        .param-table th { background: #e7f0fa; }
+    </style>
+</head>
+<body>
+    <h1>Emergent Communication and Resource Management on a New Planet</h1>
+    <p><em>Does language impact governing the commons?</em></p>
+
+    <h2>Scenario</h2>
+    <div class="scenario">
+        A group of aliens from different planets land on a resource-rich forest planet. Each alien must gather two types of fruit to survive. They arrive speaking different, mutually unintelligible languages and know nothing about each other's needs or intentions.
+    </div>
+
+    <h2>Question</h2>
+    <p>
+        We ask: <b>How does the emergence (or absence) of shared language affect the sustainability of a shared resource?</b>
+        <ul>
+            <li>When no language emerges, each alien acts independently and overharvesting is inevitable.</li>
+            <li>As groups develop shared language, communication complexity enables coordinated harvesting—and, potentially, sustainable outcomes.</li>
+        </ul>
+    </p>
+
+    <h2>Model Overview</h2>
+    <ol>
+        <li><b>Model 1: Language Emergence</b> — How do aliens form clusters of shared understanding (“languages”)?</li>
+        <li><b>Model 2: Resource Competition</b> — How do language clusters affect group harvesting and survival?</li>
+    </ol>
+
+    <h3>Key Parameters</h3>
+    <table class="param-table">
+        <tr><th>Symbol</th><th>Description</th><th>Range / Example</th></tr>
+        <tr><td>\(\theta_i\)</td><td>Agent <i>i</i>'s preference for fruit A (\(1-\theta_i\) for B)</td><td>[0, 1], drawn from \(\mathrm{Beta}(2,2)\)</td></tr>
+        <tr><td>D</td><td>Language complexity (shared within cluster)</td><td>[0, 1], higher = more information can be shared</td></tr>
+        <tr><td>n<sub>g</sub></td><td>Size of group/language cluster <i>g</i></td><td>1 &ndash; N</td></tr>
+        <tr><td>S<sub>A</sub>, S<sub>B</sub></td><td>Group's current supply of fruits A & B</td><td>≥ 0</td></tr>
+    </table>
+
+    <h2>Model 1: Language Emergence</h2>
+    <p>
+        Aliens interact when within range; every interaction slightly increases “shared language” between them.
+        At each round, agents preferentially interact with those with whom they already share some language.
+        Over time, this leads to emergent <b>clusters</b>—“languages”—where groups of agents can understand each other.
+    </p>
+
+    <div class="math-block">
+        <b>Shared Language Update:</b><br>
+        \[
+        L_{ij}^{(t+1)} =
+            \begin{cases}
+                L_{ij}^{(t)} + \lambda, & \text{if agents } i, j \text{ interact at } t \\
+                \max(0, L_{ij}^{(t)} - \delta), & \text{otherwise (decay)}
+            \end{cases}
+        \]
+        where \(L_{ij}\) is the shared language weight, \(\lambda\) is the increment per interaction, and \(\delta\) is the decay rate for unused ties.
+    </div>
+
+    <p>
+        At the beginning of the game, agents are assigned an interaction preference drawn from a normal distribution, with \(\mu\) and \(\sigma\) defined by the user. 
+        In the first round, the probability of interaction between any two agents is randomly drawn from a uniform distribution. 
+        At each subsequent round, the probability of interacting with other agents that they have already met, versus new agents with whom they have not interacted, is determined by this interaction preference value. 
+        A larger mean and smaller standard deviation for this distribution indicates a society that strongly values reinforcing existing ties, while a smaller mean indicates a society that strongly values creating new ties.
+    </p>
+
+    <h3>Interaction Probability</h3>
+    <p>
+      Each agent \(i\) is assigned a <b>repeat interaction preference</b>, \(\rho_i \sim \mathcal{N}(\mu, \sigma^2)\), where \(\mu\) and \(\sigma\) are user-defined parameters for the distribution’s mean and standard deviation.
+      <br><br>
+      The probability that agent \(i\) chooses to interact with a previously encountered agent \(j\) is proportional to:
+    </p>
+    <div class="math-block">
+      \[
+        P_{ij}^{(t)} \propto \rho_i \cdot L_{ij}^{(t)} + (1 - \rho_i) \cdot \epsilon
+      \]
+    </div>
+    <p>
+      where \(L_{ij}^{(t)}\) is the shared language weight (if \(j\) has been encountered before), and \(\epsilon\) is a small constant to allow exploration of new ties.
+    </p>
+
+
+    <p>
+        <b>Clusters</b> are identified as connected components in the agent network where \(L_{ij}\) exceeds a threshold.
+        The <b>complexity</b> of each cluster's language (\(D_g\)) is proportional to the share of all interactions that occur within the cluster.
+    </p>
+    <div class="math-block">
+        <b>Cluster Complexity:</b><br>
+        \[
+        D_g = \frac{\text{Interactions within cluster } g}{\text{Total interactions}}
+        \]
+    </div>
+
+    <h2>Model 2: Resource Competition & Extraction</h2>
+    <p>
+        After language clusters emerge, agents form groups for resource management.
+        Each agent has a fixed proportional need for fruits A and B, given by \(\theta_i\) and \(1-\theta_i\), respectively.
+        Group-level language complexity \(D_g\) shapes the <b>information-processing ability</b> of each group:
+    </p>
+
+    <ul>
+        <li><b>Low D:</b> Only immediate needs visible; no abstract planning.</li>
+        <li><b>Medium D:</b> Groups can share trends and coordinate for short-term gains.</li>
+        <li><b>High D:</b> Long-term planning, carrying capacity, and collective restraint are possible.</li>
+    </ul>
+
+    <div class="math-block">
+        <b>Agent i's Basic Daily Needs:</b><br>
+        \[
+        N_{i,A} = \theta_i \cdot N_0
+        \qquad
+        N_{i,B} = (1-\theta_i) \cdot N_0
+        \]
+        where \(N_0\) is a base need constant (e.g., 50 units).
+    </div>
+
+    <h3>Extraction Strategies</h3>
+    <b>Low Complexity (\(D < D_{\text{low}}\)):</b>
+    <div class="math-block">
+        \[
+        E_{i,A} = \min\left( N_{i,A} \cdot \alpha, \frac{S_A}{n_g} \right)
+        \qquad
+        E_{i,B} = \min\left( N_{i,B} \cdot \alpha, \frac{S_B}{n_g} \right)
+        \]
+        \[
+        \alpha > 1 \quad \text{(fear of competition/overharvesting)}
+        \]
+    </div>
+
+    <b>Medium Complexity (\(D_{\text{low}} \leq D < D_{\text{high}}\)):</b>
+    <div class="math-block">
+        \[
+        E_{i,A} = \frac{N_{i,A}}{\sum_{j \in G_g} N_{j,A}} \cdot S_A \cdot \text{TrendAdj}
+        \]
+        <br>
+        \(\text{TrendAdj} < 1\) if resources are declining; >1 if increasing.
+    </div>
+
+    <b>High Complexity (\(D \geq D_{\text{high}}\)):</b>
+    <div class="math-block">
+        <i>Sustainable, forward-looking allocation based on carrying capacity:</i>
+        <br>
+        \[
+        E_{i,A} = \frac{N_{i,A}}{\sum_{j \in G_g} N_{j,A}} \cdot S_A^{\text{sus}} \cdot \gamma
+        \]
+        \[
+        S_A^{\text{sus}} = \text{sustainable pool for A}
+        \]
+        \[
+        \gamma < 1 \text{ if long-term scarcity projected}
+        \]
+    </div>
+
+    <h2>Conflict & Group Dynamics</h2>
+    <p>
+        If a group's patch is depleted, and nearby groups have remaining resources, <b>conflict</b> can arise. The probability of winning is determined by group size and language complexity (more complex groups coordinate better).
+    </p>
+    <div class="math-block">
+        <b>Probability Group \(g\) defeats \(h\):</b><br>
+        \[
+        P_{\text{win}} = \frac{n_g (1 + D_g)}{n_g (1 + D_g) + n_h (1 + D_h)}
+        \]
+    </div>
+
+    <h2>Simulation Outputs</h2>
+    <ul>
+        <li><b>Language clusters:</b> Their size and internal complexity over time.</li>
+        <li><b>Resource levels:</b> Per group, per step; overharvesting events.</li>
+        <li><b>Survival rates:</b> Proportion of agents alive in each group.</li>
+        <li><b>Resource depletion and group conflicts</b> traced over time.</li>
+    </ul>
+    <p>
+        <b>See the simulation and results below!</b>
+    </p>
+
+    <style>
+      /* Add after your existing styles, or merge into your <style> section */
+      .case-images-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 36px 24px;
+        margin-bottom: 20px;
+        margin-top: 12px;
+      }
+      .case-images-row img {
+        width: 370px;
+        margin-bottom: 12px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 3px 10px #0001;
+      }
+      .case-gif {
+        margin-bottom: 20px;
+        border-radius: 12px;
+      }
+      .harvest-images-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px 28px;
+        margin-bottom: 28px;
+        margin-top: 12px;
+      }
+      .harvest-images-row img {
+        width: 410px;
+        margin-bottom: 16px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 3px 10px #0001;
+      }
+    </style>
+
+    <h2>Simulation Results & Visualizations</h2>
+
+    <h3>Language Emergence Dynamics</h3>
+    <p>
+        <b>Each "case" below corresponds to a different scenario of agent mobility, interaction range, and shared-language decay.</b>
+        These dynamics produce different patterns of language cluster emergence, number and size of language groups, and the complexity of shared languages.
+    </p>
+    <div>
+        <h4>Case 1: Minimal Convergence</h4>
+        <img class="case-gif" src="images/case1_clusters.gif" alt="Case 1: Cluster evolution animation" width="380"><br>
+        <div class="case-images-row">
+            <img src="images/case1_cs_num_clusters.png" alt="Number of language clusters (Case 1)">
+            <img src="images/case1_cs_largest_lang.png" alt="Size of largest language cluster (Case 1)">
+            <img src="images/case1_cs_complexity.png" alt="Language complexity in largest cluster (Case 1)">
+            <img src="images/case1_cs_depletion.png" alt="Resource depletion over time (Case 1)">
+        </div>
+    </div>
+
+    <div>
+        <h4>Case 2: Regional Convergence</h4>
+        <img class="case-gif" src="images/case2_clusters.gif" alt="Case 2: Cluster evolution animation" width="380"><br>
+        <div class="case-images-row">
+            <img src="images/case2_cs_num_clusters.png" alt="Number of language clusters (Case 2)">
+            <img src="images/case2_cs_largest_lang.png" alt="Size of largest language cluster (Case 2)">
+            <img src="images/case2_cs_complexity.png" alt="Language complexity in largest cluster (Case 2)">
+            <img src="images/case2_cs_depletion.png" alt="Resource depletion over time (Case 2)">
+        </div>
+    </div>
+
+    <div>
+        <h4>Case 3: Several Medium Clusters</h4>
+        <img class="case-gif" src="images/case3_clusters.gif" alt="Case 3: Cluster evolution animation" width="380"><br>
+        <div class="case-images-row">
+            <img src="images/case3_cs_num_clusters.png" alt="Number of language clusters (Case 3)">
+            <img src="images/case3_cs_largest_lang.png" alt="Size of largest language cluster (Case 3)">
+            <img src="images/case3_cs_complexity.png" alt="Language complexity in largest cluster (Case 3)">
+            <img src="images/case3_cs_depletion.png" alt="Resource depletion over time (Case 3)">
+        </div>
+    </div>
+
+    <div>
+        <h4>Case 4: Global Convergence</h4>
+        <img class="case-gif" src="images/case4_clusters.gif" alt="Case 4: Cluster evolution animation" width="380"><br>
+        <div class="case-images-row">
+            <img src="images/case4_cs_num_clusters.png" alt="Number of language clusters (Case 4)">
+            <img src="images/case4_cs_largest_lang.png" alt="Size of largest language cluster (Case 4)">
+            <img src="images/case4_cs_complexity.png" alt="Language complexity in largest cluster (Case 4)">
+            <img src="images/case4_cs_depletion.png" alt="Resource depletion over time (Case 4)">
+        </div>
+    </div>
+
+    <h3>Impact of Language Complexity on Harvesting</h3>
+    <p>
+        The following visualizations show the outcomes of resource extraction under different group language complexities.
+        Each figure below corresponds to an experimental run at a different value of average group language complexity (\(D\)), illustrating the relation between communicative capacity and ecological sustainability.
+    </p>
+    <style>
+      .harvest-images-row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 48px;
+        margin-bottom: 36px;
+        margin-top: 20px;
+      }
+      .harvest-images-row img {
+        width: 720px;
+        max-width: 98vw;
+        margin-bottom: 0;
+        border-radius: 14px;
+        box-shadow: 0 4px 18px #0002;
+        background: #fff;
+      }
+      .harvest-caption {
+        margin: 8px 0 22px 0;
+        text-align: center;
+        color: #2a405c;
+        font-size: 1.07em;
+        font-weight: 500;
+        letter-spacing: 0.01em;
+      }
+    </style>
+
+    <div class="harvest-images-row">
+        <div>
+          <img src="images/resource_1.png" alt="Resource use and survival, low complexity">
+          <div class="harvest-caption">Low communication complexity, no shared language: rapid overharvesting and collapse.</div>
+        </div>
+        <div>
+          <img src="images/resource_2.png" alt="Resource use and survival, moderate complexity">
+          <div class="harvest-caption">Moderate complexity, one big language cluster: some coordination, but resources still collapse.</div>
+        </div>
+        <div>
+          <img src="images/resource_3.png" alt="Resource use and survival, high complexity">
+          <div class="harvest-caption">Several language groups: group-level communication prolongs sustainability, but only a little.</div>
+        </div>
+        <div>
+          <img src="images/resource_4.png" alt="Resource use and survival, maximal complexity">
+          <div class="harvest-caption">Maximal complexity and shared language: resources are managed sustainably, high survival rate.</div>
+        </div>
+    </div>
+
+
+    <p>
+        <b>Interpretation:</b><br>
+
+        <ul>
+            <li>When groups have lower preferences for repeated interactions, more languages emerge, with generally lower complexity.</li>
+            <li>When groups have higher preferences for repeated interactions, fewer languages emerge, but they are more complex.</li>
+            <li>When communication complexity is low, groups tend to overharvest and resources collapse rapidly.</li>
+            <li>With higher complexity, groups coordinate and resources are sustained longer or indefinitely.</li>
+        </ul>
+
+        
+    Overall, the model suggests that group preferences between existing ties versus new ties can have important implications for resource management. 
+    The transition from collapse to sustainability depends critically on the capacity for abstract reasoning and collective planning.
+    </p>
+
+
+</body>
+</html>
